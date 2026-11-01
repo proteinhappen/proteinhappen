@@ -69,21 +69,17 @@
         <div class="max-w-6xl mx-auto px-4 py-3 sm:py-4">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 
-                <!-- LOGO (SVG passend zum ProteinHappen Entwurf) -->
+                <!-- LOGO -->
                 <div class="flex items-center justify-between">
                     <a href="#" onclick="showHome(); return false;" class="flex items-center gap-3 group focus:outline-none">
-                        <!-- Kombiniertes Bowl & Hantel SVG Icon -->
                         <div class="w-12 h-12 sm:w-14 sm:h-14 relative flex-shrink-0 flex items-center justify-center bg-slate-50 rounded-2xl border border-slate-100 shadow-sm group-hover:scale-105 transition">
                             <svg viewBox="0 0 100 100" class="w-11 h-11">
-                                <!-- Grüne Salatblätter & Beeren oben -->
                                 <path d="M22 48 C15 32, 30 20, 42 35 C45 22, 62 24, 60 40 C68 32, 78 40, 70 48 Z" fill="#16A34A"/>
                                 <path d="M30 48 C25 36, 38 28, 46 42 Z" fill="#84CC16"/>
                                 <circle cx="46" cy="43" r="6" fill="#EA580C"/>
                                 <circle cx="58" cy="44" r="6.5" fill="#EA580C"/>
-                                <!-- Schüssel (Bowl) -->
                                 <path d="M16 50 L74 50 C74 72, 58 82, 45 82 C32 82, 16 72, 16 50 Z" fill="#84CC16" stroke="#1E293B" stroke-width="5" stroke-linejoin="round"/>
                                 <path d="M33 84 L57 84" stroke="#1E293B" stroke-width="6" stroke-linecap="round"/>
-                                <!-- Orange Hantel im Vordergrund -->
                                 <g transform="rotate(-42 68 64)">
                                     <rect x="46" y="60" width="44" height="8" rx="4" fill="#EA580C" stroke="#FFFFFF" stroke-width="2"/>
                                     <rect x="40" y="50" width="8" height="28" rx="3" fill="#EA580C" stroke="#FFFFFF" stroke-width="1.5"/>
@@ -103,14 +99,11 @@
                         </div>
                     </a>
 
-                    <!-- Mobile Social Icons -->
+                    <!-- Mobile Social Icon (Facebook) -->
                     <div class="flex items-center gap-2 md:hidden">
-                        <button onclick="openCreatorModal()" class="p-2.5 rounded-xl bg-brand-orangeLight text-brand-orange hover:bg-brand-orange hover:text-white transition" title="Social Media Generator">
-                            <i class="fa-brands fa-instagram text-lg"></i>
-                        </button>
-                        <button onclick="openCreatorModal()" class="p-2.5 rounded-xl bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white transition" title="Facebook Gruppen Post">
+                        <a href="https://www.facebook.com/profile.php?id=61596274644312" target="_blank" class="p-2.5 rounded-xl bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white transition" title="ProteinHappen auf Facebook">
                             <i class="fa-brands fa-facebook-f text-lg"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -131,17 +124,14 @@
                     </div>
 
                     <div class="hidden md:flex items-center gap-2">
-                        <a href="#social-info" onclick="openCreatorModal(); return false;" class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-pink-500 to-purple-600 text-white flex items-center justify-center hover:opacity-90 transition shadow-sm" title="@proteinhappen auf Instagram">
-                            <i class="fa-brands fa-instagram text-lg"></i>
-                        </a>
-                        <a href="#social-info" onclick="openCreatorModal(); return false;" class="w-10 h-10 rounded-xl bg-[#1877F2] text-white flex items-center justify-center hover:opacity-90 transition shadow-sm" title="ProteinHappen auf Facebook">
+                        <a href="https://www.facebook.com/profile.php?id=61596274644312" target="_blank" class="w-10 h-10 rounded-xl bg-[#1877F2] text-white flex items-center justify-center hover:opacity-90 transition shadow-sm" title="ProteinHappen auf Facebook">
                             <i class="fa-brands fa-facebook-f text-base"></i>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- KATEGORIEN-PILLS (Mobile-First Horizontal Scroll) -->
+            <!-- KATEGORIEN-PILLS -->
             <nav class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-3 mt-3 border-t border-slate-100">
                 <button onclick="filterCategory('alle')" data-cat="alle" class="cat-btn active shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition bg-brand-green text-white shadow-sm">
                     🔥 Alle Happen
@@ -165,12 +155,8 @@
     <!-- HAUPTBEREICH -->
     <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-6">
 
-        <!-- ==========================================
-             ANSICHT 1: STARTSEITE (REZEPT-FEED)
-             ========================================== -->
+        <!-- STARTSEITE -->
         <div id="homeView">
-            
-            <!-- Kompakter Hero-Banner -->
             <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 sm:p-8 mb-8 text-white relative overflow-hidden shadow-lg">
                 <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-brand-green/20 rounded-full blur-2xl pointer-events-none"></div>
                 <div class="absolute right-20 -top-10 w-48 h-48 bg-brand-orange/20 rounded-full blur-xl pointer-events-none"></div>
@@ -197,7 +183,6 @@
                 </div>
             </div>
 
-            <!-- Aktive Filter-Info -->
             <div class="flex items-center justify-between mb-5">
                 <h2 id="feedHeading" class="font-display text-xl sm:text-2xl font-bold text-slate-800">
                     Beliebte ProteinHappen der Woche
@@ -207,19 +192,11 @@
                 </span>
             </div>
 
-            <!-- REZEPT-KARTEN GRID -->
-            <div id="recipeGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Wird dynamisch per JavaScript gerendert -->
-            </div>
-
+            <div id="recipeGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </div>
 
-        <!-- ==========================================
-             ANSICHT 2: REZEPT-DETAILSEITE (MIT 2-SEITEN PAGINATION)
-             ========================================== -->
+        <!-- REZEPT-DETAILSEITE -->
         <div id="detailView" class="hidden max-w-3xl mx-auto">
-            
-            <!-- Zurück-Navigation & Seiten-Anzeige -->
             <div class="flex items-center justify-between mb-4">
                 <button onclick="showHome()" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-brand-green bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-200/80 transition">
                     <i class="fa-solid fa-arrow-left"></i> Alle Rezepte
@@ -231,20 +208,15 @@
                 </div>
             </div>
 
-            <!-- REZEPT HAUPT-CONTAINER -->
             <article class="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden">
-                
-                <!-- Rezept Header-Bild + Overlay Badges -->
                 <div class="relative h-64 sm:h-80 w-full bg-slate-200">
                     <img id="detailImage" src="" alt="Rezeptbild" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/20 to-transparent"></div>
                     
-                    <!-- Oben rechts: Marken-Makro-Badge -->
                     <div class="absolute top-4 right-4 bg-brand-orange text-white font-display font-extrabold text-xs sm:text-sm px-3.5 py-1.5 rounded-xl shadow-lg border-2 border-white flex items-center gap-2">
                         <span id="detailTopMacroBadge">52g PROTEIN | 430 KCAL</span>
                     </div>
 
-                    <!-- Unten im Bild: Kategorie & Titel -->
                     <div class="absolute bottom-4 left-4 right-4 text-white">
                         <span id="detailCategoryBadge" class="inline-block bg-brand-green text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md mb-2">
                             Airfryer & Schnell
@@ -255,7 +227,6 @@
                     </div>
                 </div>
 
-                <!-- Schnelle Fakten-Leiste unter dem Bild -->
                 <div class="grid grid-cols-3 divide-x divide-slate-100 border-b border-slate-100 bg-slate-50/70 text-center py-3">
                     <div>
                         <div class="text-[11px] text-slate-400 font-semibold uppercase">Zubereitung</div>
@@ -278,31 +249,19 @@
                 </div>
 
                 <div class="p-5 sm:p-8">
-
-                    <!-- ==========================================
-                         REZEPT SEITE 1: EINLEITUNG, MAKROS & ZUTATEN
-                         ========================================== -->
+                    <!-- SEITE 1 -->
                     <div id="recipePage1">
-                        
-                        <!-- Kurze, nutzenorientierte Einleitung -->
                         <div class="bg-emerald-50/70 border-l-4 border-brand-green p-4 rounded-r-2xl mb-6">
                             <div class="text-xs font-bold uppercase tracking-wider text-brand-greenDark mb-1">
                                 <i class="fa-solid fa-check-double mr-1"></i> Warum dieser ProteinHappen beim Abnehmen hilft:
                             </div>
-                            <p id="detailIntro" class="text-slate-700 text-sm leading-relaxed">
-                                Beschreibungstext...
-                            </p>
+                            <p id="detailIntro" class="text-slate-700 text-sm leading-relaxed">Beschreibungstext...</p>
                         </div>
 
-                        <!-- MAKRO-RECHNER BLOCK -->
                         <div class="bg-slate-900 text-white rounded-2xl p-4 sm:p-5 mb-6 shadow-sm">
                             <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">
-                                    📊 Exakte Nährwerte (pro Portion)
-                                </span>
-                                <span class="text-xs bg-brand-green/20 text-brand-greenLight px-2.5 py-0.5 rounded-full font-semibold">
-                                    High-Protein verifiziert
-                                </span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">📊 Exakte Nährwerte (pro Portion)</span>
+                                <span class="text-xs bg-brand-green/20 text-brand-greenLight px-2.5 py-0.5 rounded-full font-semibold">High-Protein verifiziert</span>
                             </div>
                             <div class="grid grid-cols-4 gap-2 sm:gap-4 text-center">
                                 <div class="bg-slate-800/90 rounded-xl p-2.5 border border-slate-700">
@@ -324,13 +283,11 @@
                             </div>
                         </div>
 
-                        <!-- ZUTATEN & PORTIONS-RECHNER -->
                         <div class="mb-6">
                             <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
                                 <h2 class="font-display text-xl font-extrabold text-slate-800 flex items-center gap-2">
                                     <i class="fa-solid fa-basket-shopping text-brand-green"></i> Zutaten
                                 </h2>
-                                <!-- Interaktiver Portions-Umschalter -->
                                 <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
                                     <span class="text-xs text-slate-500 font-medium px-2">Portionen:</span>
                                     <button onclick="changePortions(1)" id="portBtn1" class="port-btn px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition">1</button>
@@ -338,47 +295,25 @@
                                     <button onclick="changePortions(4)" id="portBtn4" class="port-btn px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">4</button>
                                 </div>
                             </div>
-
-                            <p class="text-xs text-slate-400 mb-3">
-                                💡 Tipp: Klicke die Zutaten einfach an, um sie beim Einkaufen oder Kochen abzuhaken.
-                            </p>
-
-                            <ul id="detailIngredients" class="space-y-2.5">
-                                <!-- Wird dynamisch gefüllt -->
-                            </ul>
+                            <p class="text-xs text-slate-400 mb-3">💡 Tipp: Klicke die Zutaten einfach an, um sie beim Einkaufen oder Kochen abzuhaken.</p>
+                            <ul id="detailIngredients" class="space-y-2.5"></ul>
                         </div>
 
-                        <!-- =========================================================
-                             WEITERLESEN-BUTTON ZU SEITE 2
-                             ========================================================= -->
                         <div class="mt-8 pt-6 border-t-2 border-slate-100">
-
                             <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-5 text-center text-white shadow-xl">
-                                <div class="text-xs font-bold uppercase tracking-wider text-brand-orange mb-1">
-                                    Schritt 2 von 2 • Zubereitung & Abnehm-Hacks
-                                </div>
-                                <h3 class="font-display text-lg sm:text-xl font-bold mb-3">
-                                    Bereit für die Zubereitung & die genaue Temperatur?
-                                </h3>
-                                <p class="text-xs sm:text-sm text-slate-300 mb-4 max-w-md mx-auto">
-                                    Auf der nächsten Seite zeige ich dir die genaue Schritt-für-Schritt-Anleitung + meinen besten Abnehm- und Schicht-Trick für dieses Gericht.
-                                </p>
+                                <div class="text-xs font-bold uppercase tracking-wider text-brand-orange mb-1">Schritt 2 von 2 • Zubereitung & Abnehm-Hacks</div>
+                                <h3 class="font-display text-lg sm:text-xl font-bold mb-3">Bereit für die Zubereitung & die genaue Temperatur?</h3>
+                                <p class="text-xs sm:text-sm text-slate-300 mb-4 max-w-md mx-auto">Auf der nächsten Seite zeige ich dir die genaue Schritt-für-Schritt-Anleitung + meinen besten Abnehm- und Schicht-Trick für dieses Gericht.</p>
                                 <button onclick="switchToPage2()" class="cta-pulse w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-orangeDark text-white font-display font-extrabold text-base sm:text-lg px-8 py-4 rounded-xl transition cursor-pointer">
                                     <span>Weiter zur Zubereitung (Seite 2)</span>
                                     <i class="fa-solid fa-angles-right"></i>
                                 </button>
                             </div>
-
                         </div>
-
                     </div>
 
-                    <!-- ==========================================
-                         REZEPT SEITE 2: ZUBEREITUNG, VARIATIONEN & EQUIPMENT
-                         ========================================== -->
+                    <!-- SEITE 2 -->
                     <div id="recipePage2" class="hidden">
-                        
-                        <!-- Zurück zu Seite 1 Leiste -->
                         <div class="flex items-center justify-between bg-brand-greenLight/60 border border-brand-green/30 rounded-2xl p-3.5 mb-6">
                             <div class="flex items-center gap-2 text-brand-greenDark font-bold text-xs sm:text-sm">
                                 <i class="fa-solid fa-circle-check text-brand-green text-base"></i>
@@ -389,58 +324,40 @@
                             </button>
                         </div>
 
-                        <!-- SCHRITT-FÜR-SCHRITT ZUBEREITUNG -->
                         <h2 class="font-display text-xl font-extrabold text-slate-800 mb-4 flex items-center gap-2">
                             <i class="fa-solid fa-fire-burner text-brand-orange"></i> Schritt-für-Schritt Zubereitung
                         </h2>
+                        <div id="detailSteps" class="space-y-4 mb-8"></div>
 
-                        <div id="detailSteps" class="space-y-4 mb-8">
-                            <!-- Wird dynamisch per JS gefüllt -->
-                        </div>
-
-                        <!-- DER ABNEHM- & MEAL-PREP-HACK KASTEN -->
                         <div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-orange-200 rounded-2xl p-5 mb-8">
                             <div class="flex items-center gap-2 font-display font-extrabold text-brand-orangeDark text-base mb-2">
                                 <i class="fa-solid fa-lightbulb text-brand-orange text-lg"></i>
                                 <span>Geheimer Abnehm- & Schicht-Trick für dieses Rezept:</span>
                             </div>
-                            <p id="detailSecretTip" class="text-slate-700 text-sm leading-relaxed">
-                                Geheimtipp Text...
-                            </p>
+                            <p id="detailSecretTip" class="text-slate-700 text-sm leading-relaxed">Geheimtipp Text...</p>
                         </div>
 
-                        <!-- EQUIPMENT BOX -->
                         <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 mb-6">
                             <h3 class="font-display font-bold text-slate-800 text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
                                 <i class="fa-solid fa-utensils text-brand-green"></i> Empfohlenes Küchen-Zubehör & Helfer
                             </h3>
-                            <div id="detailEquipment" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <!-- Wird dynamisch gefüllt -->
-                            </div>
+                            <div id="detailEquipment" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
                         </div>
 
-                        <!-- Nächstes Rezept Empfehlung -->
                         <div class="text-center pt-4 border-t border-slate-100">
                             <button onclick="showHome()" class="w-full sm:w-auto bg-brand-green hover:bg-brand-greenDark text-white font-bold px-6 py-3.5 rounded-xl transition shadow-md">
                                 🥗 Weitere High-Protein Rezepte entdecken
                             </button>
                         </div>
-
                     </div>
-
                 </div>
             </article>
         </div>
-
     </main>
 
-    <!-- ==========================================
-         MODAL: CREATOR-STUDIO (SOCIAL MEDIA GENERATOR & REZEPT HINZUFÜGEN)
-         ========================================== -->
+    <!-- CREATOR STUDIO MODAL -->
     <div id="creatorModal" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
-            
-            <!-- Modal Header -->
             <div class="sticky top-0 bg-slate-900 text-white px-6 py-4 flex items-center justify-between z-10">
                 <div class="flex items-center gap-2.5">
                     <span class="w-9 h-9 rounded-xl bg-brand-orange flex items-center justify-center font-bold">
@@ -448,7 +365,7 @@
                     </span>
                     <div>
                         <h3 class="font-display font-bold text-lg leading-none">ProteinHappen Creator-Studio</h3>
-                        <p class="text-xs text-slate-400 mt-0.5">Fertige Facebook- & Instagram-Posts auf Knopfdruck</p>
+                        <p class="text-xs text-slate-400 mt-0.5">Fertige Facebook-Posts auf Knopfdruck</p>
                     </div>
                 </div>
                 <button onclick="closeCreatorModal()" class="text-slate-400 hover:text-white p-2">
@@ -457,47 +374,24 @@
             </div>
 
             <div class="p-6 space-y-6">
-                
-                <!-- Rezept-Auswahl für den Social-Media-Generator -->
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">
-                        1. Wähle das Rezept für deinen Social-Media-Post:
-                    </label>
-                    <select id="creatorRecipeSelect" onchange="updateCreatorSnippets()" class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 text-sm font-bold text-slate-800 focus:outline-none focus:border-brand-green">
-                        <!-- Wird per JS befüllt -->
-                    </select>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">1. Wähle das Rezept für deinen Social-Media-Post:</label>
+                    <select id="creatorRecipeSelect" onchange="updateCreatorSnippets()" class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 text-sm font-bold text-slate-800 focus:outline-none focus:border-brand-green"></select>
                 </div>
 
-                <!-- FACEBOOK POST GENERATOR (Mit 1.-Kommentar-Hack) -->
                 <div class="bg-blue-50/60 border border-blue-200 rounded-2xl p-4">
                     <div class="flex items-center justify-between mb-2">
                         <span class="text-xs font-bold text-blue-800 uppercase flex items-center gap-1.5">
-                            <i class="fa-brands fa-facebook text-blue-600 text-base"></i> Facebook Seiten- & Gruppen-Post (Hohe Klickrate)
+                            <i class="fa-brands fa-facebook text-blue-600 text-base"></i> Facebook Gruppen- & Seiten-Post
                         </span>
                         <button onclick="copyText('fbSnippetText')" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition flex items-center gap-1">
                             <i class="fa-regular fa-copy"></i> Text kopieren
                         </button>
                     </div>
                     <textarea id="fbSnippetText" rows="5" readonly class="w-full bg-white border border-blue-100 rounded-xl p-3 text-xs sm:text-sm text-slate-700 font-sans leading-relaxed focus:outline-none"></textarea>
-                    <p class="text-[11px] text-blue-700 mt-2 font-medium">
-                        💡 <strong>Facebook-Regel:</strong> Poste oben das Rezeptfoto + diesen Text. Den Link <code>https://proteinhappen.de</code> setzt du erst in den <strong>ersten Kommentar</strong> darunter – so drosselt Facebook deine Reichweite nicht!
-                    </p>
+                    <p class="text-[11px] text-blue-700 mt-2 font-medium">💡 <strong>Facebook-Regel:</strong> Setze den Link zur Website in den ersten Kommentar, nicht in den Hauptbeitrag!</p>
                 </div>
 
-                <!-- INSTAGRAM REEL & MANYCHAT GENERATOR -->
-                <div class="bg-pink-50/60 border border-pink-200 rounded-2xl p-4">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold text-pink-800 uppercase flex items-center gap-1.5">
-                            <i class="fa-brands fa-instagram text-pink-600 text-base"></i> Instagram Reel Caption (@proteinhappen)
-                        </span>
-                        <button onclick="copyText('igSnippetText')" class="bg-pink-600 hover:bg-pink-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition flex items-center gap-1">
-                            <i class="fa-regular fa-copy"></i> Text kopieren
-                        </button>
-                    </div>
-                    <textarea id="igSnippetText" rows="6" readonly class="w-full bg-white border border-pink-100 rounded-xl p-3 text-xs sm:text-sm text-slate-700 font-sans leading-relaxed focus:outline-none"></textarea>
-                </div>
-
-                <!-- SCHNELLES EIGENES REZEPT HINZUFÜGEN (Live-Test) -->
                 <div class="border-t border-slate-200 pt-5">
                     <h4 class="font-display font-bold text-slate-800 text-base mb-3 flex items-center gap-2">
                         <i class="fa-solid fa-plus-circle text-brand-green"></i> Eigenes Test-Rezept live zur Seite hinzufügen
@@ -517,14 +411,11 @@
                         + Rezept sofort ins Portal einfügen
                     </button>
                 </div>
-
             </div>
         </div>
     </div>
 
-    <!-- ==========================================
-         MODAL: IMPRESSUM & KONTAKT (MINIMALER SETUP)
-         ========================================== -->
+    <!-- IMPRESSUM MODAL -->
     <div id="legalModal" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-xl w-full max-h-[85vh] overflow-y-auto p-6 shadow-2xl">
             <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
@@ -534,21 +425,14 @@
                 </button>
             </div>
             <div class="text-xs sm:text-sm text-slate-600 space-y-3 leading-relaxed">
-                <p><strong>Angaben zum Projekt:</strong><br>
-                ProteinHappen – High-Protein & Abnehm-Rezepte<br>
-                Projektleitung / Redaktion: ProteinHappen Media</p>
-                <p><strong>Kontakt:</strong><br>
-                E-Mail: info@proteinhappen.de<br>
-                Internet: https://proteinhappen.de</p>
-                <p><strong>Hinweis:</strong><br>
-                Dies ist ein Web- und Rezeptprojekt im Aufbau. Bei Fragen, Anregungen oder geschäftlichen Anliegen erreichst du uns direkt per E-Mail unter info@proteinhappen.de.</p>
+                <p><strong>Angaben zum Projekt:</strong><br>ProteinHappen – High-Protein & Abnehm-Rezepte<br>Projektleitung / Redaktion: ProteinHappen Media</p>
+                <p><strong>Kontakt:</strong><br>E-Mail: info@proteinhappen.de<br>Internet: https://proteinhappen.de</p>
+                <p><strong>Hinweis:</strong><br>Dies ist ein Web- und Rezeptprojekt im Aufbau. Bei Fragen, Anregungen oder geschäftlichen Anliegen erreichst du uns direkt per E-Mail unter info@proteinhappen.de.</p>
             </div>
         </div>
     </div>
 
-    <!-- ==========================================
-         MODAL: KOOPERATIONEN & SPONSORING
-         ========================================== -->
+    <!-- SPONSORING MODAL -->
     <div id="partnerModal" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-xl w-full max-h-[85vh] overflow-y-auto p-6 shadow-2xl">
             <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
@@ -558,24 +442,19 @@
                 </button>
             </div>
             <div class="text-xs sm:text-sm text-slate-600 space-y-3 leading-relaxed">
-                <p><strong>Dein Produkt oder Brand auf ProteinHappen?</strong><br>
-                ProteinHappen.de ist die Anlaufstelle für einfache, schnelle und proteinreiche Rezepte im Alltag, im Kaloriendefizit und für Meal-Prep (z. B. Schichtarbeit).</p>
-                
+                <p><strong>Dein Produkt oder Brand auf ProteinHappen?</strong><br>ProteinHappen.de ist die Anlaufstelle für einfache, schnelle und proteinreiche Rezepte im Alltag, im Kaloriendefizit und für Meal-Prep (z. B. Schichtarbeit).</p>
                 <p><strong>Möglichkeiten für Partner & Sponsoren:</strong></p>
                 <ul class="list-disc pl-4 space-y-1">
-                    <li><strong>Produktintegrationen:</strong> Sinnvolle Platzierung von passenden Lebensmitteln (z.B. Clear Whey, Geschmackspulver, Alternativen) direkt in den Rezepten.</li>
-                    <li><strong>Equipment & Küchengeräte:</strong> Vorstellung von Helfern wie Airfryern, digitalen Küchenwaagen oder Meal-Prep-Dosen.</li>
-                    <li><strong>Social-Media-Cross-Promotion:</strong> Verknüpfung mit Beiträgen auf unseren Social-Kanälen (Instagram & Facebook).</li>
+                    <li><strong>Produktintegrationen:</strong> Sinnvolle Platzierung von passenden Lebensmitteln direkt in den Rezepten.</li>
+                    <li><strong>Equipment & Küchengeräte:</strong> Vorstellung von Helfern wie Airfryern oder Meal-Prep-Dosen.</li>
+                    <li><strong>Social-Media-Cross-Promotion:</strong> Verknüpfung mit Beiträgen auf unseren Kanälen.</li>
                 </ul>
-
-                <p class="pt-2"><strong>Interesse an einer Zusammenarbeit?</strong><br>
-                Schreib uns einfach unverbindlich eine E-Mail an:<br>
-                <a href="mailto:info@proteinhappen.de" class="text-brand-green font-bold hover:underline">info@proteinhappen.de</a></p>
+                <p class="pt-2"><strong>Interesse an einer Zusammenarbeit?</strong><br>Schreib uns einfach unverbindlich eine E-Mail an:<br><a href="mailto:info@proteinhappen.de" class="text-brand-green font-bold hover:underline">info@proteinhappen.de</a></p>
             </div>
         </div>
     </div>
 
-    <!-- TOAST BENACHRICHTIGUNG -->
+    <!-- TOAST -->
     <div id="toastBox" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-xl border border-slate-700 text-xs sm:text-sm font-semibold flex items-center gap-2.5 z-50 hidden">
         <i class="fa-solid fa-circle-check text-brand-green text-base"></i>
         <span id="toastMessage">Erfolgreich kopiert!</span>
@@ -589,7 +468,7 @@
                 <span>• Einfach. Proteinreich. Abnehmen.</span>
             </div>
             <div class="flex flex-wrap items-center gap-4 font-medium">
-                <button onclick="openLegalModal()" class="hover:text-brand-green transition">Impressum (§ 5 DDG)</button>
+                <button onclick="openLegalModal()" class="hover:text-brand-green transition">Impressum</button>
                 <button onclick="openLegalModal()" class="hover:text-brand-green transition">Datenschutz</button>
                 <button onclick="openPartnerModal()" class="hover:text-brand-green transition font-bold text-brand-orange">🤝 Sponsoring</button>
                 <button onclick="openCreatorModal()" class="text-slate-400 hover:text-brand-orange transition">⚡ Creator-Studio</button>
@@ -597,11 +476,8 @@
         </div>
     </footer>
 
-    <!-- ==========================================
-         JAVASCRIPT LOGIK & REZEPT-DATENBANK
-         ========================================== -->
+    <!-- JAVASCRIPT -->
     <script>
-        // 1. Vordefinierte High-Protein Rezepte (10 Gerichte für Alltag, Airfryer, Quark & Schichtarbeit)
         const recipes = [
             {
                 id: 1,
@@ -624,12 +500,12 @@
                     { amount: 1, unit: "Spritzer", name: "Zitronensaft, Salz & Pfeffer" }
                 ],
                 steps: [
-                    "Hähnchenbrust in mundgerechte Stücke schneiden und mit 1 EL Skyr sowie der Hälfte der Gewürze vermengen (dadurch haftet die Panade ohne Ei!).",
+                    "Hähnchenbrust in mundgerechte Stücke schneiden und mit 1 EL Skyr sowie der Hälfte der Gewürze vermengen.",
                     "Ungesüßte Cornflakes in einem Gefrierbeutel kurz zerdrücken und die Hähnchenstücke darin wenden.",
-                    "Ab in den Airfryer (Heißluftfritteuse): Bei 200 °C für 11–12 Minuten goldbraun und knusprig backen.",
-                    "Währenddessen den restlichen Skyr mit Knoblauchpulver, Salz, Pfeffer und einem Spritzer Zitrone zum cremigen Dip verrühren – fertig!"
+                    "Ab in den Airfryer: Bei 200 °C für 11–12 Minuten goldbraun und knusprig backen.",
+                    "Den restlichen Skyr mit Knoblauchpulver, Salz, Pfeffer und Zitrone zum Dip verrühren."
                 ],
-                secretTip: "Wenn du das Gericht für die Früh- oder Spätschicht vorbereitest: Nimm den Dip separat in einer kleinen Dose mit und gib die Hähnchen-Bites vor dem Essen noch einmal für 2 Minuten bei 200 °C in den Airfryer – sie werden wieder wie frisch gemacht!",
+                secretTip: "Wenn du das Gericht für die Spätschicht vorbereitest: Gib die Bites vor dem Essen noch einmal für 2 Minuten bei 200 °C in den Airfryer – sie werden wieder wie frisch gemacht!",
                 equipment: [
                     { name: "Heißluftfritteuse (Airfryer)", note: "Backt ohne Vorheizen in 11 Min. knusprig" },
                     { name: "Kalorienfreies Ölspray", note: "Für goldbraune Kruste mit 0 kcal" }
@@ -647,25 +523,24 @@
                 carbs: 31,
                 fat: 5,
                 image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=900&q=80",
-                intro: "Der absolute virale Hit auf Facebook & Instagram: Ein ganzer, saftiger Käsekuchen mit nur 360 Kalorien und satten 44g Protein! Perfekt gegen süßen Heißhunger am Abend.",
+                intro: "Der absolute virale Hit: Ein ganzer, saftiger Käsekuchen mit nur 360 Kalorien und satten 44g Protein! Perfekt gegen süßen Heißhunger am Abend.",
                 ingredients: [
                     { amount: 250, unit: "g", name: "Magerquark" },
-                    { amount: 150, unit: "g", name: "Skyr natur (macht ihn extra cremig)" },
+                    { amount: 150, unit: "g", name: "Skyr natur" },
                     { amount: 1, unit: "Stk.", name: "Ei (Größe M)" },
-                    { amount: 20, unit: "g", name: "Vanille-Puddingpulver (zum Kochen)" },
-                    { amount: 1, unit: "Scoop", name: "Geschmackspulver Vanille / Lemon (oder Erythrit)" },
-                    { amount: 75, unit: "g", name: "Mandarinen aus der Dose (leicht gezuckert, abgetropft)" }
+                    { amount: 20, unit: "g", name: "Vanille-Puddingpulver" },
+                    { amount: 1, unit: "Scoop", name: "Geschmackspulver Vanille / Lemon" },
+                    { amount: 75, unit: "g", name: "Mandarinen aus der Dose (abgetropft)" }
                 ],
                 steps: [
-                    "Magerquark, Skyr, das Ei, Puddingpulver und dein Geschmackspulver in einer Schüssel mit dem Schneebesen glatt rühren.",
-                    "Die abgetropften Mandarinen vorsichtig unterheben (ein paar Spalten für die Deko oben aufheben).",
-                    "In eine kleine, mit Backpapier ausgelegte Form geben: Entweder im Backofen bei 180 °C (ca. 30 Min.) oder direkt im Airfryer bei 160 °C für ca. 22 Minuten backen.",
-                    "Kurz abkühlen lassen – im Kühlschrank wird er noch fester wie vom Bäcker!"
+                    "Magerquark, Skyr, Ei, Puddingpulver und Geschmackspulver glatt rühren.",
+                    "Die abgetropften Mandarinen vorsichtig unterheben.",
+                    "In eine kleine Form geben: Im Backofen bei 180 °C (30 Min.) oder Airfryer bei 160 °C (22 Min.) backen."
                 ],
-                secretTip: "Halbiere das Rezept nicht – backe direkt die doppelte Menge! Im Kühlschrank hält sich der Protein-Käsekuchen volle 3 Tage und schmeckt durchgezogen am nächsten Tag sogar noch besser.",
+                secretTip: "Backe direkt die doppelte Menge! Im Kühlschrank hält sich der Kuchen volle 3 Tage.",
                 equipment: [
-                    { name: "Kleine Silikon-Backform (16cm)", note: "Kein Einfetten nötig – 0g extra Fett" },
-                    { name: "Geschmackspulver Vanille/Cheesecake", note: "Spart 150 kcal Zucker pro Kuchen" }
+                    { name: "Kleine Silikon-Backform (16cm)", note: "Kein Einfetten nötig" },
+                    { name: "Geschmackspulver Vanille", note: "Spart 150 kcal Zucker" }
                 ]
             },
             {
@@ -680,24 +555,23 @@
                 carbs: 38,
                 fat: 14,
                 image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
-                intro: "Eine Pfanne, null Abwasch und optimale Nährwerte für den Muskelaufbau und Fettabbau. Lässt sich perfekt für 3 Arbeitstage vorkochen.",
+                intro: "Eine Pfanne, null Abwasch und optimale Nährwerte für Muskelaufbau und Fettabbau. Perfekt für 3 Arbeitstage vorkochbar.",
                 ingredients: [
-                    { amount: 180, unit: "g", name: "Rinderhackfleisch fettreduziert (5% Fett / Tartar)" },
+                    { amount: 180, unit: "g", name: "Rinderhackfleisch fettreduziert (5% Fett)" },
                     { amount: 160, unit: "g", name: "Süßkartoffel (klein gewürfelt)" },
-                    { amount: 100, unit: "g", name: "Paprika & Zucchini (gewürfelt)" },
-                    { amount: 40, unit: "g", name: "Hüttenkäse (Körniger Frischkäse light) als Topping" },
-                    { amount: 2, unit: "EL", name: "Passierte Tomaten & Paprikagewürz" }
+                    { amount: 100, unit: "g", name: "Paprika & Zucchini" },
+                    { amount: 40, unit: "g", name: "Hüttenkäse light" },
+                    { amount: 2, unit: "EL", name: "Passierte Tomaten & Gewürze" }
                 ],
                 steps: [
-                    "Süßkartoffel in sehr kleine Würfel (ca. 1 cm) schneiden – so gart sie in unter 8 Minuten direkt in der Pfanne oder im Airfryer vor.",
-                    "Das magere Rinderhack in einer beschichteten Pfanne krümelig anbraten, Paprika und Zucchini dazugeben.",
-                    "Mit passierten Tomaten, Salz, Pfeffer und Paprikapulver ablöschen und 3 Minuten köcheln lassen.",
-                    "Vom Herd nehmen und den körnigen Frischkäse darübergeben – er schmilzt leicht an und liefert 5g Extra-Protein!"
+                    "Süßkartoffel in kleine Würfel schneiden. Rinderhack in einer Pfanne anbraten.",
+                    "Paprika, Zucchini und Süßkartoffeln dazugeben.",
+                    "Mit passierten Tomaten ablöschen und 3 Minuten köcheln lassen. Mit Hüttenkäse toppen."
                 ],
-                secretTip: "Tausche normales gemischtes Hackfleisch (20% Fett) immer gegen 5%-Rinderhack. Allein dieser 1-zu-1-Tausch spart dir bei einer einzigen Pfanne über 240 Kalorien, ohne dass du kleiner portionieren musst!",
+                secretTip: "Tausche normales Hack gegen 5%-Rinderhack – das spart über 240 Kalorien pro Pfanne!",
                 equipment: [
-                    { name: "Glas-Meal-Prep-Boxen (3er Set)", note: "Mikrowellenfest für die Pause auf der Arbeit" },
-                    { name: "Keramik-Pfanne (Antihaft)", note: "Braten ohne Öl-Überschuss" }
+                    { name: "Glas-Meal-Prep-Boxen", note: "Mikrowellenfest für die Arbeit" },
+                    { name: "Antihaft-Pfanne", note: "Braten mit minimalem Fett" }
                 ]
             },
             {
@@ -712,23 +586,22 @@
                 carbs: 6,
                 fat: 1,
                 image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80",
-                intro: "Wenn abends um 21 Uhr auf der Couch der Hunger kommt: Dieser Trick verwandelt normalen Magerquark mit Clear Whey in eine riesige Schüssel luftige Zitronen-Creme!",
+                intro: "Der perfekte Couch-Snack: Verwandelt normalen Magerquark mit Clear Whey in eine riesige Schüssel luftige Zitronen-Creme!",
                 ingredients: [
-                    { amount: 250, unit: "g", name: "Magerquark (gut gekühlt)" },
-                    { amount: 15, unit: "g", name: "Clear Whey (Geschmack: Lemon Iced Tea oder Pfirsich)" },
+                    { amount: 250, unit: "g", name: "Magerquark (gekühlt)" },
+                    { amount: 15, unit: "g", name: "Clear Whey (Lemon Iced Tea)" },
                     { amount: 80, unit: "ml", name: "Eiskaltes Sprudelwasser" },
-                    { amount: 40, unit: "g", name: "TK-Beerenmischung als Topping" }
+                    { amount: 40, unit: "g", name: "TK-Beeren" }
                 ],
                 steps: [
-                    "Magerquark zusammen mit dem eiskalten Sprudelwasser in eine hohe Rührschüssel geben.",
-                    "Das Clear Whey Pulver (z. B. Lemon Iced Tea) darüberstreuen.",
-                    "Mit dem Handrührgerät oder Schneebesen 2 Minuten auf höchster Stufe aufschlagen – durch das Clear Whey verdoppelt sich das Volumen zu einem luftigen Mousse!",
-                    "Mit ein paar gefrorenen Beeren toppen und sofort löffeln."
+                    "Magerquark mit Sprudelwasser in eine Schüssel geben.",
+                    "Clear Whey darüberstreuen und 2 Minuten auf höchster Stufe aufschlagen.",
+                    "Mit Beeren toppen und sofort löffeln."
                 ],
-                secretTip: "Das Geheimnis liegt in der Kombination aus Kohlensäure (Sprudelwasser) und dem Schaumeffekt von Clear Whey: Du isst optisch die doppelte Menge im Vergleich zu normalem Quark, hast aber unter 200 Kalorien!",
+                secretTip: "Durch die Kohlensäure verdoppelt sich das Volumen des Quarks zu einem Riesen-Mousse.",
                 equipment: [
-                    { name: "Clear Whey (Lemon Iced Tea)", note: "Macht Quark fruchtig-fluffig statt trocken" },
-                    { name: "Handrührgerät / Aufschäumer", note: "Für maximales Volumen in 60 Sek." }
+                    { name: "Clear Whey Lemon Iced Tea", note: "Macht Quark fruchtig-fluffig" },
+                    { name: "Handrührgerät", note: "Für maximalen Schaum" }
                 ]
             },
             {
@@ -743,24 +616,20 @@
                 carbs: 42,
                 fat: 8,
                 image: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=900&q=80",
-                intro: "Kein teures Pancake-Fertigpulver nötig: Aus Haferflocken, Magerquark und Ei mixt du in 2 Minuten den perfekten Frühstücks-Stapel, der bis zum Mittagessen vorhält.",
+                intro: "Aus Haferflocken, Magerquark und Ei mixt du in 2 Minuten den perfekten Frühstücks-Stapel.",
                 ingredients: [
                     { amount: 50, unit: "g", name: "Zarte Haferflocken" },
                     { amount: 150, unit: "g", name: "Magerquark" },
-                    { amount: 2, unit: "Stk.", name: "Eier (oder 1 Ei + 50ml Eiklar)" },
-                    { amount: 0.5, unit: "TL", name: "Backpulver & 1 Prise Zimt" },
-                    { amount: 80, unit: "g", name: "TK-Himbeeren oder Heidelbeeren" }
+                    { amount: 2, unit: "Stk.", name: "Eier" },
+                    { amount: 80, unit: "g", name: "TK-Beeren" }
                 ],
                 steps: [
-                    "Haferflocken, Magerquark, Eier, Backpulver und Zimt kurz in einer Schüssel verrühren (oder 10 Sekunden pürieren).",
-                    "Eine beschichtete Pfanne auf mittlere Hitze stellen und 3 kleine Pancakes gleichzeitig von jeder Seite ca. 2 Minuten goldbraun backen.",
-                    "Die gefrorenen Beeren in einer Tasse für 45 Sekunden in die Mikrowelle geben – so entsteht ganz ohne Zucker eine warme Fruchtsauce zum Darüberträufeln!"
+                    "Haferflocken, Quark, Eier und Backpulver verrühren.",
+                    "In einer beschichteten Pfanne goldbraun ausbacken.",
+                    "TK-Beeren kurz in der Mikrowelle erwärmen und als Sauce nutzen."
                 ],
-                secretTip: "Drehe die Pfanne beim Ausbacken nur auf mittlere Stufe (Stufe 6 von 9). Da Quark-Pancakes schneller bräunen als normaler Mehlteig, werden sie bei mittlerer Hitze innen viel fluffiger!",
-                equipment: [
-                    { name: "Kompakt-Standmixer", note: "Macht aus Haferflocken in 5 Sek. feines Mehl" },
-                    { name: "Kalorienfreier Sirup", note: "Für das klassische Pancake-Feeling" }
-                ]
+                secretTip: "Bei mittlerer Stufe ausbacken, damit sie innen schön fluffig bleiben.",
+                equipment: [{ name: "Standmixer", note: "Macht Haferflocken fein" }]
             },
             {
                 id: 6,
@@ -774,25 +643,21 @@
                 carbs: 34,
                 fat: 9,
                 image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80",
-                intro: "Pizza-Hunger im Kaloriendefizit? Dieser Blitz-Teig aus Skyr und Dinkelmehl braucht null Gehzeit, wird am Rand herrlich knusprig und liefert satte 54g Eiweiß!",
+                intro: "Blitz-Teig aus Skyr und Dinkelmehl ohne Gehzeit – knusprig und vollgepackt mit 54g Eiweiß!",
                 ingredients: [
                     { amount: 100, unit: "g", name: "Skyr natur" },
-                    { amount: 60, unit: "g", name: "Dinkelmehl (Type 630) + 1/2 TL Backpulver" },
-                    { amount: 120, unit: "g", name: "Thunfisch im eigenen Saft (abgetropft)" },
-                    { amount: 4, unit: "EL", name: "Passierte Tomaten + Oregano & Knoblauch" },
-                    { amount: 40, unit: "g", name: "Reibekäse light (16% Fett) + rote Zwiebelringe" }
+                    { amount: 60, unit: "g", name: "Dinkelmehl + Backpulver" },
+                    { amount: 120, unit: "g", name: "Thunfisch (abgetropft)" },
+                    { amount: 4, unit: "EL", name: "Passierte Tomaten" },
+                    { amount: 40, unit: "g", name: "Reibekäse light" }
                 ],
                 steps: [
-                    "Skyr, Dinkelmehl, Backpulver und eine Prise Salz mit den Händen kurz zu einem glatten Teigball kneten.",
-                    "Auf Backpapier dünn und rund ausrollen, mit den gewürzten passierten Tomaten bestreichen.",
-                    "Abgetropften Thunfisch, Zwiebelringe und den fettarmen Reibekäse darauf verteilen.",
-                    "Im vorgeheizten Ofen (200 °C) für 12 Minuten oder im Airfryer bei 190 °C für 9–10 Minuten knusprig backen!"
+                    "Skyr, Mehl und Backpulver verkneten, dünn ausrollen.",
+                    "Mit Tomaten, Thunfisch und Käse belegen.",
+                    "Im Ofen bei 200 °C (12 Min.) oder Airfryer (10 Min.) backen."
                 ],
-                secretTip: "Backe den ausgerollten Boden im Airfryer erst 3 Minuten trocken vor, bevor du die Tomatensauce draufgibst – so wird der Pizzaboden von unten knusprig wie vom Steinofen!",
-                equipment: [
-                    { name: "Dauerbackfolie / Backmatte", note: "Kein Ankleben von Quark- & Skyr-Teig" },
-                    { name: "Pizzaroller Edelstahl", note: "Für saubere Stücke in Sekunden" }
-                ]
+                secretTip: "Den Teigboden im Airfryer 3 Minuten trocken vorbacken für den perfekten Crunch.",
+                equipment: [{ name: "Backmatte", note: "Verhindert Festkleben" }]
             },
             {
                 id: 7,
@@ -806,29 +671,24 @@
                 carbs: 36,
                 fat: 7,
                 image: "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=900&q=80",
-                intro: "Schmecken wie vom Lieblings-Italiener, passen aber perfekt in deinen Diätplan: Diese überbackenen Protein-Brötchen sind in 12 Minuten im Airfryer fertig!",
+                intro: "Schmecken wie beim Italiener, fertig in 12 Minuten direkt im Airfryer.",
                 ingredients: [
-                    { amount: 150, unit: "g", name: "Magerquark oder Skyr" },
-                    { amount: 60, unit: "g", name: "Dinkelmehl oder feine Haferflocken + 1 TL Backpulver" },
-                    { amount: 60, unit: "g", name: "Putenbrust-Aufschnitt (in kleine Würfel geschnitten)" },
-                    { amount: 40, unit: "g", name: "Reibekäse light" },
-                    { amount: 2, unit: "EL", name: "Tomatenmark, Wasser & italienische Kräuter" }
+                    { amount: 150, unit: "g", name: "Magerquark" },
+                    { amount: 60, unit: "g", name: "Mehl + Backpulver" },
+                    { amount: 60, unit: "g", name: "Putenbrust gewürfelt" },
+                    { amount: 40, unit: "g", name: "Reibekäse light" }
                 ],
                 steps: [
-                    "Aus Quark, Mehl, Backpulver und einer Prise Salz 4 kleine Teigkugeln formen und in der Mitte eine kleine Mulde eindrücken.",
-                    "Tomatenmark mit etwas Wasser, Kräutern, den Putenbrust-Würfeln und der Hälfte des Käses verrühren.",
-                    "Die Füllung in die Mulden geben und mit dem restlichen Käse toppen.",
-                    "Im Airfryer bei 180 °C für 10–11 Minuten goldbraun aufbacken!"
+                    "Quark und Mehl verkneten, kleine Brötchen formen und Mulden eindrücken.",
+                    "Mit Tomatenmark, Putenwürfeln und Käse füllen.",
+                    "Im Airfryer bei 180 °C für 11 Minuten backen."
                 ],
-                secretTip: "Die Brötchen schmecken auch kalt auf der Arbeit hervorragend. Mach dir abends direkt 8 Stück, dann hast du das Frühstück oder die Schichtpause für den nächsten Tag schon sicher!",
-                equipment: [
-                    { name: "Airfryer Backpapier-Schalen", note: "Hält den Korb sauber bei geschmolzenem Käse" },
-                    { name: "Italienische Kräutermischung", note: "Für den echten Pizzeria-Geschmack" }
-                ]
+                secretTip: "Direkt doppelte Menge machen – schmecken auch kalt hervorragend in der Pause.",
+                equipment: [{ name: "Airfryer", note: "Schnell & knusprig" }]
             },
             {
                 id: 8,
-                title: "Schoko-Bananen Baked Oats aus dem Airfryer (Wie warmer Kuchen)",
+                title: "Schoko-Bananen Baked Oats aus dem Airfryer",
                 category: "suess",
                 categoryLabel: "Süße Happen",
                 tags: ["alle", "unter500", "suess", "airfryer"],
@@ -838,25 +698,19 @@
                 carbs: 44,
                 fat: 6,
                 image: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=900&q=80",
-                intro: "Warmes Schokokuchen-Feeling zum Frühstück oder nach dem Training: Komplett ohne raffinierten Zucker, super saftig durch Banane und Skyr!",
+                intro: "Warmes Schokokuchen-Feeling ohne Zucker, super saftig durch Banane und Skyr.",
                 ingredients: [
-                    { amount: 50, unit: "g", name: "Zarte Haferflocken" },
-                    { amount: 120, unit: "g", name: "Skyr natur oder Magerquark" },
-                    { amount: 0.5, unit: "Stk.", name: "Reife Banane (+ 1 kleingeschnittene Dattel für Karamell-Note)" },
-                    { amount: 25, unit: "g", name: "Proteinpulver Schoko (oder 1 EL Backkakao + Süße)" },
-                    { amount: 0.5, unit: "TL", name: "Backpulver & 30 ml Wasser oder Milch" }
+                    { amount: 50, unit: "g", name: "Haferflocken" },
+                    { amount: 120, unit: "g", name: "Skyr" },
+                    { amount: 0.5, unit: "Stk.", name: "Reife Banane" },
+                    { amount: 25, unit: "g", name: "Proteinpulver Schoko" }
                 ],
                 steps: [
-                    "Die halbe Banane in einer kleinen, ofenfesten Schale mit der Gabel zerdrücken.",
-                    "Haferflocken, Skyr, Schoko-Proteinpulver, Backpulver und einen Schluck Wasser direkt in der Schale glatt rühren.",
-                    "Optional die kleingeschnittene Dattel in die Mitte drücken (schmilzt beim Backen wie ein Karamellkern!).",
-                    "Im Airfryer bei 175 °C für 10–12 Minuten backen, bis die Oberfläche leicht aufbricht und innen noch saftig ist."
+                    "Banane in einer Schale zerdrücken, restliche Zutaten unterrühren.",
+                    "Im Airfryer bei 175 °C für 12 Minuten backen."
                 ],
-                secretTip: "Nicht zu lange backen! Wenn der Kern in der Mitte noch ganz leicht feucht ist, schmecken die Baked Oats exakt wie ein warmer Lava-Cake aus dem Restaurant.",
-                equipment: [
-                    { name: "Ofenfeste Keramik-Förmchen (2er Set)", note: "Passen exakt nebeneinander in den Airfryer" },
-                    { name: "Whey Protein Schoko", note: "Sorgt für 20g Extra-Protein im Teig" }
-                ]
+                secretTip: "Innen leicht feucht lassen wie einen warmen Lava-Cake.",
+                equipment: [{ name: "Keramik-Förmchen", note: "Perfekt für den Airfryer" }]
             },
             {
                 id: 9,
@@ -870,25 +724,19 @@
                 carbs: 29,
                 fat: 14,
                 image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=80",
-                intro: "Keine Mikrowelle in der Pause frei? Kein Problem! Dieser herzhafte High-Protein-Wrap ist in 5 Minuten gerollt, weicht nicht durch und liefert gesunde Omega-3-Fette.",
+                intro: "Ohne Mikrowelle genießbar: Schneller Wrap mit gesunden Omega-3-Fetten.",
                 ingredients: [
-                    { amount: 1, unit: "Stk.", name: "High-Protein Wrap (oder Vollkorn-Tortilla, ca. 60g)" },
-                    { amount: 100, unit: "g", name: "Stremellachs natur oder Räucherlachs" },
-                    { amount: 80, unit: "g", name: "Körniger Frischkäse light (oder Skyr-Frischkäse-Mix)" },
-                    { amount: 50, unit: "g", name: "Knackige Salatgurke (in Streifen) & Babyspinat" },
-                    { amount: 1, unit: "TL", name: "Honig-Senf-Dill-Sauce light & frischer Pfeffer" }
+                    { amount: 1, unit: "Stk.", name: "High-Protein Wrap" },
+                    { amount: 100, unit: "g", name: "Stremellachs" },
+                    { amount: 80, unit: "g", name: "Körniger Frischkäse light" },
+                    { amount: 50, unit: "g", name: "Gurke & Spinat" }
                 ],
                 steps: [
-                    "Den Protein-Wrap kurz für 20 Sekunden in einer trockenen Pfanne anwärmen (so lässt er sich später ohne Einreißen eng aufrollen).",
-                    "Zuerst das Spinatbett auflegen, dann den körnigen Frischkäse darauf verstreichen.",
-                    "Den Stremellachs in grobe Flocken zupfen und zusammen mit den Gurkenstreifen in die Mitte legen.",
-                    "Seiten einklappen, straff aufrollen und schräg halbieren – fertig für die Lunchbox!"
+                    "Wrap in der Pfanne anwärmen. Mit Spinat und Frischkäse bestreichen.",
+                    "Lachs und Gurkenscheiben darauf verteilen, straff aufrollen."
                 ],
-                secretTip: "Leg immer zuerst die Salat- oder Spinatblätter ganz nach unten auf den Teig und streiche erst darauf den Frischkäse. Diese 'Grünzeug-Barriere' verhindert, dass der Wrap bis zur Schichtpause durchweicht!",
-                equipment: [
-                    { name: "Edelstahl Lunchbox mit Trennwand", note: "Hält Wraps & Gemüsesticks knusprig frisch" },
-                    { name: "Frischhalte-Wrapbox", note: "Kein Auseinanderfallen beim Transport" }
-                ]
+                secretTip: "Spinat als unterste Schicht nutzen, damit der Wrap nicht durchweicht.",
+                equipment: [{ name: "Lunchbox", note: "Ideal für unterwegs" }]
             },
             {
                 id: 10,
@@ -902,64 +750,45 @@
                 carbs: 41,
                 fat: 10,
                 image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80",
-                intro: "Deftiges Soulfood nach einem langen Tag oder harten Training: Außen goldbraun angebratene Schupfnudeln mit saftigem Hähnchen in einer cremigen Sauce ganz ohne Sahne-Kalorienbombe.",
+                intro: "Deftiges Soulfood mit goldbraunen Schupfnudeln und saftigem Hähnchen in cremiger Sauce.",
                 ingredients: [
-                    { amount: 180, unit: "g", name: "Hähnchenbrustfilet (in Streifen)" },
-                    { amount: 150, unit: "g", name: "Frische Schupfnudeln aus dem Kühlregal" },
-                    { amount: 120, unit: "g", name: "Champignons (geviertelt) & Frühlingszwiebeln" },
-                    { amount: 60, unit: "g", name: "Frischkäse Balance (oder Skyr) für die Rahmsauce" },
-                    { amount: 80, unit: "ml", name: "Gemüsebrühe + Paprikapulver, Salz & Pfeffer" }
+                    { amount: 180, unit: "g", name: "Hähnchenbrustfilet in Streifen" },
+                    { amount: 150, unit: "g", name: "Frische Schupfnudeln" },
+                    { amount: 120, unit: "g", name: "Champignons" },
+                    { amount: 60, unit: "g", name: "Frischkäse Balance" }
                 ],
                 steps: [
-                    "Hähnchenstreifen und Schupfnudeln in einer beschichteten Pfanne bei hoher Hitze 5 Minuten goldbraun anbraten.",
-                    "Geviertelte Champignons und Frühlingszwiebeln dazugeben und 3 Minuten mitrösten.",
-                    "Hitze reduzieren, mit der Gemüsebrühe ablöschen und den fettarmen Frischkäse einrühren, bis eine sämige Rahmsauce entsteht.",
-                    "Mit Paprikapulver, Salz und frisch gemahlenem Pfeffer abschmecken und direkt heiß servieren!"
+                    "Hähnchen und Schupfnudeln scharf anbraten. Champignons dazugeben.",
+                    "Mit Brühe ablöschen, Frischkäse einrühren und cremig einkochen."
                 ],
-                secretTip: "Wenn du statt Sahne eine Mischung aus Gemüsebrühe und Balance-Frischkäse (oder Skyr am Ende bei ausgeschalteter Herdplatte) nutzt, sparst du pro Teller über 220 Kalorien bei doppelt so viel Eiweiß!",
-                equipment: [
-                    { name: "Wok- & Schmorpfanne (28cm)", note: "Hoher Rand für schnelle One-Pot-Gerichte" },
-                    { name: "Silikon-Kochlöffel", note: "Schont jede Antihaft-Beschichtung" }
-                ]
+                secretTip: "Frischkäse Balance spart über 220 Kalorien im Vergleich zu klassischer Sahne.",
+                equipment: [{ name: "Schmorpfanne", note: "Für One-Pot Gerichte" }]
             }
         ];
 
-        // 2. Globaler State für Navigation & Portionen
         let currentCategory = 'alle';
         let currentRecipe = recipes[0];
         let currentPortions = 1;
 
-        // 3. Initialisierung beim Seitenstart
         window.addEventListener('DOMContentLoaded', () => {
             renderRecipeGrid();
             populateCreatorSelect();
         });
 
-        // 4. Rezept-Grid auf der Startseite rendern
         function renderRecipeGrid(searchQuery = '') {
             const grid = document.getElementById('recipeGrid');
             const q = searchQuery.trim().toLowerCase();
 
             const filtered = recipes.filter(r => {
                 const matchesCat = currentCategory === 'alle' || r.tags.includes(currentCategory);
-                const matchesSearch = !q || 
-                    r.title.toLowerCase().includes(q) || 
-                    r.intro.toLowerCase().includes(q) ||
-                    r.ingredients.some(i => i.name.toLowerCase().includes(q));
+                const matchesSearch = !q || r.title.toLowerCase().includes(q) || r.intro.toLowerCase().includes(q) || r.ingredients.some(i => i.name.toLowerCase().includes(q));
                 return matchesCat && matchesSearch;
             });
 
             document.getElementById('recipeCountBadge').textContent = `${filtered.length} ${filtered.length === 1 ? 'Rezept' : 'Rezepte'}`;
 
             if (filtered.length === 0) {
-                grid.innerHTML = `
-                    <div class="col-span-full bg-white rounded-3xl p-8 text-center border border-slate-200">
-                        <div class="text-3xl mb-2">🔍</div>
-                        <h3 class="font-display font-bold text-lg text-slate-800">Kein Rezept für "${searchQuery}" gefunden</h3>
-                        <p class="text-sm text-slate-500 mt-1 mb-4">Probiere es mit "Skyr", "Quark", "Hähnchen", "Lachs" oder "Airfryer".</p>
-                        <button onclick="clearSearch()" class="bg-brand-green text-white text-xs font-bold px-4 py-2 rounded-xl">Alle Rezepte zeigen</button>
-                    </div>
-                `;
+                grid.innerHTML = `<div class="col-span-full bg-white rounded-3xl p-8 text-center border border-slate-200"><h3 class="font-display font-bold text-lg text-slate-800">Kein Rezept gefunden</h3></div>`;
                 return;
             }
 
@@ -968,52 +797,27 @@
                     <div class="relative h-52 overflow-hidden bg-slate-100">
                         <img src="${r.image}" alt="${r.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
-                        
-                        <!-- Kategorie Pill oben links -->
-                        <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">
-                            ${r.categoryLabel}
-                        </span>
-
-                        <!-- ProteinHappen Marken-Badge oben rechts -->
-                        <span class="absolute top-3 right-3 bg-brand-orange text-white font-display font-extrabold text-xs px-2.5 py-1 rounded-lg shadow-md">
-                            💪 ${r.protein}g PROTEIN
-                        </span>
-
-                        <!-- Unten im Bild: Kalorien & Zeit -->
+                        <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">${r.categoryLabel}</span>
+                        <span class="absolute top-3 right-3 bg-brand-orange text-white font-display font-extrabold text-xs px-2.5 py-1 rounded-lg shadow-md">💪 ${r.protein}g PROTEIN</span>
                         <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs font-semibold">
-                            <span class="bg-black/40 backdrop-blur-sm px-2.5 py-1 rounded-md">
-                                <i class="fa-regular fa-clock text-brand-greenLight mr-1"></i> ${r.time}
-                            </span>
-                            <span class="bg-brand-green px-2.5 py-1 rounded-md font-bold">
-                                🔥 ${r.kcal} kcal
-                            </span>
+                            <span class="bg-black/40 px-2.5 py-1 rounded-md"><i class="fa-regular fa-clock text-brand-greenLight mr-1"></i> ${r.time}</span>
+                            <span class="bg-brand-green px-2.5 py-1 rounded-md font-bold">🔥 ${r.kcal} kcal</span>
                         </div>
                     </div>
-
                     <div class="p-5 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="font-display font-bold text-lg text-slate-800 group-hover:text-brand-green transition leading-snug mb-2">
-                                ${r.title}
-                            </h3>
-                            <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-4">
-                                ${r.intro}
-                            </p>
+                            <h3 class="font-display font-bold text-lg text-slate-800 group-hover:text-brand-green transition leading-snug mb-2">${r.title}</h3>
+                            <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-4">${r.intro}</p>
                         </div>
-
                         <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-                            <div class="text-[11px] font-semibold text-slate-400">
-                                Carbs: <strong class="text-slate-600">${r.carbs}g</strong> • Fett: <strong class="text-slate-600">${r.fat}g</strong>
-                            </div>
-                            <span class="text-xs font-bold text-brand-orange group-hover:translate-x-1 transition inline-flex items-center gap-1">
-                                Zum Rezept <i class="fa-solid fa-arrow-right"></i>
-                            </span>
+                            <div class="text-[11px] font-semibold text-slate-400">Carbs: <strong class="text-slate-600">${r.carbs}g</strong> • Fett: <strong class="text-slate-600">${r.fat}g</strong></div>
+                            <span class="text-xs font-bold text-brand-orange group-hover:translate-x-1 transition inline-flex items-center gap-1">Zum Rezept <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
                     </div>
                 </article>
             `).join('');
         }
 
-        // 5. Kategorie filtern
         function filterCategory(cat) {
             currentCategory = cat;
             document.querySelectorAll('.cat-btn').forEach(btn => {
@@ -1027,7 +831,6 @@
             renderRecipeGrid(document.getElementById('searchInput').value);
         }
 
-        // 6. Live-Suche
         function handleSearch(val) {
             const clearBtn = document.getElementById('clearSearchBtn');
             clearBtn.classList.toggle('hidden', val.length === 0);
@@ -1036,20 +839,17 @@
         }
 
         function clearSearch() {
-            const input = document.getElementById('searchInput');
-            input.value = '';
+            document.getElementById('searchInput').value = '';
             document.getElementById('clearSearchBtn').classList.add('hidden');
             renderRecipeGrid('');
         }
 
-        // 7. Rezept-Detailansicht öffnen (Immer zuerst auf Seite 1!)
         function openRecipe(id) {
             const recipe = recipes.find(r => r.id === id);
             if (!recipe) return;
             currentRecipe = recipe;
             currentPortions = 1;
 
-            // Header & Fakten füllen
             document.getElementById('detailImage').src = recipe.image;
             document.getElementById('detailTopMacroBadge').textContent = `${recipe.protein}g PROTEIN | ${recipe.kcal} KCAL`;
             document.getElementById('detailCategoryBadge').textContent = recipe.categoryLabel;
@@ -1059,31 +859,22 @@
             document.getElementById('detailProtein').textContent = `${recipe.protein}g Protein`;
             document.getElementById('detailIntro').textContent = recipe.intro;
 
-            // Makro-Kacheln füllen
             document.getElementById('macroKcal').textContent = recipe.kcal;
             document.getElementById('macroProt').textContent = `${recipe.protein}g`;
             document.getElementById('macroCarbs').textContent = `${recipe.carbs}g`;
             document.getElementById('macroFat').textContent = `${recipe.fat}g`;
 
-            // Zutaten rendern
             changePortions(1);
 
-            // Zubereitungsschritte (Seite 2) vorbereiten
-            const stepsContainer = document.getElementById('detailSteps');
-            stepsContainer.innerHTML = recipe.steps.map((step, index) => `
+            document.getElementById('detailSteps').innerHTML = recipe.steps.map((step, index) => `
                 <div class="flex items-start gap-3.5 bg-slate-50 p-4 rounded-2xl border border-slate-200/70">
-                    <span class="w-7 h-7 rounded-xl bg-brand-orange text-white font-display font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                        ${index + 1}
-                    </span>
+                    <span class="w-7 h-7 rounded-xl bg-brand-orange text-white font-display font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5 shadow-sm">${index + 1}</span>
                     <p class="text-slate-700 text-sm leading-relaxed">${step}</p>
                 </div>
             `).join('');
 
             document.getElementById('detailSecretTip').textContent = recipe.secretTip;
-
-            // Equipment rendern
-            const eqContainer = document.getElementById('detailEquipment');
-            eqContainer.innerHTML = recipe.equipment.map(eq => `
+            document.getElementById('detailEquipment').innerHTML = recipe.equipment.map(eq => `
                 <div class="bg-white p-3.5 rounded-xl border border-slate-200 flex items-center justify-between">
                     <div>
                         <div class="font-bold text-slate-800 text-xs sm:text-sm">${eq.name}</div>
@@ -1093,16 +884,12 @@
                 </div>
             `).join('');
 
-            // Sicherstellen, dass Seite 1 aktiv ist
             switchToPage1(false);
-
-            // Views umschalten
             document.getElementById('homeView').classList.add('hidden');
             document.getElementById('detailView').classList.remove('hidden');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 8. Portionsrechner (1, 2, 4 Portionen)
         function changePortions(portions) {
             currentPortions = portions;
             [1, 2, 4].forEach(p => {
@@ -1114,44 +901,30 @@
                 }
             });
 
-            const list = document.getElementById('detailIngredients');
-            list.innerHTML = currentRecipe.ingredients.map((ing) => {
-                const calcAmount = Number.isInteger(ing.amount * portions) 
-                    ? (ing.amount * portions) 
-                    : (ing.amount * portions).toFixed(1).replace('.', ',');
+            document.getElementById('detailIngredients').innerHTML = currentRecipe.ingredients.map(ing => {
+                const calcAmount = Number.isInteger(ing.amount * portions) ? (ing.amount * portions) : (ing.amount * portions).toFixed(1).replace('.', ',');
                 return `
                     <li>
                         <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-slate-100/80 border border-slate-200/60 cursor-pointer transition select-none">
                             <input type="checkbox" class="w-4 h-4 accent-brand-green rounded cursor-pointer" onchange="this.parentElement.classList.toggle('line-through'); this.parentElement.classList.toggle('opacity-50');">
-                            <span class="text-sm text-slate-800">
-                                <strong class="font-bold text-slate-900">${calcAmount} ${ing.unit}</strong> ${ing.name}
-                            </span>
+                            <span class="text-sm text-slate-800"><strong class="font-bold text-slate-900">${calcAmount} ${ing.unit}</strong> ${ing.name}</span>
                         </label>
                     </li>
                 `;
             }).join('');
         }
 
-        // 9. Umschalten zwischen Seite 1 (Zutaten) und Seite 2 (Zubereitung)
         function switchToPage2() {
             document.getElementById('recipePage1').classList.add('hidden');
             document.getElementById('recipePage2').classList.remove('hidden');
-            
-            const badge = document.getElementById('pageIndicatorBadge');
-            badge.textContent = "🔥 Schritt 2 von 2: Zubereitung & Abnehm-Trick";
-            badge.className = "bg-brand-orangeLight text-brand-orangeDark text-xs font-bold px-3 py-1.5 rounded-xl border border-brand-orange/30";
-
+            document.getElementById('pageIndicatorBadge').textContent = "🔥 Schritt 2 von 2: Zubereitung & Abnehm-Trick";
             window.scrollTo({ top: 100, behavior: 'smooth' });
         }
 
         function switchToPage1(scroll = true) {
             document.getElementById('recipePage2').classList.add('hidden');
             document.getElementById('recipePage1').classList.remove('hidden');
-
-            const badge = document.getElementById('pageIndicatorBadge');
-            badge.textContent = "📄 Schritt 1 von 2: Zutaten & Makros";
-            badge.className = "bg-brand-greenLight text-brand-greenDark text-xs font-bold px-3 py-1.5 rounded-xl border border-brand-green/20";
-
+            document.getElementById('pageIndicatorBadge').textContent = "📄 Schritt 1 von 2: Zutaten & Makros";
             if (scroll) window.scrollTo({ top: 100, behavior: 'smooth' });
         }
 
@@ -1160,7 +933,6 @@
             document.getElementById('homeView').classList.remove('hidden');
         }
 
-        // 10. CREATOR-STUDIO MODAL (Social Media Post Generator für Facebook & Instagram)
         function populateCreatorSelect() {
             const sel = document.getElementById('creatorRecipeSelect');
             sel.innerHTML = recipes.map(r => `<option value="${r.id}">${r.title} (${r.protein}g Protein | ${r.kcal} kcal)</option>`).join('');
@@ -1170,13 +942,7 @@
         function updateCreatorSnippets() {
             const id = parseInt(document.getElementById('creatorRecipeSelect').value);
             const r = recipes.find(item => item.id === id) || recipes[0];
-
-            const fbText = `🔥 ${r.title} – nur ${r.kcal} kcal und satte ${r.protein}g Eiweiß! 😍💪\n\nPerfekt zum Abnehmen, hält stundenlang satt und ist in ${r.time} aus normalen Supermarkt-Zutaten fertig!\n\n👉 Das komplette Rezept mit allen Mengenangaben und Zubereitung findest du direkt unten im ERSTEN KOMMENTAR! 👇⬇️`;
-
-            const igText = `${r.protein}g PROTEIN | NUR ${r.kcal} KCAL 🔥🥗\n${r.title} – in ${r.time} fertig!\n\n💬 Kommentiere mit „REZEPT“ und ich schicke dir den direkten Link inkl. Einkaufsliste & Nährwerten sofort per DM!\n(Oder klicke direkt auf den Link in meiner Bio @proteinhappen 👉 proteinhappen.de)\n\n#proteinhappen #highproteinrezepte #abnehmenohnehungern #kaloriendefizit #schnellerezepte #airfryerrezepte #mealprepdeutschland`;
-
-            document.getElementById('fbSnippetText').value = fbText;
-            document.getElementById('igSnippetText').value = igText;
+            document.getElementById('fbSnippetText').value = `🔥 ${r.title} – nur ${r.kcal} kcal und satte ${r.protein}g Eiweiß! 😍💪\n\nPerfekt zum Abnehmen, hält stundenlang satt und ist in ${r.time} fertig!\n\n👉 Das komplette Rezept findest du direkt unten im ERSTEN KOMMENTAR! 👇⬇️`;
         }
 
         function openCreatorModal() {
@@ -1188,7 +954,6 @@
             document.getElementById('creatorModal').classList.add('hidden');
         }
 
-        // Neues Rezept im Creator-Studio hinzufügen
         function addNewRecipe() {
             const title = document.getElementById('newTitle').value.trim();
             const cat = document.getElementById('newCat').value;
@@ -1201,7 +966,7 @@
             }
 
             const newId = recipes.length + 1;
-            const newObj = {
+            recipes.unshift({
                 id: newId,
                 title: title,
                 category: cat,
@@ -1215,47 +980,28 @@
                 image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80",
                 intro: "Frisch hinzugefügtes High-Protein Rezept für dein Kaloriendefizit – schnell, einfach und voller Eiweiß!",
                 ingredients: [
-                    { amount: 250, unit: "g", name: "Hauptzutat (z.B. Skyr / Magerquark / Hähnchen)" },
-                    { amount: 1, unit: "Portion", name: "Gewürze oder Geschmackspulver nach Wahl" }
+                    { amount: 250, unit: "g", name: "Hauptzutat (z.B. Skyr / Magerquark)" },
+                    { amount: 1, unit: "Portion", name: "Gewürze nach Wahl" }
                 ],
-                steps: [
-                    "Alle Zutaten bereitstellen und nach Rezept vermengen.",
-                    "Schnell zubereiten und die vollen Makros genießen!"
-                ],
+                steps: ["Zutaten bereitstellen und nach Rezept zubereiten."],
                 secretTip: "Lässt sich problemlos für den nächsten Arbeitstag im Kühlschrank vorbereiten.",
-                equipment: [
-                    { name: "Küchenwaage digital", note: "Für aufs Gramm genaue Makros" }
-                ]
-            };
+                equipment: [{ name: "Küchenwaage", note: "Für genaue Makros" }]
+            });
 
-            recipes.unshift(newObj);
             renderRecipeGrid();
             closeCreatorModal();
             openRecipe(newId);
             showToast(`🎉 "${title}" wurde live hinzugefügt!`);
         }
 
-        // 11. Rechtliches Modal, Partner Modal & Zwischenablage
-        function openLegalModal() {
-            document.getElementById('legalModal').classList.remove('hidden');
-        }
-
-        function closeLegalModal() {
-            document.getElementById('legalModal').classList.add('hidden');
-        }
-
-        function openPartnerModal() {
-            document.getElementById('partnerModal').classList.remove('hidden');
-        }
-
-        function closePartnerModal() {
-            document.getElementById('partnerModal').classList.add('hidden');
-        }
+        function openLegalModal() { document.getElementById('legalModal').classList.remove('hidden'); }
+        function closeLegalModal() { document.getElementById('legalModal').classList.add('hidden'); }
+        function openPartnerModal() { document.getElementById('partnerModal').classList.remove('hidden'); }
+        function closePartnerModal() { document.getElementById('partnerModal').classList.add('hidden'); }
 
         function copyText(elementId) {
             const textarea = document.getElementById(elementId);
             textarea.select();
-            textarea.setSelectionRange(0, 99999);
             document.execCommand('copy');
             showToast("📋 Text in die Zwischenablage kopiert!");
         }
@@ -1265,9 +1011,7 @@
             document.getElementById('toastMessage').textContent = msg;
             box.classList.remove('hidden');
             clearTimeout(window.toastTimer);
-            window.toastTimer = setTimeout(() => {
-                box.classList.add('hidden');
-            }, 3500);
+            window.toastTimer = setTimeout(() => box.classList.add('hidden'), 3500);
         }
     </script>
 </body>
