@@ -626,16 +626,26 @@
                 <p class="bg-amber-50 border border-amber-200 p-3 rounded-xl text-amber-900 font-medium">
                     💡 <strong>Hinweis für deinen Live-Gang auf proteinhappen.de:</strong> Trage hier vor dem Veröffentlichen einfach deinen vollständigen Namen, deine Anschrift und deine neue IONOS-Mailadresse (<code>info@proteinhappen.de</code>) ein.
                 </p>
-                <p><strong>Angaben gemäß § 5 DDG:</strong><br>
+                <!-- ==========================================
+         MODAL: IMPRESSUM & DATENSCHUTZ (MINIMALER SETUP)
+         ========================================== -->
+    <div id="legalModal" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full max-h-[85vh] overflow-y-auto p-6 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                <h3 class="font-display font-bold text-lg text-slate-800">Impressum & Kontakt</h3>
+                <button onclick="closeLegalModal()" class="text-slate-400 hover:text-slate-700">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-600 space-y-3 leading-relaxed">
+                <p><strong>Angaben zum Projekt:</strong><br>
                 ProteinHappen – High-Protein & Abnehm-Rezepte<br>
-                Inhaber: [Dein Vor- und Nachname]<br>
-                [Deine Straße & Hausnummer]<br>
-                [PLZ & Ort, Deutschland]</p>
+                Projektleitung / Redaktion: ProteinHappen Media</p>
                 <p><strong>Kontakt:</strong><br>
                 E-Mail: info@proteinhappen.de<br>
                 Internet: https://proteinhappen.de</p>
-                <p><strong>Affiliate-Offenlegung (*):</strong><br>
-                Die mit Sternchen (*) gekennzeichneten Links sind sogenannte Affiliate-Links (z. B. Amazon PartnerNet). Wenn du auf so einen Link klickst und einkaufst, unterstützt du <em>ProteinHappen</em> mit einer kleinen Provision. Für dich verändert sich der Preis keinen Cent!</p>
+                <p><strong>Hinweis:</strong><br>
+                Dies ist ein Web- und Rezeptprojekt im Aufbau. Bei Fragen, Anregungen oder geschäftlichen Anliegen erreichst du uns direkt per E-Mail unter info@proteinhappen.de.</p>
             </div>
         </div>
     </div>
