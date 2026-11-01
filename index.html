@@ -60,45 +60,12 @@
         .cta-pulse {
             animation: subtlePulse 2.4s infinite ease-in-out;
         }
-        .ad-pattern {
-            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
-            background-size: 12px 12px;
-        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-brand-green selection:text-white">
 
-    <!-- ADMIN / CREATOR LIVE-TELEMETRIE LEISTE (Nur für dich zum Testen sichtbar, ausblendbar) -->
-    <div id="adminBar" class="bg-slate-900 text-white text-xs py-2 px-4 border-b border-slate-700 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
-            <div class="flex items-center gap-3">
-                <span class="bg-brand-orange text-white font-bold px-2 py-0.5 rounded text-[11px] uppercase tracking-wider flex items-center gap-1">
-                    <i class="fa-solid fa-bolt"></i> Admin-Modus
-                </span>
-                <span class="hidden sm:inline text-slate-300">Live-Tracking (Social Arbitrage Simulation):</span>
-            </div>
-            <div class="flex items-center gap-4 sm:gap-6 font-medium">
-                <div class="flex items-center gap-1.5" title="Jeder Klick auf 'Seite 2' verdoppelt deine Seitenaufrufe">
-                    <i class="fa-solid fa-eye text-brand-green"></i>
-                    <span>Pageviews: <strong id="statPageviews" class="text-white text-sm">1</strong></span>
-                </div>
-                <div class="flex items-center gap-1.5" title="Geschätzte Google AdSense Einblendungen">
-                    <i class="fa-solid fa-rectangle-ad text-amber-400"></i>
-                    <span>Ad-Impressions: <strong id="statAds" class="text-white text-sm">2</strong></span>
-                </div>
-                <div class="hidden md:flex items-center gap-1.5" title="Simulierter RPM/Einnahmen-Index">
-                    <i class="fa-solid fa-coins text-emerald-400"></i>
-                    <span>Geschätzter Wert: <strong id="statRevenue" class="text-emerald-400 text-sm">0,03 €</strong></span>
-                </div>
-                <button onclick="openCreatorModal()" class="bg-brand-green hover:bg-brand-greenDark text-white px-2.5 py-1 rounded font-semibold transition flex items-center gap-1 shadow-sm">
-                    <i class="fa-solid fa-wand-magic-sparkles"></i> Social-Posts & Neues Rezept
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- HAUPT-HEADER & NAVIGATION -->
-    <header class="bg-white shadow-sm sticky top-[37px] z-40 border-b border-slate-100">
+    <header class="bg-white shadow-sm sticky top-0 z-40 border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-4 py-3 sm:py-4">
             <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 
@@ -248,7 +215,7 @@
         </div>
 
         <!-- ==========================================
-             ANSICHT 2: REZEPT-DETAILSEITE (MIT 2-SEITEN PAGINATION BOOSTER)
+             ANSICHT 2: REZEPT-DETAILSEITE (MIT 2-SEITEN PAGINATION)
              ========================================== -->
         <div id="detailView" class="hidden max-w-3xl mx-auto">
             
@@ -259,11 +226,8 @@
                 </button>
                 <div class="flex items-center gap-2">
                     <span id="pageIndicatorBadge" class="bg-brand-greenLight text-brand-greenDark text-xs font-bold px-3 py-1.5 rounded-xl border border-brand-green/20">
-                        📄 Seite 1 von 2: Zutaten & Makros
+                        📄 Schritt 1 von 2: Zutaten & Makros
                     </span>
-                    <button onclick="openCreatorModalForCurrent()" class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-3 py-1.5 rounded-xl transition flex items-center gap-1.5" title="Fertigen Facebook & Insta Post für dieses Rezept kopieren">
-                        <i class="fa-solid fa-share-nodes text-brand-orange"></i> Post-Vorlage
-                    </button>
                 </div>
             </div>
 
@@ -275,7 +239,7 @@
                     <img id="detailImage" src="" alt="Rezeptbild" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/20 to-transparent"></div>
                     
-                    <!-- Oben rechts: Marken-Makro-Badge (Wiedererkennungswert wie auf Social Media!) -->
+                    <!-- Oben rechts: Marken-Makro-Badge -->
                     <div class="absolute top-4 right-4 bg-brand-orange text-white font-display font-extrabold text-xs sm:text-sm px-3.5 py-1.5 rounded-xl shadow-lg border-2 border-white flex items-center gap-2">
                         <span id="detailTopMacroBadge">52g PROTEIN | 430 KCAL</span>
                     </div>
@@ -330,7 +294,7 @@
                             </p>
                         </div>
 
-                        <!-- MAKRO-RECHNER BLOCK (Highlight für deine Nische) -->
+                        <!-- MAKRO-RECHNER BLOCK -->
                         <div class="bg-slate-900 text-white rounded-2xl p-4 sm:p-5 mb-6 shadow-sm">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-400">
@@ -385,11 +349,10 @@
                         </div>
 
                         <!-- =========================================================
-                             DER SEITE-2 PAGINATION BOOSTER (DAS HERZSTÜCK FÜR DEINE EINNAHMEN)
+                             WEITERLESEN-BUTTON ZU SEITE 2
                              ========================================================= -->
                         <div class="mt-8 pt-6 border-t-2 border-slate-100">
 
-                            <!-- Der Psychologische Weiterlesen-Button -->
                             <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-5 text-center text-white shadow-xl">
                                 <div class="text-xs font-bold uppercase tracking-wider text-brand-orange mb-1">
                                     Schritt 2 von 2 • Zubereitung & Abnehm-Hacks
@@ -398,10 +361,10 @@
                                     Bereit für die Zubereitung & die genaue Temperatur?
                                 </h3>
                                 <p class="text-xs sm:text-sm text-slate-300 mb-4 max-w-md mx-auto">
-                                    Auf der nächsten Seite zeige ich dir die genaue Schritt-für-Schritt-Anleitung + wie du bei diesem Gericht nochmal 80 kcal einsparst.
+                                    Auf der nächsten Seite zeige ich dir die genaue Schritt-für-Schritt-Anleitung + meinen besten Abnehm- und Schicht-Trick für dieses Gericht.
                                 </p>
                                 <button onclick="switchToPage2()" class="cta-pulse w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-orangeDark text-white font-display font-extrabold text-base sm:text-lg px-8 py-4 rounded-xl transition cursor-pointer">
-                                    <span>Bitte weiterlesen: Zur Zubereitung (Seite 2)</span>
+                                    <span>Weiter zur Zubereitung (Seite 2)</span>
                                     <i class="fa-solid fa-angles-right"></i>
                                 </button>
                             </div>
@@ -411,7 +374,7 @@
                     </div>
 
                     <!-- ==========================================
-                         REZEPT SEITE 2: ZUBEREITUNG, VARIATIONEN & AFFILIATE-SETUP
+                         REZEPT SEITE 2: ZUBEREITUNG, VARIATIONEN & EQUIPMENT
                          ========================================== -->
                     <div id="recipePage2" class="hidden">
                         
@@ -419,26 +382,11 @@
                         <div class="flex items-center justify-between bg-brand-greenLight/60 border border-brand-green/30 rounded-2xl p-3.5 mb-6">
                             <div class="flex items-center gap-2 text-brand-greenDark font-bold text-xs sm:text-sm">
                                 <i class="fa-solid fa-circle-check text-brand-green text-base"></i>
-                                <span>Seite 2 geladen (+1 Pageview & +2 Ad-Impressions gezählt!)</span>
+                                <span>Schritt 2 von 2: Zubereitung & Profi-Tipps</span>
                             </div>
                             <button onclick="switchToPage1()" class="text-xs font-bold text-slate-700 hover:text-slate-900 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
                                 ← Zurück zu den Zutaten
                             </button>
-                        </div>
-
-                        <!-- AD-SLOT #3 (Oben auf Seite 2 - frischer Werbeplatz) -->
-                        <div class="mb-6 bg-slate-50 border border-dashed border-slate-300 rounded-2xl p-3 text-center ad-pattern">
-                            <span class="text-[10px] uppercase tracking-widest text-slate-400 block mb-1">— Anzeige (Seite 2) —</span>
-                            <div class="bg-white rounded-xl p-3 border border-slate-200 flex items-center justify-between gap-3 text-left">
-                                <div>
-                                    <div class="text-xs font-bold text-brand-orange">Meal-Prep Bestseller</div>
-                                    <div class="font-bold text-slate-800 text-sm">Auslaufsichere Glas-Frischhaltedosen (5er Set)</div>
-                                    <div class="text-xs text-slate-500">Perfekt für Früh- und Spätschicht – backofen-, mikrowellen- & gefriergeeignet.</div>
-                                </div>
-                                <button onclick="showToast('Affiliate-Klick auf Seite 2!')" class="bg-slate-900 text-white text-xs font-bold px-3.5 py-2 rounded-xl shrink-0">
-                                    Bei Amazon* →
-                                </button>
-                            </div>
                         </div>
 
                         <!-- SCHRITT-FÜR-SCHRITT ZUBEREITUNG -->
@@ -461,10 +409,10 @@
                             </p>
                         </div>
 
-                        <!-- AFFILIATE EQUIPMENT BOX -->
+                        <!-- EQUIPMENT BOX -->
                         <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 mb-6">
                             <h3 class="font-display font-bold text-slate-800 text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
-                                <i class="fa-solid fa-utensils text-brand-green"></i> Verwendetes Zubehör & Zutaten-Empfehlung*
+                                <i class="fa-solid fa-utensils text-brand-green"></i> Empfohlenes Küchen-Zubehör & Helfer
                             </h3>
                             <div id="detailEquipment" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <!-- Wird dynamisch gefüllt -->
@@ -643,9 +591,8 @@
             <div class="flex flex-wrap items-center gap-4 font-medium">
                 <button onclick="openLegalModal()" class="hover:text-brand-green transition">Impressum (§ 5 DDG)</button>
                 <button onclick="openLegalModal()" class="hover:text-brand-green transition">Datenschutz</button>
-                <button onclick="openLegalModal()" class="hover:text-brand-green transition">*Affiliate-Hinweis</button>
                 <button onclick="openPartnerModal()" class="hover:text-brand-green transition font-bold text-brand-orange">🤝 Sponsoring</button>
-                <button onclick="openCreatorModal()" class="text-brand-orange font-bold hover:underline">⚡ Creator-Studio</button>
+                <button onclick="openCreatorModal()" class="text-slate-400 hover:text-brand-orange transition">⚡ Creator-Studio</button>
             </div>
         </div>
     </footer>
@@ -684,7 +631,7 @@
                 ],
                 secretTip: "Wenn du das Gericht für die Früh- oder Spätschicht vorbereitest: Nimm den Dip separat in einer kleinen Dose mit und gib die Hähnchen-Bites vor dem Essen noch einmal für 2 Minuten bei 200 °C in den Airfryer – sie werden wieder wie frisch gemacht!",
                 equipment: [
-                    { name: "Dual-Zone Airfryer (200°C Crisp)", note: "Backt ohne Vorheizen in 11 Min. knusprig" },
+                    { name: "Heißluftfritteuse (Airfryer)", note: "Backt ohne Vorheizen in 11 Min. knusprig" },
                     { name: "Kalorienfreies Ölspray", note: "Für goldbraune Kruste mit 0 kcal" }
                 ]
             },
@@ -781,7 +728,7 @@
                 secretTip: "Das Geheimnis liegt in der Kombination aus Kohlensäure (Sprudelwasser) und dem Schaumeffekt von Clear Whey: Du isst optisch die doppelte Menge im Vergleich zu normalem Quark, hast aber unter 200 Kalorien!",
                 equipment: [
                     { name: "Clear Whey (Lemon Iced Tea)", note: "Macht Quark fruchtig-fluffig statt trocken" },
-                    { name: "Mini-Milchaufschäumer / Mixer", note: "Für maximales Volumen in 60 Sek." }
+                    { name: "Handrührgerät / Aufschäumer", note: "Für maximales Volumen in 60 Sek." }
                 ]
             },
             {
@@ -876,7 +823,7 @@
                 secretTip: "Die Brötchen schmecken auch kalt auf der Arbeit hervorragend. Mach dir abends direkt 8 Stück, dann hast du das Frühstück oder die Schichtpause für den nächsten Tag schon sicher!",
                 equipment: [
                     { name: "Airfryer Backpapier-Schalen", note: "Hält den Korb sauber bei geschmolzenem Käse" },
-                    { name: "Pizzagewürz ohne Geschmacksverstärker", note: "Für den echten Pizzeria-Geschmack" }
+                    { name: "Italienische Kräutermischung", note: "Für den echten Pizzeria-Geschmack" }
                 ]
             },
             {
@@ -940,7 +887,7 @@
                 secretTip: "Leg immer zuerst die Salat- oder Spinatblätter ganz nach unten auf den Teig und streiche erst darauf den Frischkäse. Diese 'Grünzeug-Barriere' verhindert, dass der Wrap bis zur Schichtpause durchweicht!",
                 equipment: [
                     { name: "Edelstahl Lunchbox mit Trennwand", note: "Hält Wraps & Gemüsesticks knusprig frisch" },
-                    { name: "Bienenwachstuch / Wrap-Hülle", note: "Kein Auseinanderfallen beim Essen" }
+                    { name: "Frischhalte-Wrapbox", note: "Kein Auseinanderfallen beim Transport" }
                 ]
             },
             {
@@ -977,12 +924,10 @@
             }
         ];
 
-        // 2. Globaler State für Navigation, Portionen & Live-Statistik
+        // 2. Globaler State für Navigation & Portionen
         let currentCategory = 'alle';
         let currentRecipe = recipes[0];
         let currentPortions = 1;
-        let sessionPageviews = 1;
-        let sessionAds = 2;
 
         // 3. Initialisierung beim Seitenstart
         window.addEventListener('DOMContentLoaded', () => {
@@ -990,17 +935,7 @@
             populateCreatorSelect();
         });
 
-        // 4. Live-Telemetrie erhöhen (Simuliert deinen AdSense-Booster)
-        function incrementStats(views, ads) {
-            sessionPageviews += views;
-            sessionAds += ads;
-            const estRev = (sessionAds * 0.015).toFixed(2).replace('.', ',') + ' €';
-            document.getElementById('statPageviews').textContent = sessionPageviews;
-            document.getElementById('statAds').textContent = sessionAds;
-            document.getElementById('statRevenue').textContent = estRev;
-        }
-
-        // 5. Rezept-Grid auf der Startseite rendern
+        // 4. Rezept-Grid auf der Startseite rendern
         function renderRecipeGrid(searchQuery = '') {
             const grid = document.getElementById('recipeGrid');
             const q = searchQuery.trim().toLowerCase();
@@ -1078,7 +1013,7 @@
             `).join('');
         }
 
-        // 6. Kategorie filtern
+        // 5. Kategorie filtern
         function filterCategory(cat) {
             currentCategory = cat;
             document.querySelectorAll('.cat-btn').forEach(btn => {
@@ -1092,7 +1027,7 @@
             renderRecipeGrid(document.getElementById('searchInput').value);
         }
 
-        // 7. Live-Suche
+        // 6. Live-Suche
         function handleSearch(val) {
             const clearBtn = document.getElementById('clearSearchBtn');
             clearBtn.classList.toggle('hidden', val.length === 0);
@@ -1107,15 +1042,12 @@
             renderRecipeGrid('');
         }
 
-        // 8. Rezept-Detailansicht öffnen (Immer zuerst auf Seite 1!)
+        // 7. Rezept-Detailansicht öffnen (Immer zuerst auf Seite 1!)
         function openRecipe(id) {
             const recipe = recipes.find(r => r.id === id);
             if (!recipe) return;
             currentRecipe = recipe;
             currentPortions = 1;
-
-            // Statistik für Klick auf Rezeptseite erhöhen
-            incrementStats(1, 2);
 
             // Header & Fakten füllen
             document.getElementById('detailImage').src = recipe.image;
@@ -1149,15 +1081,15 @@
 
             document.getElementById('detailSecretTip').textContent = recipe.secretTip;
 
-            // Affiliate Equipment rendern
+            // Equipment rendern
             const eqContainer = document.getElementById('detailEquipment');
             eqContainer.innerHTML = recipe.equipment.map(eq => `
-                <div onclick="showToast('Affiliate-Link Klick: ${eq.name}')" class="bg-white p-3.5 rounded-xl border border-slate-200 hover:border-brand-green flex items-center justify-between cursor-pointer transition group">
+                <div class="bg-white p-3.5 rounded-xl border border-slate-200 flex items-center justify-between">
                     <div>
-                        <div class="font-bold text-slate-800 text-xs sm:text-sm group-hover:text-brand-green transition">${eq.name}</div>
+                        <div class="font-bold text-slate-800 text-xs sm:text-sm">${eq.name}</div>
                         <div class="text-[11px] text-slate-500">${eq.note}</div>
                     </div>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-slate-400 group-hover:text-brand-green text-xs"></i>
+                    <i class="fa-solid fa-check text-brand-green text-xs"></i>
                 </div>
             `).join('');
 
@@ -1170,7 +1102,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // 9. Portionsrechner (1, 2, 4 Portionen)
+        // 8. Portionsrechner (1, 2, 4 Portionen)
         function changePortions(portions) {
             currentPortions = portions;
             [1, 2, 4].forEach(p => {
@@ -1183,7 +1115,7 @@
             });
 
             const list = document.getElementById('detailIngredients');
-            list.innerHTML = currentRecipe.ingredients.map((ing, idx) => {
+            list.innerHTML = currentRecipe.ingredients.map((ing) => {
                 const calcAmount = Number.isInteger(ing.amount * portions) 
                     ? (ing.amount * portions) 
                     : (ing.amount * portions).toFixed(1).replace('.', ',');
@@ -1200,19 +1132,16 @@
             }).join('');
         }
 
-        // 10. DER SEITEN-AUFRUF-BOOSTER: Umschalten auf Seite 2 (Zubereitung)
+        // 9. Umschalten zwischen Seite 1 (Zutaten) und Seite 2 (Zubereitung)
         function switchToPage2() {
             document.getElementById('recipePage1').classList.add('hidden');
             document.getElementById('recipePage2').classList.remove('hidden');
             
             const badge = document.getElementById('pageIndicatorBadge');
-            badge.textContent = "🔥 Seite 2 von 2: Zubereitung & Abnehm-Trick";
+            badge.textContent = "🔥 Schritt 2 von 2: Zubereitung & Abnehm-Trick";
             badge.className = "bg-brand-orangeLight text-brand-orangeDark text-xs font-bold px-3 py-1.5 rounded-xl border border-brand-orange/30";
 
-            // Erhöht den Pageview- und Ad-Counter sichtbar!
-            incrementStats(1, 2);
-            showToast("📄 Seite 2 geladen: +1 Pageview & +2 Ad-Einblendungen generiert!");
-            window.scrollTo({ top: 120, behavior: 'smooth' });
+            window.scrollTo({ top: 100, behavior: 'smooth' });
         }
 
         function switchToPage1(scroll = true) {
@@ -1220,10 +1149,10 @@
             document.getElementById('recipePage1').classList.remove('hidden');
 
             const badge = document.getElementById('pageIndicatorBadge');
-            badge.textContent = "📄 Seite 1 von 2: Zutaten & Makros";
+            badge.textContent = "📄 Schritt 1 von 2: Zutaten & Makros";
             badge.className = "bg-brand-greenLight text-brand-greenDark text-xs font-bold px-3 py-1.5 rounded-xl border border-brand-green/20";
 
-            if (scroll) window.scrollTo({ top: 120, behavior: 'smooth' });
+            if (scroll) window.scrollTo({ top: 100, behavior: 'smooth' });
         }
 
         function showHome() {
@@ -1231,7 +1160,7 @@
             document.getElementById('homeView').classList.remove('hidden');
         }
 
-        // 11. CREATOR-STUDIO MODAL (Social Media Post Generator für Facebook & Instagram)
+        // 10. CREATOR-STUDIO MODAL (Social Media Post Generator für Facebook & Instagram)
         function populateCreatorSelect() {
             const sel = document.getElementById('creatorRecipeSelect');
             sel.innerHTML = recipes.map(r => `<option value="${r.id}">${r.title} (${r.protein}g Protein | ${r.kcal} kcal)</option>`).join('');
@@ -1242,10 +1171,8 @@
             const id = parseInt(document.getElementById('creatorRecipeSelect').value);
             const r = recipes.find(item => item.id === id) || recipes[0];
 
-            // Facebook Gruppen & Seiten Post (Optimiert auf den 1.-Kommentar-Algorithmus-Hack)
             const fbText = `🔥 ${r.title} – nur ${r.kcal} kcal und satte ${r.protein}g Eiweiß! 😍💪\n\nPerfekt zum Abnehmen, hält stundenlang satt und ist in ${r.time} aus normalen Supermarkt-Zutaten fertig!\n\n👉 Das komplette Rezept mit allen Mengenangaben und Zubereitung findest du direkt unten im ERSTEN KOMMENTAR! 👇⬇️`;
 
-            // Instagram Reel Caption (@proteinhappen)
             const igText = `${r.protein}g PROTEIN | NUR ${r.kcal} KCAL 🔥🥗\n${r.title} – in ${r.time} fertig!\n\n💬 Kommentiere mit „REZEPT“ und ich schicke dir den direkten Link inkl. Einkaufsliste & Nährwerten sofort per DM!\n(Oder klicke direkt auf den Link in meiner Bio @proteinhappen 👉 proteinhappen.de)\n\n#proteinhappen #highproteinrezepte #abnehmenohnehungern #kaloriendefizit #schnellerezepte #airfryerrezepte #mealprepdeutschland`;
 
             document.getElementById('fbSnippetText').value = fbText;
@@ -1257,18 +1184,11 @@
             document.getElementById('creatorModal').classList.remove('hidden');
         }
 
-        function openCreatorModalForCurrent() {
-            populateCreatorSelect();
-            document.getElementById('creatorRecipeSelect').value = currentRecipe.id;
-            updateCreatorSnippets();
-            document.getElementById('creatorModal').classList.remove('hidden');
-        }
-
         function closeCreatorModal() {
             document.getElementById('creatorModal').classList.add('hidden');
         }
 
-        // Neues Test-Rezept im Creator-Studio hinzufügen
+        // Neues Rezept im Creator-Studio hinzufügen
         function addNewRecipe() {
             const title = document.getElementById('newTitle').value.trim();
             const cat = document.getElementById('newCat').value;
@@ -1315,7 +1235,7 @@
             showToast(`🎉 "${title}" wurde live hinzugefügt!`);
         }
 
-        // 12. Rechtliches Modal & Zwischenablage & Partner Modal
+        // 11. Rechtliches Modal, Partner Modal & Zwischenablage
         function openLegalModal() {
             document.getElementById('legalModal').classList.remove('hidden');
         }
