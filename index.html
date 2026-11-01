@@ -3,16 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProteinHappen | Einfache High-Protein Rezepte zum Abnehmen</title>
-    <meta name="description" content="Satt essen. Kalorien sparen. Volle Protein-Power. Schnelle und einfache High-Protein Rezepte unter 15 Minuten für deinen Alltag.">
+    <title id="seoTitle">ProteinHappen | Proteinreich essen. Einfach genießen. (20+ High-Protein Rezepte)</title>
+    <meta id="seoDescription" name="description" content="Proteinreich essen. Einfach genießen. Entdecke über 20 schnelle High-Protein Rezepte für Airfryer, Pfanne & Backofen inkl. Wochenplaner, Einkaufsliste und Kalorienrechner.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://proteinhappen.de/">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="ProteinHappen | Proteinreich essen. Einfach genießen.">
+    <meta property="og:description" content="Schnelle High-Protein Rezepte mit exakten Nährwerten, Wochenplaner & automatischer Einkaufsliste.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://proteinhappen.de/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=80">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Dynamisches Google Recipe Schema (JSON-LD) -->
+    <script id="dynamicRecipeSchema" type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ProteinHappen",
+      "url": "https://proteinhappen.de/",
+      "description": "Proteinreich essen. Einfach genießen. High-Protein Rezepte, Wochenplaner und Kalorienrechner."
+    }
+    </script>
 
     <script>
         tailwind.config = {
@@ -30,7 +51,7 @@
                             orange: '#EA580C',
                             orangeLight: '#FFEDD5',
                             orangeDark: '#C2410C',
-                            dark: '#1E293B',
+                            dark: '#0F172A',
                             bg: '#F8FAFC'
                         }
                     }
@@ -44,999 +65,1404 @@
             background-color: #F8FAFC;
             color: #1E293B;
         }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        @keyframes subtlePulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(234, 88, 12, 0.4); }
-            50% { transform: scale(1.015); box-shadow: 0 15px 30px -5px rgba(234, 88, 12, 0.65); }
-        }
-        .cta-pulse {
-            animation: subtlePulse 2.4s infinite ease-in-out;
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Druck-Stylesheet für Wochenplaner & Einkaufsliste */
+        @media print {
+            header, footer, .no-print { display: none !important; }
+            body { background: #FFFFFF !important; color: #000000 !important; }
+            .print-container { box-shadow: none !important; border: 1px solid #cbd5e1 !important; }
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-brand-green selection:text-white">
 
-    <!-- HAUPT-HEADER & NAVIGATION -->
-    <header class="bg-white shadow-sm sticky top-0 z-40 border-b border-slate-100">
-        <div class="max-w-6xl mx-auto px-4 py-3 sm:py-4">
-            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+    <!-- ==========================================
+         HAUPT-HEADER & NAVIGATION
+         ========================================== -->
+    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 py-3">
+            <div class="flex items-center justify-between gap-4">
                 
                 <!-- LOGO -->
-                <div class="flex items-center justify-between">
-                    <a href="#" onclick="showHome(); return false;" class="flex items-center gap-3 group focus:outline-none">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 relative flex-shrink-0 flex items-center justify-center bg-slate-50 rounded-2xl border border-slate-100 shadow-sm group-hover:scale-105 transition">
-                            <svg viewBox="0 0 100 100" class="w-11 h-11">
-                                <path d="M22 48 C15 32, 30 20, 42 35 C45 22, 62 24, 60 40 C68 32, 78 40, 70 48 Z" fill="#16A34A"/>
-                                <path d="M30 48 C25 36, 38 28, 46 42 Z" fill="#84CC16"/>
-                                <circle cx="46" cy="43" r="6" fill="#EA580C"/>
-                                <circle cx="58" cy="44" r="6.5" fill="#EA580C"/>
-                                <path d="M16 50 L74 50 C74 72, 58 82, 45 82 C32 82, 16 72, 16 50 Z" fill="#84CC16" stroke="#1E293B" stroke-width="5" stroke-linejoin="round"/>
-                                <path d="M33 84 L57 84" stroke="#1E293B" stroke-width="6" stroke-linecap="round"/>
-                                <g transform="rotate(-42 68 64)">
-                                    <rect x="46" y="60" width="44" height="8" rx="4" fill="#EA580C" stroke="#FFFFFF" stroke-width="2"/>
-                                    <rect x="40" y="50" width="8" height="28" rx="3" fill="#EA580C" stroke="#FFFFFF" stroke-width="1.5"/>
-                                    <rect x="33" y="54" width="6" height="20" rx="2" fill="#EA580C" stroke="#FFFFFF" stroke-width="1.5"/>
-                                    <rect x="88" y="50" width="8" height="28" rx="3" fill="#EA580C" stroke="#FFFFFF" stroke-width="1.5"/>
-                                    <rect x="97" y="54" width="6" height="20" rx="2" fill="#EA580C" stroke="#FFFFFF" stroke-width="1.5"/>
-                                </g>
-                            </svg>
+                <a href="#" onclick="switchMainTab('home'); return false;" class="flex items-center gap-3 group focus:outline-none">
+                    <div class="w-12 h-12 relative flex-shrink-0 flex items-center justify-center bg-slate-50 rounded-2xl border border-slate-200 shadow-sm group-hover:scale-105 transition">
+                        <svg viewBox="0 0 100 100" class="w-10 h-10" role="img" aria-label="ProteinHappen Logo">
+                            <path d="M22 48 C15 32, 30 20, 42 35 C45 22, 62 24, 60 40 C68 32, 78 40, 70 48 Z" fill="#16A34A"/>
+                            <path d="M30 48 C25 36, 38 28, 46 42 Z" fill="#84CC16"/>
+                            <circle cx="46" cy="43" r="6" fill="#EA580C"/>
+                            <circle cx="58" cy="44" r="6.5" fill="#EA580C"/>
+                            <path d="M16 50 L74 50 C74 72, 58 82, 45 82 C32 82, 16 72, 16 50 Z" fill="#84CC16" stroke="#1E293B" stroke-width="5" stroke-linejoin="round"/>
+                            <path d="M33 84 L57 84" stroke="#1E293B" stroke-width="6" stroke-linecap="round"/>
+                            <g transform="rotate(-42 68 64)">
+                                <rect x="46" y="60" width="44" height="8" rx="4" fill="#EA580C" stroke="#FFFFFF" stroke-width="2"/>
+                                <rect x="40" y="50" width="8" height="28" rx="3" fill="#EA580C" stroke="#FFFFFF" stroke-width="1.5"/>
+                                <rect x="88" y="50" width="8" height="28" rx="3" fill="#EA580C" stroke="#FFFFFF" stroke-width="1.5"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-display text-2xl tracking-tight text-slate-900 leading-none">
+                            <span class="font-extrabold">Protein</span><span class="font-normal text-brand-green">Happen</span>
                         </div>
-                        <div>
-                            <div class="font-display text-2xl sm:text-3xl tracking-tight text-slate-800 leading-none">
-                                <span class="font-extrabold">Protein</span><span class="font-normal text-slate-700">Happen</span>
-                            </div>
-                            <div class="text-[10px] sm:text-[11px] font-bold tracking-widest text-brand-orange uppercase mt-1">
-                                EINFACH • PROTEINREICH • ABNEHMEN
-                            </div>
+                        <div class="text-[10px] font-bold tracking-widest text-brand-orange uppercase mt-1">
+                            PROTEINREICH ESSEN • EINFACH GENIESSEN
                         </div>
+                    </div>
+                </a>
+
+                <!-- HAUPT-NAVIGATION (TABS) -->
+                <nav class="hidden lg:flex items-center gap-1 bg-slate-100 p-1.5 rounded-2xl border border-slate-200/70">
+                    <button onclick="switchMainTab('home')" id="navBtn-home" class="nav-tab-btn px-4 py-2 rounded-xl text-sm font-bold transition bg-white text-slate-900 shadow-sm">
+                        <i class="fa-solid fa-utensils text-brand-green mr-1.5"></i> Rezepte (20+)
+                    </button>
+                    <button onclick="switchMainTab('planner')" id="navBtn-planner" class="nav-tab-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:text-slate-900 flex items-center gap-1.5">
+                        <i class="fa-solid fa-calendar-check text-brand-orange"></i> Wochenplaner
+                        <span id="plannerBadgeCount" class="bg-brand-orange text-white text-[11px] px-2 py-0.5 rounded-full">0</span>
+                    </button>
+                    <button onclick="switchMainTab('calculator')" id="navBtn-calculator" class="nav-tab-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:text-slate-900">
+                        <i class="fa-solid fa-calculator text-brand-green mr-1.5"></i> Kalorien- & Proteinrechner
+                    </button>
+                    <button onclick="switchMainTab('about')" id="navBtn-about" class="nav-tab-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:text-slate-900">
+                        <i class="fa-solid fa-shield-heart text-emerald-600 mr-1.5"></i> Über uns & Qualität
+                    </button>
+                </nav>
+
+                <!-- RECHTE AKTIONEN -->
+                <div class="flex items-center gap-2">
+                    <button onclick="switchMainTab('planner')" class="lg:hidden relative p-2.5 rounded-xl bg-orange-50 text-brand-orange font-bold text-xs flex items-center gap-1.5 border border-orange-200">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span id="plannerBadgeMobile">0</span>
+                    </button>
+                    <button onclick="switchMainTab('calculator')" class="lg:hidden p-2.5 rounded-xl bg-emerald-50 text-brand-green font-bold text-xs border border-emerald-200" title="Kalorienrechner">
+                        <i class="fa-solid fa-calculator"></i>
+                    </button>
+                    <a href="https://www.facebook.com/profile.php?id=61596274644312" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl bg-[#1877F2] text-white flex items-center justify-center hover:opacity-90 transition shadow-sm" title="ProteinHappen auf Facebook">
+                        <i class="fa-brands fa-facebook-f text-base"></i>
                     </a>
-
-                    <!-- Mobile Social Icon (Facebook) -->
-                    <div class="flex items-center gap-2 md:hidden">
-                        <a href="https://www.facebook.com/profile.php?id=61596274644312" target="_blank" class="p-2.5 rounded-xl bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white transition" title="ProteinHappen auf Facebook">
-                            <i class="fa-brands fa-facebook-f text-lg"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- SUCHLEISTE & DESKTOP SOCIALS -->
-                <div class="flex items-center gap-3 flex-1 max-w-md md:ml-auto">
-                    <div class="relative w-full">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
-                        <input 
-                            type="text" 
-                            id="searchInput" 
-                            oninput="handleSearch(this.value)"
-                            placeholder="Zutat oder Rezept suchen (z.B. Skyr, Airfryer, Quark)..." 
-                            class="w-full pl-10 pr-9 py-2.5 bg-slate-100 hover:bg-slate-200/70 focus:bg-white rounded-xl text-sm border border-transparent focus:border-brand-green focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition"
-                        >
-                        <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
-                            <i class="fa-solid fa-circle-xmark"></i>
-                        </button>
-                    </div>
-
-                    <div class="hidden md:flex items-center gap-2">
-                        <a href="https://www.facebook.com/profile.php?id=61596274644312" target="_blank" class="w-10 h-10 rounded-xl bg-[#1877F2] text-white flex items-center justify-center hover:opacity-90 transition shadow-sm" title="ProteinHappen auf Facebook">
-                            <i class="fa-brands fa-facebook-f text-base"></i>
-                        </a>
-                    </div>
                 </div>
             </div>
 
-            <!-- KATEGORIEN-PILLS -->
-            <nav class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-3 mt-3 border-t border-slate-100">
-                <button onclick="filterCategory('alle')" data-cat="alle" class="cat-btn active shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition bg-brand-green text-white shadow-sm">
-                    🔥 Alle Happen
+            <!-- MOBILE SUB-NAVIGATION -->
+            <div class="flex lg:hidden items-center gap-2 overflow-x-auto no-scrollbar pt-2.5 mt-2.5 border-t border-slate-100">
+                <button onclick="switchMainTab('home')" class="shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 text-white">
+                    🍽️ Alle Rezepte
                 </button>
-                <button onclick="filterCategory('unter500')" data-cat="unter500" class="cat-btn shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200">
-                    🥗 Unter 500 kcal (Defizit)
+                <button onclick="switchMainTab('planner')" class="shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
+                    📅 Wochenplaner & Einkaufsliste
                 </button>
-                <button onclick="filterCategory('protein40')" data-cat="protein40" class="cat-btn shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200">
-                    💪 40g+ Protein Bombe
+                <button onclick="switchMainTab('calculator')" class="shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
+                    ⚖️ Kalorien- & Proteinrechner
                 </button>
-                <button onclick="filterCategory('suess')" data-cat="suess" class="cat-btn shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200">
-                    🍰 Süße Happen & Quark
+                <button onclick="switchMainTab('about')" class="shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
+                    💚 Über uns
                 </button>
-                <button onclick="filterCategory('airfryer')" data-cat="airfryer" class="cat-btn shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200">
-                    ⚡ Airfryer & 15-Min-Schichtküche
-                </button>
-            </nav>
+            </div>
         </div>
     </header>
 
-    <!-- HAUPTBEREICH -->
-    <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-6">
+    <!-- ==========================================
+         HAUPTBEREICH (MULTI-VIEW)
+         ========================================== -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 py-6">
 
-        <!-- STARTSEITE -->
-        <div id="homeView">
-            <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 sm:p-8 mb-8 text-white relative overflow-hidden shadow-lg">
-                <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-brand-green/20 rounded-full blur-2xl pointer-events-none"></div>
-                <div class="absolute right-20 -top-10 w-48 h-48 bg-brand-orange/20 rounded-full blur-xl pointer-events-none"></div>
-                
-                <div class="relative z-10 max-w-2xl">
-                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-brand-greenLight mb-3 border border-white/15">
-                        <span class="w-2 h-2 rounded-full bg-brand-green animate-ping"></span>
-                        100% Supermarkt-Zutaten • In max. 15 Min. fertig
+        <!-- ==========================================
+             VIEW 1: STARTSEITE & REZEPTE (PUNKT 1, 2, 3)
+             ========================================== -->
+        <div id="view-home">
+
+            <!-- 1. PROFESSIONELLER HERO-BEREICH MIT GROSSER HAUPTAUFNAHME -->
+            <section class="relative rounded-3xl overflow-hidden shadow-xl mb-10 min-h-[380px] sm:min-h-[440px] flex items-center">
+                <img 
+                    src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1600&q=85" 
+                    alt="Frische High-Protein Bowl mit Hähnchen, Ei, Avocado und knackigem Gemüse" 
+                    class="absolute inset-0 w-full h-full object-cover"
+                >
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/75 to-slate-900/30"></div>
+
+                <div class="relative z-10 p-6 sm:p-12 max-w-2xl text-white">
+                    <div class="inline-flex items-center gap-2 bg-brand-green/90 backdrop-blur-sm px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-white mb-4 shadow-sm">
+                        <i class="fa-solid fa-check-circle"></i> 20+ geprüfte Rezepte • Alltag & Schichtarbeit
                     </div>
-                    <h1 class="font-display text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight mb-2">
-                        Satt essen. Kalorien sparen. <span class="text-brand-orange">Volle Protein-Power.</span>
+                    <h1 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4">
+                        Proteinreich essen. <span class="text-brand-orange">Einfach genießen.</span>
                     </h1>
-                    <p class="text-slate-300 text-sm sm:text-base mb-5">
-                        Schluss mit trockenem Hähnchen und komplizierten Diät-Plänen. Klick auf ein Rezept für die exakten Makros, Einkaufsliste & Schritt-für-Schritt-Anleitung!
+                    <p class="text-slate-200 text-sm sm:text-lg mb-7 leading-relaxed">
+                        Schluss mit komplizierten Diäten: Entdecke alltagstaugliche High-Protein-Gerichte aus normalen Supermarkt-Zutaten – inklusive exakter Nährwerte, intelligentem Filter und kostenlosem Wochenplaner.
                     </p>
-                    <div class="flex flex-wrap gap-3 text-xs sm:text-sm font-semibold">
-                        <div class="bg-white/10 px-3.5 py-2 rounded-xl flex items-center gap-2">
-                            <i class="fa-solid fa-check-circle text-brand-green"></i> Exakte Kalorien & Makros
-                        </div>
-                        <div class="bg-white/10 px-3.5 py-2 rounded-xl flex items-center gap-2">
-                            <i class="fa-solid fa-check-circle text-brand-orange"></i> Airfryer & Meal-Prep erprobt
-                        </div>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a href="#rezepteSection" class="bg-brand-orange hover:bg-brand-orangeDark text-white font-display font-extrabold text-sm sm:text-base px-7 py-4 rounded-2xl shadow-lg transition transform hover:-translate-y-0.5 inline-flex items-center gap-2">
+                            <span>Rezepte entdecken</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <button onclick="switchMainTab('planner')" class="bg-white/15 hover:bg-white/25 backdrop-blur-md text-white font-bold text-sm sm:text-base px-6 py-4 rounded-2xl border border-white/25 transition inline-flex items-center gap-2">
+                            <i class="fa-solid fa-calendar-days text-brand-greenLight"></i> Wochenplaner öffnen
+                        </button>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="flex items-center justify-between mb-5">
-                <h2 id="feedHeading" class="font-display text-xl sm:text-2xl font-bold text-slate-800">
-                    Beliebte ProteinHappen der Woche
-                </h2>
-                <span id="recipeCountBadge" class="text-xs font-semibold bg-slate-200 text-slate-700 px-3 py-1 rounded-full">
-                    10 Rezepte
-                </span>
-            </div>
+            <!-- 2. OPTISCH DEUTLICH GETRENNTE KATEGORIEN -->
+            <section class="mb-12">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900">
+                        Nach Tageszeit & Kategorie wählen
+                    </h2>
+                    <span class="text-xs font-semibold text-slate-500">Klicke auf eine Rubrik zum Filtern</span>
+                </div>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                    <button onclick="quickSelectMealCategory('Frühstück')" class="group bg-amber-50 hover:bg-amber-100/80 border-2 border-amber-200 rounded-2xl p-4 text-left transition flex items-center justify-between shadow-sm">
+                        <div>
+                            <span class="text-2xl block mb-1">🥞</span>
+                            <div class="font-display font-extrabold text-slate-900 group-hover:text-brand-orange transition">Frühstück</div>
+                            <div class="text-xs text-slate-600 font-medium">Pancakes, Oats & Eier</div>
+                        </div>
+                        <span class="bg-white text-amber-800 font-bold text-xs px-2.5 py-1 rounded-xl border border-amber-200" id="catCount-Frühstück">4</span>
+                    </button>
 
-            <div id="recipeGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-        </div>
+                    <button onclick="quickSelectMealCategory('Mittagessen')" class="group bg-emerald-50 hover:bg-emerald-100/80 border-2 border-emerald-200 rounded-2xl p-4 text-left transition flex items-center justify-between shadow-sm">
+                        <div>
+                            <span class="text-2xl block mb-1">🥗</span>
+                            <div class="font-display font-extrabold text-slate-900 group-hover:text-brand-green transition">Mittagessen</div>
+                            <div class="text-xs text-slate-600 font-medium">Meal-Prep, Wraps & Bowls</div>
+                        </div>
+                        <span class="bg-white text-emerald-800 font-bold text-xs px-2.5 py-1 rounded-xl border border-emerald-200" id="catCount-Mittagessen">5</span>
+                    </button>
 
-        <!-- REZEPT-DETAILSEITE -->
-        <div id="detailView" class="hidden max-w-3xl mx-auto">
-            <div class="flex items-center justify-between mb-4">
-                <button onclick="showHome()" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-brand-green bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-200/80 transition">
-                    <i class="fa-solid fa-arrow-left"></i> Alle Rezepte
-                </button>
-                <div class="flex items-center gap-2">
-                    <span id="pageIndicatorBadge" class="bg-brand-greenLight text-brand-greenDark text-xs font-bold px-3 py-1.5 rounded-xl border border-brand-green/20">
-                        📄 Schritt 1 von 2: Zutaten & Makros
+                    <button onclick="quickSelectMealCategory('Abendessen')" class="group bg-blue-50 hover:bg-blue-100/80 border-2 border-blue-200 rounded-2xl p-4 text-left transition flex items-center justify-between shadow-sm">
+                        <div>
+                            <span class="text-2xl block mb-1">🍳</span>
+                            <div class="font-display font-extrabold text-slate-900 group-hover:text-blue-600 transition">Abendessen</div>
+                            <div class="text-xs text-slate-600 font-medium">Pfannen, Pizza & Aufläufe</div>
+                        </div>
+                        <span class="bg-white text-blue-800 font-bold text-xs px-2.5 py-1 rounded-xl border border-blue-200" id="catCount-Abendessen">6</span>
+                    </button>
+
+                    <button onclick="quickSelectMealCategory('Snacks')" class="group bg-purple-50 hover:bg-purple-100/80 border-2 border-purple-200 rounded-2xl p-4 text-left transition flex items-center justify-between shadow-sm">
+                        <div>
+                            <span class="text-2xl block mb-1">🍰</span>
+                            <div class="font-display font-extrabold text-slate-900 group-hover:text-purple-600 transition">Snacks & Süßes</div>
+                            <div class="text-xs text-slate-600 font-medium">Quark-Fluff, Kuchen & Bites</div>
+                        </div>
+                        <span class="bg-white text-purple-800 font-bold text-xs px-2.5 py-1 rounded-xl border border-purple-200" id="catCount-Snacks">5</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- 3. RUBRIK: DIESE WOCHE BESONDERS BELIEBT -->
+            <section class="mb-12 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-lg">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-orange block mb-1">⭐ Community-Favoriten</span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-extrabold">Diese Woche besonders beliebt</h2>
+                    </div>
+                    <span class="text-xs bg-white/10 px-3.5 py-1.5 rounded-full text-slate-300 font-medium self-start sm:self-auto">
+                        Meistgekochte High-Protein-Gerichte
                     </span>
                 </div>
+                <div id="popularRecipesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <!-- Wird per JS befüllt -->
+                </div>
+            </section>
+
+            <!-- 4. INTELLIGENTE REZEPTFILTER (PUNKT 3 - ECHTE FUNKTION) -->
+            <section id="rezepteSection" class="scroll-mt-24">
+                <div class="bg-white rounded-3xl p-5 sm:p-7 shadow-sm border border-slate-200/90 mb-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+                        <div>
+                            <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+                                <i class="fa-solid fa-sliders text-brand-green"></i> Intelligenter Rezeptfilter
+                            </h2>
+                            <p class="text-xs sm:text-sm text-slate-500 mt-0.5">
+                                Kombiniere Kalorien, Eiweißgehalt, Zubereitungsart und Ernährungsform genau nach deinem Ziel.
+                            </p>
+                        </div>
+
+                        <!-- Suchfeld & Reset -->
+                        <div class="flex items-center gap-2 w-full md:w-auto">
+                            <div class="relative flex-1 md:w-72">
+                                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                                <input 
+                                    type="text" 
+                                    id="filterSearch" 
+                                    oninput="applyAllFilters()"
+                                    placeholder="Zutat oder Gericht suchen..." 
+                                    class="w-full pl-9 pr-4 py-2.5 bg-slate-100 focus:bg-white rounded-xl text-sm border border-slate-200 focus:border-brand-green focus:outline-none"
+                                >
+                            </div>
+                            <button onclick="resetAllFilters()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-3.5 py-2.5 rounded-xl transition shrink-0" title="Alle Filter zurücksetzen">
+                                <i class="fa-solid fa-rotate-left mr-1"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 6-Wege Filter-Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3.5 pt-5">
+                        <!-- Filter 1: Kalorien -->
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">🔥 Kalorien</label>
+                            <select id="filterKcal" onchange="applyAllFilters()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm font-semibold text-slate-800 focus:border-brand-green focus:outline-none">
+                                <option value="all">Alle Kalorien</option>
+                                <option value="300">Unter 300 kcal</option>
+                                <option value="500">Unter 500 kcal</option>
+                                <option value="700">Unter 700 kcal</option>
+                            </select>
+                        </div>
+
+                        <!-- Filter 2: Protein -->
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">💪 Protein</label>
+                            <select id="filterProtein" onchange="applyAllFilters()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm font-semibold text-slate-800 focus:border-brand-green focus:outline-none">
+                                <option value="all">Beliebig</option>
+                                <option value="20">Ab 20 g Protein</option>
+                                <option value="30">Ab 30 g Protein</option>
+                                <option value="40">Ab 40 g Protein</option>
+                                <option value="50">Ab 50 g Protein</option>
+                            </select>
+                        </div>
+
+                        <!-- Filter 3: Zubereitungszeit -->
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">⏱️ Zeitaufwand</label>
+                            <select id="filterTime" onchange="applyAllFilters()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm font-semibold text-slate-800 focus:border-brand-green focus:outline-none">
+                                <option value="all">Alle Zeiten</option>
+                                <option value="15">Unter 15 Minuten</option>
+                                <option value="30">Unter 30 Minuten</option>
+                                <option value="45">Unter 45 Minuten</option>
+                            </select>
+                        </div>
+
+                        <!-- Filter 4: Kategorie -->
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">🍽️ Mahlzeit</label>
+                            <select id="filterCategory" onchange="applyAllFilters()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm font-semibold text-slate-800 focus:border-brand-green focus:outline-none">
+                                <option value="all">Alle Mahlzeiten</option>
+                                <option value="Frühstück">Frühstück</option>
+                                <option value="Mittagessen">Mittagessen</option>
+                                <option value="Abendessen">Abendessen</option>
+                                <option value="Snacks">Snacks & Süßes</option>
+                            </select>
+                        </div>
+
+                        <!-- Filter 5: Gerät / Zubereitung -->
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">⚡ Zubereitung</label>
+                            <select id="filterMethod" onchange="applyAllFilters()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm font-semibold text-slate-800 focus:border-brand-green focus:outline-none">
+                                <option value="all">Alle Geräte</option>
+                                <option value="Airfryer">Airfryer (Heißluft)</option>
+                                <option value="Pfanne">Pfanne & Herd</option>
+                                <option value="Backofen">Backofen</option>
+                                <option value="Ohne Kochen">Ohne Kochen / Kalt</option>
+                            </select>
+                        </div>
+
+                        <!-- Filter 6: Ernährung -->
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">🌱 Ernährung</label>
+                            <select id="filterDiet" onchange="applyAllFilters()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-xs sm:text-sm font-semibold text-slate-800 focus:border-brand-green focus:outline-none">
+                                <option value="all">Alle Ernährungsformen</option>
+                                <option value="Mit Fleisch">Mit Fleisch / Geflügel</option>
+                                <option value="Fisch">Mit Fisch & Meeresfrüchten</option>
+                                <option value="Vegetarisch">Vegetarisch</option>
+                                <option value="Vegan">Vegan (rein pflanzlich)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ergebnis-Kopfleiste -->
+                <div class="flex items-center justify-between mb-5">
+                    <h3 id="resultsHeading" class="font-display text-xl sm:text-2xl font-extrabold text-slate-900">
+                        Alle High-Protein Rezepte
+                    </h3>
+                    <span id="recipeCountBadge" class="text-xs font-extrabold bg-brand-green text-white px-3.5 py-1.5 rounded-full shadow-sm">
+                        20 Rezepte gefunden
+                    </span>
+                </div>
+
+                <!-- HAUPT-GRID DER 20+ REZEPTE -->
+                <div id="recipeGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamisches Rendering -->
+                </div>
+            </section>
+        </div>
+
+        <!-- ==========================================
+             VIEW 2: REZEPT-DETAILSEITE (VOLLSTÄNDIG AUSGEARBEITET + SEO + SOCIAL)
+             ========================================== -->
+        <div id="view-detail" class="hidden max-w-4xl mx-auto">
+            
+            <!-- Top Aktionsleiste -->
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+                <button onclick="switchMainTab('home')" class="inline-flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-brand-green bg-white px-4 py-2.5 rounded-xl shadow-sm border border-slate-200 transition">
+                    <i class="fa-solid fa-arrow-left"></i> Zurück zur Rezeptübersicht
+                </button>
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="openAddToPlannerModal(currentRecipe.id)" class="bg-brand-green hover:bg-brand-greenDark text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-sm transition flex items-center gap-2">
+                        <i class="fa-solid fa-calendar-plus"></i> In den Wochenplan
+                    </button>
+                    <button onclick="openSocialKitModal(currentRecipe.id)" class="bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-sm transition flex items-center gap-2">
+                        <i class="fa-solid fa-share-nodes text-brand-orange"></i> Social-Media-Kit
+                    </button>
+                    <button onclick="window.print()" class="bg-white hover:bg-slate-100 text-slate-700 text-xs sm:text-sm font-bold px-3.5 py-2.5 rounded-xl border border-slate-200 transition" title="Rezept drucken">
+                        <i class="fa-solid fa-print"></i>
+                    </button>
+                </div>
             </div>
 
-            <article class="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden">
-                <div class="relative h-64 sm:h-80 w-full bg-slate-200">
-                    <img id="detailImage" src="" alt="Rezeptbild" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/20 to-transparent"></div>
-                    
-                    <div class="absolute top-4 right-4 bg-brand-orange text-white font-display font-extrabold text-xs sm:text-sm px-3.5 py-1.5 rounded-xl shadow-lg border-2 border-white flex items-center gap-2">
-                        <span id="detailTopMacroBadge">52g PROTEIN | 430 KCAL</span>
+            <!-- REZEPT-ARTIKEL -->
+            <article class="bg-white rounded-3xl shadow-md border border-slate-200/80 overflow-hidden mb-10">
+                
+                <!-- Großes Original-Rezeptfoto -->
+                <div class="relative h-72 sm:h-96 w-full bg-slate-200">
+                    <img id="detailImage" src="" alt="" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/30 to-transparent"></div>
+
+                    <!-- Top Badges -->
+                    <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                        <span id="detailCategoryBadge" class="bg-brand-green text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-xl shadow"></span>
+                        <span id="detailMethodBadge" class="bg-slate-900/85 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-xl"></span>
+                        <span id="detailDietBadge" class="bg-white/90 text-slate-900 text-xs font-bold px-3 py-1 rounded-xl"></span>
                     </div>
 
-                    <div class="absolute bottom-4 left-4 right-4 text-white">
-                        <span id="detailCategoryBadge" class="inline-block bg-brand-green text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-md mb-2">
-                            Airfryer & Schnell
-                        </span>
-                        <h1 id="detailTitle" class="font-display text-2xl sm:text-3xl font-extrabold leading-tight drop-shadow-sm">
-                            Rezept Titel
-                        </h1>
+                    <div class="absolute top-4 right-4 bg-brand-orange text-white font-display font-extrabold text-xs sm:text-sm px-4 py-1.5 rounded-xl shadow-lg border-2 border-white">
+                        <span id="detailTopMacroBadge"></span>
+                    </div>
+
+                    <!-- Titel & Kurzbeschreibung -->
+                    <div class="absolute bottom-5 left-5 right-5 text-white">
+                        <h1 id="detailTitle" class="font-display text-2xl sm:text-4xl font-extrabold leading-tight mb-2 drop-shadow"></h1>
+                        <p id="detailShortDesc" class="text-slate-200 text-xs sm:text-base max-w-2xl"></p>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-3 divide-x divide-slate-100 border-b border-slate-100 bg-slate-50/70 text-center py-3">
-                    <div>
-                        <div class="text-[11px] text-slate-400 font-semibold uppercase">Zubereitung</div>
+                <!-- Einheitliche Metadaten-Leiste (Zeit, Schwierigkeitsgrad, Portionen, Kalorien) -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-slate-200 border-b border-slate-200 bg-slate-50 text-center py-3.5">
+                    <div class="p-1">
+                        <div class="text-[11px] text-slate-400 font-bold uppercase">Zubereitungszeit</div>
                         <div class="font-bold text-slate-800 text-sm sm:text-base mt-0.5">
-                            <i class="fa-regular fa-clock text-brand-green mr-1"></i><span id="detailTime">15 Min.</span>
+                            <i class="fa-regular fa-clock text-brand-green mr-1"></i><span id="detailTime"></span>
                         </div>
                     </div>
-                    <div>
-                        <div class="text-[11px] text-slate-400 font-semibold uppercase">Kalorien</div>
+                    <div class="p-1">
+                        <div class="text-[11px] text-slate-400 font-bold uppercase">Schwierigkeitsgrad</div>
                         <div class="font-bold text-slate-800 text-sm sm:text-base mt-0.5">
-                            <i class="fa-solid fa-fire-flame-curved text-brand-orange mr-1"></i><span id="detailCalories">430 kcal</span>
+                            <i class="fa-solid fa-signal text-brand-orange mr-1"></i><span id="detailDifficulty"></span>
                         </div>
                     </div>
-                    <div>
-                        <div class="text-[11px] text-slate-400 font-semibold uppercase">Eiweiß pro Portion</div>
+                    <div class="p-1">
+                        <div class="text-[11px] text-slate-400 font-bold uppercase">Standard-Portion</div>
+                        <div class="font-bold text-slate-800 text-sm sm:text-base mt-0.5">
+                            <i class="fa-solid fa-user-check text-blue-600 mr-1"></i><span id="detailBasePortions">1 Portion</span>
+                        </div>
+                    </div>
+                    <div class="p-1">
+                        <div class="text-[11px] text-slate-400 font-bold uppercase">Eiweiß-Dichte</div>
                         <div class="font-bold text-brand-green text-sm sm:text-base mt-0.5">
-                            <i class="fa-solid fa-dumbbell mr-1"></i><span id="detailProtein">52g Protein</span>
+                            <i class="fa-solid fa-dumbbell mr-1"></i><span id="detailProteinHighlight"></span>
                         </div>
                     </div>
                 </div>
 
-                <div class="p-5 sm:p-8">
-                    <!-- SEITE 1 -->
-                    <div id="recipePage1">
-                        <div class="bg-emerald-50/70 border-l-4 border-brand-green p-4 rounded-r-2xl mb-6">
-                            <div class="text-xs font-bold uppercase tracking-wider text-brand-greenDark mb-1">
-                                <i class="fa-solid fa-check-double mr-1"></i> Warum dieser ProteinHappen beim Abnehmen hilft:
+                <div class="p-6 sm:p-10 space-y-8">
+                    
+                    <!-- Einleitung -->
+                    <div class="bg-emerald-50/80 border-l-4 border-brand-green p-4 sm:p-5 rounded-r-2xl">
+                        <div class="text-xs font-bold uppercase tracking-wider text-brand-greenDark mb-1">
+                            <i class="fa-solid fa-circle-info mr-1"></i> Warum dieses Rezept ideal für dein Ziel ist:
+                        </div>
+                        <p id="detailIntro" class="text-slate-700 text-sm sm:text-base leading-relaxed"></p>
+                    </div>
+
+                    <!-- Exakte Nährwerte pro Portion -->
+                    <div class="bg-slate-900 text-white rounded-2xl p-5 shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">
+                                📊 Nährwerte pro Portion (Überprüfte Berechnung)
+                            </span>
+                            <button onclick="openTrustModal('nutrition')" class="text-xs text-brand-greenLight hover:underline flex items-center gap-1">
+                                <i class="fa-solid fa-circle-check"></i> Wie wir Nährwerte berechnen
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                            <div class="bg-slate-800 rounded-xl p-3 border border-slate-700">
+                                <div class="text-xl sm:text-2xl font-display font-extrabold text-white" id="macroKcal"></div>
+                                <div class="text-xs text-slate-400">Kalorien (kcal)</div>
                             </div>
-                            <p id="detailIntro" class="text-slate-700 text-sm leading-relaxed">Beschreibungstext...</p>
+                            <div class="bg-brand-green/20 rounded-xl p-3 border border-brand-green/50">
+                                <div class="text-xl sm:text-2xl font-display font-extrabold text-brand-greenLight" id="macroProt"></div>
+                                <div class="text-xs text-brand-greenLight font-bold">Eiweiß (Protein)</div>
+                            </div>
+                            <div class="bg-slate-800 rounded-xl p-3 border border-slate-700">
+                                <div class="text-xl sm:text-2xl font-display font-extrabold text-amber-300" id="macroCarbs"></div>
+                                <div class="text-xs text-slate-400">Kohlenhydrate</div>
+                            </div>
+                            <div class="bg-slate-800 rounded-xl p-3 border border-slate-700">
+                                <div class="text-xl sm:text-2xl font-display font-extrabold text-rose-300" id="macroFat"></div>
+                                <div class="text-xs text-slate-400">Fett</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zutaten & Portionsrechner -->
+                    <div>
+                        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                            <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+                                <i class="fa-solid fa-basket-shopping text-brand-green"></i> Zutaten & Mengenangaben
+                            </h2>
+                            <div class="flex items-center gap-1 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
+                                <span class="text-xs text-slate-600 font-semibold px-2">Portionen:</span>
+                                <button onclick="changePortions(1)" id="portBtn1" class="port-btn px-3 py-1 rounded-lg text-xs font-bold bg-brand-green text-white shadow-sm transition">1</button>
+                                <button onclick="changePortions(2)" id="portBtn2" class="port-btn px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">2</button>
+                                <button onclick="changePortions(3)" id="portBtn3" class="port-btn px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">3</button>
+                                <button onclick="changePortions(4)" id="portBtn4" class="port-btn px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">4 (Meal-Prep)</button>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-3">💡 Klicke auf eine Zutat, um sie beim Einkaufen oder Kochen abzuhaken.</p>
+                        <ul id="detailIngredients" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5"></ul>
+                    </div>
+
+                    <!-- Ausführliche Schritt-für-Schritt-Anleitung -->
+                    <div>
+                        <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 mb-4 flex items-center gap-2">
+                            <i class="fa-solid fa-fire-burner text-brand-orange"></i> Schritt-für-Schritt-Anleitung
+                        </h2>
+                        <div id="detailSteps" class="space-y-4"></div>
+                    </div>
+
+                    <!-- Tipps und Variationsmöglichkeiten -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="bg-amber-50/80 border border-amber-200 rounded-2xl p-5">
+                            <div class="flex items-center gap-2 font-display font-extrabold text-amber-900 text-base mb-2">
+                                <i class="fa-solid fa-lightbulb text-brand-orange"></i>
+                                <span>Profi-Tipp für Alltag & Schicht:</span>
+                            </div>
+                            <p id="detailSecretTip" class="text-slate-700 text-sm leading-relaxed"></p>
                         </div>
 
-                        <div class="bg-slate-900 text-white rounded-2xl p-4 sm:p-5 mb-6 shadow-sm">
-                            <div class="flex items-center justify-between mb-3">
-                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">📊 Exakte Nährwerte (pro Portion)</span>
-                                <span class="text-xs bg-brand-green/20 text-brand-greenLight px-2.5 py-0.5 rounded-full font-semibold">High-Protein verifiziert</span>
+                        <div class="bg-blue-50/80 border border-blue-200 rounded-2xl p-5">
+                            <div class="flex items-center gap-2 font-display font-extrabold text-blue-900 text-base mb-2">
+                                <i class="fa-solid fa-wand-magic-sparkles text-blue-600"></i>
+                                <span>Leckere Variationsmöglichkeiten:</span>
                             </div>
-                            <div class="grid grid-cols-4 gap-2 sm:gap-4 text-center">
-                                <div class="bg-slate-800/90 rounded-xl p-2.5 border border-slate-700">
-                                    <div class="text-lg sm:text-xl font-display font-extrabold text-white" id="macroKcal">430</div>
-                                    <div class="text-[11px] text-slate-400">Kalorien</div>
+                            <ul id="detailVariations" class="text-slate-700 text-sm space-y-1.5 list-disc pl-4"></ul>
+                        </div>
+                    </div>
+
+                    <!-- Empfohlenes Zubehör mit transparenter Kennzeichnung -->
+                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-display font-bold text-slate-800 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-utensils text-brand-green"></i> Passendes Küchen-Equipment (Empfehlung*)
+                            </h3>
+                            <button onclick="openTrustModal('affiliate')" class="text-[11px] text-slate-400 hover:underline">*Transparenz-Hinweis</button>
+                        </div>
+                        <div id="detailEquipment" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+                    </div>
+
+                </div>
+            </article>
+
+            <!-- INTERNE VERLINKUNG: ÄHNLICHE REZEPTE (PUNKT 7 SEO) -->
+            <section class="mb-8 no-print">
+                <h3 class="font-display text-xl font-extrabold text-slate-900 mb-4">
+                    🔥 Ähnliche High-Protein Rezepte, die dir schmecken werden
+                </h3>
+                <div id="relatedRecipesGrid" class="grid grid-cols-1 sm:grid-cols-3 gap-5"></div>
+            </section>
+        </div>
+
+        <!-- ==========================================
+             VIEW 3: WOCHENPLANER & AUTOMATISCHE EINKAUFSLISTE (PUNKT 4)
+             ========================================== -->
+        <div id="view-planner" class="hidden">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 mb-8 print-container">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">📅 Dein persönlicher Meal-Prep-Assistent</span>
+                        <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+                            Interaktiver High-Protein Wochenplaner
+                        </h1>
+                        <p class="text-sm text-slate-500 mt-1">
+                            Wähle Rezepte für Montag bis Sonntag, lege die Portionen fest und drucke deine automatische Einkaufsliste aus.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2 no-print">
+                        <button onclick="autofillSampleWeek()" class="bg-emerald-50 hover:bg-emerald-100 text-brand-greenDark text-xs font-bold px-4 py-2.5 rounded-xl border border-emerald-200 transition">
+                            <i class="fa-solid fa-wand-magic-sparkles mr-1"></i> Beispiel-Woche füllen
+                        </button>
+                        <button onclick="clearWeekPlanner()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2.5 rounded-xl transition">
+                            <i class="fa-solid fa-trash-can mr-1"></i> Plan leeren
+                        </button>
+                        <button onclick="window.print()" class="bg-brand-orange hover:bg-brand-orangeDark text-white text-xs font-bold px-5 py-2.5 rounded-xl shadow-sm transition">
+                            <i class="fa-solid fa-print mr-1.5"></i> Wochenplan & Einkaufsliste drucken
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Schnelles Hinzufügen zum Tag -->
+                <div class="bg-slate-50 rounded-2xl p-4 my-6 border border-slate-200/80 no-print">
+                    <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">➕ Rezept direkt einem Wochentag zuweisen:</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+                        <select id="plannerDaySelect" class="bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-bold text-slate-800">
+                            <option value="Montag">Montag</option>
+                            <option value="Dienstag">Dienstag</option>
+                            <option value="Mittwoch">Mittwoch</option>
+                            <option value="Donnerstag">Donnerstag</option>
+                            <option value="Freitag">Freitag</option>
+                            <option value="Samstag">Samstag</option>
+                            <option value="Sonntag">Sonntag</option>
+                        </select>
+                        <select id="plannerRecipeSelect" class="sm:col-span-2 bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-800"></select>
+                        <div class="flex items-center gap-2">
+                            <select id="plannerPortionSelect" class="bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-bold text-slate-800">
+                                <option value="1">1 Port.</option>
+                                <option value="2">2 Port.</option>
+                                <option value="3">3 Port.</option>
+                                <option value="4">4 Port.</option>
+                            </select>
+                            <button onclick="addSelectedToPlanner()" class="flex-1 bg-brand-green hover:bg-brand-greenDark text-white font-bold py-2.5 px-4 rounded-xl text-sm transition">
+                                Hinzufügen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Montag bis Sonntag Übersicht -->
+                <div id="weeklyGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-3 mb-8">
+                    <!-- Dynamisch per JS -->
+                </div>
+
+                <!-- AUTOMATISCHE EINKAUFSLISTE -->
+                <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 print-container">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-5 border-b border-slate-700">
+                        <div>
+                            <h2 class="font-display text-xl sm:text-2xl font-extrabold flex items-center gap-2">
+                                <i class="fa-solid fa-cart-shopping text-brand-greenLight"></i> Automatische Wochen-Einkaufsliste
+                            </h2>
+                            <p class="text-xs text-slate-400 mt-0.5">Alle Zutaten deiner gewählten Rezepte & Portionen automatisch zusammengerechnet.</p>
+                        </div>
+                        <button onclick="window.print()" class="no-print self-start sm:self-auto bg-white text-slate-900 hover:bg-slate-100 text-xs font-extrabold px-4 py-2.5 rounded-xl transition flex items-center gap-2">
+                            <i class="fa-solid fa-print text-brand-orange"></i> Einkaufsliste ausdrucken
+                        </button>
+                    </div>
+                    <ul id="shoppingListContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 text-sm">
+                        <!-- Dynamisch per JS -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             VIEW 4: PROTEIN- & KALORIENRECHNER (PUNKT 5)
+             ========================================== -->
+        <div id="view-calculator" class="hidden max-w-4xl mx-auto">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-green">⚖️ Wissenschaftlich fundierte Orientierung</span>
+                <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 mb-2">
+                    Protein- und Kalorienrechner
+                </h1>
+                <p class="text-sm text-slate-600 mb-6">
+                    Berechne deine persönlichen Richtwerte für Kalorien und Eiweiß im Alltag – abgestimmt auf deine körperliche Aktivität und dein Ziel.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Eingabeformular -->
+                    <div class="space-y-4 bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Geschlecht</label>
+                                <select id="calcGender" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                                    <option value="male">Männlich</option>
+                                    <option value="female">Weiblich</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Alter (Jahre)</label>
+                                <input id="calcAge" type="number" value="40" min="16" max="99" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Größe (in cm)</label>
+                                <input id="calcHeight" type="number" value="175" min="130" max="230" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Gewicht (in kg)</label>
+                                <input id="calcWeight" type="number" value="83" min="40" max="250" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Aktivitätsniveau (Beruf & Sport)</label>
+                            <select id="calcActivity" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                                <option value="1.2">Wenig aktiv (Bürojob, kaum Sport)</option>
+                                <option value="1.4">Leicht aktiv (1–2x Sport/Woche oder viel Gehen)</option>
+                                <option value="1.6" selected>Mäßig aktiv (Schichtarbeit / Lager / 3–4x Training)</option>
+                                <option value="1.8">Sehr aktiv (Körperliche Arbeit + intensives Training)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Dein persönliches Ziel</label>
+                            <select id="calcGoal" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                                <option value="lose" selected>🔥 Abnehmen (moderates Defizit: -450 kcal)</option>
+                                <option value="maintain">⚖️ Gewicht halten & fit bleiben</option>
+                                <option value="gain">💪 Muskelaufbau (leichter Überschuss: +250 kcal)</option>
+                            </select>
+                        </div>
+
+                        <button onclick="calculateMacros()" class="w-full bg-brand-green hover:bg-brand-greenDark text-white font-display font-extrabold py-3.5 rounded-xl text-sm shadow-md transition">
+                            Richtwerte jetzt berechnen
+                        </button>
+                    </div>
+
+                    <!-- Ergebnis-Anzeige -->
+                    <div class="bg-slate-900 text-white rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-orange">📊 Deine persönlichen Orientierungswerte</span>
+                            <div class="mt-4 bg-slate-800 rounded-2xl p-4 border border-slate-700 text-center">
+                                <div class="text-xs text-slate-400">Empfohlene Tageskalorien für dein Ziel</div>
+                                <div id="resTargetKcal" class="font-display text-4xl font-extrabold text-white my-1">2.140 kcal</div>
+                                <div id="resBmrInfo" class="text-[11px] text-slate-400">Grundumsatz: 1.720 kcal • Gesamtbedarf: 2.590 kcal</div>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-2.5 my-4 text-center">
+                                <div class="bg-brand-green/20 border border-brand-green/40 rounded-xl p-3">
+                                    <div id="resProtein" class="font-display text-xl font-extrabold text-brand-greenLight">166 g</div>
+                                    <div class="text-[11px] text-brand-greenLight font-bold">Protein / Tag</div>
                                 </div>
-                                <div class="bg-brand-green/20 rounded-xl p-2.5 border border-brand-green/40">
-                                    <div class="text-lg sm:text-xl font-display font-extrabold text-brand-greenLight" id="macroProt">52g</div>
-                                    <div class="text-[11px] text-brand-greenLight font-semibold">Protein 💪</div>
+                                <div class="bg-slate-800 border border-slate-700 rounded-xl p-3">
+                                    <div id="resCarbs" class="font-display text-xl font-extrabold text-amber-300">195 g</div>
+                                    <div class="text-[11px] text-slate-400">Kohlenhydrate</div>
                                 </div>
-                                <div class="bg-slate-800/90 rounded-xl p-2.5 border border-slate-700">
-                                    <div class="text-lg sm:text-xl font-display font-extrabold text-amber-300" id="macroCarbs">28g</div>
-                                    <div class="text-[11px] text-slate-400">Carbs</div>
-                                </div>
-                                <div class="bg-slate-800/90 rounded-xl p-2.5 border border-slate-700">
-                                    <div class="text-lg sm:text-xl font-display font-extrabold text-rose-300" id="macroFat">11g</div>
+                                <div class="bg-slate-800 border border-slate-700 rounded-xl p-3">
+                                    <div id="resFat" class="font-display text-xl font-extrabold text-rose-300">68 g</div>
                                     <div class="text-[11px] text-slate-400">Fett</div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mb-6">
-                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-                                <h2 class="font-display text-xl font-extrabold text-slate-800 flex items-center gap-2">
-                                    <i class="fa-solid fa-basket-shopping text-brand-green"></i> Zutaten
-                                </h2>
-                                <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200">
-                                    <span class="text-xs text-slate-500 font-medium px-2">Portionen:</span>
-                                    <button onclick="changePortions(1)" id="portBtn1" class="port-btn px-3 py-1 rounded-lg text-xs font-bold bg-white text-slate-900 shadow-sm transition">1</button>
-                                    <button onclick="changePortions(2)" id="portBtn2" class="port-btn px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">2 (Meal Prep)</button>
-                                    <button onclick="changePortions(4)" id="portBtn4" class="port-btn px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition">4</button>
-                                </div>
+                        <div class="space-y-3">
+                            <div class="bg-slate-800/90 rounded-xl p-3 text-[11px] text-slate-300 leading-relaxed border border-slate-700">
+                                <strong>Transparenz-Hinweis:</strong> Diese Werte basieren auf der anerkannten <em>Mifflin-St Jeor Formel</em> sowie einem Proteinrichtwert von 1,6–2,0 g je kg Körpergewicht. Es handelt sich um nachvollziehbare Orientierungswerte für Gesunde und nicht um ein medizinisches Heilversprechen.
                             </div>
-                            <p class="text-xs text-slate-400 mb-3">💡 Tipp: Klicke die Zutaten einfach an, um sie beim Einkaufen oder Kochen abzuhaken.</p>
-                            <ul id="detailIngredients" class="space-y-2.5"></ul>
-                        </div>
-
-                        <div class="mt-8 pt-6 border-t-2 border-slate-100">
-                            <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-5 text-center text-white shadow-xl">
-                                <div class="text-xs font-bold uppercase tracking-wider text-brand-orange mb-1">Schritt 2 von 2 • Zubereitung & Abnehm-Hacks</div>
-                                <h3 class="font-display text-lg sm:text-xl font-bold mb-3">Bereit für die Zubereitung & die genaue Temperatur?</h3>
-                                <p class="text-xs sm:text-sm text-slate-300 mb-4 max-w-md mx-auto">Auf der nächsten Seite zeige ich dir die genaue Schritt-für-Schritt-Anleitung + meinen besten Abnehm- und Schicht-Trick für dieses Gericht.</p>
-                                <button onclick="switchToPage2()" class="cta-pulse w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-brand-orange hover:bg-brand-orangeDark text-white font-display font-extrabold text-base sm:text-lg px-8 py-4 rounded-xl transition cursor-pointer">
-                                    <span>Weiter zur Zubereitung (Seite 2)</span>
-                                    <i class="fa-solid fa-angles-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SEITE 2 -->
-                    <div id="recipePage2" class="hidden">
-                        <div class="flex items-center justify-between bg-brand-greenLight/60 border border-brand-green/30 rounded-2xl p-3.5 mb-6">
-                            <div class="flex items-center gap-2 text-brand-greenDark font-bold text-xs sm:text-sm">
-                                <i class="fa-solid fa-circle-check text-brand-green text-base"></i>
-                                <span>Schritt 2 von 2: Ausführliche Zubereitung & Profi-Tipps</span>
-                            </div>
-                            <button onclick="switchToPage1()" class="text-xs font-bold text-slate-700 hover:text-slate-900 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
-                                ← Zurück zu den Zutaten
-                            </button>
-                        </div>
-
-                        <h2 class="font-display text-xl font-extrabold text-slate-800 mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-fire-burner text-brand-orange"></i> Ausführliche Schritt-für-Schritt Anleitung
-                        </h2>
-                        <div id="detailSteps" class="space-y-4 mb-8"></div>
-
-                        <div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-orange-200 rounded-2xl p-5 mb-8">
-                            <div class="flex items-center gap-2 font-display font-extrabold text-brand-orangeDark text-base mb-2">
-                                <i class="fa-solid fa-lightbulb text-brand-orange text-lg"></i>
-                                <span>Geheimer Abnehm- & Schicht-Trick für dieses Rezept:</span>
-                            </div>
-                            <p id="detailSecretTip" class="text-slate-700 text-sm leading-relaxed">Geheimtipp Text...</p>
-                        </div>
-
-                        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 mb-6">
-                            <h3 class="font-display font-bold text-slate-800 text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
-                                <i class="fa-solid fa-utensils text-brand-green"></i> Empfohlenes Küchen-Zubehör & Helfer
-                            </h3>
-                            <div id="detailEquipment" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
-                        </div>
-
-                        <div class="text-center pt-4 border-t border-slate-100">
-                            <button onclick="showHome()" class="w-full sm:w-auto bg-brand-green hover:bg-brand-greenDark text-white font-bold px-6 py-3.5 rounded-xl transition shadow-md">
-                                🥗 Weitere High-Protein Rezepte entdecken
+                            <button onclick="filterRecipesByCalculator()" class="w-full bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-xl text-xs sm:text-sm transition">
+                                🥗 Passende Rezepte für mein Kalorienziel anzeigen →
                             </button>
                         </div>
                     </div>
                 </div>
-            </article>
+            </div>
         </div>
+
+        <!-- ==========================================
+             VIEW 5: ÜBER UNS, TRANSPARENZ & VERTRAUEN (PUNKT 8)
+             ========================================== -->
+        <div id="view-about" class="hidden max-w-4xl mx-auto space-y-6">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-green">💚 Unsere Mission hinter ProteinHappen.de</span>
+                <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 mb-4">
+                    Ehrliche High-Protein-Küche für den echten Alltag
+                </h1>
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-4">
+                    Viele Fitness-Rezeptseiten verlangen exotische Zutaten, teure Spezialprodukte oder stundenlange Vorbereitungszeiten. <strong>ProteinHappen</strong> wurde gegründet, um genau das Gegenteil zu beweisen: Gesunde, proteinreiche Ernährung funktioniert mit ganz normalen Lebensmitteln aus dem Supermarkt um die Ecke – in 10 bis 20 Minuten, perfekt für Berufstätige, Familien und Schichtarbeiter.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <div class="text-brand-green font-display font-extrabold text-base mb-1">1. Transparente Nährwerte</div>
+                        <p class="text-xs text-slate-600 leading-relaxed">Alle Kalorien- und Makroangaben werden anhand standardisierter Nährwerttabellen (BLS / Herstellerangaben der Rohzutaten) auf die Einzelportion berechnet.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <div class="text-brand-orange font-display font-extrabold text-base mb-1">2. Alltag & Schicht-Fokus</div>
+                        <p class="text-xs text-slate-600 leading-relaxed">Jedes Rezept ist auf Sättigung, einfache Zubereitung (Airfryer, One-Pot-Pfanne, Backofen) und optimale Haltbarkeit in der Meal-Prep-Box ausgelegt.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <div class="text-blue-600 font-display font-extrabold text-base mb-1">3. Klare Kennzeichnung</div>
+                        <p class="text-xs text-slate-600 leading-relaxed">Empfehlungen für Küchenzubehör oder Zutaten sind immer transparent mit einem Sternchen (*) als Affiliate- oder Partnerhinweis gekennzeichnet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
-    <!-- CREATOR STUDIO MODAL -->
-    <div id="creatorModal" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
-            <div class="sticky top-0 bg-slate-900 text-white px-6 py-4 flex items-center justify-between z-10">
-                <div class="flex items-center gap-2.5">
-                    <span class="w-9 h-9 rounded-xl bg-brand-orange flex items-center justify-center font-bold">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    </span>
-                    <div>
-                        <h3 class="font-display font-bold text-lg leading-none">ProteinHappen Creator-Studio</h3>
-                        <p class="text-xs text-slate-400 mt-0.5">Fertige Facebook-Posts auf Knopfdruck</p>
-                    </div>
+    <!-- ==========================================
+         MODAL 1: REZEPT ZUM WOCHENPLAN HINZUFÜGEN
+         ========================================== -->
+    <div id="addToPlannerModal" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                <h3 class="font-display font-bold text-lg text-slate-900">📅 In den Wochenplan eintragen</h3>
+                <button onclick="closeAddToPlannerModal()" class="text-slate-400 hover:text-slate-700"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <p id="modalPlannerRecipeTitle" class="text-sm font-bold text-brand-green mb-4"></p>
+            <div class="space-y-3 mb-5">
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 mb-1">Wochentag auswählen:</label>
+                    <select id="modalDaySelect" class="w-full bg-slate-100 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-bold">
+                        <option value="Montag">Montag</option>
+                        <option value="Dienstag">Dienstag</option>
+                        <option value="Mittwoch">Mittwoch</option>
+                        <option value="Donnerstag">Donnerstag</option>
+                        <option value="Freitag">Freitag</option>
+                        <option value="Samstag">Samstag</option>
+                        <option value="Sonntag">Sonntag</option>
+                    </select>
                 </div>
-                <button onclick="closeCreatorModal()" class="text-slate-400 hover:text-white p-2">
-                    <i class="fa-solid fa-xmark text-xl"></i>
-                </button>
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 mb-1">Anzahl Portionen:</label>
+                    <select id="modalPortionSelect" class="w-full bg-slate-100 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-bold">
+                        <option value="1">1 Portion</option>
+                        <option value="2">2 Portionen (Meal-Prep)</option>
+                        <option value="3">3 Portionen</option>
+                        <option value="4">4 Portionen</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="confirmAddToPlanner()" class="w-full bg-brand-green hover:bg-brand-greenDark text-white font-bold py-3 rounded-xl text-sm transition">
+                Jetzt zum Wochenplan hinzufügen
+            </button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         MODAL 2: SOCIAL MEDIA KIT PRO REZEPT (PUNKT 9)
+         ========================================== -->
+    <div id="socialKitModal" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl">
+            <div class="sticky top-0 bg-slate-900 text-white px-6 py-4 flex items-center justify-between z-10">
+                <div>
+                    <h3 class="font-display font-bold text-lg">📱 Social-Media-Suite (Alle Formate für dieses Rezept)</h3>
+                    <p class="text-xs text-slate-400">Instagram-Format, Pinterest-Pin, Facebook-Post & 15-Sek.-Reel-Skript</p>
+                </div>
+                <button onclick="closeSocialKitModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
             </div>
 
             <div class="p-6 space-y-6">
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">1. Wähle das Rezept für deinen Social-Media-Post:</label>
-                    <select id="creatorRecipeSelect" onchange="updateCreatorSnippets()" class="w-full bg-slate-100 border border-slate-200 rounded-xl px-4 py-3 text-sm font-bold text-slate-800 focus:outline-none focus:border-brand-green"></select>
+                <!-- Visuelle Vorschau: Instagram 1:1 & Pinterest 2:3 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Instagram 1:1 Grafik-Vorschau -->
+                    <div>
+                        <div class="text-xs font-bold uppercase text-slate-500 mb-2">📸 1. Instagram-Bildformat (1:1 Feed-Grafik)</div>
+                        <div class="aspect-square rounded-2xl overflow-hidden relative shadow-lg border border-slate-200">
+                            <img id="socialIgImg" src="" alt="" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
+                            <div class="absolute top-4 left-4 bg-brand-orange text-white font-display font-extrabold text-xs px-3 py-1.5 rounded-lg shadow">
+                                <span id="socialIgBadge"></span>
+                            </div>
+                            <div class="absolute bottom-5 left-5 right-5 text-white">
+                                <div class="text-[11px] font-bold uppercase tracking-widest text-brand-greenLight mb-1">PROTEINHAPPEN.DE</div>
+                                <div id="socialIgTitle" class="font-display font-extrabold text-xl leading-tight"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pinterest 2:3 Pin-Vorschau -->
+                    <div>
+                        <div class="text-xs font-bold uppercase text-slate-500 mb-2">📌 2. Pinterest-Pin-Format (Vertikal + SEO-Text)</div>
+                        <div class="h-72 rounded-2xl overflow-hidden relative shadow-lg border border-slate-200 mb-3">
+                            <img id="socialPinImg" src="" alt="" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-b from-slate-950/85 via-transparent to-slate-950/90"></div>
+                            <div class="absolute top-4 left-4 right-4 text-center text-white">
+                                <span class="bg-brand-green text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full">High-Protein Rezept</span>
+                                <div id="socialPinTitle" class="font-display font-extrabold text-lg mt-2 leading-snug"></div>
+                            </div>
+                            <div class="absolute bottom-3 left-4 right-4 text-center">
+                                <span id="socialPinMacros" class="inline-block bg-white text-slate-900 font-extrabold text-xs px-3 py-1 rounded-lg"></span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs font-bold text-slate-600">Pinterest Pin-Beschreibung:</span>
+                            <button onclick="copyText('socialPinText')" class="text-xs font-bold text-brand-green hover:underline">Kopieren</button>
+                        </div>
+                        <textarea id="socialPinText" rows="2" readonly class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-700"></textarea>
+                    </div>
                 </div>
 
-                <div class="bg-blue-50/60 border border-blue-200 rounded-2xl p-4">
+                <!-- 3. Facebook Beitrag & 4. Kurzbeschreibung -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-blue-50/70 border border-blue-200 rounded-2xl p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-blue-900 uppercase"><i class="fa-brands fa-facebook mr-1"></i> 3. Facebook-Beitrag</span>
+                            <button onclick="copyText('socialFbText')" class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-lg">Text kopieren</button>
+                        </div>
+                        <textarea id="socialFbText" rows="5" readonly class="w-full bg-white border border-blue-100 rounded-xl p-3 text-xs text-slate-700"></textarea>
+                    </div>
+
+                    <div class="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-bold text-emerald-900 uppercase"><i class="fa-solid fa-align-left mr-1"></i> 4. Kurze Rezeptbeschreibung & Caption</span>
+                            <button onclick="copyText('socialShortCaption')" class="bg-brand-green text-white text-xs font-bold px-3 py-1 rounded-lg">Text kopieren</button>
+                        </div>
+                        <textarea id="socialShortCaption" rows="5" readonly class="w-full bg-white border border-emerald-100 rounded-xl p-3 text-xs text-slate-700"></textarea>
+                    </div>
+                </div>
+
+                <!-- 5. Video-Skript für ein 10-15 Sekunden Reel -->
+                <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-4">
                     <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold text-blue-800 uppercase flex items-center gap-1.5">
-                            <i class="fa-brands fa-facebook text-blue-600 text-base"></i> Facebook Gruppen- & Seiten-Post
-                        </span>
-                        <button onclick="copyText('fbSnippetText')" class="bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition flex items-center gap-1">
-                            <i class="fa-regular fa-copy"></i> Text kopieren
+                        <span class="text-xs font-bold text-amber-900 uppercase"><i class="fa-solid fa-video mr-1"></i> 5. Video-Skript für ein 10–15-Sekunden-Reel / TikTok</span>
+                        <button onclick="copyText('socialReelScript')" class="bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-lg">Skript kopieren</button>
+                    </div>
+                    <textarea id="socialReelScript" rows="5" readonly class="w-full bg-white border border-amber-100 rounded-xl p-3 text-xs text-slate-700 font-mono"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         MODAL 3: ÜBERARBEITETES CREATOR-STUDIO (PUNKT 6 & 7)
+         ========================================== -->
+    <div id="creatorModal" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl">
+            <div class="sticky top-0 bg-slate-900 text-white px-6 py-4 flex items-center justify-between z-10">
+                <div class="flex items-center gap-3">
+                    <span class="w-10 h-10 rounded-xl bg-brand-orange flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </span>
+                    <div>
+                        <h3 class="font-display font-bold text-lg">ProteinHappen Creator-Studio 2.0</h3>
+                        <p class="text-xs text-slate-400">KI-Rezeptgenerator • Automatischer Nährwertrechner • Entwurfs-Prüfung • SEO-Tools</p>
+                    </div>
+                </div>
+                <button onclick="closeCreatorModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+
+            <div class="p-6 space-y-8">
+                
+                <!-- 1. KI-Unterstützter Rezept- & Nährwert-Generator -->
+                <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-4">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <h4 class="font-display font-extrabold text-slate-900 text-base">
+                            🤖 1. Neues Rezept erstellen (mit automatischer Nährwertberechnung)
+                        </h4>
+                        <button onclick="generateAiDraftProposal()" class="bg-brand-orange hover:bg-brand-orangeDark text-white text-xs font-bold px-3.5 py-2 rounded-xl transition">
+                            ✨ KI-Rezeptvorschlag automatisch ausfüllen
                         </button>
                     </div>
-                    <textarea id="fbSnippetText" rows="5" readonly class="w-full bg-white border border-blue-100 rounded-xl p-3 text-xs sm:text-sm text-slate-700 font-sans leading-relaxed focus:outline-none"></textarea>
-                    <p class="text-[11px] text-blue-700 mt-2 font-medium">💡 <strong>Facebook-Regel:</strong> Setze den Link zur Website in den ersten Kommentar, nicht in den Hauptbeitrag!</p>
-                </div>
 
-                <div class="border-t border-slate-200 pt-5">
-                    <h4 class="font-display font-bold text-slate-800 text-base mb-3 flex items-center gap-2">
-                        <i class="fa-solid fa-plus-circle text-brand-green"></i> Eigenes Test-Rezept live zur Seite hinzufügen
-                    </h4>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
-                        <input id="newTitle" type="text" placeholder="Rezeptname (z.B. Skyr-Auflauf)" class="bg-slate-100 rounded-xl px-3.5 py-2.5 text-sm border border-slate-200">
-                        <select id="newCat" class="bg-slate-100 rounded-xl px-3.5 py-2.5 text-sm border border-slate-200 font-semibold">
-                            <option value="airfryer">⚡ Airfryer & Schnell</option>
-                            <option value="suess">🍰 Süße Happen & Quark</option>
-                            <option value="unter500">🥗 Unter 500 kcal</option>
-                            <option value="protein40">💪 40g+ Protein</option>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <input id="newTitle" type="text" placeholder="Rezeptname (z.B. Skyr-Beeren-Auflauf)" class="sm:col-span-2 bg-white rounded-xl px-3.5 py-2.5 text-sm border border-slate-200 font-semibold">
+                        <select id="newMealType" class="bg-white rounded-xl px-3.5 py-2.5 text-sm border border-slate-200 font-semibold">
+                            <option value="Frühstück">Frühstück</option>
+                            <option value="Mittagessen">Mittagessen</option>
+                            <option value="Abendessen">Abendessen</option>
+                            <option value="Snacks">Snacks</option>
                         </select>
-                        <input id="newKcal" type="number" placeholder="Kalorien (z.B. 380)" class="bg-slate-100 rounded-xl px-3.5 py-2.5 text-sm border border-slate-200">
-                        <input id="newProtein" type="number" placeholder="Protein in Gramm (z.B. 45)" class="bg-slate-100 rounded-xl px-3.5 py-2.5 text-sm border border-slate-200">
+                        <select id="newMethod" class="bg-white rounded-xl px-3.5 py-2.5 text-sm border border-slate-200 font-semibold">
+                            <option value="Airfryer">Airfryer</option>
+                            <option value="Pfanne">Pfanne</option>
+                            <option value="Backofen">Backofen</option>
+                            <option value="Ohne Kochen">Ohne Kochen</option>
+                        </select>
+                        <select id="newDiet" class="bg-white rounded-xl px-3.5 py-2.5 text-sm border border-slate-200 font-semibold">
+                            <option value="Vegetarisch">Vegetarisch</option>
+                            <option value="Mit Fleisch">Mit Fleisch</option>
+                            <option value="Fisch">Fisch</option>
+                            <option value="Vegan">Vegan</option>
+                        </select>
+                        <input id="newTime" type="number" placeholder="Zeit in Min. (z.B. 15)" value="15" class="bg-white rounded-xl px-3.5 py-2.5 text-sm border border-slate-200 font-semibold">
                     </div>
-                    <button onclick="addNewRecipe()" class="w-full bg-brand-green hover:bg-brand-greenDark text-white font-bold py-2.5 rounded-xl text-sm transition shadow-sm">
-                        + Rezept sofort ins Portal einfügen
-                    </button>
+
+                    <!-- Überprüfbarer Nährwert-Rechner anhand echter Lebensmitteldaten -->
+                    <div class="bg-white p-4 rounded-xl border border-slate-200">
+                        <div class="text-xs font-bold text-slate-700 mb-2">
+                            🧮 Automatische Nährwertberechnung (Wähle Zutat & Menge in Gramm):
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 mb-3">
+                            <select id="calcIngSelect" class="sm:col-span-2 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs font-semibold">
+                                <option value="magerquark">Magerquark (pro 100g: 67 kcal | 12g P | 4g C | 0.2g F)</option>
+                                <option value="skyr">Skyr natur (pro 100g: 63 kcal | 11g P | 4g C | 0.2g F)</option>
+                                <option value="haehnchen">Hähnchenbrustfilet (pro 100g: 109 kcal | 24g P | 0g C | 1.2g F)</option>
+                                <option value="rinderhack5">Rinderhack 5% (pro 100g: 128 kcal | 21g P | 0g C | 5g F)</option>
+                                <option value="haferflocken">Haferflocken (pro 100g: 370 kcal | 13.5g P | 59g C | 7g F)</option>
+                                <option value="ei">Vollei (pro 100g: 154 kcal | 13g P | 1g C | 11g F)</option>
+                                <option value="lachs">Lachsfilet (pro 100g: 208 kcal | 20g P | 0g C | 13g F)</option>
+                                <option value="whey">Whey / Clear Whey (pro 100g: 360 kcal | 80g P | 4g C | 2g F)</option>
+                            </select>
+                            <input id="calcIngGrams" type="number" value="200" placeholder="Gramm" class="bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs font-bold">
+                            <button onclick="addIngredientToDraftCalc()" class="bg-slate-900 text-white text-xs font-bold rounded-lg px-3 py-2">
+                                + Zutat addieren
+                            </button>
+                        </div>
+                        <div id="draftIngListDisplay" class="text-xs text-slate-500 mb-2">Noch keine Zutaten im Rechner addiert.</div>
+                        <div class="grid grid-cols-4 gap-2">
+                            <input id="newKcal" type="number" placeholder="Kalorien" class="bg-slate-50 rounded-lg px-3 py-2 text-xs font-bold border border-slate-200">
+                            <input id="newProtein" type="number" placeholder="Protein (g)" class="bg-slate-50 rounded-lg px-3 py-2 text-xs font-bold border border-slate-200">
+                            <input id="newCarbs" type="number" placeholder="Carbs (g)" class="bg-slate-50 rounded-lg px-3 py-2 text-xs font-bold border border-slate-200">
+                            <input id="newFat" type="number" placeholder="Fett (g)" class="bg-slate-50 rounded-lg px-3 py-2 text-xs font-bold border border-slate-200">
+                        </div>
+                    </div>
+
+                    <!-- Automatische Rezeptbild-Auswahl & SEO-Vorschau -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <input id="newImage" type="text" placeholder="Bild-URL (oder rechts automatisch generieren)" value="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80" class="bg-white rounded-xl px-3.5 py-2 text-xs border border-slate-200">
+                        <input id="newSeoMeta" type="text" placeholder="Automatischer SEO-Titel & Meta-Beschreibung..." class="bg-white rounded-xl px-3.5 py-2 text-xs border border-slate-200">
+                    </div>
+
+                    <textarea id="newStepsText" rows="3" placeholder="Zubereitungsschritte (jeder Schritt in einer neuen Zeile)..." class="w-full bg-white rounded-xl p-3 text-xs border border-slate-200"></textarea>
+
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="saveRecipeAsDraft()" class="flex-1 bg-brand-green hover:bg-brand-greenDark text-white font-bold py-3 rounded-xl text-sm transition shadow-sm">
+                            📝 Zunächst als Entwurf speichern (zur Qualitätskontrolle)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2. Entwürfe prüfen & veröffentlichen -->
+                <div class="bg-amber-50/70 p-5 rounded-2xl border border-amber-200">
+                    <h4 class="font-display font-extrabold text-amber-900 text-base mb-1">
+                        🔍 2. Gespeicherte Rezept-Entwürfe (Vor Veröffentlichung prüfen)
+                    </h4>
+                    <p class="text-xs text-amber-800 mb-3">Entwürfe sind für normale Besucher noch nicht sichtbar. Erst nach deiner Freigabe erscheinen sie live auf der Seite.</p>
+                    <div id="draftsContainer" class="space-y-2"></div>
+                </div>
+
+                <!-- 3. Google SEO & Sitemap/Robots Export (Punkt 7) -->
+                <div class="bg-slate-100 p-5 rounded-2xl border border-slate-200">
+                    <h4 class="font-display font-extrabold text-slate-900 text-base mb-2">
+                        🚀 3. Google SEO: Sitemap.xml & Robots.txt für GitHub exportieren
+                    </h4>
+                    <p class="text-xs text-slate-600 mb-3">Das strukturierte JSON-LD Recipe Schema ist bereits automatisch in jedes Rezept integriert. Hier kannst du zusätzlich deine aktuelle <code>sitemap.xml</code> und <code>robots.txt</code> kopieren:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="exportSitemapXml()" class="bg-slate-900 text-white text-xs font-bold px-4 py-2.5 rounded-xl">
+                            📋 Sitemap.xml kopieren
+                        </button>
+                        <button onclick="exportRobotsTxt()" class="bg-slate-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl">
+                            📋 Robots.txt kopieren
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         MODAL 4: RECHTLICHES, DATENSCHUTZ, COOKIES & TRANSPARENZ (PUNKT 8)
+         ========================================== -->
+    <div id="legalModal" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[88vh] overflow-y-auto p-6 sm:p-8 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                <h3 id="legalModalTitle" class="font-display font-extrabold text-xl text-slate-900">Rechtliches & Transparenz</h3>
+                <button onclick="closeLegalModal()" class="text-slate-400 hover:text-slate-700"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div id="legalModalContent" class="text-xs sm:text-sm text-slate-600 space-y-4 leading-relaxed"></div>
+        </div>
+    </div>
+
+    <!-- TOAST BENACHRICHTIGUNG -->
+    <div id="toastBox" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-xl border border-slate-700 text-xs sm:text-sm font-semibold flex items-center gap-2.5 z-50 hidden no-print">
+        <i class="fa-solid fa-circle-check text-brand-green text-base"></i>
+        <span id="toastMessage">Erfolgreich gespeichert!</span>
+    </div>
+
+    <!-- ==========================================
+         FOOTER MIT ALLEN VERTRAUENS- & RECHTS-LINKS
+         ========================================== -->
+    <footer class="bg-white border-t border-slate-200 mt-16 py-10 no-print">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-slate-100 text-xs sm:text-sm">
+                <div>
+                    <div class="font-display font-extrabold text-slate-900 text-lg mb-2">ProteinHappen.de</div>
+                    <p class="text-slate-500 text-xs leading-relaxed">
+                        Proteinreich essen. Einfach genießen. Deine Plattform für alltagstaugliche High-Protein Rezepte, Meal-Prep und transparente Nährwerte.
+                    </p>
+                </div>
+                <div>
+                    <div class="font-bold text-slate-900 mb-2">Funktionen</div>
+                    <ul class="space-y-1.5 text-slate-500 text-xs">
+                        <li><button onclick="switchMainTab('home')" class="hover:text-brand-green">Alle 20+ Rezepte & Filter</button></li>
+                        <li><button onclick="switchMainTab('planner')" class="hover:text-brand-green">Interaktiver Wochenplaner</button></li>
+                        <li><button onclick="switchMainTab('calculator')" class="hover:text-brand-green">Protein- & Kalorienrechner</button></li>
+                        <li><button onclick="openCreatorModal()" class="text-brand-orange font-bold hover:underline">⚡ Creator-Studio (Entwürfe & KI)</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="font-bold text-slate-900 mb-2">Vertrauen & Transparenz</div>
+                    <ul class="space-y-1.5 text-slate-500 text-xs">
+                        <li><button onclick="switchMainTab('about')" class="hover:text-brand-green">Über uns & Qualitätsanspruch</button></li>
+                        <li><button onclick="openTrustModal('nutrition')" class="hover:text-brand-green">Transparente Nährwertberechnung</button></li>
+                        <li><button onclick="openTrustModal('affiliate')" class="hover:text-brand-green">*Kennzeichnung von Werbung & Links</button></li>
+                        <li><button onclick="openTrustModal('sponsoring')" class="hover:text-brand-green font-semibold text-brand-orange">🤝 Kooperationen & Sponsoring</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="font-bold text-slate-900 mb-2">Rechtliches & Kontakt</div>
+                    <ul class="space-y-1.5 text-slate-500 text-xs">
+                        <li><button onclick="openTrustModal('kontakt')" class="hover:text-brand-green">Kontakt (info@proteinhappen.de)</button></li>
+                        <li><button onclick="openTrustModal('impressum')" class="hover:text-brand-green">Impressum</button></li>
+                        <li><button onclick="openTrustModal('datenschutz')" class="hover:text-brand-green">Datenschutzerklärung</button></li>
+                        <li><button onclick="openTrustModal('cookies')" class="hover:text-brand-green">Cookie-Einstellungen</button></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- IMPRESSUM MODAL -->
-    <div id="legalModal" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-xl w-full max-h-[85vh] overflow-y-auto p-6 shadow-2xl">
-            <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-                <h3 class="font-display font-bold text-lg text-slate-800">Impressum & Kontakt</h3>
-                <button onclick="closeLegalModal()" class="text-slate-400 hover:text-slate-700">
-                    <i class="fa-solid fa-xmark text-xl"></i>
-                </button>
-            </div>
-            <div class="text-xs sm:text-sm text-slate-600 space-y-3 leading-relaxed">
-                <p><strong>Angaben zum Projekt:</strong><br>ProteinHappen – High-Protein & Abnehm-Rezepte<br>Projektleitung / Redaktion: ProteinHappen Media</p>
-                <p><strong>Kontakt:</strong><br>E-Mail: info@proteinhappen.de<br>Internet: https://proteinhappen.de</p>
-                <p><strong>Hinweis:</strong><br>Dies ist ein Web- und Rezeptprojekt im Aufbau. Bei Fragen, Anregungen oder geschäftlichen Anliegen erreichst du uns direkt per E-Mail unter info@proteinhappen.de.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- SPONSORING MODAL -->
-    <div id="partnerModal" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-xl w-full max-h-[85vh] overflow-y-auto p-6 shadow-2xl">
-            <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
-                <h3 class="font-display font-bold text-lg text-slate-800">🤝 Kooperationen & Sponsoring</h3>
-                <button onclick="closePartnerModal()" class="text-slate-400 hover:text-slate-700">
-                    <i class="fa-solid fa-xmark text-xl"></i>
-                </button>
-            </div>
-            <div class="text-xs sm:text-sm text-slate-600 space-y-3 leading-relaxed">
-                <p><strong>Dein Produkt oder Brand auf ProteinHappen?</strong><br>ProteinHappen.de ist die Anlaufstelle für einfache, schnelle und proteinreiche Rezepte im Alltag, im Kaloriendefizit und für Meal-Prep (z. B. Schichtarbeit).</p>
-                <p><strong>Möglichkeiten für Partner & Sponsoren:</strong></p>
-                <ul class="list-disc pl-4 space-y-1">
-                    <li><strong>Produktintegrationen:</strong> Sinnvolle Platzierung von passenden Lebensmitteln direkt in den Rezepten.</li>
-                    <li><strong>Equipment & Küchengeräte:</strong> Vorstellung von Helfern wie Airfryern oder Meal-Prep-Dosen.</li>
-                    <li><strong>Social-Media-Cross-Promotion:</strong> Verknüpfung mit Beiträgen auf unseren Kanälen.</li>
-                </ul>
-                <p class="pt-2"><strong>Interesse an einer Zusammenarbeit?</strong><br>Schreib uns einfach unverbindlich eine E-Mail an:<br><a href="mailto:info@proteinhappen.de" class="text-brand-green font-bold hover:underline">info@proteinhappen.de</a></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- TOAST -->
-    <div id="toastBox" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-xl border border-slate-700 text-xs sm:text-sm font-semibold flex items-center gap-2.5 z-50 hidden">
-        <i class="fa-solid fa-circle-check text-brand-green text-base"></i>
-        <span id="toastMessage">Erfolgreich kopiert!</span>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="bg-white border-t border-slate-200/80 mt-16 py-8">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-            <div class="flex items-center gap-2">
-                <span class="font-display font-extrabold text-slate-800 text-sm">ProteinHappen.de</span>
-                <span>• Einfach. Proteinreich. Abnehmen.</span>
-            </div>
-            <div class="flex flex-wrap items-center gap-4 font-medium">
-                <button onclick="openLegalModal()" class="hover:text-brand-green transition">Impressum</button>
-                <button onclick="openLegalModal()" class="hover:text-brand-green transition">Datenschutz</button>
-                <button onclick="openPartnerModal()" class="hover:text-brand-green transition font-bold text-brand-orange">🤝 Sponsoring</button>
-                <button onclick="openCreatorModal()" class="text-slate-400 hover:text-brand-orange transition">⚡ Creator-Studio</button>
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
+                <span>© 2026 ProteinHappen.de • Alle Rezepte mit strukturierten Google Recipe Schema-Daten</span>
+                <span>Mit ❤️ für Alltag, Fitness & Schichtarbeit entwickelt</span>
             </div>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- ==========================================
+         JAVASCRIPT: 20 VOLLSTÄNDIGE REZEPTE & ALLE FUNKTIONEN
+         ========================================== -->
     <script>
-        const recipes = [
+        // 1. DATENBANK MIT 20 VOLLSTÄNDIG AUSGEARBEITETEN HIGH-PROTEIN REZEPTEN
+        const defaultRecipes = [
             {
                 id: 1,
                 title: "Knusprige Airfryer Hähnchen-Bites mit Knoblauch-Skyr-Dip",
-                category: "airfryer",
-                categoryLabel: "Airfryer & Schnell",
-                tags: ["alle", "unter500", "protein40", "airfryer"],
+                shortDesc: "Außen knusprig wie Nuggets, innen extrem saftig – ganz ohne Frittierfett in 15 Minuten.",
+                mealType: "Mittagessen",
+                method: "Airfryer",
+                diet: "Mit Fleisch",
+                difficulty: "Einfach",
                 time: "15 Min.",
+                timeMinutes: 15,
                 kcal: 430,
                 protein: 52,
                 carbs: 24,
                 fat: 11,
+                popular: true,
                 image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=900&q=80",
-                intro: "Außen knusprig wie Nuggets, innen extrem saftig – und das komplett ohne Frittierfett! Mit 52g Eiweiß bei nur 430 Kalorien hält dich diese Portion locker 5–6 Stunden pappsatt.",
+                intro: "Mit 52g hochwertigem Eiweiß bei nur 430 Kalorien hält dich diese Portion locker 5 bis 6 Stunden satt. Die Cornflakes-Kruste sorgt im Airfryer für echten Crunch ohne Ölbad.",
                 ingredients: [
-                    { amount: 200, unit: "g", name: "Hähnchenbrustfilet (gewürfelt)" },
-                    { amount: 30, unit: "g", name: "Cornflakes (ungesüßt, zerbröselt für die Kruste)" },
-                    { amount: 150, unit: "g", name: "Skyr natur (für Dip & Marinade)" },
-                    { amount: 1, unit: "TL", name: "Paprikapulver edelsüß & Knoblauchgranulat" },
+                    { amount: 200, unit: "g", name: "Hähnchenbrustfilet" },
+                    { amount: 30, unit: "g", name: "Cornflakes (ungesüßt)" },
+                    { amount: 150, unit: "g", name: "Skyr natur" },
+                    { amount: 1, unit: "TL", name: "Paprikapulver & Knoblauchgranulat" },
                     { amount: 1, unit: "Spritzer", name: "Zitronensaft, Salz & Pfeffer" }
                 ],
                 steps: [
-                    "Vorbereitung des Fleisches: Hähnchenbrustfilet unter kaltem Wasser abspülen, mit Küchenpapier trocken tupfen und in gleichmäßige, etwa mundgerechte Würfel schneiden.",
-                    "Die Marinade vorbereiten: In einer Schüssel 1 EL Skyr mit Paprikapulver, Knoblauchgranulat, Salz und Pfeffer verrühren. Die Hähnchenwürfel dazugeben und gründlich vermengen (der Skyr sorgt dafür, dass die Panade komplett ohne zusätzliches Ei perfekt haftet).",
-                    "Die knusprige Panade: Die ungesüßten Cornflakes in einen kleinen Frischebeutel geben und mit den Händen oder einem Nudelholz grob zerbröseln. Die marinierten Hähnchenstücke Portionsweise darin wenden, bis sie rundherum paniert sind.",
-                    "Airfryer-Garvorgang: Den Airfryer auf 200 °C vorheizen. Die Hähnchen-Bites locker in den Korb geben (nicht übereinander stapeln) und für exakt 11 bis 12 Minuten goldbraun und knusprig backen. Nach der Hälfte der Zeit den Korb einmal kurz durchschütteln.",
-                    "Das Finale: Während die Bites backen, den restlichen Skyr mit Salz, Pfeffer, Knoblauchpulver und einem Spritzer Zitronensaft in einer kleinen Schüssel zu einem cremigen Dip verrühren und zusammen mit den heißen Hähnchen-Bites servieren."
+                    "Hähnchenbrustfilet trocken tupfen und in gleichmäßige, mundgerechte Würfel (ca. 2–3 cm) schneiden.",
+                    "In einer Schüssel 1 EL Skyr mit der Hälfte des Paprika- und Knoblauchpulvers sowie etwas Salz verrühren und die Hähnchenwürfel darin wenden.",
+                    "Ungesüßte Cornflakes in einem Beutel grob zerdrücken und die marinierten Hähnchenstücke rundherum darin panieren.",
+                    "Im Airfryer bei 200 °C für 11–12 Minuten goldbraun backen (nach 6 Minuten einmal kurz durchschütteln).",
+                    "Restlichen Skyr mit Knoblauch, Zitronensaft, Salz und Pfeffer glatt rühren und als Dip zu den heißen Bites servieren."
                 ],
-                secretTip: "Wenn du das Gericht für die Früh- oder Spätschicht vorbereitest: Gib die gebackenen Bites vor dem Verzehr auf der Arbeit noch einmal für genau 2 Minuten bei 200 °C in den Airfryer – sie werden wieder exakt so knusprig wie frisch zubereitet!",
+                secretTip: "Für die Schichtpause: Dip separat einpacken und die Bites vor dem Essen 2 Minuten im Airfryer oder Kontaktgrill aufknuspern.",
+                variations: [
+                    "Statt Cornflakes 30g Panko-Paniermehl für eine japanische Note nutzen.",
+                    "Mit 1 TL Sriracha-Sauce im Skyr-Dip für eine feurige Chili-Variante."
+                ],
                 equipment: [
-                    { name: "Heißluftfritteuse (Airfryer)", note: "Backt ohne Vorheizen in 11 Min. knusprig" },
+                    { name: "Heißluftfritteuse (Airfryer)", note: "Backt in 11 Min. ohne Vorheizen knusprig" },
                     { name: "Kalorienfreies Ölspray", note: "Für goldbraune Kruste mit 0 kcal" }
                 ]
             },
             {
                 id: 2,
                 title: "Cremiger High-Protein Mandarinen-Käsekuchen (ohne Boden)",
-                category: "suess",
-                categoryLabel: "Süße Happen",
-                tags: ["alle", "unter500", "protein40", "suess"],
-                time: "10 Min. (+ Backzeit)",
+                shortDesc: "Ein ganzer, saftiger Käsekuchen mit nur 360 kcal und 44g Protein gegen süßen Heißhunger.",
+                mealType: "Snacks",
+                method: "Backofen",
+                diet: "Vegetarisch",
+                difficulty: "Einfach",
+                time: "30 Min.",
+                timeMinutes: 30,
                 kcal: 360,
                 protein: 44,
                 carbs: 31,
                 fat: 5,
+                popular: true,
                 image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=900&q=80",
-                intro: "Der absolute virale Hit: Ein ganzer, saftiger Käsekuchen mit nur 360 Kalorien und satten 44g Protein! Perfekt gegen süßen Heißhunger am Abend.",
+                intro: "Durch den Verzicht auf einen fettigen Mürbeteigboden sparst du hunderte Kalorien, während die Kombination aus Magerquark und Skyr für eine cremige Konsistenz wie vom Bäcker sorgt.",
                 ingredients: [
                     { amount: 250, unit: "g", name: "Magerquark" },
                     { amount: 150, unit: "g", name: "Skyr natur" },
                     { amount: 1, unit: "Stk.", name: "Ei (Größe M)" },
                     { amount: 20, unit: "g", name: "Vanille-Puddingpulver" },
-                    { amount: 1, unit: "Scoop", name: "Geschmackspulver Vanille / Lemon" },
-                    { amount: 75, unit: "g", name: "Mandarinen aus der Dose (abgetropft)" }
+                    { amount: 30, unit: "g", name: "Erythrit oder Geschmackspulver Vanille" },
+                    { amount: 75, unit: "g", name: "Mandarinen (Dose, abgetropft)" }
                 ],
                 steps: [
-                    "Backofen oder Airfryer vorbereiten: Den Ofen auf 180 °C Ober-/Unterhitze vorheizen oder den Airfryer auf 160 °C einstellen. Eine kleine Backform (ca. 16 cm Durchmesser) mit Backpapier auslegen.",
-                    "Die Quarkmasse mixen: Magerquark, Skyr, das Ei, das Vanille-Puddingpulver sowie dein ausgewähltes Geschmackspulver in eine Rührschüssel geben. Mit dem Handrührgerät oder Schneebesen so lange verrühren, bis eine absolut klumpenfreie, cremige Masse entsteht.",
-                    "Mandarinen einarbeiten: Die Mandarinen aus der Dose in ein Sieb geben, den Saft komplett abtropfen lassen und die Fruchtspalten auf einem Küchenpapier trocken tupfen. Etwa drei Viertel der Mandarinen vorsichtig mit einem Teigschaber unter die Quarkmasse heben.",
-                    "Backvorgang: Die Masse gleichmäßig in die vorbereitete Form füllen und die restlichen Mandarinen oben auf dem Kuchen verteilen. Im Ofen für ca. 30 Minuten (oder im Airfryer bei 160 °C für ca. 22 Minuten) backen, bis der Rand leicht gebräunt ist.",
-                    "Auskühlen lassen: Den Kuchen nach dem Backen komplett in der Form auf Raumtemperatur abkühlen lassen und anschließend für mindestens 2 Stunden in den Kühlschrank stellen – erst gut durchgekühlt entfaltet er seine perfekte, festere Käsekuchen-Konsistenz."
+                    "Backofen auf 180 °C Ober-/Unterhitze vorheizen und eine kleine Spring- oder Silikonform (16 cm) bereitstellen.",
+                    "Magerquark, Skyr, Ei, Puddingpulver und Süße mit dem Schneebesen zu einer glatten Creme verrühren.",
+                    "Mandarinen gut abtropfen lassen und drei Viertel davon vorsichtig unter die Quarkmasse heben.",
+                    "Masse in die Form füllen, restliche Mandarinen oben auflegen und 28–30 Minuten backen (oder 22 Min. bei 160 °C im Airfryer).",
+                    "Komplett auskühlen lassen – im Kühlschrank zieht er perfekt an und lässt sich sauber schneiden."
                 ],
-                secretTip: "Backe direkt die doppelte Menge in einer größeren Form! Im Kühlschrank hält sich der Protein-Käsekuchen problemlos volle 3 Tage, trocknet nicht aus und schmeckt am zweiten Tag durchgezogen fast noch besser.",
+                secretTip: "Backe direkt zwei Formen gleichzeitig: Im Kühlschrank hält sich der Kuchen 3 Tage frisch und saftig.",
+                variations: [
+                    "Mit TK-Blaubeeren und etwas Zitronenabrieb statt Mandarinen backen.",
+                    "1 EL Backkakao in die Hälfte des Teigs rühren für einen Russischen Zupfkuchen-Effekt."
+                ],
                 equipment: [
-                    { name: "Kleine Silikon-Backform (16cm)", note: "Kein Einfetten nötig" },
-                    { name: "Geschmackspulver Vanille", note: "Spart 150 kcal Zucker" }
+                    { name: "Silikon-Backform (16 cm)", note: "Kein Einfetten nötig – spart extra Kalorien" },
+                    { name: "Erythrit / Geschmackspulver", note: "Süßt ohne Zucker-Kalorien" }
                 ]
             },
             {
                 id: 3,
                 title: "12-Minuten Schicht-Pfanne: Würziges Rinderhack & Süßkartoffel",
-                category: "protein40",
-                categoryLabel: "Meal Prep & Schicht",
-                tags: ["alle", "unter500", "protein40", "airfryer"],
+                shortDesc: "Eine Pfanne, kaum Abwasch und 46g Protein – das perfekte Meal-Prep-Gericht für 3 Arbeitstage.",
+                mealType: "Mittagessen",
+                method: "Pfanne",
+                diet: "Mit Fleisch",
+                difficulty: "Einfach",
                 time: "12 Min.",
+                timeMinutes: 12,
                 kcal: 475,
                 protein: 46,
                 carbs: 38,
                 fat: 14,
+                popular: true,
                 image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
-                intro: "Eine Pfanne, null Abwasch und optimale Nährwerte für Muskelaufbau und Fettabbau. Perfekt für 3 Arbeitstage vorkochbar.",
+                intro: "Komplexe Kohlenhydrate aus der Süßkartoffel kombiniert mit fettarmem Rinderhack und geschmolzenem Hüttenkäse liefern dir langanhaltende Energie ohne Mittagstief.",
                 ingredients: [
-                    { amount: 180, unit: "g", name: "Rinderhackfleisch fettreduziert (5% Fett)" },
-                    { amount: 160, unit: "g", name: "Süßkartoffel (klein gewürfelt)" },
+                    { amount: 180, unit: "g", name: "Rinderhackfleisch fettreduziert (5%)" },
+                    { amount: 160, unit: "g", name: "Süßkartoffel" },
                     { amount: 100, unit: "g", name: "Paprika & Zucchini" },
-                    { amount: 40, unit: "g", name: "Hüttenkäse light" },
-                    { amount: 2, unit: "EL", name: "Passierte Tomaten & Gewürze" }
+                    { amount: 40, unit: "g", name: "Körniger Frischkäse light" },
+                    { amount: 3, unit: "EL", name: "Passierte Tomaten & Paprikagewürz" }
                 ],
                 steps: [
-                    "Gemüse und Knolle vorbereiten: Die Süßkartoffel schälen und in sehr kleine Würfel (maximal 1 cm) schneiden – je kleiner die Würfel, desto schneller gart sie in der Pfanne durch. Paprika und Zucchini ebenfalls in feine Würfel schneiden.",
-                    "Das Fleisch anbraten: Eine beschichtete Pfanne ohne zusätzliches Öl erhitzen. Das fettreduzierte 5%-Rinderhack hineingeben und mit einem Kochlöffel krümelig anbraten, bis das Fleisch rundherum Farbe angenommen hat.",
-                    "Gemüse dazugeben: Die Süßkartoffelwürfel, Paprika und Zucchini mit in die Pfanne geben und das Ganze bei mittlerer bis hoher Hitze unter gelegentlichem Rühren für etwa 5 Minuten scharf anbraten.",
-                    "Ablöschen und köcheln lassen: Die passierten Tomaten sowie einen Schuss Wasser dazugießen. Mit Paprikapulver, Salz, Pfeffer und Kräutern würzen. Einen Deckel auf die Pfanne legen und das Gericht bei kleiner Hitze 4 bis 5 Minuten sanft köcheln lassen, bis die Süßkartoffelwürfel weich sind.",
-                    "Anrichten: Die Pfanne vom Herd nehmen. Den körnigen Frischkäse (Hüttenkäse) kalt als cremiges Topping auf der heißen Pfanne verteilen – er schmilzt leicht an und liefert wertvolles Extra-Protein."
+                    "Süßkartoffel schälen und in sehr kleine Würfel (ca. 0,8 cm) schneiden, damit sie in wenigen Minuten gar wird.",
+                    "Das magere Rinderhack in einer beschichteten Pfanne ohne Zusatzfett krümelig und braun anbraten.",
+                    "Süßkartoffel-, Paprika- und Zucchiniwürfel dazugeben und 4 Minuten kräftig mitrösten.",
+                    "Mit passierten Tomaten und 3 EL Wasser ablöschen, würzen und zugedeckt 4 Minuten sanft köcheln lassen.",
+                    "Vom Herd nehmen und den körnigen Frischkäse als schmelzendes Protein-Topping darübergeben."
                 ],
-                secretTip: "Tausche normales gemischtes Hackfleisch (ca. 20% Fett) immer konsequent gegen fettreduziertes 5%-Rinderhack oder Tartar aus. Allein dieser einfache 1-zu-1-Tausch spart dir bei einer einzigen Pfanne über 240 Kalorien ein!",
+                secretTip: "5%-Rinderhack statt gemischtem Hackfleisch spart dir bei einer einzigen Pfanne über 240 Kalorien!",
+                variations: [
+                    "Mexikanisch: Mit 2 EL Kidneybohnen, Mais und Kreuzkümmel abschmecken.",
+                    "Mediterran: Mit getrockneten Tomaten, Oregano und 30g Feta light toppen."
+                ],
                 equipment: [
-                    { name: "Glas-Meal-Prep-Boxen", note: "Mikrowellenfest für die Arbeit" },
-                    { name: "Antihaft-Pfanne", note: "Braten mit minimalem Fett" }
+                    { name: "Glas-Meal-Prep-Dosen", note: "Auslaufsicher & mikrowellengeeignet" },
+                    { name: "Antihaft-Schmorpfanne", note: "Braten ohne zusätzliches Öl" }
                 ]
             },
             {
                 id: 4,
                 title: "Erfrischender Lemon-Iced-Tea Quark-Fluff (Unter 200 kcal!)",
-                category: "suess",
-                categoryLabel: "Unter 200 kcal Snack",
-                tags: ["alle", "unter500", "protein40", "suess"],
+                shortDesc: "Verwandelt normalen Magerquark in 5 Minuten in eine riesige Schüssel luftige Zitronen-Mousse.",
+                mealType: "Snacks",
+                method: "Ohne Kochen",
+                diet: "Vegetarisch",
+                difficulty: "Einfach",
                 time: "5 Min.",
+                timeMinutes: 5,
                 kcal: 195,
                 protein: 41,
                 carbs: 6,
                 fat: 1,
+                popular: true,
                 image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80",
-                intro: "Der perfekte Couch-Snack: Verwandelt normalen Magerquark mit Clear Whey in eine riesige Schüssel luftige Zitronen-Creme!",
+                intro: "Wenn abends auf der Couch der Hunger kommt, liefert dieser Trick doppeltes Ess-Volumen durch die Reaktion von Kohlensäure und Clear Whey bei unter 200 Kalorien.",
                 ingredients: [
-                    { amount: 250, unit: "g", name: "Magerquark (gekühlt)" },
+                    { amount: 250, unit: "g", name: "Magerquark (gut gekühlt)" },
                     { amount: 15, unit: "g", name: "Clear Whey (Lemon Iced Tea)" },
                     { amount: 80, unit: "ml", name: "Eiskaltes Sprudelwasser" },
-                    { amount: 40, unit: "g", name: "TK-Beeren" }
+                    { amount: 40, unit: "g", name: "TK-Beerenmischung" }
                 ],
                 steps: [
-                    "Die Schüssel wählen: Da sich das Volumen der Masse beim Aufschlagen durch das Clear Whey und die Kohlensäure mindestens verdoppelt, unbedingt eine sehr große Rührschüssel verwenden.",
-                    "Die Basis einfüllen: Den gut gekühlten Magerquark direkt aus dem Kühlschrank in die Schüssel geben und das eiskalte Sprudelwasser dazugießen (die Kälte ist wichtig für den Schaum-Effekt).",
-                    "Das Pulver hinzufügen: Das Clear Whey Pulver (Geschmacksrichtung Lemon Iced Tea oder Pfirsich) gleichmäßig über den Quark streuen, damit es beim Mixen nicht staubt.",
-                    "Vollgas aufschlagen: Mit dem Handrührgerät (Rührbesen) auf höchster Stufe für exakt 2 Minuten kräftig aufschlagen. Die Masse wird augenblicklich extrem fluffig, leicht und schaumig wie ein Profi-Mousse.",
-                    "Servieren: Den fertigen Quark-Fluff in eine Schale füllen, mit den tiefgekühlten Beeren toppen und sofort löffeln, solange er wunderbar luftig ist."
+                    "Eine hohe Rührschüssel bereitstellen, da sich das Volumen beim Aufschlagen fast verdoppelt.",
+                    "Den gekühlten Magerquark und das eiskalte Sprudelwasser in die Schüssel geben.",
+                    "Das Clear Whey Pulver gleichmäßig über die Masse streuen.",
+                    "Mit dem Handrührgerät auf höchster Stufe 2 Minuten lang zu einem luftigen Schaum-Fluff aufschlagen.",
+                    "In eine große Bowl füllen, mit Beeren toppen und direkt frisch genießen."
                 ],
-                secretTip: "Das absolute Geheimnis liegt in der chemischen Reaktion zwischen der Kohlensäure des Sprudelwassers und dem speziellen Clear-Whey-Proteinpulver. Du isst optisch die doppelte Menge im Vergleich zu normalem Quark, bleibst aber absolut unter 200 Kalorien!",
+                secretTip: "Je kälter Quark und Sprudelwasser sind, desto stabiler und luftiger wird der Schaum!",
+                variations: [
+                    "Pfirsich-Maracuja Clear Whey mit ein paar gewürfelten Mango-Stücken.",
+                    "1 TL Flohsamenschalen unterrühren für noch längere Sättigung."
+                ],
                 equipment: [
-                    { name: "Clear Whey Lemon Iced Tea", note: "Macht Quark fruchtig-fluffig" },
-                    { name: "Handrührgerät", note: "Für maximalen Schaum" }
+                    { name: "Handrührgerät mit Quirlen", note: "Schlägt den Quark in 120 Sek. luftig" },
+                    { name: "Clear Whey Isolate", note: "Sorgt für den fruchtigen Schaum-Effekt" }
                 ]
             },
             {
                 id: 5,
                 title: "Fluffige 3-Zutaten Hafer-Protein-Pancakes mit warmen Beeren",
-                category: "unter500",
-                categoryLabel: "Schnelles Frühstück",
-                tags: ["alle", "unter500", "suess"],
+                shortDesc: "Aus Haferflocken, Magerquark und Ei mixt du in 10 Minuten einen sättigenden Pancake-Stapel.",
+                mealType: "Frühstück",
+                method: "Pfanne",
+                diet: "Vegetarisch",
+                difficulty: "Einfach",
                 time: "10 Min.",
+                timeMinutes: 10,
                 kcal: 395,
                 protein: 38,
                 carbs: 42,
                 fat: 8,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=900&q=80",
-                intro: "Aus Haferflocken, Magerquark und Ei mixt du in 2 Minuten den perfekten Frühstücks-Stapel.",
+                intro: "Ganz ohne teure Fertigmischungen: Die Kombination aus Haferflocken und Quark ergibt saftige Pancakes, die deinen Blutzuckerspiegel den ganzen Vormittag stabil halten.",
                 ingredients: [
                     { amount: 50, unit: "g", name: "Zarte Haferflocken" },
                     { amount: 150, unit: "g", name: "Magerquark" },
-                    { amount: 2, unit: "Stk.", name: "Eier" },
-                    { amount: 80, unit: "g", name: "TK-Beeren" }
+                    { amount: 2, unit: "Stk.", name: "Eier (Größe M)" },
+                    { amount: 0.5, unit: "TL", name: "Backpulver & Zimt" },
+                    { amount: 80, unit: "g", name: "TK-Himbeeren" }
                 ],
                 steps: [
-                    "Teig vorbereiten: Die zarten Haferflocken, den Magerquark, die beiden Eier sowie eine Prise Backpulver und Zimt in einen Standmixer geben. Für ca. 10 bis 15 Sekunden auf hoher Stufe durchmixen, bis ein homogener, dickflüssiger Teig entsteht.",
-                    "Pfanne erhitzen: Eine beschichtete Pfanne auf mittlere Stufe (Stufe 5 bis 6 von 9) erhitzen. Bei einer guten Beschichtung wird absolut kein Öl oder Fett benötigt.",
-                    "Pancakes ausbacken: Jeweils kleine Portionen des Teigs (ca. 2 bis 3 Esslöffel pro Pancake) als kleine Häufchen in die Pfanne geben. Geduldig warten, bis an der Oberfläche kleine Blasen aufsteigen und der Rand matt wird (ca. 2 Minuten).",
-                    "Wenden und fertigbacken: Die Pancakes vorsichtig mit einem Pfannenwender wenden und von der zweiten Seite ebenfalls in etwa 1 bis 2 Minuten goldbraun ausbacken.",
-                    "Fruchtsauce anrichten: Während die Pancakes backen, die tiefgekühlten Beeren in einer kleinen Tasse für 45 Sekunden in der Mikrowelle erhitzen, sodass eine natürliche, zuckerfreie Fruchtsauce entsteht, die du über den Stapel gießt."
+                    "Haferflocken, Magerquark, Eier, Backpulver und Zimt im Mixer oder mit dem Pürierstab 15 Sekunden glatt mixen.",
+                    "Eine beschichtete Pfanne auf mittlere Stufe (Stufe 5–6 von 9) vorheizen.",
+                    "Jeweils 2 EL Teig pro Pancake in die Pfanne geben und 2 Minuten backen, bis sich oben kleine Bläschen zeigen.",
+                    "Pancakes vorsichtig wenden und weitere 1–2 Minuten goldbraun backen.",
+                    "TK-Himbeeren 45 Sekunden in der Mikrowelle erhitzen und als warme Fruchtsauce über die Pancakes geben."
                 ],
-                secretTip: "Lass den Teig nach dem Mixen nicht lange stehen, sondern gib ihn direkt in die Pfanne. Da keine herkömmliche Stärke oder viel Mehl enthalten ist, bleiben die Pancakes innen wunderbar zart.",
-                equipment: [{ name: "Standmixer", note: "Macht Haferflocken fein" }]
+                secretTip: "Nicht zu heiß braten – da Quark schneller bräunt als Weizenmehl, gelingen sie bei mittlerer Hitze am besten.",
+                variations: [
+                    "Apfel-Zimt: Einen halben geraspelten Apfel direkt in den Rohteig rühren.",
+                    "Schoko-Style: 1 TL Backkakao in den Teig geben und mit Bananenscheiben belegen."
+                ],
+                equipment: [
+                    { name: "Kompakt-Standmixer", note: "Macht aus Haferflocken feinen Teig" },
+                    { name: "Beschichtete Crêpe-/Pfanne", note: "Kein Ankleben ohne Butter" }
+                ]
             },
             {
                 id: 6,
                 title: "Schnelle High-Protein Thunfisch-Skyr-Pizza (Ohne Hefe)",
-                category: "protein40",
-                categoryLabel: "54g Protein Bombe",
-                tags: ["alle", "unter500", "protein40", "airfryer"],
+                shortDesc: "Knuspriger Blitz-Teig aus Skyr und Dinkelmehl ohne Gehzeit mit satten 54g Protein.",
+                mealType: "Abendessen",
+                method: "Backofen",
+                diet: "Fisch",
+                difficulty: "Einfach",
                 time: "15 Min.",
+                timeMinutes: 15,
                 kcal: 460,
                 protein: 54,
                 carbs: 34,
                 fat: 9,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80",
-                intro: "Blitz-Teig aus Skyr und Dinkelmehl ohne Gehzeit – knusprig und vollgepackt mit 54g Eiweiß!",
+                intro: "Pizza-Genuss trotz Kaloriendefizit: Der Skyr-Teig ist in 2 Minuten geknetet und liefert zusammen mit dem Thunfisch über 50 Gramm Eiweiß.",
                 ingredients: [
                     { amount: 100, unit: "g", name: "Skyr natur" },
-                    { amount: 60, unit: "g", name: "Dinkelmehl + Backpulver" },
-                    { amount: 120, unit: "g", name: "Thunfisch (abgetropft)" },
-                    { amount: 4, unit: "EL", name: "Passierte Tomaten" },
-                    { amount: 40, unit: "g", name: "Reibekäse light" }
+                    { amount: 60, unit: "g", name: "Dinkelmehl (Type 630)" },
+                    { amount: 0.5, unit: "TL", name: "Backpulver & Salz" },
+                    { amount: 120, unit: "g", name: "Thunfisch im eigenen Saft (abgetropft)" },
+                    { amount: 4, unit: "EL", name: "Passierte Tomaten & Oregano" },
+                    { amount: 40, unit: "g", name: "Reibekäse light (16%)" }
                 ],
                 steps: [
-                    "Teig anrühren: In einer Schüssel den Skyr natur, das Dinkelmehl (Type 630), einen halben Teelöffel Backpulver und eine Prise Salz mit den Händen zu einem geschmeidigen Teigball verkneten (klebt er zu sehr, einfach einen Teelöffel Mehl nachgeben).",
-                    "Ausrollen: Den Teig direkt auf einem Stück Backpapier mit den Händen oder einem kleinen Nudelholz dünn und rund ausrollen – es ist keine Ruhe- oder Gehzeit nötig.",
-                    "Sauce & Belag: Die passierten Tomaten großzügig auf dem Teigboden verstreichen und mit Oregano sowie Knoblauchpulver würzen. Den Thunfisch aus der Dose gut abtropfen lassen, mit einer Gabel zerzupfen und zusammen mit Zwiebelringen auf der Pizza verteilen.",
-                    "Mit Käse toppen: Den leichten Reibekäse gleichmäßig über den Thunfisch streuen, damit beim Backen eine goldgelbe Käseschicht entsteht.",
-                    "Backvorgang: Im vorgeheizten Backofen bei 200 °C Ober-/Unterhitze für 12 Minuten oder im Airfryer bei 190 °C für ca. 9 bis 10 Minuten backen, bis der Rand knusprig und der Käse geschmolzen ist."
+                    "Skyr, Dinkelmehl, Backpulver und Salz in einer Schüssel rasch mit den Händen zu einem Teigball verkneten.",
+                    "Den Teig auf einem Bogen Backpapier dünn und rund ausrollen.",
+                    "Passierte Tomaten mit Oregano, Salz und Pfeffer würzen und auf dem Teigboden verstreichen.",
+                    "Den gut abgetropften Thunfisch sowie den leichten Reibekäse gleichmäßig darauf verteilen.",
+                    "Im vorgeheizten Ofen bei 200 °C für 12 Minuten (oder im Airfryer bei 190 °C für 9 Min.) knusprig backen."
                 ],
-                secretTip: "Schiebe den ausgerollten Pizzateig ohne Belag für 3 Minuten im Airfryer vor. Wenn du ihn danach erst belegst, wird der Boden absolut steinhart-knusprig wie beim Italiener und weicht durch die Tomatensauce nicht durch!",
-                equipment: [{ name: "Backmatte", note: "Verhindert Festkleben" }]
+                secretTip: "Backe den Teigboden vor dem Belegen 3 Minuten trocken vor – das garantiert einen extra knusprigen Boden!",
+                variations: [
+                    "Mit roten Zwiebelringen, Kapern und ein paar schwarzen Oliven verfeinern.",
+                    "Vegetarisch: Statt Thunfisch 80g gewürfelten Feta light und frische Champignons nutzen."
+                ],
+                equipment: [
+                    { name: "Dauerbackmatte", note: "Perfekt zum Ausrollen ohne Festkleben" },
+                    { name: "Edelstahl-Pizzaroller", note: "Teilt die Pizza in Sekunden" }
+                ]
             },
             {
                 id: 7,
                 title: "Knusprige Airfryer Pizza-Brötchen (High-Protein Edition)",
-                category: "airfryer",
-                categoryLabel: "Airfryer Hit",
-                tags: ["alle", "unter500", "protein40", "airfryer"],
+                shortDesc: "Überbackene Quark-Teig-Brötchen mit Putenbrust und Käse – in 12 Minuten im Airfryer fertig.",
+                mealType: "Snacks",
+                method: "Airfryer",
+                diet: "Mit Fleisch",
+                difficulty: "Einfach",
                 time: "12 Min.",
+                timeMinutes: 12,
                 kcal: 385,
                 protein: 42,
                 carbs: 36,
                 fat: 7,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=900&q=80",
-                intro: "Schmecken wie beim Italiener, fertig in 12 Minuten direkt im Airfryer.",
+                intro: "Ideal als herzhafter Snack am Abend oder zum Mitnehmen in die Schicht: Außen knusprig gebacken, innen herzhaft gefüllt.",
                 ingredients: [
                     { amount: 150, unit: "g", name: "Magerquark" },
-                    { amount: 60, unit: "g", name: "Mehl + Backpulver" },
-                    { amount: 60, unit: "g", name: "Putenbrust gewürfelt" },
-                    { amount: 40, unit: "g", name: "Reibekäse light" }
+                    { amount: 60, unit: "g", name: "Dinkelmehl" },
+                    { amount: 1, unit: "TL", name: "Backpulver" },
+                    { amount: 60, unit: "g", name: "Putenbrust-Aufschnitt (gewürfelt)" },
+                    { amount: 40, unit: "g", name: "Reibekäse light" },
+                    { amount: 2, unit: "EL", name: "Tomatenmark & Pizzagewürz" }
                 ],
                 steps: [
-                    "Teig vorbereiten: Magerquark, Mehl, einen Teelöffel Backpulver und etwas Salz in einer Schüssel zu einem formbaren Teig verkneten.",
-                    "Portionieren: Den Teig auf einer bemehlten Arbeitsfläche in 4 gleich große Stücke teilen und daraus mit befeuchteten Händen kleine Brötchen formen. Auf dem Airfryer-Backpapier platzieren.",
-                    "Mulden formen: Mit dem Daumen mittig in jedes Brötchen eine tiefe Mulde drücken, sodass ein kleiner Teigrand entsteht.",
-                    "Füllung anrühren: In einer kleinen Tasse Tomatenmark mit ein paar Tropfen Wasser, italienischen Kräutern, den gewürfelten Putenbrust-Aufschnitt und der Hälfte des leichten Reibekäses vermengen.",
-                    "Überbacken: Die Masse löffelweise in die Mulden der Brötchen füllen und den restlichen Käse als Krönung darüberstreuen. Im Airfryer bei 180 °C für 10 bis 11 Minuten goldbraun und knusprig backen."
+                    "Magerquark, Dinkelmehl, Backpulver und 1 Prise Salz zu einem formbaren Teig verkneten.",
+                    "Mit leicht angefeuchteten Händen 4 kleine Brötchen formen und mittig jeweils eine Mulde eindrücken.",
+                    "Tomatenmark mit 2 EL Wasser, Pizzagewürz, den Putenbrust-Würfeln und der Hälfte des Käses verrühren.",
+                    "Die Würzmasse in die Mulden der Brötchen füllen und mit dem restlichen Käse bestreuen.",
+                    "Im Airfryer bei 180 °C für 10–11 Minuten goldbraun aufbacken."
                 ],
-                secretTip: "Bereite direkt die doppelte Menge zu! Die Pizza-Brötchen schmecken kalt am nächsten Tag in der Arbeitspause genauso genial wie frisch aus dem Airfryer.",
-                equipment: [{ name: "Airfryer", note: "Schnell & knusprig" }]
+                secretTip: "Schmecken auch kalt hervorragend – perfekt für die Brotdose am nächsten Arbeitstag!",
+                variations: [
+                    "Flammkuchen-Style: Mit Schinkenwürfeln, Frühlingszwiebeln und Skyr statt Tomatenmark.",
+                    "Veggie: Mit Mais, gewürfelter Paprika und fettarmem Mozzarella füllen."
+                ],
+                equipment: [
+                    { name: "Airfryer Backpapier-Einlagen", note: "Schützt den Korb vor geschmolzenem Käse" }
+                ]
             },
             {
                 id: 8,
                 title: "Schoko-Bananen Baked Oats aus dem Airfryer",
-                category: "suess",
-                categoryLabel: "Süße Happen",
-                tags: ["alle", "unter500", "suess", "airfryer"],
+                shortDesc: "Schmeckt wie warmer Schokokuchen zum Frühstück – komplett ohne raffinierten Zucker.",
+                mealType: "Frühstück",
+                method: "Airfryer",
+                diet: "Vegetarisch",
+                difficulty: "Einfach",
                 time: "12 Min.",
+                timeMinutes: 12,
                 kcal: 390,
                 protein: 36,
                 carbs: 44,
                 fat: 6,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=900&q=80",
-                intro: "Warmes Schokokuchen-Feeling ohne Zucker, super saftig durch Banane und Skyr.",
+                intro: "Wenn du morgens etwas Warmes und Schokoladiges liebst: Durch Banane und Skyr werden die gebackenen Haferflocken saftig wie ein Lava-Cake.",
                 ingredients: [
-                    { amount: 50, unit: "g", name: "Haferflocken" },
-                    { amount: 120, unit: "g", name: "Skyr" },
+                    { amount: 50, unit: "g", name: "Zarte Haferflocken" },
+                    { amount: 120, unit: "g", name: "Skyr natur" },
                     { amount: 0.5, unit: "Stk.", name: "Reife Banane" },
-                    { amount: 25, unit: "g", name: "Proteinpulver Schoko" }
+                    { amount: 25, unit: "g", name: "Whey Protein Schoko" },
+                    { amount: 0.5, unit: "TL", name: "Backpulver & 30 ml Wasser" }
                 ],
                 steps: [
-                    "Banane zerdrücken: Die halbe reife Banane direkt in einer ofenfesten Backform oder einem kleinen Keramikförmchen mit einer Gabel gründlich zu einem Brei zerdrücken.",
-                    "Teigkomponenten zugeben: Die zarten Haferflocken, den Skyr, das Schoko-Proteinpulver, eine Prise Backpulver sowie einen kleinen Schluck Wasser oder Milch hinzufügen.",
-                    "Glatt rühren: Alle Zutaten in der Form mit einem Löffel so lange verrühren, bis eine gleichmäßige, dicke Teigmasse entsteht.",
-                    "Extra-Kern verstecken: Wer mag, drückt jetzt eine entkernte Dattel oder ein Stück zuckerfreie Schokolade tief in die Mitte des Teiges (das schmilzt beim Backen zu einem Schoko-Karamell-Kern).",
-                    "Backvorgang: Das Förmchen in den Airfryer stellen und bei 175 °C für 10 bis 12 Minuten backen. Die Oberfläche sollte leicht aufgehen und fest werden, während das Innere herrlich saftig bleibt."
+                    "Die halbe Banane direkt in einer kleinen, ofenfesten Keramikschale mit der Gabel fein zerdrücken.",
+                    "Haferflocken, Skyr, Schoko-Proteinpulver, Backpulver und 30 ml Wasser dazugeben.",
+                    "Mit dem Löffel gründlich verrühren, bis ein gleichmäßiger Kuchenteig entsteht.",
+                    "Im Airfryer bei 175 °C für 10–12 Minuten backen, bis die Oberfläche leicht aufbricht.",
+                    "Vor dem Löffeln 2 Minuten abkühlen lassen, damit sich das Schoko-Aroma voll entfaltet."
                 ],
-                secretTip: "Lass den Kuchen nach dem Backen kurz 2 Minuten ruhen. Wenn der Kern in der Mitte noch minimal feucht ist, schmeckt es exakt wie ein teurer Schoko-Lavakuchen aus dem Restaurant!",
-                equipment: [{ name: "Keramik-Förmchen", note: "Perfekt für den Airfryer" }]
+                secretTip: "Drücke vor dem Backen eine entkernte Dattel in die Mitte – sie schmilzt wie ein flüssiger Karamellkern!",
+                variations: [
+                    "mit 1 TL Erdnussmus als Swirl obendrauf vor dem Backen.",
+                    "Vanille-Beeren-Oats: Vanille-Protein nutzen und eine Handvoll Himbeeren unterheben."
+                ],
+                equipment: [
+                    { name: "Ofenfeste Keramik-Förmchen", note: "Passen perfekt in jeden Airfryer-Korb" }
+                ]
             },
             {
                 id: 9,
                 title: "10-Minuten Stremellachs-Protein-Wrap für die Schichtpause",
-                category: "unter500",
-                categoryLabel: "Meal Prep & Schicht",
-                tags: ["alle", "unter500", "protein40"],
+                shortDesc: "Kalt genießbar, kein Durchweichen und 41g Eiweiß plus wertvolle Omega-3-Fettsäuren.",
+                mealType: "Mittagessen",
+                method: "Ohne Kochen",
+                diet: "Fisch",
+                difficulty: "Einfach",
                 time: "10 Min.",
+                timeMinutes: 10,
                 kcal: 415,
                 protein: 41,
                 carbs: 29,
                 fat: 14,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=900&q=80",
-                intro: "Ohne Mikrowelle genießbar: Schneller Wrap mit gesunden Omega-3-Fetten.",
+                intro: "Wenn in der Pause keine Mikrowelle frei ist, rettet dir dieser saftige Lachs-Wrap den Tag – in wenigen Minuten gerollt und extrem nahrhaft.",
                 ingredients: [
-                    { amount: 1, unit: "Stk.", name: "High-Protein Wrap" },
-                    { amount: 100, unit: "g", name: "Stremellachs" },
+                    { amount: 1, unit: "Stk.", name: "High-Protein Wrap (ca. 60g)" },
+                    { amount: 100, unit: "g", name: "Stremellachs natur" },
                     { amount: 80, unit: "g", name: "Körniger Frischkäse light" },
-                    { amount: 50, unit: "g", name: "Gurke & Spinat" }
+                    { amount: 50, unit: "g", name: "Salatgurke & Babyspinat" },
+                    { amount: 1, unit: "TL", name: "Honig-Senf-Sauce light & Dill" }
                 ],
-                steps: [
-                    "Wrap anwärmen: Den High-Protein-Tortilla-Wrap für etwa 20 Sekunden in einer trockenen Pfanne ohne Fett von beiden Seiten erwärmen – das bricht die Spannung im Teig, sodass er beim Rollen später nicht einreißt.",
-                    "Die Barriere legen: Den warmen Wrap auf einem Brett ausbreiten und eine Handvoll frischen Babyspinat flächig in die Mitte legen (das verhindert, dass Feuchtigkeit den Teig durchweicht).",
-                    "Frischkäse verstreichen: Den leichten körnigen Frischkäse gleichmäßig auf dem Spinatbett verstreichen und mit etwas frischem Pfeffer bestreuen.",
-                    "Lachs & Gurke ergänzen: Den Stremellachs in grobe Stücke zupfen und zusammen mit den in feine Streifen geschnittenen Gurkenstücken auf dem Frischkäse platzieren.",
-                    "Straff aufrollen: Die untere Teigkante über die Füllung schlagen, die beiden Seiten einklappen und den Wrap von unten nach oben fest und straff aufrollen. Schräg halbieren und in der Box verstauen."
-                ],
-                secretTip: "Verwende immer den Spinat als unterste Schutzschicht direkt auf dem Wrap-Teig. So bleibt der Teig selbst dann trocken und elastisch, wenn du den Wrap am Vorabend für die Spätschicht vorbereitest.",
-                equipment: [{ name: "Lunchbox", note: "Ideal für unterwegs" }]
-            },
-            {
-                id: 10,
-                title: "Cremige 15-Minuten Hähnchen-Schupfnudel-Pfanne (Ohne Sahne)",
-                category: "protein40",
-                categoryLabel: "49g Protein Pfanne",
-                tags: ["alle", "unter500", "protein40"],
-                time: "15 Min.",
-                kcal: 470,
-                protein: 49,
-                carbs: 41,
-                fat: 10,
-                image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80",
-                intro: "Deftiges Soulfood mit goldbraunen Schupfnudeln und saftigem Hähnchen in cremiger Sauce.",
-                ingredients: [
-                    { amount: 180, unit: "g", name: "Hähnchenbrustfilet in Streifen" },
-                    { amount: 150, unit: "g", name: "Frische Schupfnudeln" },
-                    { amount: 120, unit: "g", name: "Champignons" },
-                    { amount: 60, unit: "g", name: "Frischkäse Balance" }
-                ],
-                steps: [
-                    "Fleisch und Teigwaren anbraten: Eine große beschichtete Pfanne erhitzen. Die Hähnchenbruststreifen zusammen mit den frischen Schupfnudeln aus dem Kühlregal hineingeben und bei starker Hitze ca. 5 Minuten rundherum goldbraun anbraten.",
-                    "Pilze dazugeben: Die Champignons vierteln, in die Pfanne zu den Schupfnudeln geben und weitere 3 Minuten unter Rühren mitrösten, bis die Pilze weich werden und Aroma entwickeln.",
-                    "Ablöschen: Die Hitze der Platte etwas reduzieren. Das Ganze mit 80 ml Gemüsebrühe ablöschen, sodass sich die leckeren Röstaromen vom Pfannenboden lösen.",
-                    "Cremige Sauce rühren: Den fettarmen Frischkäse Balance (oder cremigen Skyr) direkt in die heiße Brühe einrühren. Das Ganze bei kleiner Hitze 2 bis 3 Minuten köcheln lassen, bis eine sämige, cremige Rahmsauce entsteht.",
-                    "Abschmecken: Mit Paprikapulver edelsüß, Salz und kräftig aus der Mühle gemahlenem Pfeffer abschmecken, eventuell mit ein paar Frühlingszwiebeln bestreuen und direkt heiß aus der Pfanne genießen."
-                ],
-                secretTip: "Der Griff zu Frischkäse Balance statt herkömmlicher Kochsahne ist der ultimative Makro-Trick: Du sparst bei diesem Gericht über 220 Kalorien ein und verdoppelst gleichzeitig den Proteingehalt der Sauce!",
-                equipment: [{ name: "Schmorpfanne", note: "Für One-Pot Gerichte" }]
-            }
-        ];
-
-        let currentCategory = 'alle';
-        let currentRecipe = recipes[0];
-        let currentPortions = 1;
-
-        window.addEventListener('DOMContentLoaded', () => {
-            renderRecipeGrid();
-            populateCreatorSelect();
-        });
-
-        function renderRecipeGrid(searchQuery = '') {
-            const grid = document.getElementById('recipeGrid');
-            const q = searchQuery.trim().toLowerCase();
-
-            const filtered = recipes.filter(r => {
-                const matchesCat = currentCategory === 'alle' || r.tags.includes(currentCategory);
-                const matchesSearch = !q || r.title.toLowerCase().includes(q) || r.intro.toLowerCase().includes(q) || r.ingredients.some(i => i.name.toLowerCase().includes(q));
-                return matchesCat && matchesSearch;
-            });
-
-            document.getElementById('recipeCountBadge').textContent = `${filtered.length} ${filtered.length === 1 ? 'Rezept' : 'Rezepte'}`;
-
-            if (filtered.length === 0) {
-                grid.innerHTML = `<div class="col-span-full bg-white rounded-3xl p-8 text-center border border-slate-200"><h3 class="font-display font-bold text-lg text-slate-800">Kein Rezept gefunden</h3></div>`;
-                return;
-            }
-
-            grid.innerHTML = filtered.map(r => `
-                <article onclick="openRecipe(${r.id})" class="group bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col">
-                    <div class="relative h-52 overflow-hidden bg-slate-100">
-                        <img src="${r.image}" alt="${r.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
-                        <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">${r.categoryLabel}</span>
-                        <span class="absolute top-3 right-3 bg-brand-orange text-white font-display font-extrabold text-xs px-2.5 py-1 rounded-lg shadow-md">💪 ${r.protein}g PROTEIN</span>
-                        <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs font-semibold">
-                            <span class="bg-black/40 px-2.5 py-1 rounded-md"><i class="fa-regular fa-clock text-brand-greenLight mr-1"></i> ${r.time}</span>
-                            <span class="bg-brand-green px-2.5 py-1 rounded-md font-bold">🔥 ${r.kcal} kcal</span>
-                        </div>
-                    </div>
-                    <div class="p-5 flex-1 flex flex-col justify-between">
-                        <div>
-                            <h3 class="font-display font-bold text-lg text-slate-800 group-hover:text-brand-green transition leading-snug mb-2">${r.title}</h3>
-                            <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed mb-4">${r.intro}</p>
-                        </div>
-                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
-                            <div class="text-[11px] font-semibold text-slate-400">Carbs: <strong class="text-slate-600">${r.carbs}g</strong> • Fett: <strong class="text-slate-600">${r.fat}g</strong></div>
-                            <span class="text-xs font-bold text-brand-orange group-hover:translate-x-1 transition inline-flex items-center gap-1">Zum Rezept <i class="fa-solid fa-arrow-right"></i></span>
-                        </div>
-                    </div>
-                </article>
-            `).join('');
-        }
-
-        function filterCategory(cat) {
-            currentCategory = cat;
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                if (btn.dataset.cat === cat) {
-                    btn.className = "cat-btn active shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition bg-brand-green text-white shadow-sm";
-                } else {
-                    btn.className = "cat-btn shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition bg-slate-100 text-slate-700 hover:bg-slate-200";
-                }
-            });
-            showHome();
-            renderRecipeGrid(document.getElementById('searchInput').value);
-        }
-
-        function handleSearch(val) {
-            const clearBtn = document.getElementById('clearSearchBtn');
-            clearBtn.classList.toggle('hidden', val.length === 0);
-            showHome();
-            renderRecipeGrid(val);
-        }
-
-        function clearSearch() {
-            document.getElementById('searchInput').value = '';
-            document.getElementById('clearSearchBtn').classList.add('hidden');
-            renderRecipeGrid('');
-        }
-
-        function openRecipe(id) {
-            const recipe = recipes.find(r => r.id === id);
-            if (!recipe) return;
-            currentRecipe = recipe;
-            currentPortions = 1;
-
-            document.getElementById('detailImage').src = recipe.image;
-            document.getElementById('detailTopMacroBadge').textContent = `${recipe.protein}g PROTEIN | ${recipe.kcal} KCAL`;
-            document.getElementById('detailCategoryBadge').textContent = recipe.categoryLabel;
-            document.getElementById('detailTitle').textContent = recipe.title;
-            document.getElementById('detailTime').textContent = recipe.time;
-            document.getElementById('detailCalories').textContent = `${recipe.kcal} kcal`;
-            document.getElementById('detailProtein').textContent = `${recipe.protein}g Protein`;
-            document.getElementById('detailIntro').textContent = recipe.intro;
-
-            document.getElementById('macroKcal').textContent = recipe.kcal;
-            document.getElementById('macroProt').textContent = `${recipe.protein}g`;
-            document.getElementById('macroCarbs').textContent = `${recipe.carbs}g`;
-            document.getElementById('macroFat').textContent = `${recipe.fat}g`;
-
-            changePortions(1);
-
-            document.getElementById('detailSteps').innerHTML = recipe.steps.map((step, index) => `
-                <div class="flex items-start gap-3.5 bg-slate-50 p-4 rounded-2xl border border-slate-200/70">
-                    <span class="w-7 h-7 rounded-xl bg-brand-orange text-white font-display font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5 shadow-sm">${index + 1}</span>
-                    <p class="text-slate-700 text-sm leading-relaxed">${step}</p>
-                </div>
-            `).join('');
-
-            document.getElementById('detailSecretTip').textContent = recipe.secretTip;
-            document.getElementById('detailEquipment').innerHTML = recipe.equipment.map(eq => `
-                <div class="bg-white p-3.5 rounded-xl border border-slate-200 flex items-center justify-between">
-                    <div>
-                        <div class="font-bold text-slate-800 text-xs sm:text-sm">${eq.name}</div>
-                        <div class="text-[11px] text-slate-500">${eq.note}</div>
-                    </div>
-                    <i class="fa-solid fa-check text-brand-green text-xs"></i>
-                </div>
-            `).join('');
-
-            switchToPage1(false);
-            document.getElementById('homeView').classList.add('hidden');
-            document.getElementById('detailView').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function changePortions(portions) {
-            currentPortions = portions;
-            [1, 2, 4].forEach(p => {
-                const btn = document.getElementById(`portBtn${p}`);
-                if (p === portions) {
-                    btn.className = "port-btn px-3 py-1 rounded-lg text-xs font-bold bg-brand-green text-white shadow-sm transition";
-                } else {
-                    btn.className = "port-btn px-3 py-1 rounded-lg text-xs font-bold text-slate-600 hover:text-slate-900 transition";
-                }
-            });
-
-            document.getElementById('detailIngredients').innerHTML = currentRecipe.ingredients.map(ing => {
-                const calcAmount = Number.isInteger(ing.amount * portions) ? (ing.amount * portions) : (ing.amount * portions).toFixed(1).replace('.', ',');
-                return `
-                    <li>
-                        <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-slate-100/80 border border-slate-200/60 cursor-pointer transition select-none">
-                            <input type="checkbox" class="w-4 h-4 accent-brand-green rounded cursor-pointer" onchange="this.parentElement.classList.toggle('line-through'); this.parentElement.classList.toggle('opacity-50');">
-                            <span class="text-sm text-slate-800"><strong class="font-bold text-slate-900">${calcAmount} ${ing.unit}</strong> ${ing.name}</span>
-                        </label>
-                    </li>
-                `;
-            }).join('');
-        }
-
-        function switchToPage2() {
-            document.getElementById('recipePage1').classList.add('hidden');
-            document.getElementById('recipePage2').classList.remove('hidden');
-            document.getElementById('pageIndicatorBadge').textContent = "🔥 Schritt 2 von 2: Ausführliche Zubereitung & Tricks";
-            window.scrollTo({ top: 100, behavior: 'smooth' });
-        }
-
-        function switchToPage1(scroll = true) {
-            document.getElementById('recipePage2').classList.add('hidden');
-            document.getElementById('recipePage1').classList.remove('hidden');
-            document.getElementById('pageIndicatorBadge').textContent = "📄 Schritt 1 von 2: Zutaten & Makros";
-            if (scroll) window.scrollTo({ top: 100, behavior: 'smooth' });
-        }
-
-        function showHome() {
-            document.getElementById('detailView').classList.add('hidden');
-            document.getElementById('homeView').classList.remove('hidden');
-        }
-
-        function populateCreatorSelect() {
-            const sel = document.getElementById('creatorRecipeSelect');
-            sel.innerHTML = recipes.map(r => `<option value="${r.id}">${r.title} (${r.protein}g Protein | ${r.kcal} kcal)</option>`).join('');
-            updateCreatorSnippets();
-        }
-
-        function updateCreatorSnippets() {
-            const id = parseInt(document.getElementById('creatorRecipeSelect').value);
-            const r = recipes.find(item => item.id === id) || recipes[0];
-            document.getElementById('fbSnippetText').value = `🔥 ${r.title} – nur ${r.kcal} kcal und satte ${r.protein}g Eiweiß! 😍💪\n\nPerfekt zum Abnehmen, hält stundenlang satt und ist in ${r.time} fertig!\n\n👉 Das komplette Rezept findest du direkt unten im ERSTEN KOMMENTAR! 👇⬇️`;
-        }
-
-        function openCreatorModal() {
-            populateCreatorSelect();
-            document.getElementById('creatorModal').classList.remove('hidden');
-        }
-
-        function closeCreatorModal() {
-            document.getElementById('creatorModal').classList.add('hidden');
-        }
-
-        function addNewRecipe() {
-            const title = document.getElementById('newTitle').value.trim();
-            const cat = document.getElementById('newCat').value;
-            const kcal = parseInt(document.getElementById('newKcal').value) || 390;
-            const protein = parseInt(document.getElementById('newProtein').value) || 42;
-
-            if (!title) {
-                showToast("Bitte gib kurz einen Rezeptnamen ein!");
-                return;
-            }
-
-            const newId = recipes.length + 1;
-            recipes.unshift({
-                id: newId,
-                title: title,
-                category: cat,
-                categoryLabel: "Neu hinzugefügt",
-                tags: ["alle", cat, "unter500", "protein40"],
-                time: "10 Min.",
-                kcal: kcal,
-                protein: protein,
-                carbs: 25,
-                fat: 9,
-                image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80",
-                intro: "Frisch hinzugefügtes High-Protein Rezept für dein Kaloriendefizit – schnell, einfach und voller Eiweiß!",
-                ingredients: [
-                    { amount: 250, unit: "g", name: "Hauptzutat (z.B. Skyr / Magerquark)" },
-                    { amount: 1, unit: "Portion", name: "Gewürze nach Wahl" }
-                ],
-                steps: [
-                    "Vorbereitung der Hauptzutaten und sauberes Vermengen in einer Schüssel.",
-                    "Zubereitung in der Pfanne oder im Airfryer nach gewünschter Garzeit.",
-                    "Anrichten, mit Gewürzen verfeinern und direkt genießen."
-                ],
-                secretTip: "Lässt sich problemlos für den nächsten Arbeitstag im Kühlschrank vorbereiten.",
-                equipment: [{ name: "Küchenwaage", note: "Für genaue Makros" }]
-            });
-
-            renderRecipeGrid();
-            closeCreatorModal();
-            openRecipe(newId);
-            showToast(`🎉 "${title}" wurde live hinzugefügt!`);
-        }
-
-        function openLegalModal() { document.getElementById('legalModal').classList.remove('hidden'); }
-        function closeLegalModal() { document.getElementById('legalModal').classList.add('hidden'); }
-        function openPartnerModal() { document.getElementById('partnerModal').classList.remove('hidden'); }
-        function closePartnerModal() { document.getElementById('partnerModal').classList.add('hidden'); }
-
-        function copyText(elementId) {
-            const textarea = document.getElementById(elementId);
-            textarea.select();
-            document.execCommand('copy');
-            showToast("📋 Text in die Zwischenablage kopiert!");
-        }
-
-        function showToast(msg) {
-            const box = document.getElementById('toastBox');
-            document.getElementById('toastMessage').textContent = msg;
-            box.classList.remove('hidden');
-            clearTimeout(window.toastTimer);
-            window.toastTimer = setTimeout(() => box.classList.add('hidden'), 3500);
-        }
-    </script>
-</body>
-</html>
+                steps
