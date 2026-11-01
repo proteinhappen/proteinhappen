@@ -598,6 +598,35 @@
         </div>
     </div>
 
+    <!-- ==========================================
+         MODAL: KOOPERATIONEN & SPONSORING
+         ========================================== -->
+    <div id="partnerModal" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-xl w-full max-h-[85vh] overflow-y-auto p-6 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                <h3 class="font-display font-bold text-lg text-slate-800">🤝 Kooperationen & Sponsoring</h3>
+                <button onclick="closePartnerModal()" class="text-slate-400 hover:text-slate-700">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div class="text-xs sm:text-sm text-slate-600 space-y-3 leading-relaxed">
+                <p><strong>Dein Produkt oder Brand auf ProteinHappen?</strong><br>
+                ProteinHappen.de ist die Anlaufstelle für einfache, schnelle und proteinreiche Rezepte im Alltag, im Kaloriendefizit und für Meal-Prep (z. B. Schichtarbeit).</p>
+                
+                <p><strong>Möglichkeiten für Partner & Sponsoren:</strong></p>
+                <ul class="list-disc pl-4 space-y-1">
+                    <li><strong>Produktintegrationen:</strong> Sinnvolle Platzierung von passenden Lebensmitteln (z.B. Clear Whey, Geschmackspulver, Alternativen) direkt in den Rezepten.</li>
+                    <li><strong>Equipment & Küchengeräte:</strong> Vorstellung von Helfern wie Airfryern, digitalen Küchenwaagen oder Meal-Prep-Dosen.</li>
+                    <li><strong>Social-Media-Cross-Promotion:</strong> Verknüpfung mit Beiträgen auf unseren Social-Kanälen (Instagram & Facebook).</li>
+                </ul>
+
+                <p class="pt-2"><strong>Interesse an einer Zusammenarbeit?</strong><br>
+                Schreib uns einfach unverbindlich eine E-Mail an:<br>
+                <a href="mailto:info@proteinhappen.de" class="text-brand-green font-bold hover:underline">info@proteinhappen.de</a></p>
+            </div>
+        </div>
+    </div>
+
     <!-- TOAST BENACHRICHTIGUNG -->
     <div id="toastBox" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-xl border border-slate-700 text-xs sm:text-sm font-semibold flex items-center gap-2.5 z-50 hidden">
         <i class="fa-solid fa-circle-check text-brand-green text-base"></i>
@@ -615,6 +644,7 @@
                 <button onclick="openLegalModal()" class="hover:text-brand-green transition">Impressum (§ 5 DDG)</button>
                 <button onclick="openLegalModal()" class="hover:text-brand-green transition">Datenschutz</button>
                 <button onclick="openLegalModal()" class="hover:text-brand-green transition">*Affiliate-Hinweis</button>
+                <button onclick="openPartnerModal()" class="hover:text-brand-green transition font-bold text-brand-orange">🤝 Sponsoring</button>
                 <button onclick="openCreatorModal()" class="text-brand-orange font-bold hover:underline">⚡ Creator-Studio</button>
             </div>
         </div>
@@ -1125,13 +1155,21 @@
             showToast(`🎉 "${title}" wurde live hinzugefügt!`);
         }
 
-        // 12. Rechtliches Modal & Zwischenablage (Iframe-sicher via execCommand)
+        // 12. Rechtliches Modal & Zwischenablage & Partner Modal
         function openLegalModal() {
             document.getElementById('legalModal').classList.remove('hidden');
         }
 
         function closeLegalModal() {
             document.getElementById('legalModal').classList.add('hidden');
+        }
+
+        function openPartnerModal() {
+            document.getElementById('partnerModal').classList.remove('hidden');
+        }
+
+        function closePartnerModal() {
+            document.getElementById('partnerModal').classList.add('hidden');
         }
 
         function copyText(elementId) {
