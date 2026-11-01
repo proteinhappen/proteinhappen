@@ -44,7 +44,6 @@
             background-color: #F8FAFC;
             color: #1E293B;
         }
-        /* Custom Scrollbar for horizontal categories */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -52,7 +51,6 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        /* Subtle pulse animation for the Page 2 CTA Button */
         @keyframes subtlePulse {
             0%, 100% { transform: scale(1); box-shadow: 0 10px 25px -5px rgba(234, 88, 12, 0.4); }
             50% { transform: scale(1.015); box-shadow: 0 15px 30px -5px rgba(234, 88, 12, 0.65); }
@@ -317,7 +315,7 @@
                         <div class="flex items-center justify-between bg-brand-greenLight/60 border border-brand-green/30 rounded-2xl p-3.5 mb-6">
                             <div class="flex items-center gap-2 text-brand-greenDark font-bold text-xs sm:text-sm">
                                 <i class="fa-solid fa-circle-check text-brand-green text-base"></i>
-                                <span>Schritt 2 von 2: Zubereitung & Profi-Tipps</span>
+                                <span>Schritt 2 von 2: Ausführliche Zubereitung & Profi-Tipps</span>
                             </div>
                             <button onclick="switchToPage1()" class="text-xs font-bold text-slate-700 hover:text-slate-900 bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm">
                                 ← Zurück zu den Zutaten
@@ -325,7 +323,7 @@
                         </div>
 
                         <h2 class="font-display text-xl font-extrabold text-slate-800 mb-4 flex items-center gap-2">
-                            <i class="fa-solid fa-fire-burner text-brand-orange"></i> Schritt-für-Schritt Zubereitung
+                            <i class="fa-solid fa-fire-burner text-brand-orange"></i> Ausführliche Schritt-für-Schritt Anleitung
                         </h2>
                         <div id="detailSteps" class="space-y-4 mb-8"></div>
 
@@ -500,12 +498,13 @@
                     { amount: 1, unit: "Spritzer", name: "Zitronensaft, Salz & Pfeffer" }
                 ],
                 steps: [
-                    "Hähnchenbrust in mundgerechte Stücke schneiden und mit 1 EL Skyr sowie der Hälfte der Gewürze vermengen.",
-                    "Ungesüßte Cornflakes in einem Gefrierbeutel kurz zerdrücken und die Hähnchenstücke darin wenden.",
-                    "Ab in den Airfryer: Bei 200 °C für 11–12 Minuten goldbraun und knusprig backen.",
-                    "Den restlichen Skyr mit Knoblauchpulver, Salz, Pfeffer und Zitrone zum Dip verrühren."
+                    "Vorbereitung des Fleisches: Hähnchenbrustfilet unter kaltem Wasser abspülen, mit Küchenpapier trocken tupfen und in gleichmäßige, etwa mundgerechte Würfel schneiden.",
+                    "Die Marinade vorbereiten: In einer Schüssel 1 EL Skyr mit Paprikapulver, Knoblauchgranulat, Salz und Pfeffer verrühren. Die Hähnchenwürfel dazugeben und gründlich vermengen (der Skyr sorgt dafür, dass die Panade komplett ohne zusätzliches Ei perfekt haftet).",
+                    "Die knusprige Panade: Die ungesüßten Cornflakes in einen kleinen Frischebeutel geben und mit den Händen oder einem Nudelholz grob zerbröseln. Die marinierten Hähnchenstücke Portionsweise darin wenden, bis sie rundherum paniert sind.",
+                    "Airfryer-Garvorgang: Den Airfryer auf 200 °C vorheizen. Die Hähnchen-Bites locker in den Korb geben (nicht übereinander stapeln) und für exakt 11 bis 12 Minuten goldbraun und knusprig backen. Nach der Hälfte der Zeit den Korb einmal kurz durchschütteln.",
+                    "Das Finale: Während die Bites backen, den restlichen Skyr mit Salz, Pfeffer, Knoblauchpulver und einem Spritzer Zitronensaft in einer kleinen Schüssel zu einem cremigen Dip verrühren und zusammen mit den heißen Hähnchen-Bites servieren."
                 ],
-                secretTip: "Wenn du das Gericht für die Spätschicht vorbereitest: Gib die Bites vor dem Essen noch einmal für 2 Minuten bei 200 °C in den Airfryer – sie werden wieder wie frisch gemacht!",
+                secretTip: "Wenn du das Gericht für die Früh- oder Spätschicht vorbereitest: Gib die gebackenen Bites vor dem Verzehr auf der Arbeit noch einmal für genau 2 Minuten bei 200 °C in den Airfryer – sie werden wieder exakt so knusprig wie frisch zubereitet!",
                 equipment: [
                     { name: "Heißluftfritteuse (Airfryer)", note: "Backt ohne Vorheizen in 11 Min. knusprig" },
                     { name: "Kalorienfreies Ölspray", note: "Für goldbraune Kruste mit 0 kcal" }
@@ -533,11 +532,13 @@
                     { amount: 75, unit: "g", name: "Mandarinen aus der Dose (abgetropft)" }
                 ],
                 steps: [
-                    "Magerquark, Skyr, Ei, Puddingpulver und Geschmackspulver glatt rühren.",
-                    "Die abgetropften Mandarinen vorsichtig unterheben.",
-                    "In eine kleine Form geben: Im Backofen bei 180 °C (30 Min.) oder Airfryer bei 160 °C (22 Min.) backen."
+                    "Backofen oder Airfryer vorbereiten: Den Ofen auf 180 °C Ober-/Unterhitze vorheizen oder den Airfryer auf 160 °C einstellen. Eine kleine Backform (ca. 16 cm Durchmesser) mit Backpapier auslegen.",
+                    "Die Quarkmasse mixen: Magerquark, Skyr, das Ei, das Vanille-Puddingpulver sowie dein ausgewähltes Geschmackspulver in eine Rührschüssel geben. Mit dem Handrührgerät oder Schneebesen so lange verrühren, bis eine absolut klumpenfreie, cremige Masse entsteht.",
+                    "Mandarinen einarbeiten: Die Mandarinen aus der Dose in ein Sieb geben, den Saft komplett abtropfen lassen und die Fruchtspalten auf einem Küchenpapier trocken tupfen. Etwa drei Viertel der Mandarinen vorsichtig mit einem Teigschaber unter die Quarkmasse heben.",
+                    "Backvorgang: Die Masse gleichmäßig in die vorbereitete Form füllen und die restlichen Mandarinen oben auf dem Kuchen verteilen. Im Ofen für ca. 30 Minuten (oder im Airfryer bei 160 °C für ca. 22 Minuten) backen, bis der Rand leicht gebräunt ist.",
+                    "Auskühlen lassen: Den Kuchen nach dem Backen komplett in der Form auf Raumtemperatur abkühlen lassen und anschließend für mindestens 2 Stunden in den Kühlschrank stellen – erst gut durchgekühlt entfaltet er seine perfekte, festere Käsekuchen-Konsistenz."
                 ],
-                secretTip: "Backe direkt die doppelte Menge! Im Kühlschrank hält sich der Kuchen volle 3 Tage.",
+                secretTip: "Backe direkt die doppelte Menge in einer größeren Form! Im Kühlschrank hält sich der Protein-Käsekuchen problemlos volle 3 Tage, trocknet nicht aus und schmeckt am zweiten Tag durchgezogen fast noch besser.",
                 equipment: [
                     { name: "Kleine Silikon-Backform (16cm)", note: "Kein Einfetten nötig" },
                     { name: "Geschmackspulver Vanille", note: "Spart 150 kcal Zucker" }
@@ -564,11 +565,13 @@
                     { amount: 2, unit: "EL", name: "Passierte Tomaten & Gewürze" }
                 ],
                 steps: [
-                    "Süßkartoffel in kleine Würfel schneiden. Rinderhack in einer Pfanne anbraten.",
-                    "Paprika, Zucchini und Süßkartoffeln dazugeben.",
-                    "Mit passierten Tomaten ablöschen und 3 Minuten köcheln lassen. Mit Hüttenkäse toppen."
+                    "Gemüse und Knolle vorbereiten: Die Süßkartoffel schälen und in sehr kleine Würfel (maximal 1 cm) schneiden – je kleiner die Würfel, desto schneller gart sie in der Pfanne durch. Paprika und Zucchini ebenfalls in feine Würfel schneiden.",
+                    "Das Fleisch anbraten: Eine beschichtete Pfanne ohne zusätzliches Öl erhitzen. Das fettreduzierte 5%-Rinderhack hineingeben und mit einem Kochlöffel krümelig anbraten, bis das Fleisch rundherum Farbe angenommen hat.",
+                    "Gemüse dazugeben: Die Süßkartoffelwürfel, Paprika und Zucchini mit in die Pfanne geben und das Ganze bei mittlerer bis hoher Hitze unter gelegentlichem Rühren für etwa 5 Minuten scharf anbraten.",
+                    "Ablöschen und köcheln lassen: Die passierten Tomaten sowie einen Schuss Wasser dazugießen. Mit Paprikapulver, Salz, Pfeffer und Kräutern würzen. Einen Deckel auf die Pfanne legen und das Gericht bei kleiner Hitze 4 bis 5 Minuten sanft köcheln lassen, bis die Süßkartoffelwürfel weich sind.",
+                    "Anrichten: Die Pfanne vom Herd nehmen. Den körnigen Frischkäse (Hüttenkäse) kalt als cremiges Topping auf der heißen Pfanne verteilen – er schmilzt leicht an und liefert wertvolles Extra-Protein."
                 ],
-                secretTip: "Tausche normales Hack gegen 5%-Rinderhack – das spart über 240 Kalorien pro Pfanne!",
+                secretTip: "Tausche normales gemischtes Hackfleisch (ca. 20% Fett) immer konsequent gegen fettreduziertes 5%-Rinderhack oder Tartar aus. Allein dieser einfache 1-zu-1-Tausch spart dir bei einer einzigen Pfanne über 240 Kalorien ein!",
                 equipment: [
                     { name: "Glas-Meal-Prep-Boxen", note: "Mikrowellenfest für die Arbeit" },
                     { name: "Antihaft-Pfanne", note: "Braten mit minimalem Fett" }
@@ -594,11 +597,13 @@
                     { amount: 40, unit: "g", name: "TK-Beeren" }
                 ],
                 steps: [
-                    "Magerquark mit Sprudelwasser in eine Schüssel geben.",
-                    "Clear Whey darüberstreuen und 2 Minuten auf höchster Stufe aufschlagen.",
-                    "Mit Beeren toppen und sofort löffeln."
+                    "Die Schüssel wählen: Da sich das Volumen der Masse beim Aufschlagen durch das Clear Whey und die Kohlensäure mindestens verdoppelt, unbedingt eine sehr große Rührschüssel verwenden.",
+                    "Die Basis einfüllen: Den gut gekühlten Magerquark direkt aus dem Kühlschrank in die Schüssel geben und das eiskalte Sprudelwasser dazugießen (die Kälte ist wichtig für den Schaum-Effekt).",
+                    "Das Pulver hinzufügen: Das Clear Whey Pulver (Geschmacksrichtung Lemon Iced Tea oder Pfirsich) gleichmäßig über den Quark streuen, damit es beim Mixen nicht staubt.",
+                    "Vollgas aufschlagen: Mit dem Handrührgerät (Rührbesen) auf höchster Stufe für exakt 2 Minuten kräftig aufschlagen. Die Masse wird augenblicklich extrem fluffig, leicht und schaumig wie ein Profi-Mousse.",
+                    "Servieren: Den fertigen Quark-Fluff in eine Schale füllen, mit den tiefgekühlten Beeren toppen und sofort löffeln, solange er wunderbar luftig ist."
                 ],
-                secretTip: "Durch die Kohlensäure verdoppelt sich das Volumen des Quarks zu einem Riesen-Mousse.",
+                secretTip: "Das absolute Geheimnis liegt in der chemischen Reaktion zwischen der Kohlensäure des Sprudelwassers und dem speziellen Clear-Whey-Proteinpulver. Du isst optisch die doppelte Menge im Vergleich zu normalem Quark, bleibst aber absolut unter 200 Kalorien!",
                 equipment: [
                     { name: "Clear Whey Lemon Iced Tea", note: "Macht Quark fruchtig-fluffig" },
                     { name: "Handrührgerät", note: "Für maximalen Schaum" }
@@ -624,11 +629,13 @@
                     { amount: 80, unit: "g", name: "TK-Beeren" }
                 ],
                 steps: [
-                    "Haferflocken, Quark, Eier und Backpulver verrühren.",
-                    "In einer beschichteten Pfanne goldbraun ausbacken.",
-                    "TK-Beeren kurz in der Mikrowelle erwärmen und als Sauce nutzen."
+                    "Teig vorbereiten: Die zarten Haferflocken, den Magerquark, die beiden Eier sowie eine Prise Backpulver und Zimt in einen Standmixer geben. Für ca. 10 bis 15 Sekunden auf hoher Stufe durchmixen, bis ein homogener, dickflüssiger Teig entsteht.",
+                    "Pfanne erhitzen: Eine beschichtete Pfanne auf mittlere Stufe (Stufe 5 bis 6 von 9) erhitzen. Bei einer guten Beschichtung wird absolut kein Öl oder Fett benötigt.",
+                    "Pancakes ausbacken: Jeweils kleine Portionen des Teigs (ca. 2 bis 3 Esslöffel pro Pancake) als kleine Häufchen in die Pfanne geben. Geduldig warten, bis an der Oberfläche kleine Blasen aufsteigen und der Rand matt wird (ca. 2 Minuten).",
+                    "Wenden und fertigbacken: Die Pancakes vorsichtig mit einem Pfannenwender wenden und von der zweiten Seite ebenfalls in etwa 1 bis 2 Minuten goldbraun ausbacken.",
+                    "Fruchtsauce anrichten: Während die Pancakes backen, die tiefgekühlten Beeren in einer kleinen Tasse für 45 Sekunden in der Mikrowelle erhitzen, sodass eine natürliche, zuckerfreie Fruchtsauce entsteht, die du über den Stapel gießt."
                 ],
-                secretTip: "Bei mittlerer Stufe ausbacken, damit sie innen schön fluffig bleiben.",
+                secretTip: "Lass den Teig nach dem Mixen nicht lange stehen, sondern gib ihn direkt in die Pfanne. Da keine herkömmliche Stärke oder viel Mehl enthalten ist, bleiben die Pancakes innen wunderbar zart.",
                 equipment: [{ name: "Standmixer", note: "Macht Haferflocken fein" }]
             },
             {
@@ -652,11 +659,13 @@
                     { amount: 40, unit: "g", name: "Reibekäse light" }
                 ],
                 steps: [
-                    "Skyr, Mehl und Backpulver verkneten, dünn ausrollen.",
-                    "Mit Tomaten, Thunfisch und Käse belegen.",
-                    "Im Ofen bei 200 °C (12 Min.) oder Airfryer (10 Min.) backen."
+                    "Teig anrühren: In einer Schüssel den Skyr natur, das Dinkelmehl (Type 630), einen halben Teelöffel Backpulver und eine Prise Salz mit den Händen zu einem geschmeidigen Teigball verkneten (klebt er zu sehr, einfach einen Teelöffel Mehl nachgeben).",
+                    "Ausrollen: Den Teig direkt auf einem Stück Backpapier mit den Händen oder einem kleinen Nudelholz dünn und rund ausrollen – es ist keine Ruhe- oder Gehzeit nötig.",
+                    "Sauce & Belag: Die passierten Tomaten großzügig auf dem Teigboden verstreichen und mit Oregano sowie Knoblauchpulver würzen. Den Thunfisch aus der Dose gut abtropfen lassen, mit einer Gabel zerzupfen und zusammen mit Zwiebelringen auf der Pizza verteilen.",
+                    "Mit Käse toppen: Den leichten Reibekäse gleichmäßig über den Thunfisch streuen, damit beim Backen eine goldgelbe Käseschicht entsteht.",
+                    "Backvorgang: Im vorgeheizten Backofen bei 200 °C Ober-/Unterhitze für 12 Minuten oder im Airfryer bei 190 °C für ca. 9 bis 10 Minuten backen, bis der Rand knusprig und der Käse geschmolzen ist."
                 ],
-                secretTip: "Den Teigboden im Airfryer 3 Minuten trocken vorbacken für den perfekten Crunch.",
+                secretTip: "Schiebe den ausgerollten Pizzateig ohne Belag für 3 Minuten im Airfryer vor. Wenn du ihn danach erst belegst, wird der Boden absolut steinhart-knusprig wie beim Italiener und weicht durch die Tomatensauce nicht durch!",
                 equipment: [{ name: "Backmatte", note: "Verhindert Festkleben" }]
             },
             {
@@ -679,11 +688,13 @@
                     { amount: 40, unit: "g", name: "Reibekäse light" }
                 ],
                 steps: [
-                    "Quark und Mehl verkneten, kleine Brötchen formen und Mulden eindrücken.",
-                    "Mit Tomatenmark, Putenwürfeln und Käse füllen.",
-                    "Im Airfryer bei 180 °C für 11 Minuten backen."
+                    "Teig vorbereiten: Magerquark, Mehl, einen Teelöffel Backpulver und etwas Salz in einer Schüssel zu einem formbaren Teig verkneten.",
+                    "Portionieren: Den Teig auf einer bemehlten Arbeitsfläche in 4 gleich große Stücke teilen und daraus mit befeuchteten Händen kleine Brötchen formen. Auf dem Airfryer-Backpapier platzieren.",
+                    "Mulden formen: Mit dem Daumen mittig in jedes Brötchen eine tiefe Mulde drücken, sodass ein kleiner Teigrand entsteht.",
+                    "Füllung anrühren: In einer kleinen Tasse Tomatenmark mit ein paar Tropfen Wasser, italienischen Kräutern, den gewürfelten Putenbrust-Aufschnitt und der Hälfte des leichten Reibekäses vermengen.",
+                    "Überbacken: Die Masse löffelweise in die Mulden der Brötchen füllen und den restlichen Käse als Krönung darüberstreuen. Im Airfryer bei 180 °C für 10 bis 11 Minuten goldbraun und knusprig backen."
                 ],
-                secretTip: "Direkt doppelte Menge machen – schmecken auch kalt hervorragend in der Pause.",
+                secretTip: "Bereite direkt die doppelte Menge zu! Die Pizza-Brötchen schmecken kalt am nächsten Tag in der Arbeitspause genauso genial wie frisch aus dem Airfryer.",
                 equipment: [{ name: "Airfryer", note: "Schnell & knusprig" }]
             },
             {
@@ -706,10 +717,13 @@
                     { amount: 25, unit: "g", name: "Proteinpulver Schoko" }
                 ],
                 steps: [
-                    "Banane in einer Schale zerdrücken, restliche Zutaten unterrühren.",
-                    "Im Airfryer bei 175 °C für 12 Minuten backen."
+                    "Banane zerdrücken: Die halbe reife Banane direkt in einer ofenfesten Backform oder einem kleinen Keramikförmchen mit einer Gabel gründlich zu einem Brei zerdrücken.",
+                    "Teigkomponenten zugeben: Die zarten Haferflocken, den Skyr, das Schoko-Proteinpulver, eine Prise Backpulver sowie einen kleinen Schluck Wasser oder Milch hinzufügen.",
+                    "Glatt rühren: Alle Zutaten in der Form mit einem Löffel so lange verrühren, bis eine gleichmäßige, dicke Teigmasse entsteht.",
+                    "Extra-Kern verstecken: Wer mag, drückt jetzt eine entkernte Dattel oder ein Stück zuckerfreie Schokolade tief in die Mitte des Teiges (das schmilzt beim Backen zu einem Schoko-Karamell-Kern).",
+                    "Backvorgang: Das Förmchen in den Airfryer stellen und bei 175 °C für 10 bis 12 Minuten backen. Die Oberfläche sollte leicht aufgehen und fest werden, während das Innere herrlich saftig bleibt."
                 ],
-                secretTip: "Innen leicht feucht lassen wie einen warmen Lava-Cake.",
+                secretTip: "Lass den Kuchen nach dem Backen kurz 2 Minuten ruhen. Wenn der Kern in der Mitte noch minimal feucht ist, schmeckt es exakt wie ein teurer Schoko-Lavakuchen aus dem Restaurant!",
                 equipment: [{ name: "Keramik-Förmchen", note: "Perfekt für den Airfryer" }]
             },
             {
@@ -732,10 +746,13 @@
                     { amount: 50, unit: "g", name: "Gurke & Spinat" }
                 ],
                 steps: [
-                    "Wrap in der Pfanne anwärmen. Mit Spinat und Frischkäse bestreichen.",
-                    "Lachs und Gurkenscheiben darauf verteilen, straff aufrollen."
+                    "Wrap anwärmen: Den High-Protein-Tortilla-Wrap für etwa 20 Sekunden in einer trockenen Pfanne ohne Fett von beiden Seiten erwärmen – das bricht die Spannung im Teig, sodass er beim Rollen später nicht einreißt.",
+                    "Die Barriere legen: Den warmen Wrap auf einem Brett ausbreiten und eine Handvoll frischen Babyspinat flächig in die Mitte legen (das verhindert, dass Feuchtigkeit den Teig durchweicht).",
+                    "Frischkäse verstreichen: Den leichten körnigen Frischkäse gleichmäßig auf dem Spinatbett verstreichen und mit etwas frischem Pfeffer bestreuen.",
+                    "Lachs & Gurke ergänzen: Den Stremellachs in grobe Stücke zupfen und zusammen mit den in feine Streifen geschnittenen Gurkenstücken auf dem Frischkäse platzieren.",
+                    "Straff aufrollen: Die untere Teigkante über die Füllung schlagen, die beiden Seiten einklappen und den Wrap von unten nach oben fest und straff aufrollen. Schräg halbieren und in der Box verstauen."
                 ],
-                secretTip: "Spinat als unterste Schicht nutzen, damit der Wrap nicht durchweicht.",
+                secretTip: "Verwende immer den Spinat als unterste Schutzschicht direkt auf dem Wrap-Teig. So bleibt der Teig selbst dann trocken und elastisch, wenn du den Wrap am Vorabend für die Spätschicht vorbereitest.",
                 equipment: [{ name: "Lunchbox", note: "Ideal für unterwegs" }]
             },
             {
@@ -758,10 +775,13 @@
                     { amount: 60, unit: "g", name: "Frischkäse Balance" }
                 ],
                 steps: [
-                    "Hähnchen und Schupfnudeln scharf anbraten. Champignons dazugeben.",
-                    "Mit Brühe ablöschen, Frischkäse einrühren und cremig einkochen."
+                    "Fleisch und Teigwaren anbraten: Eine große beschichtete Pfanne erhitzen. Die Hähnchenbruststreifen zusammen mit den frischen Schupfnudeln aus dem Kühlregal hineingeben und bei starker Hitze ca. 5 Minuten rundherum goldbraun anbraten.",
+                    "Pilze dazugeben: Die Champignons vierteln, in die Pfanne zu den Schupfnudeln geben und weitere 3 Minuten unter Rühren mitrösten, bis die Pilze weich werden und Aroma entwickeln.",
+                    "Ablöschen: Die Hitze der Platte etwas reduzieren. Das Ganze mit 80 ml Gemüsebrühe ablöschen, sodass sich die leckeren Röstaromen vom Pfannenboden lösen.",
+                    "Cremige Sauce rühren: Den fettarmen Frischkäse Balance (oder cremigen Skyr) direkt in die heiße Brühe einrühren. Das Ganze bei kleiner Hitze 2 bis 3 Minuten köcheln lassen, bis eine sämige, cremige Rahmsauce entsteht.",
+                    "Abschmecken: Mit Paprikapulver edelsüß, Salz und kräftig aus der Mühle gemahlenem Pfeffer abschmecken, eventuell mit ein paar Frühlingszwiebeln bestreuen und direkt heiß aus der Pfanne genießen."
                 ],
-                secretTip: "Frischkäse Balance spart über 220 Kalorien im Vergleich zu klassischer Sahne.",
+                secretTip: "Der Griff zu Frischkäse Balance statt herkömmlicher Kochsahne ist der ultimative Makro-Trick: Du sparst bei diesem Gericht über 220 Kalorien ein und verdoppelst gleichzeitig den Proteingehalt der Sauce!",
                 equipment: [{ name: "Schmorpfanne", note: "Für One-Pot Gerichte" }]
             }
         ];
@@ -917,7 +937,7 @@
         function switchToPage2() {
             document.getElementById('recipePage1').classList.add('hidden');
             document.getElementById('recipePage2').classList.remove('hidden');
-            document.getElementById('pageIndicatorBadge').textContent = "🔥 Schritt 2 von 2: Zubereitung & Abnehm-Trick";
+            document.getElementById('pageIndicatorBadge').textContent = "🔥 Schritt 2 von 2: Ausführliche Zubereitung & Tricks";
             window.scrollTo({ top: 100, behavior: 'smooth' });
         }
 
@@ -983,7 +1003,11 @@
                     { amount: 250, unit: "g", name: "Hauptzutat (z.B. Skyr / Magerquark)" },
                     { amount: 1, unit: "Portion", name: "Gewürze nach Wahl" }
                 ],
-                steps: ["Zutaten bereitstellen und nach Rezept zubereiten."],
+                steps: [
+                    "Vorbereitung der Hauptzutaten und sauberes Vermengen in einer Schüssel.",
+                    "Zubereitung in der Pfanne oder im Airfryer nach gewünschter Garzeit.",
+                    "Anrichten, mit Gewürzen verfeinern und direkt genießen."
+                ],
                 secretTip: "Lässt sich problemlos für den nächsten Arbeitstag im Kühlschrank vorbereiten.",
                 equipment: [{ name: "Küchenwaage", note: "Für genaue Makros" }]
             });
