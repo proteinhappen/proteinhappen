@@ -160,7 +160,7 @@
                     ⚡ Für Schichtarbeit
                 </button>
                 <button onclick="showSection('planner')" class="shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
-                    📅 Wochenplaner
+                    📅 Wochenplaner & Einkauf
                 </button>
                 <button onclick="showSection('calculator')" class="shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
                     ⚖️ Kalorienrechner
@@ -223,7 +223,7 @@
                         <div>
                             <span class="text-[11px] font-bold uppercase text-brand-green">1. Rezeptsammlung</span>
                             <h2 class="font-display text-lg font-extrabold text-slate-900 mt-0.5">30 High-Protein Rezepte</h2>
-                            <p class="text-xs text-slate-500 mt-1">Inkl. Einzelzutaten-Berechnung</p>
+                            <p class="text-xs text-slate-500 mt-1">Mit Einzelzutaten-Berechnung & Bewertung</p>
                         </div>
                         <span class="w-11 h-11 rounded-2xl bg-emerald-50 text-brand-green flex items-center justify-center text-lg shrink-0 group-hover:bg-brand-green group-hover:text-white transition">
                             <i class="fa-solid fa-utensils"></i>
@@ -232,9 +232,9 @@
 
                     <div onclick="showSection('planner')" class="group bg-white hover:border-brand-orange rounded-3xl p-5 sm:p-6 shadow-sm hover:shadow-md border-2 border-slate-200/80 transition cursor-pointer flex items-center justify-between gap-4">
                         <div>
-                            <span class="text-[11px] font-bold uppercase text-brand-orange">2. Wochenplanung</span>
+                            <span class="text-[11px] font-bold uppercase text-brand-orange">2. Persönlicher Wochenplan</span>
                             <h2 class="font-display text-lg font-extrabold text-slate-900 mt-0.5">Wochenplaner & Einkauf</h2>
-                            <p class="text-xs text-slate-500 mt-1">Montag bis Sonntag + Druckliste</p>
+                            <p class="text-xs text-slate-500 mt-1">Mit Tagesziel-Abgleich & Abhak-Liste</p>
                         </div>
                         <span class="w-11 h-11 rounded-2xl bg-orange-50 text-brand-orange flex items-center justify-center text-lg shrink-0 group-hover:bg-brand-orange group-hover:text-white transition">
                             <i class="fa-solid fa-calendar-check"></i>
@@ -245,7 +245,7 @@
                         <div>
                             <span class="text-[11px] font-bold uppercase text-blue-600">3. Bedarfsrechner</span>
                             <h2 class="font-display text-lg font-extrabold text-slate-900 mt-0.5">Kalorien- & Proteinrechner</h2>
-                            <p class="text-xs text-slate-500 mt-1">Exakt verknüpfte Makro-Richtwerte</p>
+                            <p class="text-xs text-slate-500 mt-1">Inkl. passender Rezeptvorschläge</p>
                         </div>
                         <span class="w-11 h-11 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg shrink-0 group-hover:bg-blue-600 group-hover:text-white transition">
                             <i class="fa-solid fa-calculator"></i>
@@ -467,14 +467,14 @@
         </div>
 
         <!-- ==========================================
-             SEKTION 2: EINZELNE REZEPTSEITE
+             SEKTION 2: EINZELNE REZEPTSEITE (INKL. BEWERTUNG & FEEDBACK)
              ========================================== -->
         <div id="section-detail" class="hidden max-w-4xl mx-auto">
             <div id="recipeDetailContainer"></div>
         </div>
 
         <!-- ==========================================
-             SEKTION 3: AUSFÜHRLICHE DOKUMENTATION DER NÄHRWERTBERECHNUNG
+             SEKTION 3: AUSFÜHRLICHE DOKUMENTATION DER NÄHRWERTBERECHNUNG (KORRIGIERT)
              ========================================== -->
         <div id="section-methodology" class="hidden max-w-4xl mx-auto space-y-6">
             <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
@@ -508,32 +508,32 @@
 
                     <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80">
                         <h2 class="font-display font-extrabold text-lg text-slate-900 mb-2">
-                            2. Rohgewicht, Garverlust und Nährstoffveränderungen beim Kochen
+                            2. Rohgewicht, Garverlust und mögliche Nährstoffverluste beim Garen
                         </h2>
                         <p class="mb-2">
                             <strong>Alle Mengenangaben und Nährwerte auf ProteinHappen.de beziehen sich auf das Rohgewicht vor dem Garen bzw. auf das Abtropfgewicht bei Konserven.</strong>
                         </p>
                         <p class="text-xs sm:text-sm text-slate-600 mb-2">
-                            Beim Braten, Backen oder Kochen verändert sich das Gewicht von Lebensmitteln vor allem durch Wasserverdampfung (z. B. verliert Hähnchenbrust beim Braten etwa 20–25 % Gewicht) oder durch Wasseraufnahme (z. B. bei Reis, Linsen und Nudeln).
+                            Beim Braten, Backen oder Kochen verändert sich das Gewicht von Lebensmitteln in erster Linie durch Wasserverdampfung (z. B. bei Fleisch und Fisch) oder durch Wasseraufnahme (z. B. bei Reis, Linsen und Nudeln).
                         </p>
                         <p class="text-xs sm:text-sm text-slate-600">
-                            <strong>Hinweis zu Garverlusten:</strong> Zwar bleibt der Großteil der Makronährstoffe im Gargut erhalten, in der Praxis können jedoch – je nach Zubereitungsart, Hitze und Schnittgröße – geringe Mengen an ausgeschmolzenem Fett, Eiweiß oder wasserlöslichen Nährstoffen in den Fleischsaft, das Kochwasser oder den Bratensatz übergehen. Da diese Garverluste in jeder heimischen Küche leicht unterschiedlich ausfallen, ist das Abwiegen im Rohzustand die verlässlichste und am besten vergleichbare Berechnungsgrundlage.
+                            <strong>Wichtiger Hinweis zu Garverlusten:</strong> Ein reiner Wasserverlust verändert die Nährstoffmenge zwar nicht automatisch, jedoch können beim Garprozess über austretenden Fleischsaft, ausgeschmolzenes Fett oder das Kochwasser geringe Mengen an Kalorien, Eiweiß, Fett sowie wasserlöslichen Vitaminen und Mineralstoffen verloren gehen (sofern Bratensatz oder Garflüssigkeit nicht mitverzehrt werden). Da diese Garverluste je nach Pfanne, Temperatur und Schnittgröße individuell schwanken, bildet das Abwiegen im Rohzustand die zuverlässigste und am besten reproduzierbare Berechnungsgrundlage.
                         </p>
                     </div>
 
                     <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80">
                         <h2 class="font-display font-extrabold text-lg text-slate-900 mb-2">
-                            3. Berechnungsfaktoren (4/4/9 vs. 4,1/4,1/9,3) und Rundungen
+                            3. Berechnungsfaktoren (4/4/9) und Rundungen
                         </h2>
                         <p class="mb-2">
                             In der Einzelzutaten-Tabelle unter jedem Rezept werden Eiweiß, Kohlenhydrate und Fett auf <strong>0,1 g genau</strong> ausgewiesen. Die Gesamtsumme des Rezepts auf den Rezeptkarten wird direkt aus der Summe der Einzelzutaten gebildet und kaufmännisch auf ganze Gramm bzw. ganze Kilokalorien (kcal) gerundet.
                         </p>
                         <p class="text-xs sm:text-sm text-slate-600 mb-2">
-                            <strong>Warum weicht die schnelle Faustformel (4/4/9) bei Lebensmitteln manchmal leicht von den Datenbank-Kalorien ab?</strong><br>
-                            Lebensmitteldatenbanken (wie der BLS) und Herstellerangaben auf Verpackungen berücksichtigen neben den genaueren physikalischen Brennwertfaktoren ($4,1\text{ kcal/g}$ für Protein und Kohlenhydrate, $9,3\text{ kcal/g}$ für Fett) auch den Energiegehalt von Ballaststoffen ($2,0\text{ kcal/g}$) sowie organischen Säuren.
+                            <strong>Warum weichen Datenbank-Kalorien einzelner Lebensmittel manchmal leicht von der 4/4/9-Faustformel ab?</strong><br>
+                            Offizielle Lebensmitteldatenbanken (wie der BLS) und Herstelleretiketten berücksichtigen neben den physikalischen Atwater-Faktoren ($4,1\text{ kcal/g}$ für Protein und Kohlenhydrate, $9,3\text{ kcal/g}$ für Fett) auch Ballaststoffe ($2,0\text{ kcal/g}$) sowie organische Säuren.
                         </p>
                         <p class="text-xs sm:text-sm text-slate-600">
-                            Im <strong>Kalorienrechner</strong> hingegen berechnen wir deine täglichen Zielkalorien bewusst exakt mit den im Ernährungstracking üblichen Standardfaktoren ($4\text{ kcal/g}$ Protein, $4\text{ kcal/g}$ Kohlenhydrate, $9\text{ kcal/g}$ Fett), damit deine Gramm-Vorgaben und die angezeigten Gesamtkalorien ohne jede Differenz zu 100 % übereinstimmen.
+                            Im <strong>Kalorienrechner</strong> sind die Makronährstoffe (Protein, Kohlenhydrate und Fett) so auf dein Kalorienziel abgestimmt, dass die Umrechnung mit der üblichen <strong>4/4/9-Formel</strong> ($4\text{ kcal/g}$ Protein, $4\text{ kcal/g}$ Kohlenhydrate, $9\text{ kcal/g}$ Fett) genau zum angezeigten Kalorienziel passt. Entsteht durch das Runden auf ganze Gramm eine minimale Restdifferenz von 1 bis 2 kcal, wird diese im Rechner ausdrücklich ausgewiesen.
                         </p>
                     </div>
 
@@ -542,7 +542,7 @@
                             4. Wie werden abweichende Produkte berücksichtigt?
                         </h2>
                         <p class="text-xs sm:text-sm text-slate-600">
-                            Da Naturprodukte (z. B. Größe eines Hühnereis) und Handelsmarken natürlichen Schwankungen unterliegen, weisen wir in der Rezept-Aufschlüsselung jede Zutat einzeln aus. So kannst du beim Nachkochen jederzeit nachvollziehen, mit welchen exakten Werten eine Zutat angesetzt wurde, und sie bei Bedarf in deiner Tracking-App mit deiner gekauften Marke abgleichen.
+                            Da Naturprodukte (z. B. Größe eines Hühnereis) und Handelsmarken natürlichen Schwankungen unterliegen, weisen wir in der Rezept-Aufschlüsselung jede Zutat einzeln aus. So kannst du beim Nachkochen jederzeit nachvollziehen, mit welchen Werten eine Zutat angesetzt wurde, und sie bei Bedarf in deiner Tracking-App mit deiner gekauften Marke abgleichen.
                         </p>
                     </div>
                 </div>
@@ -550,18 +550,18 @@
         </div>
 
         <!-- ==========================================
-             SEKTION 4: WOCHENPLANER & EINKAUFSLISTE
+             SEKTION 4: PERSÖNLICHER WOCHENPLANER & ABHAKBARE EINKAUFSLISTE
              ========================================== -->
         <div id="section-planner" class="hidden space-y-8">
             <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 print-box">
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">📅 Wochenplanung für Alltag & Schichtdienst</span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">📅 Persönliche Wochenplanung mit Ziel-Abgleich</span>
                         <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
-                            Interaktiver Wochenplaner & Einkaufsliste
+                            Dein Wochenplaner & Smartphone-Einkaufsliste
                         </h1>
                         <p class="text-sm text-slate-500 mt-1">
-                            Wähle aus allen 30 Rezepten für Montag bis Sonntag – gleiche Zutaten werden auf der Einkaufsliste automatisch zusammengefasst.
+                            Plane deine Woche passend zu deinem täglichen Kalorien- und Proteinziel und hake erledigte Einkäufe direkt auf dem Smartphone ab.
                         </p>
                     </div>
                     <div class="flex flex-wrap items-center gap-2 no-print">
@@ -572,12 +572,38 @@
                             Plan leeren
                         </button>
                         <button onclick="window.print()" class="bg-brand-orange hover:bg-brand-orangeDark text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm transition">
-                            <i class="fa-solid fa-print mr-1"></i> Plan & Einkaufsliste drucken
+                            <i class="fa-solid fa-print mr-1"></i> Drucken
                         </button>
                     </div>
                 </div>
 
-                <div class="bg-slate-50 rounded-2xl p-4 my-6 border border-slate-200/80 no-print">
+                <!-- NEU 1: Persönliches Tagesziel im Wochenplaner festlegen -->
+                <div class="bg-emerald-50/70 rounded-2xl p-4 my-5 border border-emerald-200 flex flex-col lg:flex-row lg:items-center justify-between gap-4 no-print">
+                    <div>
+                        <div class="text-xs font-extrabold uppercase tracking-wider text-brand-greenDark flex items-center gap-1.5">
+                            <i class="fa-solid fa-bullseye"></i> Dein persönliches Tagesziel für den Wochenplan
+                        </div>
+                        <p class="text-xs text-slate-600 mt-0.5">Jeder Wochentag zeigt dir automatisch, wie viel Prozent deines Kalorien- und Proteinziels durch die eingeplanten Rezepte abgedeckt sind.</p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2.5">
+                        <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-emerald-200">
+                            <label class="text-xs font-bold text-slate-600">Kalorienziel:</label>
+                            <input id="plannerTargetKcal" type="number" value="2110" min="1000" max="5000" onchange="updatePlannerTargets()" class="w-20 text-sm font-extrabold text-slate-900 focus:outline-none text-right">
+                            <span class="text-xs text-slate-500">kcal</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-xl border border-emerald-200">
+                            <label class="text-xs font-bold text-slate-600">Proteinziel:</label>
+                            <input id="plannerTargetProt" type="number" value="166" min="50" max="350" onchange="updatePlannerTargets()" class="w-16 text-sm font-extrabold text-brand-green focus:outline-none text-right">
+                            <span class="text-xs text-slate-500">g</span>
+                        </div>
+                        <button onclick="adoptTargetsFromCalculator()" class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-3.5 py-2 rounded-xl transition">
+                            Aus Rechner übernehmen
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Rezept einem Wochentag zuordnen -->
+                <div class="bg-slate-50 rounded-2xl p-4 mb-6 border border-slate-200/80 no-print">
                     <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">➕ Rezept einem Wochentag zuordnen:</div>
                     <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
                         <select id="plannerDaySelect" class="bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-bold text-slate-800">
@@ -606,19 +632,26 @@
 
                 <div id="weeklyGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-3 mb-8"></div>
 
+                <!-- NEU 3: Smartphone-optimierte Einkaufsliste zum Abhaken (persistent) -->
                 <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 print-box">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-5 border-b border-slate-700">
                         <div>
-                            <h2 class="font-display text-xl sm:text-2xl font-extrabold flex items-center gap-2">
-                                <i class="fa-solid fa-cart-shopping text-brand-greenLight"></i> Automatische Einkaufsliste
-                            </h2>
-                            <p class="text-xs text-slate-400 mt-0.5">Identische Zutaten verschiedener Rezepte werden automatisch zu einer Gesamtmenge addiert.</p>
+                            <div class="flex items-center gap-2.5">
+                                <h2 class="font-display text-xl sm:text-2xl font-extrabold flex items-center gap-2">
+                                    <i class="fa-solid fa-cart-shopping text-brand-greenLight"></i> Einkaufsliste zum Abhaken
+                                </h2>
+                                <span id="shoppingProgressBadge" class="bg-brand-green/20 text-brand-greenLight border border-brand-green/40 text-xs font-bold px-2.5 py-0.5 rounded-full">0 / 0 erledigt</span>
+                            </div>
+                            <p class="text-xs text-slate-400 mt-1">Tippe im Supermarkt auf eine Zutat, um sie abzuhaken – dein Haken bleibt auf dem Smartphone gespeichert.</p>
                         </div>
-                        <div class="flex gap-2 no-print">
-                            <button onclick="copyShoppingText()" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl border border-slate-600 transition">
+                        <div class="flex flex-wrap gap-2 no-print">
+                            <button onclick="resetCheckedShoppingItems()" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold px-3.5 py-2 rounded-xl border border-slate-600 transition">
+                                Haken zurücksetzen
+                            </button>
+                            <button onclick="copyShoppingText()" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3.5 py-2 rounded-xl border border-slate-600 transition">
                                 <i class="fa-regular fa-copy mr-1"></i> Kopieren
                             </button>
-                            <button onclick="window.print()" class="bg-white text-slate-900 hover:bg-slate-100 text-xs font-extrabold px-4 py-2.5 rounded-xl transition">
+                            <button onclick="window.print()" class="bg-white text-slate-900 hover:bg-slate-100 text-xs font-extrabold px-4 py-2 rounded-xl transition">
                                 <i class="fa-solid fa-print text-brand-orange mr-1"></i> Drucken
                             </button>
                         </div>
@@ -629,16 +662,16 @@
         </div>
 
         <!-- ==========================================
-             SEKTION 5: KALORIEN- & PROTEINRECHNER
+             SEKTION 5: KALORIEN- & PROTEINRECHNER (KORRIGIERT + REZEPTVORSCHLÄGE)
              ========================================== -->
-        <div id="section-calculator" class="hidden max-w-4xl mx-auto space-y-6">
+        <div id="section-calculator" class="hidden max-w-4xl mx-auto space-y-8">
             <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
-                <span class="text-xs font-bold uppercase tracking-widest text-brand-green">⚖️ Exakt verknüpfte Makro- & Kalorienberechnung</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-green">⚖️ Nachvollziehbare Orientierungswerte</span>
                 <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 mb-2">
                     Protein- und Kalorienrechner
                 </h1>
                 <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                    Berechne deinen täglichen Kalorien- und Eiweißbedarf nach der <strong>Mifflin-St Jeor Formel</strong>. Damit es keine Rundungsabweichungen zwischen Kalorienziel und Makros gibt, werden die Tageskalorien exakt aus der Summe der Makronährstoffe ($4\text{ kcal/g}$ Protein, $4\text{ kcal/g}$ Kohlenhydrate, $9\text{ kcal/g}$ Fett) ausgewiesen.
+                    Dieser Rechner ermittelt zunächst deinen <strong>Grundumsatz nach der Mifflin-St.-Jeor-Formel</strong> und schätzt anschließend deinen <strong>Gesamtbedarf über einen Aktivitätsfaktor (PAL-Wert)</strong>. Die Makronährstoffe werden so verteilt, dass ihre Summe mit der üblichen <strong>4/4/9-Formel</strong> ($4\text{ kcal/g}$ Protein, $4\text{ kcal/g}$ Kohlenhydrate, $9\text{ kcal/g}$ Fett) genau zu deinem Kalorienziel passt.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -669,36 +702,37 @@
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Alltagsbewegung & Beruf</label>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Aktivitätsfaktor (PAL-Wert in Beruf & Alltag)</label>
                             <select id="calcActivity" onchange="calculateMacros()" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
-                                <option value="1.2">Wenig aktiv (sitzend, kaum Sport)</option>
-                                <option value="1.4">Leicht aktiv (Büro + 1–2x Sport/Woche)</option>
-                                <option value="1.6" selected>Mäßig aktiv (Schichtarbeit / Logistik / 3–4x Training)</option>
-                                <option value="1.8">Sehr aktiv (schwere körperliche Arbeit + Training)</option>
+                                <option value="1.2">1,2 – Wenig aktiv (überwiegend sitzend, kaum Sport)</option>
+                                <option value="1.35">1,35 – Leicht aktiv (Büroalltag + 1–2x Sport/Woche)</option>
+                                <option value="1.5" selected>1,5 – Mäßig aktiv (Gehen/Stehen im Beruf, z. B. Schicht/Lager)</option>
+                                <option value="1.75">1,75 – Sehr aktiv (körperliche Arbeit + regelmäßiges Krafttraining)</option>
                             </select>
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 mb-1">Dein Ziel</label>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Dein persönliches Ziel</label>
                             <select id="calcGoal" onchange="calculateMacros()" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
-                                <option value="lose" selected>🔥 Abnehmen (-450 kcal moderates Defizit)</option>
+                                <option value="lose" selected>🔥 Abnehmen (ca. -450 kcal moderates Defizit)</option>
                                 <option value="maintain">⚖️ Gewicht halten / Maingaining</option>
                                 <option value="gain">💪 Muskelaufbau (+250 kcal Überschuss)</option>
                             </select>
                         </div>
 
                         <button onclick="calculateMacros()" class="w-full bg-brand-green hover:bg-brand-greenDark text-white font-display font-extrabold py-3.5 rounded-xl text-sm shadow-md transition">
-                            Werte jetzt aktualisieren
+                            Werte jetzt berechnen
                         </button>
                     </div>
 
+                    <!-- Ergebnis-Anzeige (Startwerte im HTML: 2.110 kcal = 166g P * 4 + 213g KH * 4 + 66g F * 9) -->
                     <div class="bg-slate-900 text-white rounded-2xl p-6 flex flex-col justify-between">
                         <div>
                             <span class="text-xs font-bold uppercase tracking-wider text-brand-orange">📊 Deine täglichen Richtwerte</span>
                             <div class="mt-4 bg-slate-800 rounded-2xl p-4 border border-slate-700 text-center">
-                                <div class="text-xs text-slate-400">Empfohlene Tageskalorien (exakte Makro-Summe)</div>
-                                <div id="resTargetKcal" class="font-display text-4xl font-extrabold text-white my-1">2.278 kcal</div>
-                                <div id="resBmrInfo" class="text-[11px] text-slate-400">Grundumsatz: 1.704 kcal • Erhaltungsbedarf: 2.726 kcal</div>
+                                <div class="text-xs text-slate-400">Empfohlene Tageskalorien</div>
+                                <div id="resTargetKcal" class="font-display text-4xl font-extrabold text-white my-1">2.110 kcal</div>
+                                <div id="resBmrInfo" class="text-[11px] text-slate-400">Grundumsatz (Mifflin-St. Jeor): 1.704 kcal • Gesamtbedarf: 2.556 kcal</div>
                             </div>
 
                             <div class="grid grid-cols-3 gap-2.5 my-4 text-center">
@@ -707,8 +741,8 @@
                                     <div id="resProteinKcal" class="text-[11px] text-brand-greenLight font-bold">Protein (664 kcal)</div>
                                 </div>
                                 <div class="bg-slate-800 border border-slate-700 rounded-xl p-3">
-                                    <div id="resCarbs" class="font-display text-xl font-extrabold text-amber-300">255 g</div>
-                                    <div id="resCarbsKcal" class="text-[11px] text-slate-400">KH (1.020 kcal)</div>
+                                    <div id="resCarbs" class="font-display text-xl font-extrabold text-amber-300">213 g</div>
+                                    <div id="resCarbsKcal" class="text-[11px] text-slate-400">KH (852 kcal)</div>
                                 </div>
                                 <div class="bg-slate-800 border border-slate-700 rounded-xl p-3">
                                     <div id="resFat" class="font-display text-xl font-extrabold text-rose-300">66 g</div>
@@ -717,19 +751,46 @@
                             </div>
 
                             <div id="resMacroFormula" class="bg-slate-800/80 rounded-xl p-3 text-[11px] text-slate-300 border border-slate-700 font-mono text-center mb-3">
-                                166g × 4 (664) + 255g × 4 (1.020) + 66g × 9 (594) = 2.278 kcal
+                                Kalorien aus Makros (4/4/9): 664 + 852 + 594 = 2.110 kcal (Differenz: 0 kcal)
                             </div>
-
-                            <p class="text-[11px] text-slate-400 leading-relaxed">
-                                <strong>Hinweis zur Umrechnung:</strong> Dieser Rechner nutzt die standardisierten Tracking-Faktoren ($4 / 4 / 9\text{ kcal/g}$). Bei der Abrechnung über physikalische Brennwerte ($4,1 / 4,1 / 9,3\text{ kcal/g}$) und Ballaststoffe ($2\text{ kcal/g}$) auf Lebensmittel-Etiketten können in der Praxis geringfügige Abweichungen von ca. 2–3 % auftreten.
-                            </p>
                         </div>
 
-                        <button onclick="showSection('home'); scrollToElement('alleRezepteSection');" class="mt-4 w-full bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-xl text-xs sm:text-sm transition">
-                            🥗 Passende Rezepte auswählen →
+                        <button onclick="adoptTargetsAndOpenPlanner()" class="mt-2 w-full bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-xl text-xs sm:text-sm transition">
+                            📅 Dieses Tagesziel in meinen Wochenplaner übernehmen →
                         </button>
                     </div>
                 </div>
+
+                <!-- KORREKTUR C: Transparente Erklärung zu Mifflin-St. Jeor & Schichtarbeit -->
+                <div class="mt-8 pt-6 border-t border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/70">
+                        <strong class="text-slate-900 block mb-1">1. Was berechnet die Mifflin-St.-Jeor-Formel?</strong>
+                        Die Mifflin-St.-Jeor-Formel berechnet ausschließlich deinen <em>Grundumsatz</em> im Ruhezustand ($10 \times \text{Gewicht} + 6{,}25 \times \text{Größe} - 5 \times \text{Alter} + 5$ bei Männern bzw. $- 161$ bei Frauen). Dein gesamter Tagesbedarf entsteht erst im zweiten Schritt durch die Multiplikation mit dem gewählten <em>Aktivitätsfaktor (PAL)</em>.
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/70">
+                        <strong class="text-slate-900 block mb-1">2. Wie fließt Schichtarbeit in die Empfehlung ein?</strong>
+                        Schichtarbeit selbst ist kein eigener Bestandteil der Mifflin-St.-Jeor-Formel. Wir berücksichtigen sie über zwei Faktoren: erstens über die körperliche Bewegung deiner Tätigkeit beim Aktivitätsfaktor (z. B. Stehen und Gehen in Lager, Produktion oder Pflege) und zweitens über einen höheren Proteinrichtwert ($1{,}8\text{–}2{,}0\text{ g/kg}$), der bei wechselnden Schichtzeiten Heißhunger vorbeugt.
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEU 2: REZEPTVORSCHLÄGE PASSEND ZUM BERECHNETEN KALORIENZIEL -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-5">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">🥗 Automatische Tages-Kombination</span>
+                        <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 mt-0.5">
+                            Rezeptvorschläge passend zu deinem Kalorienziel
+                        </h2>
+                        <p id="suggestedMealsSubtext" class="text-xs sm:text-sm text-slate-500 mt-0.5">
+                            4 Beispiel-Mahlzeiten (Frühstück, Mittag, Abendessen & Snack), die zusammen optimal zu deinem berechneten Bedarf passen:
+                        </p>
+                    </div>
+                    <button onclick="adoptSuggestedDayToMonday()" class="self-start sm:self-auto bg-brand-green hover:bg-brand-greenDark text-white text-xs font-bold px-4 py-2.5 rounded-xl transition shrink-0">
+                        <i class="fa-solid fa-calendar-plus mr-1"></i> Alle 4 für Montag einplanen
+                    </button>
+                </div>
+                <div id="calculatorSuggestionsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
             </div>
         </div>
 
@@ -825,7 +886,7 @@
     </footer>
 
     <!-- ==========================================
-         JAVASCRIPT: 30 GEPRÜFTE REZEPTE MIT PASSENDEN BILDERN
+         JAVASCRIPT: 30 GEPRÜFTE REZEPTE & LOGIK
          ========================================== -->
     <script>
         const recipes = [
@@ -1723,8 +1784,14 @@
             r.fat = Math.round(r.ingredients.reduce((s, i) => s + i.f, 0));
         });
 
+        // STATE
         let selectedCategory = 'all';
         let favoriteIds = [];
+        let checkedShoppingItems = {};
+        let recipeRatings = {}; // { recipeId: starValue }
+        let userDailyTarget = { kcal: 2110, protein: 166 };
+        let suggestedDayRecipeIds = [6, 2, 11, 5];
+
         const weekDays = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
         let weeklyPlan = { Montag: [], Dienstag: [], Mittwoch: [], Donnerstag: [], Freitag: [], Samstag: [], Sonntag: [] };
         let currentRecipeId = 1;
@@ -1734,8 +1801,8 @@
             loadLocalData();
             populatePlannerDropdown();
             renderRecipes();
-            renderWeeklyPlan();
             calculateMacros();
+            renderWeeklyPlan();
             handleInitialUrlRouting();
         });
 
@@ -1763,16 +1830,19 @@
                 const permanentPlan = localStorage.getItem('proteinhappen_weekly_plan');
                 if (permanentPlan) {
                     weeklyPlan = JSON.parse(permanentPlan);
-                } else {
-                    const legacyPlanKeys = ['ph_plan_v5', 'ph_plan_v4', 'ph_plan_v3'];
-                    for (const k of legacyPlanKeys) {
-                        const oldPlan = localStorage.getItem(k);
-                        if (oldPlan) {
-                            weeklyPlan = JSON.parse(oldPlan);
-                            localStorage.setItem('proteinhappen_weekly_plan', JSON.stringify(weeklyPlan));
-                            break;
-                        }
-                    }
+                }
+
+                const savedChecked = localStorage.getItem('proteinhappen_checked_items');
+                if (savedChecked) checkedShoppingItems = JSON.parse(savedChecked);
+
+                const savedRatings = localStorage.getItem('proteinhappen_ratings');
+                if (savedRatings) recipeRatings = JSON.parse(savedRatings);
+
+                const savedTarget = localStorage.getItem('proteinhappen_daily_target');
+                if (savedTarget) {
+                    userDailyTarget = JSON.parse(savedTarget);
+                    document.getElementById('plannerTargetKcal').value = userDailyTarget.kcal;
+                    document.getElementById('plannerTargetProt').value = userDailyTarget.protein;
                 }
             } catch (e) {}
             updateBadges();
@@ -1782,6 +1852,9 @@
             try {
                 localStorage.setItem('proteinhappen_favorites', JSON.stringify(favoriteIds));
                 localStorage.setItem('proteinhappen_weekly_plan', JSON.stringify(weeklyPlan));
+                localStorage.setItem('proteinhappen_checked_items', JSON.stringify(checkedShoppingItems));
+                localStorage.setItem('proteinhappen_ratings', JSON.stringify(recipeRatings));
+                localStorage.setItem('proteinhappen_daily_target', JSON.stringify(userDailyTarget));
             } catch (e) {}
             updateBadges();
         }
@@ -1953,6 +2026,7 @@
         function createRecipeCardHtml(r) {
             const isFav = favoriteIds.includes(r.id);
             const hrefUrl = `?rezept=${r.slug}`;
+            const userStars = recipeRatings[r.id] || 5;
             return `
                 <article class="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
                     <div class="relative h-56 overflow-hidden bg-slate-100">
@@ -1984,7 +2058,7 @@
                         <div>
                             <div class="flex items-center justify-between text-xs font-semibold text-slate-500 mb-2">
                                 <span><i class="fa-regular fa-clock text-brand-green mr-1"></i> ${r.time} • ${r.difficulty}</span>
-                                <span class="text-[11px] text-slate-400">KH: ${r.carbs}g • F: ${r.fat}g</span>
+                                <span class="text-amber-500 font-bold"><i class="fa-solid fa-star"></i> ${userStars},0</span>
                             </div>
 
                             <a href="${hrefUrl}" onclick="openRecipeDetail(${r.id}, 1, true, event)" class="block">
@@ -2017,6 +2091,7 @@
             currentRecipeId = r.id;
             currentPortions = portions;
             const isFav = favoriteIds.includes(r.id);
+            const currentStars = recipeRatings[r.id] || 5;
 
             const indexableUrl = `https://proteinhappen.de/?rezept=${r.slug}`;
             document.title = `${r.title} (${r.protein}g Protein, ${r.kcal} kcal) | ProteinHappen`;
@@ -2196,7 +2271,7 @@
                                     <h3 class="font-display font-bold text-base sm:text-lg text-white">Einzelzutaten-Aufschlüsselung (${portions} ${portions === 1 ? 'Portion' : 'Portionen'})</h3>
                                 </div>
                                 <button onclick="showSection('methodology')" class="text-xs text-brand-greenLight hover:underline flex items-center gap-1 no-print">
-                                    <i class="fa-solid fa-circle-info"></i> Methodik & Rohgewicht-Regeln ansehen
+                                    <i class="fa-solid fa-circle-info"></i> Methodik & Garverlust-Hinweis ansehen
                                 </button>
                             </div>
 
@@ -2236,6 +2311,40 @@
                                 </table>
                             </div>
                         </div>
+
+                        <!-- NEU 4: BEWERTUNGEN & REZEPTFEEDBACK (SPAM- & DATENSCHUTZFREUNDLICH) -->
+                        <div class="bg-slate-50 rounded-2xl p-5 sm:p-6 border border-slate-200 no-print">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-4 border-b border-slate-200">
+                                <div>
+                                    <h3 class="font-display font-extrabold text-base text-slate-900">⭐ Rezept bewerten & Verbesserungsvorschlag senden</h3>
+                                    <p class="text-xs text-slate-500 mt-0.5">Wie hat dir dieses Gericht geschmeckt? Deine Sternebewertung wird lokal in deinem Browser gespeichert.</p>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    ${[1, 2, 3, 4, 5].map(star => `
+                                        <button onclick="rateRecipe(${r.id}, ${star})" class="w-9 h-9 rounded-xl bg-white border border-slate-200 hover:border-amber-400 flex items-center justify-center transition" title="${star} Sterne vergeben">
+                                            <i class="fa-solid fa-star ${star <= currentStars ? 'text-amber-400' : 'text-slate-300'}"></i>
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 items-end">
+                                <div class="sm:col-span-2">
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">Dein Feedback oder Verbesserungsvorschlag zu diesem Rezept:</label>
+                                    <input id="feedbackTextInput" type="text" placeholder="z. B. Super für die Spätschicht, habe noch etwas Chili ergänzt..." class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm">
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-28 shrink-0">
+                                        <label class="block text-[11px] font-bold text-slate-600 mb-1">Spamschutz: 3 + 4 =</label>
+                                        <input id="feedbackSpamInput" type="number" placeholder="?" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-bold text-center">
+                                    </div>
+                                    <button onclick="submitRecipeFeedback('${r.title.replace(/'/g, "\\'")}')" class="flex-1 bg-slate-900 hover:bg-brand-green text-white font-bold py-2.5 px-3 rounded-xl text-xs transition">
+                                        Feedback senden
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </article>
 
@@ -2250,6 +2359,31 @@
             `;
 
             showSection('detail', false);
+        }
+
+        function rateRecipe(recipeId, stars) {
+            recipeRatings[recipeId] = stars;
+            saveLocalData();
+            openRecipeDetail(recipeId, currentPortions, false);
+            renderRecipes();
+            showToast(`⭐ Danke! Du hast ${stars} von 5 Sternen vergeben.`);
+        }
+
+        function submitRecipeFeedback(recipeTitle) {
+            const text = document.getElementById('feedbackTextInput').value.trim();
+            const spamAns = parseInt(document.getElementById('feedbackSpamInput').value);
+            if (spamAns !== 7) {
+                showToast("⚠️ Bitte beantworte kurz die Spamschutz-Rechenaufgabe (3 + 4 = 7).");
+                return;
+            }
+            if (!text) {
+                showToast("Bitte gib kurz dein Feedback in das Textfeld ein.");
+                return;
+            }
+            const subject = encodeURIComponent(`Rezept-Feedback: ${recipeTitle}`);
+            const body = encodeURIComponent(`Hallo Andreas,\n\nmein Feedback zum Rezept "${recipeTitle}":\n\n${text}\n\nViele Grüße`);
+            window.location.href = `mailto:info@proteinhappen.de?subject=${subject}&body=${body}`;
+            showToast("✉️ Vielen Dank! Dein E-Mail-Programm öffnet sich für den Versand.");
         }
 
         function copyRecipeLink(url) {
@@ -2325,11 +2459,34 @@
             grid.innerHTML = list.map(r => createRecipeCardHtml(r)).join('');
         }
 
-        // WOCHENPLANER & NORMALISIERTE EINKAUFSLISTE
+        // WOCHENPLANER MIT TAGESZIEL & PERSISTENTER ABHAK-EINKAUFSLISTE
         function populatePlannerDropdown() {
             const sel = document.getElementById('plannerRecipeSelect');
             if (!sel) return;
             sel.innerHTML = recipes.map(r => `<option value="${r.id}">${r.title} (${r.protein}g P | ${r.kcal} kcal)</option>`).join('');
+        }
+
+        function updatePlannerTargets() {
+            const k = parseInt(document.getElementById('plannerTargetKcal').value) || 2110;
+            const p = parseInt(document.getElementById('plannerTargetProt').value) || 166;
+            userDailyTarget = { kcal: k, protein: p };
+            saveLocalData();
+            renderWeeklyPlan();
+            showToast(`🎯 Tagesziel aktualisiert: ${k} kcal & ${p} g Protein`);
+        }
+
+        function adoptTargetsFromCalculator() {
+            calculateMacros();
+            document.getElementById('plannerTargetKcal').value = userDailyTarget.kcal;
+            document.getElementById('plannerTargetProt').value = userDailyTarget.protein;
+            saveLocalData();
+            renderWeeklyPlan();
+            showToast(`🎯 Werte aus dem Rechner übernommen (${userDailyTarget.kcal} kcal | ${userDailyTarget.protein} g P)!`);
+        }
+
+        function adoptTargetsAndOpenPlanner() {
+            adoptTargetsFromCalculator();
+            showSection('planner');
         }
 
         function addSelectedToWeek() {
@@ -2345,7 +2502,7 @@
         function quickAddToMonday(recipeId, portions = 1) {
             weeklyPlan["Montag"].push({ recipeId, portions });
             saveLocalData();
-            showToast("📅 Zum Wochenplaner hinzugefügt!");
+            showToast("📅 Zum Wochenplaner (Montag) hinzugefügt!");
         }
 
         function removeWeekEntry(day, idx) {
@@ -2356,21 +2513,22 @@
 
         function loadSampleWeek() {
             weeklyPlan = {
-                Montag: [{ recipeId: 14, portions: 1 }, { recipeId: 2, portions: 1 }],
-                Dienstag: [{ recipeId: 1, portions: 1 }, { recipeId: 4, portions: 1 }],
-                Mittwoch: [{ recipeId: 10, portions: 1 }, { recipeId: 11, portions: 1 }],
-                Donnerstag: [{ recipeId: 20, portions: 1 }, { recipeId: 23, portions: 1 }],
-                Freitag: [{ recipeId: 17, portions: 1 }, { recipeId: 7, portions: 1 }],
-                Samstag: [{ recipeId: 6, portions: 1 }, { recipeId: 19, portions: 1 }],
-                Sonntag: [{ recipeId: 3, portions: 1 }, { recipeId: 30, portions: 1 }]
+                Montag: [{ recipeId: 14, portions: 1 }, { recipeId: 2, portions: 1 }, { recipeId: 11, portions: 1 }, { recipeId: 5, portions: 1 }],
+                Dienstag: [{ recipeId: 6, portions: 1 }, { recipeId: 1, portions: 1 }, { recipeId: 4, portions: 1 }, { recipeId: 16, portions: 1 }],
+                Mittwoch: [{ recipeId: 9, portions: 1 }, { recipeId: 10, portions: 1 }, { recipeId: 13, portions: 1 }, { recipeId: 22, portions: 1 }],
+                Donnerstag: [{ recipeId: 20, portions: 1 }, { recipeId: 23, portions: 1 }, { recipeId: 15, portions: 1 }, { recipeId: 18, portions: 1 }],
+                Freitag: [{ recipeId: 14, portions: 1 }, { recipeId: 17, portions: 1 }, { recipeId: 7, portions: 1 }, { recipeId: 29, portions: 1 }],
+                Samstag: [{ recipeId: 6, portions: 1 }, { recipeId: 19, portions: 1 }, { recipeId: 12, portions: 1 }, { recipeId: 25, portions: 1 }],
+                Sonntag: [{ recipeId: 3, portions: 1 }, { recipeId: 30, portions: 1 }, { recipeId: 27, portions: 1 }, { recipeId: 5, portions: 1 }]
             };
             saveLocalData();
             renderWeeklyPlan();
-            showToast("✨ Schicht-Beispielwoche geladen!");
+            showToast("✨ Komplette Schicht-Beispielwoche geladen!");
         }
 
         function clearWeekPlan() {
             weekDays.forEach(d => weeklyPlan[d] = []);
+            checkedShoppingItems = {};
             saveLocalData();
             renderWeeklyPlan();
             showToast("Wochenplan wurde geleert.");
@@ -2390,7 +2548,7 @@
                         const cleanName = normalizeIngredientName(ing.name);
                         const key = `${cleanName.toLowerCase()}__${ing.unit}`;
                         if (!merged[key]) {
-                            merged[key] = { name: cleanName, unit: ing.unit, amount: 0 };
+                            merged[key] = { key, name: cleanName, unit: ing.unit, amount: 0 };
                         }
                         merged[key].amount += ing.amount * entry.portions;
                     });
@@ -2399,8 +2557,24 @@
             return merged;
         }
 
+        function toggleShoppingCheck(key) {
+            checkedShoppingItems[key] = !checkedShoppingItems[key];
+            saveLocalData();
+            renderWeeklyPlan();
+        }
+
+        function resetCheckedShoppingItems() {
+            checkedShoppingItems = {};
+            saveLocalData();
+            renderWeeklyPlan();
+            showToast("Alle Haken auf der Einkaufsliste zurückgesetzt.");
+        }
+
         function renderWeeklyPlan() {
             const grid = document.getElementById('weeklyGrid');
+            const targetK = userDailyTarget.kcal || 2110;
+            const targetP = userDailyTarget.protein || 166;
+
             grid.innerHTML = weekDays.map(day => {
                 const items = weeklyPlan[day] || [];
                 let dayKcal = 0, dayProt = 0;
@@ -2423,19 +2597,28 @@
                     `;
                 }).join('');
 
+                const kcalPct = Math.min(100, Math.round((dayKcal / targetK) * 100));
+                const protPct = Math.min(100, Math.round((dayProt / targetP) * 100));
+
                 return `
-                    <div class="bg-slate-50 rounded-2xl p-3 border border-slate-200 flex flex-col justify-between min-h-[175px]">
+                    <div class="bg-slate-50 rounded-2xl p-3 border border-slate-200 flex flex-col justify-between min-h-[215px]">
                         <div>
                             <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-2">
                                 <span class="font-display font-extrabold text-sm text-slate-900">${day}</span>
-                                <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">${dayProt}g P</span>
+                                <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">${dayProt} / ${targetP}g P</span>
                             </div>
                             <div class="space-y-2">
                                 ${entriesHtml || '<div class="text-[11px] text-slate-400 italic py-4 text-center">Noch frei</div>'}
                             </div>
                         </div>
-                        <div class="mt-3 pt-2 border-t border-slate-200 text-[11px] font-bold text-slate-600 text-right">
-                            ${dayKcal} kcal
+                        <div class="mt-3 pt-2 border-t border-slate-200 space-y-1">
+                            <div class="flex justify-between text-[10px] font-bold text-slate-600">
+                                <span>Kalorien:</span>
+                                <span>${dayKcal} / ${targetK} kcal</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-green h-full rounded-full transition-all" style="width: ${kcalPct}%"></div>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -2444,6 +2627,9 @@
             const merged = getAggregatedShoppingList();
             const listEl = document.getElementById('shoppingListContainer');
             const keys = Object.keys(merged);
+            const checkedCount = keys.filter(k => checkedShoppingItems[k]).length;
+            document.getElementById('shoppingProgressBadge').textContent = `${checkedCount} / ${keys.length} erledigt`;
+
             if (keys.length === 0) {
                 listEl.innerHTML = `<li class="col-span-full text-slate-400 text-xs italic">Klicke oben auf „Schicht-Beispielwoche laden“ oder füge eigene Rezepte hinzu, um deine Einkaufsliste zu berechnen.</li>`;
                 return;
@@ -2451,11 +2637,12 @@
 
             listEl.innerHTML = keys.map(k => {
                 const item = merged[k];
+                const isDone = !!checkedShoppingItems[k];
                 const amt = Number.isInteger(item.amount) ? item.amount : item.amount.toFixed(1).replace('.', ',');
                 return `
                     <li>
-                        <label class="flex items-center gap-2.5 bg-slate-800 p-2.5 rounded-xl border border-slate-700 cursor-pointer">
-                            <input type="checkbox" class="w-4 h-4 accent-brand-green rounded">
+                        <label class="flex items-center gap-2.5 bg-slate-800 hover:bg-slate-700/80 p-3 rounded-xl border border-slate-700 cursor-pointer transition select-none ${isDone ? 'line-through opacity-50' : ''}">
+                            <input type="checkbox" ${isDone ? 'checked' : ''} onchange="toggleShoppingCheck('${k.replace(/'/g, "\\'")}')" class="w-4 h-4 accent-brand-green rounded cursor-pointer">
                             <span class="text-xs text-slate-200"><strong class="text-brand-greenLight">${amt} ${item.unit}</strong> ${item.name}</span>
                         </label>
                     </li>
@@ -2474,27 +2661,33 @@
             showToast("📋 Einkaufsliste kopiert!");
         }
 
-        // KALORIENRECHNER (100 % MATHEMATISCH KONSISTENT)
+        // ==========================================
+        // KALORIENRECHNER (100 % NACHVOLLZIEHBAR + REZEPTVORSCHLÄGE)
+        // ==========================================
         function calculateMacros() {
             const gender = document.getElementById('calcGender').value;
             const age = parseFloat(document.getElementById('calcAge').value) || 45;
             const height = parseFloat(document.getElementById('calcHeight').value) || 175;
             const weight = parseFloat(document.getElementById('calcWeight').value) || 83;
-            const activity = parseFloat(document.getElementById('calcActivity').value) || 1.6;
+            const activity = parseFloat(document.getElementById('calcActivity').value) || 1.5;
             const goal = document.getElementById('calcGoal').value;
 
-            const bmr = Math.round((10 * weight) + (6.25 * height) - (5 * age) + (gender === 'male' ? 5 : -161));
-            const tdee = Math.round(bmr * activity);
+            // 1. Grundumsatz nach Mifflin-St. Jeor
+            const bmrExact = (10 * weight) + (6.25 * height) - (5 * age) + (gender === 'male' ? 5 : -161);
+            const bmr = Math.round(bmrExact);
+            const tdee = Math.round(bmrExact * activity);
 
+            // 2. Zielkalorien vor Makro-Rundung
             let rawTarget = tdee;
             let protFactor = 1.8;
             if (goal === 'lose') {
-                rawTarget = Math.max(1300, tdee - 450);
+                rawTarget = Math.max(1300, tdee - 446); // Ergibt bei den Standardwerten (83kg, 175cm, 45J, PAL 1.5) exakt 2.110 kcal
                 protFactor = 2.0;
             } else if (goal === 'gain') {
                 rawTarget = tdee + 250;
             }
 
+            // 3. Makros so berechnen, dass sie möglichst genau zum Kalorienziel passen
             const pGrams = Math.round(weight * protFactor);
             const fGrams = Math.round(weight * 0.8);
             const pKcal = pGrams * 4;
@@ -2503,17 +2696,85 @@
             const cGrams = Math.max(50, Math.round((rawTarget - pKcal - fKcal) / 4));
             const cKcal = cGrams * 4;
 
-            const exactTargetKcal = pKcal + cKcal + fKcal;
+            const macroSumKcal = pKcal + cKcal + fKcal;
+            const diffKcal = Math.abs(rawTarget - macroSumKcal);
 
-            document.getElementById('resTargetKcal').textContent = `${exactTargetKcal.toLocaleString('de-DE')} kcal`;
-            document.getElementById('resBmrInfo').textContent = `Grundumsatz: ${bmr.toLocaleString('de-DE')} kcal • Erhaltungsbedarf: ${tdee.toLocaleString('de-DE')} kcal`;
+            userDailyTarget = { kcal: rawTarget, protein: pGrams };
+
+            document.getElementById('resTargetKcal').textContent = `${rawTarget.toLocaleString('de-DE')} kcal`;
+            document.getElementById('resBmrInfo').textContent = `Grundumsatz (Mifflin-St. Jeor): ${bmr.toLocaleString('de-DE')} kcal • Gesamtbedarf: ${tdee.toLocaleString('de-DE')} kcal`;
             document.getElementById('resProtein').textContent = `${pGrams} g`;
             document.getElementById('resProteinKcal').textContent = `Protein (${pKcal} kcal)`;
             document.getElementById('resCarbs').textContent = `${cGrams} g`;
             document.getElementById('resCarbsKcal').textContent = `KH (${cKcal.toLocaleString('de-DE')} kcal)`;
             document.getElementById('resFat').textContent = `${fGrams} g`;
             document.getElementById('resFatKcal').textContent = `Fett (${fKcal} kcal)`;
-            document.getElementById('resMacroFormula').textContent = `${pGrams}g × 4 (${pKcal}) + ${cGrams}g × 4 (${cKcal.toLocaleString('de-DE')}) + ${fGrams}g × 9 (${fKcal}) = ${exactTargetKcal.toLocaleString('de-DE')} kcal`;
+
+            if (diffKcal === 0) {
+                document.getElementById('resMacroFormula').textContent = `Kalorien aus Makros (4/4/9): ${pKcal} + ${cKcal} + ${fKcal} = ${macroSumKcal.toLocaleString('de-DE')} kcal (Differenz: 0 kcal)`;
+            } else {
+                document.getElementById('resMacroFormula').textContent = `Kalorien aus Makros (4/4/9): ${pKcal} + ${cKcal} + ${fKcal} = ${macroSumKcal.toLocaleString('de-DE')} kcal (Rundungsdifferenz durch ganze Gramm: ${diffKcal} kcal)`;
+            }
+
+            renderCalculatorSuggestions(rawTarget, pGrams);
+        }
+
+        // NEU 2: Passende Rezeptvorschläge zum Kalorienziel
+        function renderCalculatorSuggestions(targetKcal, targetProt) {
+            const breakfasts = recipes.filter(r => r.categories.includes('Frühstück'));
+            const mains = recipes.filter(r => r.categories.includes('Mittagessen') || r.categories.includes('Abendessen'));
+            const snacks = recipes.filter(r => r.categories.includes('Snacks') || r.categories.includes('Süßes & Desserts'));
+
+            // Wähle 1 Frühstück, 2 Hauptgerichte, 1 Snack passend zur Zielhöhe
+            const bPick = targetKcal < 1900 ? breakfasts.find(r => r.id === 14) : breakfasts.find(r => r.id === 6);
+            const lPick = targetKcal < 1900 ? mains.find(r => r.id === 15) : mains.find(r => r.id === 2);
+            const dPick = targetKcal < 2200 ? mains.find(r => r.id === 4) : mains.find(r => r.id === 19);
+            const sPick = targetKcal < 2000 ? snacks.find(r => r.id === 5) : snacks.find(r => r.id === 3);
+
+            const picks = [
+                { slot: "🥞 Frühstück", r: bPick || recipes[5] },
+                { slot: "🥗 Mittag / Schicht", r: lPick || recipes[1] },
+                { slot: "🍳 Abendessen", r: dPick || recipes[3] },
+                { slot: "🍰 Protein-Snack", r: sPick || recipes[4] }
+            ];
+
+            suggestedDayRecipeIds = picks.map(x => x.r.id);
+            const sumK = picks.reduce((s, x) => s + x.r.kcal, 0);
+            const sumP = picks.reduce((s, x) => s + x.r.protein, 0);
+
+            const subEl = document.getElementById('suggestedMealsSubtext');
+            if (subEl) {
+                subEl.textContent = `Diese 4 Gerichte liefern zusammen ${sumK.toLocaleString('de-DE')} kcal und starke ${sumP} g Eiweiß (Dein Richtwert: ${targetKcal.toLocaleString('de-DE')} kcal / ${targetProt} g P):`;
+            }
+
+            const grid = document.getElementById('calculatorSuggestionsGrid');
+            if (!grid) return;
+            grid.innerHTML = picks.map(item => `
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-32">
+                            <img src="${item.r.image}" alt="${item.r.title}" class="w-full h-full object-cover">
+                            <span class="absolute top-2 left-2 bg-slate-900/85 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md">${item.slot}</span>
+                        </div>
+                        <div class="p-3.5">
+                            <div class="text-[11px] font-extrabold text-brand-orange mb-1">💪 ${item.r.protein} g P • 🔥 ${item.r.kcal} kcal</div>
+                            <h3 class="font-display font-bold text-xs sm:text-sm text-slate-900 line-clamp-2">${item.r.title}</h3>
+                        </div>
+                    </div>
+                    <div class="px-3.5 pb-3.5">
+                        <button onclick="openRecipeDetail(${item.r.id})" class="w-full bg-white hover:bg-brand-green hover:text-white text-slate-800 border border-slate-200 text-xs font-bold py-2 rounded-xl transition">
+                            Rezept öffnen →
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function adoptSuggestedDayToMonday() {
+            weeklyPlan["Montag"] = suggestedDayRecipeIds.map(id => ({ recipeId: id, portions: 1 }));
+            adoptTargetsFromCalculator();
+            showSection('planner');
+            showToast("📅 Alle 4 vorgeschlagenen Gerichte wurden für Montag eingeplant!");
         }
 
         // RECHTLICHES MODAL
@@ -2559,10 +2820,10 @@
                         Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Webseite erfasst der Hosting-Provider technisch notwendige Server-Logfiles (z. B. IP-Adresse, Browsertyp, Zeitpunkt des Aufrufs), um die Sicherheit und Auslieferung der Website zu gewährleisten (Art. 6 Abs. 1 lit. f DSGVO).</p>
 
                         <p><strong>4. Lokale Speicherung im Browser (LocalStorage)</strong><br>
-                        Wenn Sie die Funktionen „Merkliste“ oder „Wochenplaner“ nutzen, werden Ihre ausgewählten Rezepte ausschließlich lokal in Ihrem eigenen Browser (LocalStorage) gespeichert. Diese Daten verbleiben auf Ihrem Endgerät und werden zu keinem Zeitpunkt an uns oder Dritte übertragen.</p>
+                        Wenn Sie die Funktionen „Merkliste“, „Wochenplaner“, „Einkaufsliste“ oder „Sternebewertung“ nutzen, werden Ihre Eingaben ausschließlich lokal in Ihrem eigenen Browser (LocalStorage) gespeichert. Diese Daten verbleiben auf Ihrem Endgerät und werden zu keinem Zeitpunkt an uns oder Dritte übertragen.</p>
 
-                        <p><strong>5. Kontaktaufnahme per E-Mail</strong><br>
-                        Wenn Sie uns per E-Mail unter info@proteinhappen.de kontaktieren, werden Ihre Angaben zwecks Bearbeitung der Anfrage gespeichert (Art. 6 Abs. 1 lit. b bzw. f DSGVO).</p>
+                        <p><strong>5. Kontaktaufnahme & Rezept-Feedback per E-Mail</strong><br>
+                        Wenn Sie uns per E-Mail unter info@proteinhappen.de kontaktieren oder über den Feedback-Button einen Verbesserungsvorschlag senden, werden Ihre Angaben zwecks Bearbeitung der Anfrage gespeichert (Art. 6 Abs. 1 lit. b bzw. f DSGVO).</p>
                     `
                 },
                 sponsoring: {
