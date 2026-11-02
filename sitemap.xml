@@ -2,8 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://proteinhappen.de/</loc>
-    <lastmod>2026-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://proteinhappen.de/?rezept=knusprige-airfryer-haehnchen-bites</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proteinhappen.de/?rezept=high-protein-mandarinen-kaesekuchen</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proteinhappen.de/?rezept=rinderhack-suesskartoffel-schicht-pfanne</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proteinhappen.de/?rezept=lemon-iced-tea-quark-fluff</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proteinhappen.de/?rezept=fluffige-hafer-protein-pancakes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proteinhappen.de/?rezept=thunfisch-skyr-pizza-ohne-hefe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proteinhappen.de/?rezept=airfryer-pizza-broetchen-high-protein</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proteinhappen.de/?rezept=schoko-bananen-baked-oats-airfryer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proteinhappen.de/?rezept=stremellachs-protein-wrap-schichtpause</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proteinhappen.de/?rezept=haehnchen-schupfnudel-pfanne-ohne-sahne</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proteinhappen.de/?rezept=airfryer-lachs-mediterranes-ofengemuese</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://proteinhappen.de/?rezept=griechischer-ofen-feta-haehnchen-auflauf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
