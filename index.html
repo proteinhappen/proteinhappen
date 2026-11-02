@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Cache-Kontrolle für sofortige Aktualisierung auf Smartphone & Desktop -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -168,6 +167,9 @@
                 </button>
                 <button onclick="showSection('methodology')" class="shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-emerald-50 text-brand-greenDark border border-emerald-200">
                     📊 Nährwert-Doku
+                </button>
+                <button onclick="showSection('favorites')" class="shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-rose-50 text-rose-600 border border-rose-200">
+                    ❤️ Merkliste
                 </button>
             </div>
         </div>
@@ -456,7 +458,7 @@
                     <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-2.5 text-xs">
                         <div class="font-display font-bold text-sm text-slate-900">Unser Qualitätsstandard:</div>
                         <div class="flex items-start gap-2 text-slate-600"><i class="fa-solid fa-check text-brand-green mt-0.5"></i> <span>Berechnung nach Bundeslebensmittelschlüssel (BLS) & LMIV</span></div>
-                        <div class="flex items-start gap-2 text-slate-600"><i class="fa-solid fa-check text-brand-green mt-0.5"></i> <span>Konsequente Deklaration nach Roh- bzw. Abtropfgewicht</span></div>
+                        <div class="flex items-start gap-2 text-slate-600"><i class="fa-solid fa-check text-brand-green mt-0.5"></i> <span>Einheitliche Deklaration nach Roh- bzw. Abtropfgewicht</span></div>
                         <div class="flex items-start gap-2 text-slate-600"><i class="fa-solid fa-check text-brand-green mt-0.5"></i> <span>Einzelzutaten-Aufschlüsselung unter jedem Rezept</span></div>
                     </div>
                 </div>
@@ -472,7 +474,7 @@
         </div>
 
         <!-- ==========================================
-             SEKTION 3: AUSFÜHRLICHE DOKUMENTATION DER NÄHRWERTBERECHNUNG
+             SEKTION 3: AUSFÜHRLICHE DOKUMENTATION DER NÄHRWERTBERECHNUNG (KORRIGIERT)
              ========================================== -->
         <div id="section-methodology" class="hidden max-w-4xl mx-auto space-y-6">
             <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
@@ -506,25 +508,32 @@
 
                     <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80">
                         <h2 class="font-display font-extrabold text-lg text-slate-900 mb-2">
-                            2. Werden Rohgewichte oder gegarte Gewichte berechnet?
+                            2. Rohgewicht, Garverlust und Nährstoffveränderungen beim Kochen
                         </h2>
                         <p class="mb-2">
-                            <strong>Alle Mengenangaben und Nährwerte beziehen sich konsequent auf das Rohgewicht vor dem Garen bzw. auf das Abtropfgewicht bei Konserven.</strong>
+                            <strong>Alle Mengenangaben und Nährwerte auf ProteinHappen.de beziehen sich auf das Rohgewicht vor dem Garen bzw. auf das Abtropfgewicht bei Konserven.</strong>
+                        </p>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            Beim Braten, Backen oder Kochen verändert sich das Gewicht von Lebensmitteln vor allem durch Wasserverdampfung (z. B. verliert Hähnchenbrust beim Braten etwa 20–25 % Gewicht) oder durch Wasseraufnahme (z. B. bei Reis, Linsen und Nudeln).
                         </p>
                         <p class="text-xs sm:text-sm text-slate-600">
-                            Beim Braten oder Backen verliert Fleisch ca. 20–25 % Wasser, während Reis und Nudeln beim Kochen Wasser aufnehmen. Der absolute Kalorien- und Proteingehalt verändert sich durch den Wasserverlust oder die Wasseraufnahme nicht – deshalb garantiert nur das Abwiegen im Rohzustand verlässliche Werte.
+                            <strong>Hinweis zu Garverlusten:</strong> Zwar bleibt der Großteil der Makronährstoffe im Gargut erhalten, in der Praxis können jedoch – je nach Zubereitungsart, Hitze und Schnittgröße – geringe Mengen an ausgeschmolzenem Fett, Eiweiß oder wasserlöslichen Nährstoffen in den Fleischsaft, das Kochwasser oder den Bratensatz übergehen. Da diese Garverluste in jeder heimischen Küche leicht unterschiedlich ausfallen, ist das Abwiegen im Rohzustand die verlässlichste und am besten vergleichbare Berechnungsgrundlage.
                         </p>
                     </div>
 
                     <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80">
                         <h2 class="font-display font-extrabold text-lg text-slate-900 mb-2">
-                            3. Wie werden Rundungen vorgenommen?
+                            3. Berechnungsfaktoren (4/4/9 vs. 4,1/4,1/9,3) und Rundungen
                         </h2>
                         <p class="mb-2">
-                            In der Einzelzutaten-Tabelle unter jedem Rezept werden Eiweiß, Kohlenhydrate und Fett auf <strong>0,1 g genau</strong> ausgewiesen. Die Gesamtsumme des Rezepts für die Rezeptkarten wird exakt aus der Summe der Einzelzutaten gebildet und kaufmännisch auf ganze Gramm bzw. ganze Kilokalorien (kcal) gerundet.
+                            In der Einzelzutaten-Tabelle unter jedem Rezept werden Eiweiß, Kohlenhydrate und Fett auf <strong>0,1 g genau</strong> ausgewiesen. Die Gesamtsumme des Rezepts auf den Rezeptkarten wird direkt aus der Summe der Einzelzutaten gebildet und kaufmännisch auf ganze Gramm bzw. ganze Kilokalorien (kcal) gerundet.
+                        </p>
+                        <p class="text-xs sm:text-sm text-slate-600 mb-2">
+                            <strong>Warum weicht die schnelle Faustformel (4/4/9) bei Lebensmitteln manchmal leicht von den Datenbank-Kalorien ab?</strong><br>
+                            Lebensmitteldatenbanken (wie der BLS) und Herstellerangaben auf Verpackungen berücksichtigen neben den genaueren physikalischen Brennwertfaktoren ($4,1\text{ kcal/g}$ für Protein und Kohlenhydrate, $9,3\text{ kcal/g}$ für Fett) auch den Energiegehalt von Ballaststoffen ($2,0\text{ kcal/g}$) sowie organischen Säuren.
                         </p>
                         <p class="text-xs sm:text-sm text-slate-600">
-                            Im <strong>Kalorienrechner</strong> wird die Ziel-Kalorienzahl direkt aus den berechneten Makronährstoffen ($\text{Protein in g} \times 4\text{ kcal} + \text{Kohlenhydrate in g} \times 4\text{ kcal} + \text{Fett in g} \times 9\text{ kcal}$) gebildet, sodass Makros und Gesamtkalorien ohne Rundungsdifferenz zu 100 % übereinstimmen.
+                            Im <strong>Kalorienrechner</strong> hingegen berechnen wir deine täglichen Zielkalorien bewusst exakt mit den im Ernährungstracking üblichen Standardfaktoren ($4\text{ kcal/g}$ Protein, $4\text{ kcal/g}$ Kohlenhydrate, $9\text{ kcal/g}$ Fett), damit deine Gramm-Vorgaben und die angezeigten Gesamtkalorien ohne jede Differenz zu 100 % übereinstimmen.
                         </p>
                     </div>
 
@@ -533,7 +542,7 @@
                             4. Wie werden abweichende Produkte berücksichtigt?
                         </h2>
                         <p class="text-xs sm:text-sm text-slate-600">
-                            Da Naturprodukte (z. B. Größe eines Hühnereis) und Handelsmarken leichten Schwankungen unterliegen, weisen wir in der Rezept-Aufschlüsselung jede Zutat einzeln aus. So kannst du beim Nachkochen jederzeit erkennen, mit welchen exakten Werten eine Zutat berechnet wurde, und sie bei Bedarf in deiner Tracking-App mit deiner spezifischen Produktmarke abgleichen.
+                            Da Naturprodukte (z. B. Größe eines Hühnereis) und Handelsmarken natürlichen Schwankungen unterliegen, weisen wir in der Rezept-Aufschlüsselung jede Zutat einzeln aus. So kannst du beim Nachkochen jederzeit nachvollziehen, mit welchen exakten Werten eine Zutat angesetzt wurde, und sie bei Bedarf in deiner Tracking-App mit deiner gekauften Marke abgleichen.
                         </p>
                     </div>
                 </div>
@@ -552,7 +561,7 @@
                             Interaktiver Wochenplaner & Einkaufsliste
                         </h1>
                         <p class="text-sm text-slate-500 mt-1">
-                            Wähle aus allen 30 Rezepten für Montag bis Sonntag – deine Einkaufsliste summiert alle Mengen automatisch.
+                            Wähle aus allen 30 Rezepten für Montag bis Sonntag – gleiche Zutaten werden auf der Einkaufsliste automatisch zusammengefasst.
                         </p>
                     </div>
                     <div class="flex flex-wrap items-center gap-2 no-print">
@@ -603,7 +612,7 @@
                             <h2 class="font-display text-xl sm:text-2xl font-extrabold flex items-center gap-2">
                                 <i class="fa-solid fa-cart-shopping text-brand-greenLight"></i> Automatische Einkaufsliste
                             </h2>
-                            <p class="text-xs text-slate-400 mt-0.5">Alle Rohgewichte deiner geplanten Mahlzeiten fertig addiert.</p>
+                            <p class="text-xs text-slate-400 mt-0.5">Identische Zutaten verschiedener Rezepte werden automatisch zu einer Gesamtmenge addiert.</p>
                         </div>
                         <div class="flex gap-2 no-print">
                             <button onclick="copyShoppingText()" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl border border-slate-600 transition">
@@ -620,7 +629,7 @@
         </div>
 
         <!-- ==========================================
-             SEKTION 5: KALORIEN- & PROTEINRECHNER (100 % SYNCHRONISIERT)
+             SEKTION 5: KALORIEN- & PROTEINRECHNER (100 % SYNCHRONISIERT & ERKLÄRT)
              ========================================== -->
         <div id="section-calculator" class="hidden max-w-4xl mx-auto space-y-6">
             <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
@@ -629,7 +638,7 @@
                     Protein- und Kalorienrechner
                 </h1>
                 <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                    Berechne deinen täglichen Kalorien- und Eiweißbedarf nach der <strong>Mifflin-St Jeor Formel</strong>. Die ausgegebenen Tageskalorien entsprechen immer exakt der Summe der berechneten Makronährstoffe ($4\text{ kcal/g}$ Protein, $4\text{ kcal/g}$ Kohlenhydrate, $9\text{ kcal/g}$ Fett).
+                    Berechne deinen täglichen Kalorien- und Eiweißbedarf nach der <strong>Mifflin-St Jeor Formel</strong>. Damit es keine Rundungsabweichungen zwischen Kalorienziel und Makros gibt, werden die Tageskalorien exakt aus der Summe der Makronährstoffe ($4\text{ kcal/g}$ Protein, $4\text{ kcal/g}$ Kohlenhydrate, $9\text{ kcal/g}$ Fett) ausgewiesen.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -707,9 +716,13 @@
                                 </div>
                             </div>
 
-                            <div id="resMacroFormula" class="bg-slate-800/80 rounded-xl p-3 text-[11px] text-slate-300 border border-slate-700 font-mono text-center">
-                                Nachweis: 664 kcal (P) + 1.020 kcal (KH) + 594 kcal (F) = 2.278 kcal
+                            <div id="resMacroFormula" class="bg-slate-800/80 rounded-xl p-3 text-[11px] text-slate-300 border border-slate-700 font-mono text-center mb-3">
+                                166g × 4 (664) + 255g × 4 (1.020) + 66g × 9 (594) = 2.278 kcal
                             </div>
+
+                            <p class="text-[11px] text-slate-400 leading-relaxed">
+                                <strong>Hinweis zur Umrechnung:</strong> Dieser Rechner nutzt die standardisierten Tracking-Faktoren ($4 / 4 / 9\text{ kcal/g}$). Bei der Abrechnung über physikalische Brennwerte ($4,1 / 4,1 / 9,3\text{ kcal/g}$) und Ballaststoffe ($2\text{ kcal/g}$) auf Lebensmittel-Etiketten können in der Praxis geringfügige Abweichungen von ca. 2–3 % auftreten.
+                            </p>
                         </div>
 
                         <button onclick="showSection('home'); scrollToElement('alleRezepteSection');" class="mt-4 w-full bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-xl text-xs sm:text-sm transition">
@@ -727,10 +740,11 @@
             <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-100 mb-6">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-widest text-rose-500">❤️ Deine persönliche Rezept-Sammlung</span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-rose-500">❤️ Dauerhaft im Browser gespeichert</span>
                         <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
                             Gespeicherte Lieblingsrezepte
                         </h1>
+                        <p class="text-xs sm:text-sm text-slate-500 mt-1">Deine markierten Rezepte bleiben auch nach dem Schließen und Neustarten des Browsers erhalten.</p>
                     </div>
                     <button onclick="showSection('home')" class="self-start sm:self-auto bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold px-4 py-2.5 rounded-xl transition">
                         ← Zurück zu allen 30 Rezepten
@@ -862,7 +876,7 @@
                     { amount: 180, unit: "g", name: "Hähnchenbrustfilet (roh)", kcal: 196, p: 43.2, c: 0, f: 1.8 },
                     { amount: 60, unit: "g", name: "Basmatireis (Rohgewicht trocken)", kcal: 210, p: 4.5, c: 46, f: 0.6 },
                     { amount: 50, unit: "g", name: "Edamame Bohnen (geschält, TK)", kcal: 60, p: 5.5, c: 3, f: 2.5 },
-                    { amount: 60, unit: "g", name: "Skyr natur mit Limettensaft", kcal: 38, p: 6.3, c: 2.4, f: 0.1 },
+                    { amount: 60, unit: "g", name: "Skyr natur (mit Limettensaft)", kcal: 38, p: 6.3, c: 2.4, f: 0.1 },
                     { amount: 80, unit: "g", name: "Salatgurke, Karottenstreifen & Sojasauce", kcal: 11, p: 0.5, c: 1.6, f: 2.0 }
                 ],
                 steps: [
@@ -920,7 +934,7 @@
                 image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80",
                 intro: "5%-Rinderhackfleisch statt gemischtem Hack spart über 200 Kalorien pro Pfanne, während die Süßkartoffel komplexe Energie für lange Schichten liefert.",
                 ingredients: [
-                    { amount: 180, unit: "g", name: "Rinderhackfleisch fettreduziert (5 % Fett)", kcal: 230, p: 38, c: 0, f: 9.0 },
+                    { amount: 180, unit: "g", name: "Rinderhackfleisch 5 % Fett (roh)", kcal: 230, p: 38, c: 0, f: 9.0 },
                     { amount: 160, unit: "g", name: "Süßkartoffel (roh, geschält)", kcal: 138, p: 2.5, c: 32, f: 0.2 },
                     { amount: 120, unit: "g", name: "Paprika & Zucchini (roh)", kcal: 30, p: 1.5, c: 5, f: 0.3 },
                     { amount: 50, unit: "g", name: "Körniger Frischkäse light", kcal: 46, p: 6.5, c: 1, f: 1.5 },
@@ -977,11 +991,11 @@
                 time: "10 Min.",
                 kcal: 435, protein: 38, carbs: 42, fat: 10,
                 image: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1000&q=80",
-                intro: "Komplett ohne Fertigpulver: Komplexe Hafer-Kohlenhydraten und Quark-Protein halten deinen Blutzuckerspiegel den ganzen Vormittag stabil.",
+                intro: "Komplett ohne Fertigpulver: Komplexe Hafer-Kohlenhydrate und Quark-Protein halten deinen Blutzuckerspiegel den ganzen Vormittag stabil.",
                 ingredients: [
                     { amount: 50, unit: "g", name: "Zarte Haferflocken", kcal: 185, p: 7, c: 29.5, f: 3.5 },
                     { amount: 150, unit: "g", name: "Magerquark", kcal: 100, p: 18, c: 6, f: 0.3 },
-                    { amount: 2, unit: "Stk.", name: "Eier (oder 1 Ei + 50 ml Eiklar)", kcal: 110, p: 12, c: 0.5, f: 6.2 },
+                    { amount: 2, unit: "Stk.", name: "Hühnerei (Größe M)", kcal: 110, p: 12, c: 0.5, f: 6.2 },
                     { amount: 80, unit: "g", name: "Himbeeren (TK)", kcal: 35, p: 1, c: 5, f: 0.0 },
                     { amount: 3, unit: "g", name: "Backpulver & Zimt", kcal: 5, p: 0, c: 1, f: 0.0 }
                 ],
@@ -1010,14 +1024,14 @@
                 intro: "Der Teig aus Dinkelmehl und Skyr braucht keine Gehzeit und liefert zusammen mit dem Thunfisch-Belag 65 g Protein bei unter 10 g Fett.",
                 ingredients: [
                     { amount: 100, unit: "g", name: "Skyr natur", kcal: 63, p: 11, c: 4, f: 0.2 },
-                    { amount: 60, unit: "g", name: "Dinkelmehl Type 630 + Backpulver", kcal: 208, p: 8, c: 42, f: 0.8 },
+                    { amount: 60, unit: "g", name: "Dinkelmehl Type 630", kcal: 208, p: 8, c: 42, f: 0.8 },
                     { amount: 130, unit: "g", name: "Thunfisch im eigenen Saft (Abtropfgewicht)", kcal: 143, p: 32.5, c: 0, f: 1.3 },
                     { amount: 40, unit: "g", name: "Reibekäse light (16 % Fett)", kcal: 106, p: 12.5, c: 0, f: 6.4 },
                     { amount: 60, unit: "g", name: "Passierte Tomaten, Zwiebel & Oregano", kcal: 20, p: 1, c: 4, f: 0.3 }
                 ],
                 steps: [
                     "Ofen auf 200 °C Ober-/Unterhitze (oder Airfryer auf 190 °C) vorheizen.",
-                    "Skyr, Dinkelmehl, Backpulver und Salz mit den Händen rasch zu einem Teigball verkneten.",
+                    "Skyr, Dinkelmehl, 1/2 TL Backpulver und Salz mit den Händen rasch zu einem Teigball verkneten.",
                     "Auf Backpapier dünn ausrollen.",
                     "Mit gewürzten passierten Tomaten bestreichen und mit Thunfisch, Zwiebeln sowie Käse belegen.",
                     "Im Ofen 12 Minuten (oder im Airfryer 9–10 Minuten) knusprig backen."
@@ -1040,13 +1054,13 @@
                 intro: "Diese schnellen Pizza-Brötchen benötigen keine Hefe und sind in 12 Minuten im Airfryer ausgebacken – perfekter Fingerfood-Proviant für die Schicht.",
                 ingredients: [
                     { amount: 150, unit: "g", name: "Magerquark", kcal: 100, p: 18, c: 6, f: 0.3 },
-                    { amount: 60, unit: "g", name: "Dinkelmehl Type 630 + Backpulver", kcal: 208, p: 8, c: 42, f: 0.8 },
+                    { amount: 60, unit: "g", name: "Dinkelmehl Type 630", kcal: 208, p: 8, c: 42, f: 0.8 },
                     { amount: 60, unit: "g", name: "Putenbrust-Aufschnitt (gewürfelt)", kcal: 64, p: 13, c: 0.5, f: 1.0 },
                     { amount: 40, unit: "g", name: "Reibekäse light (16 % Fett)", kcal: 106, p: 12.5, c: 0, f: 6.4 },
                     { amount: 30, unit: "g", name: "Tomatenmark & Pizzagewürz", kcal: 27, p: 1.5, c: 4.5, f: 0.5 }
                 ],
                 steps: [
-                    "Magerquark, Dinkelmehl, Backpulver und Salz zu einem formbaren Teig verkneten.",
+                    "Magerquark, Dinkelmehl, 1 TL Backpulver und Salz zu einem formbaren Teig verkneten.",
                     "4 kleine Brötchen formen und mit dem Daumen mittig jeweils eine Mulde eindrücken.",
                     "Tomatenmark mit 2 EL Wasser, Kräutern, Putenwürfeln und der Hälfte des Käses verrühren.",
                     "Die Füllung in die Mulden geben und mit dem restlichen Käse bestreuen.",
@@ -1073,11 +1087,11 @@
                     { amount: 120, unit: "g", name: "Skyr natur", kcal: 76, p: 13, c: 5, f: 0.2 },
                     { amount: 60, unit: "g", name: "Reife Banane (geschält)", kcal: 54, p: 0.6, c: 12.5, f: 0.1 },
                     { amount: 25, unit: "g", name: "Whey Proteinpulver Schoko", kcal: 93, p: 19.4, c: 1.5, f: 1.2 },
-                    { amount: 3, unit: "g", name: "Backpulver & 30 ml Wasser", kcal: 5, p: 0, c: 1.5, f: 0.0 }
+                    { amount: 3, unit: "g", name: "Backpulver & Zimt", kcal: 5, p: 0, c: 1.5, f: 0.0 }
                 ],
                 steps: [
                     "Halbe Banane direkt in einer kleinen ofenfesten Form mit der Gabel fein zerdrücken.",
-                    "Haferflocken, Skyr, Schoko-Protein, Backpulver und Wasser dazugeben.",
+                    "Haferflocken, Skyr, Schoko-Protein, Backpulver und 30 ml Wasser dazugeben.",
                     "Mit einem Löffel direkt in der Form glatt rühren.",
                     "Im Airfryer bei 175 °C für 10–12 Minuten backen.",
                     "2 Minuten abkühlen lassen und warm löffeln."
@@ -1099,7 +1113,7 @@
                 image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=1000&q=80",
                 intro: "Wenn in der Pause keine Mikrowelle frei ist, liefert dir dieser Lachs-Wrap hochwertiges Eiweiß und Omega-3-Fettsäuren ohne Kochen.",
                 ingredients: [
-                    { amount: 60, unit: "g", name: "High-Protein Tortilla-Wrap (1 Stück)", kcal: 168, p: 13, c: 17, f: 4.5 },
+                    { amount: 60, unit: "g", name: "High-Protein Tortilla-Wrap", kcal: 168, p: 13, c: 17, f: 4.5 },
                     { amount: 100, unit: "g", name: "Stremellachs natur", kcal: 202, p: 24, c: 0, f: 11.5 },
                     { amount: 80, unit: "g", name: "Körniger Frischkäse light", kcal: 74, p: 10.5, c: 1.5, f: 2.5 },
                     { amount: 80, unit: "g", name: "Salatgurke, Babyspinat & Dill", kcal: 16, p: 1.5, c: 2.5, f: 0.5 }
@@ -1161,7 +1175,7 @@
                     { amount: 180, unit: "g", name: "Lachsfilet (roh, ohne Haut)", kcal: 356, p: 36, c: 0, f: 23.0 },
                     { amount: 200, unit: "g", name: "Zucchini & rote Paprika (roh)", kcal: 46, p: 2.5, c: 8, f: 0.5 },
                     { amount: 100, unit: "g", name: "Kirschtomaten", kcal: 20, p: 1, c: 3.5, f: 0.2 },
-                    { amount: 5, unit: "g", name: "Olivenöl (1 TL), Zitrone & Kräuter", kcal: 43, p: 0, c: 0.5, f: 4.3 }
+                    { amount: 5, unit: "g", name: "Olivenöl, Zitrone & Kräuter", kcal: 43, p: 0, c: 0.5, f: 4.3 }
                 ],
                 steps: [
                     "Zucchini und Paprika würfeln und mit Kirschtomaten, 1 TL Olivenöl und Kräutern mischen.",
@@ -1188,10 +1202,10 @@
                 intro: "5 Minuten Vorbereitung, den Rest macht der Ofen: Aufgeplatzte Kirschtomaten und Feta light verschmelzen zu einer würzigen Sauce.",
                 ingredients: [
                     { amount: 200, unit: "g", name: "Hähnchenbrustfilet (roh)", kcal: 218, p: 48, c: 0, f: 2.0 },
-                    { amount: 100, unit: "g", name: "Feta light / Hirtenkäse (9 % Fett)", kcal: 168, p: 21, c: 1, f: 9.0 },
+                    { amount: 100, unit: "g", name: "Feta light (9 % Fett)", kcal: 168, p: 21, c: 1, f: 9.0 },
                     { amount: 150, unit: "g", name: "Kirschtomaten & rote Zwiebel", kcal: 35, p: 1.5, c: 6.5, f: 0.3 },
                     { amount: 20, unit: "g", name: "Schwarze Oliven (entsteint)", kcal: 28, p: 0.5, c: 0.5, f: 2.7 },
-                    { amount: 5, unit: "g", name: "Olivenöl (1 TL), Oregano & Knoblauch", kcal: 41, p: 0, c: 0, f: 4.0 }
+                    { amount: 5, unit: "g", name: "Olivenöl, Zitrone & Kräuter", kcal: 41, p: 0, c: 0, f: 4.0 }
                 ],
                 steps: [
                     "Backofen auf 200 °C Umluft vorheizen.",
@@ -1221,7 +1235,7 @@
                     { amount: 180, unit: "g", name: "Skyr natur", kcal: 113, p: 19.8, c: 7.2, f: 0.4 },
                     { amount: 15, unit: "g", name: "Whey Protein Vanille", kcal: 56, p: 11.5, c: 0.8, f: 0.6 },
                     { amount: 60, unit: "ml", name: "Starker kalter Kaffee / Espresso", kcal: 2, p: 0, c: 0.5, f: 0.0 },
-                    { amount: 8, unit: "g", name: "Chiasamen & 1 TL Backkakao", kcal: 29, p: 0.7, c: 5, f: 1.5 }
+                    { amount: 8, unit: "g", name: "Chiasamen & Backkakao", kcal: 29, p: 0.7, c: 5, f: 1.5 }
                 ],
                 steps: [
                     "Haferflocken und Chiasamen mit dem kalten Espresso und 30 ml Wasser verrühren.",
@@ -1250,7 +1264,7 @@
                     { amount: 200, unit: "g", name: "Putenhackfleisch mager (roh)", kcal: 224, p: 40, c: 0, f: 6.5 },
                     { amount: 250, unit: "g", name: "Zucchini (roh, gewürfelt)", kcal: 48, p: 4, c: 6, f: 0.5 },
                     { amount: 50, unit: "g", name: "Feta light (9 % Fett)", kcal: 84, p: 10.5, c: 0.5, f: 4.5 },
-                    { amount: 40, unit: "g", name: "Tomatenmark, Zwiebel & Kräuter", kcal: 34, p: 1.5, c: 4.5, f: 3.5 }
+                    { amount: 40, unit: "g", name: "Tomatenmark & Pizzagewürz", kcal: 34, p: 1.5, c: 4.5, f: 3.5 }
                 ],
                 steps: [
                     "Zucchini waschen und in mundgerechte Halbringe schneiden.",
@@ -1305,7 +1319,7 @@
                 intro: "Statt schwerer Mayonnaise bildet körniger Frischkäse mit etwas Senf das cremige Dressing für diesen proteinreichen Thunfisch-Ei-Salat.",
                 ingredients: [
                     { amount: 130, unit: "g", name: "Thunfisch im eigenen Saft (Abtropfgewicht)", kcal: 143, p: 32.5, c: 0, f: 1.3 },
-                    { amount: 1, unit: "Stk.", name: "Hartgekochtes Ei (Größe M, 55 g)", kcal: 85, p: 7, c: 0.5, f: 6.0 },
+                    { amount: 1, unit: "Stk.", name: "Hühnerei (hartgekocht, 55 g)", kcal: 85, p: 7, c: 0.5, f: 6.0 },
                     { amount: 60, unit: "g", name: "Körniger Frischkäse light", kcal: 55, p: 7.8, c: 1.2, f: 1.8 },
                     { amount: 40, unit: "g", name: "Avocado (gewürfelt)", kcal: 64, p: 0.8, c: 1.5, f: 6.0 },
                     { amount: 80, unit: "g", name: "Salatgurke, Frühlingszwiebel & 1 TL Senf", kcal: 18, p: 0.9, c: 2.8, f: 0.9 }
@@ -1337,7 +1351,7 @@
                     { amount: 200, unit: "g", name: "Körniger Frischkäse light", kcal: 184, p: 26, c: 4, f: 6.0 },
                     { amount: 80, unit: "g", name: "Skyr natur", kcal: 50, p: 8.8, c: 3.2, f: 0.2 },
                     { amount: 100, unit: "g", name: "Sauerkirschen (ungesüßt, TK oder Glas)", kcal: 54, p: 0.9, c: 12, f: 0.3 },
-                    { amount: 15, unit: "g", name: "Erythrit, Vanille & Zimt", kcal: 52, p: 0.3, c: 9.8, f: 0.5 }
+                    { amount: 15, unit: "g", name: "Erythrit (mit Vanille & Zimt)", kcal: 52, p: 0.3, c: 9.8, f: 0.5 }
                 ],
                 steps: [
                     "Körnigen Frischkäse und Skyr in einer Schale mit Erythrit und Vanille verrühren.",
@@ -1365,8 +1379,8 @@
                     { amount: 180, unit: "g", name: "Rinderminutensteak mager (roh)", kcal: 216, p: 39.6, c: 0, f: 5.4 },
                     { amount: 50, unit: "g", name: "Basmatireis (Rohgewicht trocken)", kcal: 175, p: 3.8, c: 38, f: 0.5 },
                     { amount: 60, unit: "g", name: "Schwarze Bohnen & Mais (Abtropfgewicht)", kcal: 68, p: 4.2, c: 10.5, f: 0.6 },
-                    { amount: 70, unit: "g", name: "Skyr natur mit Limettensaft", kcal: 44, p: 7.4, c: 2.5, f: 0.1 },
-                    { amount: 5, unit: "g", name: "Olivenöl (1 TL) & Fajita-Gewürz", kcal: 42, p: 0, c: 0, f: 5.4 }
+                    { amount: 70, unit: "g", name: "Skyr natur (mit Limettensaft)", kcal: 44, p: 7.4, c: 2.5, f: 0.1 },
+                    { amount: 5, unit: "g", name: "Olivenöl, Zitrone & Kräuter", kcal: 42, p: 0, c: 0, f: 5.4 }
                 ],
                 steps: [
                     "Basmatireis nach Packungsanweisung kochen.",
@@ -1392,10 +1406,10 @@
                 image: "https://images.unsplash.com/photo-1590412200988-a436970781fa?auto=format&fit=crop&w=1000&q=80",
                 intro: "Aus Eiern, Hüttenkäse und Putenbrust gebackene Muffins, die im Kühlschrank 3 Tage frisch bleiben und morgens null Arbeit machen.",
                 ingredients: [
-                    { amount: 2, unit: "Stk.", name: "Hühnereier (Größe M, 110 g)", kcal: 170, p: 14, c: 1, f: 12.0 },
+                    { amount: 2, unit: "Stk.", name: "Hühnerei (Größe M, 110 g)", kcal: 170, p: 14, c: 1, f: 12.0 },
                     { amount: 60, unit: "g", name: "Putenbrust-Aufschnitt (gewürfelt)", kcal: 64, p: 13, c: 0.5, f: 1.0 },
                     { amount: 50, unit: "g", name: "Körniger Frischkäse light", kcal: 46, p: 6.5, c: 1, f: 0.8 },
-                    { amount: 60, unit: "g", name: "Rote Paprika & Frühlingszwiebel", kcal: 15, p: 2.5, c: 2.5, f: 0.2 }
+                    { amount: 60, unit: "g", name: "Paprika & Zucchini (roh)", kcal: 15, p: 2.5, c: 2.5, f: 0.2 }
                 ],
                 steps: [
                     "Ofen auf 180 °C Umluft (oder Airfryer auf 170 °C) vorheizen und 4 Silikon-Muffinförmchen bereitstellen.",
@@ -1422,7 +1436,7 @@
                 intro: "Räuchertofu wird im Airfryer mit einem Teelöffel Stärke außen knusprig wie beim Asiaten und liefert hochwertiges pflanzliches Protein.",
                 ingredients: [
                     { amount: 180, unit: "g", name: "Räuchertofu fest", kcal: 216, p: 28.8, c: 2, f: 10.0 },
-                    { amount: 50, unit: "g", name: "Jasminreis (Rohgewicht trocken)", kcal: 175, p: 3.5, c: 39, f: 0.5 },
+                    { amount: 50, unit: "g", name: "Basmatireis (Rohgewicht trocken)", kcal: 175, p: 3.5, c: 39, f: 0.5 },
                     { amount: 120, unit: "g", name: "Brokkoliröschen", kcal: 34, p: 2.7, c: 3, f: 0.3 },
                     { amount: 20, unit: "g", name: "Teriyaki-Sauce & Sojasauce", kcal: 20, p: 0, c: 4, f: 0.2 }
                 ],
@@ -1453,7 +1467,7 @@
                     { amount: 300, unit: "g", name: "Skyr natur", kcal: 189, p: 33, c: 12, f: 0.6 },
                     { amount: 100, unit: "g", name: "Frische Erdbeeren (geviertelt)", kcal: 32, p: 0.8, c: 5.5, f: 0.4 },
                     { amount: 10, unit: "g", name: "Zartbitterschokolade 85 % (gehackt)", kcal: 58, p: 1.2, c: 2, f: 5.0 },
-                    { amount: 10, unit: "g", name: "Chiasamen / Haferflocken & Erythrit", kcal: 26, p: 3, c: 4.5, f: 0.0 }
+                    { amount: 10, unit: "g", name: "Chiasamen & Backkakao", kcal: 26, p: 3, c: 4.5, f: 0.0 }
                 ],
                 steps: [
                     "Skyr mit 2 EL Wasser und Erythrit in einer Schüssel cremig aufschlagen.",
@@ -1482,7 +1496,7 @@
                     { amount: 160, unit: "g", name: "Rinderhackfleisch 5 % Fett (roh)", kcal: 205, p: 33.6, c: 0, f: 8.0 },
                     { amount: 150, unit: "g", name: "Frische Gnocchi (Kühlregal)", kcal: 210, p: 6, c: 43, f: 1.0 },
                     { amount: 50, unit: "g", name: "Mozzarella light (gewürfelt)", kcal: 79, p: 9.5, c: 0.5, f: 4.0 },
-                    { amount: 150, unit: "g", name: "Passierte Tomaten, Basilikum & Knoblauch", kcal: 36, p: 1.9, c: 6.5, f: 0.0 }
+                    { amount: 150, unit: "g", name: "Passierte Tomaten & Gewürze", kcal: 36, p: 1.9, c: 6.5, f: 0.0 }
                 ],
                 steps: [
                     "Rinderhackfleisch in einer tiefen Pfanne ohne Fett krümelig anbraten.",
@@ -1509,7 +1523,7 @@
                 intro: "Klassisches Caesar-Dressing besteht fast nur aus Öl und Mayonnaise. Unser Dressing aus Skyr, Zitrone, Senf und echtem Parmesan spart 250 Kalorien.",
                 ingredients: [
                     { amount: 150, unit: "g", name: "Hähnchenbrustfilet (roh)", kcal: 164, p: 36, c: 0, f: 1.5 },
-                    { amount: 60, unit: "g", name: "High-Protein Tortilla-Wrap (1 Stück)", kcal: 168, p: 13, c: 17, f: 4.5 },
+                    { amount: 60, unit: "g", name: "High-Protein Tortilla-Wrap", kcal: 168, p: 13, c: 17, f: 4.5 },
                     { amount: 60, unit: "g", name: "Skyr natur", kcal: 38, p: 6.6, c: 2.4, f: 0.1 },
                     { amount: 15, unit: "g", name: "Parmesan gerieben", kcal: 60, p: 5, c: 0, f: 4.0 },
                     { amount: 60, unit: "g", name: "Römersalat, Zitronensaft & 1/2 TL Senf", kcal: 10, p: 0.4, c: 3.6, f: 3.9 }
@@ -1538,11 +1552,11 @@
                 image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80",
                 intro: "Wenn du sofort Lust auf warmen Apfelkuchen hast: In einer großen Kaffeetasse ist dieser proteinreiche Kuchen in wenigen Minuten fertig.",
                 ingredients: [
-                    { amount: 35, unit: "g", name: "Haferflocken (fein) oder Dinkelmehl", kcal: 130, p: 4.7, c: 21, f: 2.5 },
+                    { amount: 35, unit: "g", name: "Zarte Haferflocken", kcal: 130, p: 4.7, c: 21, f: 2.5 },
                     { amount: 25, unit: "g", name: "Whey Protein Vanille", kcal: 93, p: 19.5, c: 1.5, f: 1.2 },
                     { amount: 80, unit: "g", name: "Skyr natur", kcal: 50, p: 8.8, c: 3.2, f: 0.2 },
                     { amount: 80, unit: "g", name: "Apfel (fein gewürfelt) & Zimt", kcal: 42, p: 0.3, c: 10, f: 0.1 },
-                    { amount: 3, unit: "g", name: "Backpulver & 2 EL Wasser", kcal: 15, p: 0.7, c: 0.3, f: 1.0 }
+                    { amount: 3, unit: "g", name: "Backpulver & Zimt", kcal: 15, p: 0.7, c: 0.3, f: 1.0 }
                 ],
                 steps: [
                     "Haferflocken, Vanille-Protein, Backpulver, Zimt, die Hälfte des Skyrs und 2 EL Wasser in einer großen Tasse verrühren.",
@@ -1567,10 +1581,10 @@
                 image: "https://images.unsplash.com/photo-1582169296194-e4d644c48063?auto=format&fit=crop&w=1000&q=80",
                 intro: "Durch die Kombination aus Eiern, Kichererbsen und Feta light wird dieses orientalische Pfannengericht zur vollwertigen Protein-Mahlzeit.",
                 ingredients: [
-                    { amount: 2, unit: "Stk.", name: "Hühnereier (Größe M, 110 g)", kcal: 170, p: 14, c: 1, f: 12.0 },
+                    { amount: 2, unit: "Stk.", name: "Hühnerei (Größe M, 110 g)", kcal: 170, p: 14, c: 1, f: 12.0 },
                     { amount: 60, unit: "g", name: "Feta light (9 % Fett)", kcal: 101, p: 12.6, c: 0.6, f: 5.4 },
                     { amount: 80, unit: "g", name: "Kichererbsen (Dose, Abtropfgewicht)", kcal: 96, p: 5.6, c: 15, f: 0.5 },
-                    { amount: 200, unit: "g", name: "Stückige Tomaten, Paprika & Kreuzkümmel", kcal: 53, p: 2.8, c: 10.4, f: 0.1 }
+                    { amount: 200, unit: "g", name: "Passierte Tomaten & Gewürze", kcal: 53, p: 2.8, c: 10.4, f: 0.1 }
                 ],
                 steps: [
                     "Paprika würfeln und mit Kreuzkümmel und Knoblauch 2 Minuten in der Pfanne anrösten.",
@@ -1597,10 +1611,10 @@
                 intro: "Schnitzel und Kartoffelspalten passen perfekt in eine Diät, wenn beides mit nur einem Teelöffel Öl und knuspriger Panade im Airfryer gebacken wird.",
                 ingredients: [
                     { amount: 180, unit: "g", name: "Putenschnitzel natur (roh)", kcal: 193, p: 43.2, c: 0, f: 1.8 },
-                    { amount: 200, unit: "g", name: "Kartoffeln festkochend (roh)", kcal: 146, p: 4, c: 31, f: 0.2 },
-                    { amount: 25, unit: "g", name: "Paniermehl / Cornflakes-Brösel", kcal: 90, p: 2.5, c: 19, f: 0.4 },
-                    { amount: 40, unit: "g", name: "Skyr natur (zum Bestreichen & als Dip)", kcal: 25, p: 4.3, c: 1.6, f: 0.1 },
-                    { amount: 4, unit: "g", name: "Olivenöl (1 TL), Rosmarin & Paprika", kcal: 41, p: 0, c: 2.4, f: 3.5 }
+                    { amount: 200, unit: "g", name: "Kartoffeln (roh)", kcal: 146, p: 4, c: 31, f: 0.2 },
+                    { amount: 25, unit: "g", name: "Cornflakes (ungesüßt, für Panade)", kcal: 90, p: 2.5, c: 19, f: 0.4 },
+                    { amount: 40, unit: "g", name: "Skyr natur", kcal: 25, p: 4.3, c: 1.6, f: 0.1 },
+                    { amount: 4, unit: "g", name: "Olivenöl, Zitrone & Kräuter", kcal: 41, p: 0, c: 2.4, f: 3.5 }
                 ],
                 steps: [
                     "Kartoffeln waschen, in Spalten schneiden und mit 1 TL Öl, Rosmarin und Salz mischen.",
@@ -1656,9 +1670,9 @@
                 intro: "Entöltes Erdnussmehl liefert fast 50 % Eiweiß und intensives Erdnussaroma ohne die hohen Fettkalorien normaler Erdnussbutter.",
                 ingredients: [
                     { amount: 250, unit: "g", name: "Magerquark", kcal: 168, p: 30, c: 10, f: 0.5 },
-                    { amount: 20, unit: "g", name: "Entöltes Erdnusspulver / Erdnussmehl", kcal: 80, p: 10, c: 4, f: 2.4 },
+                    { amount: 20, unit: "g", name: "Entöltes Erdnusspulver", kcal: 80, p: 10, c: 4, f: 2.4 },
                     { amount: 10, unit: "g", name: "Backkakao stark entölt", kcal: 24, p: 2, c: 1, f: 1.1 },
-                    { amount: 25, unit: "g", name: "Erythrit, 60 ml Wasser & 5 g Schokodrops", kcal: 38, p: 0, c: 4, f: 2.0 }
+                    { amount: 25, unit: "g", name: "Erythrit (mit 5 g Schokodrops)", kcal: 38, p: 0, c: 4, f: 2.0 }
                 ],
                 steps: [
                     "Magerquark mit 60 ml Wasser und Erythrit in einer Schüssel glatt rühren.",
@@ -1684,24 +1698,24 @@
                 image: "https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=1000&q=80",
                 intro: "Kartoffeln, Brokkoli und Hähnchenbrust in einem leichten Skyr-Ei-Guss: Einmal im Ofen gebacken hast du sofort drei vollwertige Mahlzeiten für deine Arbeitswoche.",
                 ingredients: [
-                    { amount: 180, unit: "g", name: "Hähnchenbrustfilet (roh, gewürfelt)", kcal: 196, p: 43.2, c: 0, f: 1.8 },
-                    { amount: 200, unit: "g", name: "Kartoffeln (roh, klein gewürfelt)", kcal: 146, p: 4, c: 31, f: 0.2 },
+                    { amount: 180, unit: "g", name: "Hähnchenbrustfilet (roh)", kcal: 196, p: 43.2, c: 0, f: 1.8 },
+                    { amount: 200, unit: "g", name: "Kartoffeln (roh)", kcal: 146, p: 4, c: 31, f: 0.2 },
                     { amount: 150, unit: "g", name: "Brokkoliröschen", kcal: 42, p: 4.5, c: 4, f: 0.3 },
-                    { amount: 60, unit: "g", name: "Skyr natur & 30 ml Gemüsebrühe", kcal: 38, p: 6.6, c: 2.4, f: 0.1 },
-                    { amount: 25, unit: "g", name: "Reibekäse light (16 % Fett) & Muskat", kcal: 58, p: 7.7, c: 2.6, f: 6.6 }
+                    { amount: 60, unit: "g", name: "Skyr natur", kcal: 38, p: 6.6, c: 2.4, f: 0.1 },
+                    { amount: 25, unit: "g", name: "Reibekäse light (16 % Fett)", kcal: 58, p: 7.7, c: 2.6, f: 6.6 }
                 ],
                 steps: [
                     "Backofen auf 200 °C Umluft vorheizen.",
                     "Kartoffelwürfel und Brokkoliröschen in kochendem Salzwasser 6 Minuten vorkochen und abgießen.",
                     "Hähnchenwürfel mit Salz, Pfeffer und Paprika würzen und zusammen mit Kartoffeln und Brokkoli in eine Auflaufform geben.",
-                    "Skyr mit der Gemüsebrühe, Muskatnuss und Salz verrühren und über den Auflauf gießen.",
+                    "Skyr mit 30 ml Gemüsebrühe, Muskatnuss und Salz verrühren und über den Auflauf gießen.",
                     "Mit leichtem Reibekäse bestreuen und 20 Minuten goldbraun überbacken."
                 ],
                 tip: "Schicht-Tipp: Vervierfache die Mengen am Sonntag, backe ein großes Blech und teile es direkt in deine 4 Schicht-Boxen auf."
             }
         ];
 
-        // AUTOMATISCHE PRÜFUNG: Jedes Rezept übernimmt exakt die Summe seiner Einzelzutaten
+        // Automatische Synchronisation der Rezeptkarten-Summen mit den Einzelzutaten
         recipes.forEach(r => {
             r.kcal = Math.round(r.ingredients.reduce((s, i) => s + i.kcal, 0));
             r.protein = Math.round(r.ingredients.reduce((s, i) => s + i.p, 0));
@@ -1729,20 +1743,47 @@
             handleInitialUrlRouting();
         });
 
+        // DAUERHAFTE SPEICHERUNG MIT AUTOMATISCHER MIGRATION ÄLTERER SCHLÜSSEL
         function loadLocalData() {
             try {
-                const favs = localStorage.getItem('ph_favs_v5');
-                if (favs) favoriteIds = JSON.parse(favs);
-                const plan = localStorage.getItem('ph_plan_v5');
-                if (plan) weeklyPlan = JSON.parse(plan);
+                const permanentFavs = localStorage.getItem('proteinhappen_favorites');
+                if (permanentFavs) {
+                    favoriteIds = JSON.parse(permanentFavs);
+                } else {
+                    // Übernehme evtl. vorhandene Favoriten aus vorherigen Versionen
+                    const legacyKeys = ['ph_favs_v5', 'ph_favs_v4', 'ph_favs_v3', 'ph_favorites_v2'];
+                    for (const k of legacyKeys) {
+                        const oldData = localStorage.getItem(k);
+                        if (oldData) {
+                            favoriteIds = JSON.parse(oldData);
+                            localStorage.setItem('proteinhappen_favorites', JSON.stringify(favoriteIds));
+                            break;
+                        }
+                    }
+                }
+
+                const permanentPlan = localStorage.getItem('proteinhappen_weekly_plan');
+                if (permanentPlan) {
+                    weeklyPlan = JSON.parse(permanentPlan);
+                } else {
+                    const legacyPlanKeys = ['ph_plan_v5', 'ph_plan_v4', 'ph_plan_v3'];
+                    for (const k of legacyPlanKeys) {
+                        const oldPlan = localStorage.getItem(k);
+                        if (oldPlan) {
+                            weeklyPlan = JSON.parse(oldPlan);
+                            localStorage.setItem('proteinhappen_weekly_plan', JSON.stringify(weeklyPlan));
+                            break;
+                        }
+                    }
+                }
             } catch (e) {}
             updateBadges();
         }
 
         function saveLocalData() {
             try {
-                localStorage.setItem('ph_favs_v5', JSON.stringify(favoriteIds));
-                localStorage.setItem('ph_plan_v5', JSON.stringify(weeklyPlan));
+                localStorage.setItem('proteinhappen_favorites', JSON.stringify(favoriteIds));
+                localStorage.setItem('proteinhappen_weekly_plan', JSON.stringify(weeklyPlan));
             } catch (e) {}
             updateBadges();
         }
@@ -1758,9 +1799,7 @@
             document.getElementById('plannerCountMobile').textContent = planCount;
         }
 
-        // ==========================================
-        // GOOGLE-FREUNDLICHES URL-ROUTING (HTTP 200 OK)
-        // ==========================================
+        // URL-ROUTING
         function handleInitialUrlRouting() {
             const redirectedSlug = sessionStorage.getItem('ph_redirect_path');
             if (redirectedSlug) {
@@ -2251,7 +2290,7 @@
             document.getElementById('dynamicSchema').textContent = JSON.stringify(schema, null, 2);
         }
 
-        // MERKLISTE
+        // MERKLISTE (DAUERHAFT PERSISTENT)
         function toggleFavorite(recipeId, event = null) {
             if (event) event.stopPropagation();
             const idx = favoriteIds.indexOf(recipeId);
@@ -2260,7 +2299,7 @@
                 showToast("Aus deiner Merkliste entfernt.");
             } else {
                 favoriteIds.push(recipeId);
-                showToast("❤️ Auf deiner Merkliste gespeichert!");
+                showToast("❤️ Dauerhaft auf deiner Merkliste gespeichert!");
             }
             saveLocalData();
             renderRecipes();
@@ -2280,7 +2319,7 @@
                     <div class="col-span-full bg-slate-50 rounded-2xl p-10 text-center border border-slate-200">
                         <div class="text-3xl mb-2">❤️</div>
                         <h3 class="font-display font-bold text-lg text-slate-800 mb-1">Deine Merkliste ist noch leer</h3>
-                        <p class="text-xs sm:text-sm text-slate-500 mb-4">Klicke bei deinen Lieblingsrezepten auf das Herz-Symbol, um sie hier zu speichern.</p>
+                        <p class="text-xs sm:text-sm text-slate-500 mb-4">Klicke bei deinen Lieblingsrezepten auf das Herz-Symbol, um sie hier dauerhaft zu speichern.</p>
                         <button onclick="showSection('home')" class="bg-brand-green text-white text-xs font-bold px-5 py-2.5 rounded-xl">Zu den 30 Rezepten</button>
                     </div>
                 `;
@@ -2289,7 +2328,7 @@
             grid.innerHTML = list.map(r => createRecipeCardHtml(r)).join('');
         }
 
-        // WOCHENPLANER
+        // WOCHENPLANER & NORMALISIERTE EINKAUFSLISTE
         function populatePlannerDropdown() {
             const sel = document.getElementById('plannerRecipeSelect');
             if (!sel) return;
@@ -2340,6 +2379,30 @@
             showToast("Wochenplan wurde geleert.");
         }
 
+        // Bereinigt Klammerzusätze wie "(roh)" oder "(gut gekühlt)", damit identische Zutaten sauber summiert werden
+        function normalizeIngredientName(rawName) {
+            return rawName.replace(/\s*\([^)]*\)/g, '').trim();
+        }
+
+        function getAggregatedShoppingList() {
+            const merged = {};
+            weekDays.forEach(d => {
+                (weeklyPlan[d] || []).forEach(entry => {
+                    const r = recipes.find(x => x.id === entry.recipeId);
+                    if (!r) return;
+                    r.ingredients.forEach(ing => {
+                        const cleanName = normalizeIngredientName(ing.name);
+                        const key = `${cleanName.toLowerCase()}__${ing.unit}`;
+                        if (!merged[key]) {
+                            merged[key] = { name: cleanName, unit: ing.unit, amount: 0 };
+                        }
+                        merged[key].amount += ing.amount * entry.portions;
+                    });
+                });
+            });
+            return merged;
+        }
+
         function renderWeeklyPlan() {
             const grid = document.getElementById('weeklyGrid');
             grid.innerHTML = weekDays.map(day => {
@@ -2382,19 +2445,7 @@
                 `;
             }).join('');
 
-            const merged = {};
-            weekDays.forEach(d => {
-                (weeklyPlan[d] || []).forEach(entry => {
-                    const r = recipes.find(x => x.id === entry.recipeId);
-                    if (!r) return;
-                    r.ingredients.forEach(ing => {
-                        const key = `${ing.name}__${ing.unit}`;
-                        if (!merged[key]) merged[key] = { name: ing.name, unit: ing.unit, amount: 0 };
-                        merged[key].amount += ing.amount * entry.portions;
-                    });
-                });
-            });
-
+            const merged = getAggregatedShoppingList();
             const listEl = document.getElementById('shoppingListContainer');
             const keys = Object.keys(merged);
             if (keys.length === 0) {
@@ -2417,18 +2468,7 @@
         }
 
         function copyShoppingText() {
-            const merged = {};
-            weekDays.forEach(d => {
-                (weeklyPlan[d] || []).forEach(entry => {
-                    const r = recipes.find(x => x.id === entry.recipeId);
-                    if (!r) return;
-                    r.ingredients.forEach(ing => {
-                        const key = `${ing.name}__${ing.unit}`;
-                        if (!merged[key]) merged[key] = { name: ing.name, unit: ing.unit, amount: 0 };
-                        merged[key].amount += ing.amount * entry.portions;
-                    });
-                });
-            });
+            const merged = getAggregatedShoppingList();
             const lines = Object.values(merged).map(i => `- ${Number.isInteger(i.amount) ? i.amount : i.amount.toFixed(1)} ${i.unit} ${i.name}`);
             if (lines.length === 0) {
                 showToast("Wochenplan ist noch leer.");
@@ -2449,11 +2489,9 @@
             const activity = parseFloat(document.getElementById('calcActivity').value) || 1.6;
             const goal = document.getElementById('calcGoal').value;
 
-            // 1. Grundumsatz (Mifflin-St Jeor) & Erhaltungsbedarf
             const bmr = Math.round((10 * weight) + (6.25 * height) - (5 * age) + (gender === 'male' ? 5 : -161));
             const tdee = Math.round(bmr * activity);
 
-            // 2. Roh-Zielwert nach Zielsetzung
             let rawTarget = tdee;
             let protFactor = 1.8;
             if (goal === 'lose') {
@@ -2463,7 +2501,6 @@
                 rawTarget = tdee + 250;
             }
 
-            // 3. Makros in Gramm berechnen
             const pGrams = Math.round(weight * protFactor);
             const fGrams = Math.round(weight * 0.8);
             const pKcal = pGrams * 4;
@@ -2472,7 +2509,6 @@
             const cGrams = Math.max(50, Math.round((rawTarget - pKcal - fKcal) / 4));
             const cKcal = cGrams * 4;
 
-            // 4. Exakte Verknüpfung: Die angezeigten Tageskalorien entsprechen exakt der Summe der Makro-Kalorien
             const exactTargetKcal = pKcal + cKcal + fKcal;
 
             document.getElementById('resTargetKcal').textContent = `${exactTargetKcal.toLocaleString('de-DE')} kcal`;
@@ -2483,7 +2519,7 @@
             document.getElementById('resCarbsKcal').textContent = `KH (${cKcal.toLocaleString('de-DE')} kcal)`;
             document.getElementById('resFat').textContent = `${fGrams} g`;
             document.getElementById('resFatKcal').textContent = `Fett (${fKcal} kcal)`;
-            document.getElementById('resMacroFormula').textContent = `Nachweis: ${pKcal} kcal (P) + ${cKcal.toLocaleString('de-DE')} kcal (KH) + ${fKcal} kcal (F) = ${exactTargetKcal.toLocaleString('de-DE')} kcal`;
+            document.getElementById('resMacroFormula').textContent = `${pGrams}g × 4 (${pKcal}) + ${cGrams}g × 4 (${cKcal.toLocaleString('de-DE')}) + ${fGrams}g × 9 (${fKcal}) = ${exactTargetKcal.toLocaleString('de-DE')} kcal`;
         }
 
         // RECHTLICHES MODAL
