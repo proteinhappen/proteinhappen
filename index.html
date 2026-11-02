@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="seoTitle">ProteinHappen | High-Protein Rezepte für Alltag, Abnehmen & Schichtarbeit</title>
-    <meta id="seoDescription" name="description" content="Proteinreich essen. Einfach genießen. 30 schnelle High-Protein Rezepte für Alltag, Schichtarbeit & Meal Prep mit dokumentierter Nährwertberechnung nach BLS.">
+    <!-- Cache-Kontrolle für sofortige Aktualisierung auf Smartphone & Desktop -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title id="seoTitle">ProteinHappen | 30 High-Protein Rezepte für Alltag, Abnehmen & Schichtarbeit</title>
+    <meta id="seoDescription" name="description" content="Proteinreich essen. Einfach genießen. 30 geprüfte High-Protein Rezepte für Alltag, Schichtarbeit & Meal Prep mit dokumentierter Nährwertberechnung nach BLS.">
     <meta name="robots" content="index, follow">
     <link id="canonicalLink" rel="canonical" href="https://proteinhappen.de/">
 
     <!-- Open Graph -->
-    <meta property="og:title" id="ogTitle" content="ProteinHappen | High-Protein Rezepte für Alltag & Schichtarbeit">
+    <meta property="og:title" id="ogTitle" content="ProteinHappen | 30 High-Protein Rezepte für Alltag & Schichtarbeit">
     <meta property="og:description" id="ogDescription" content="30 geprüfte High-Protein Rezepte unter 20 Minuten – perfekt für Meal Prep, Nachtschicht, Mittagspause und Kaloriendefizit.">
     <meta property="og:type" content="website">
     <meta property="og:url" id="ogUrl" content="https://proteinhappen.de/">
@@ -31,7 +36,7 @@
       "@type": "WebSite",
       "name": "ProteinHappen",
       "url": "https://proteinhappen.de/",
-      "description": "High-Protein Rezepte für Alltag, Schichtarbeit und Meal Prep mit transparenter Nährwertdokumentation."
+      "description": "30 High-Protein Rezepte für Alltag, Schichtarbeit und Meal Prep mit transparenter Nährwertdokumentation."
     }
     </script>
 
@@ -81,7 +86,7 @@
             <div class="flex items-center justify-between gap-4">
                 
                 <!-- LOGO -->
-                <a href="/" onclick="navigateHome(event)" class="flex items-center gap-3 group focus:outline-none">
+                <a href="https://proteinhappen.de/" onclick="navigateHome(event)" class="flex items-center gap-3 group focus:outline-none">
                     <div class="w-12 h-12 relative flex-shrink-0 flex items-center justify-center bg-slate-50 rounded-2xl border border-slate-200 shadow-sm group-hover:scale-105 transition">
                         <svg viewBox="0 0 100 100" class="w-10 h-10" role="img" aria-label="ProteinHappen Logo">
                             <path d="M22 48 C15 32, 30 20, 42 35 C45 22, 62 24, 60 40 C68 32, 78 40, 70 48 Z" fill="#16A34A"/>
@@ -133,11 +138,11 @@
 
                 <!-- SOCIAL & MOBILE SHORTCUTS -->
                 <div class="flex items-center gap-2">
-                    <button onclick="showSection('planner')" class="xl:hidden px-3 py-2 rounded-xl bg-orange-50 text-brand-orange font-bold text-xs border border-orange-200 flex items-center gap-1.5">
+                    <button onclick="showSection('planner')" class="xl:hidden px-3 py-2 rounded-xl bg-orange-50 text-brand-orange font-bold text-xs border border-orange-200 flex items-center gap-1.5" aria-label="Wochenplaner">
                         <i class="fa-solid fa-calendar-check"></i>
                         <span id="plannerCountMobile">0</span>
                     </button>
-                    <button onclick="showSection('favorites')" class="xl:hidden px-3 py-2 rounded-xl bg-rose-50 text-rose-600 font-bold text-xs border border-rose-200 flex items-center gap-1.5">
+                    <button onclick="showSection('favorites')" class="xl:hidden px-3 py-2 rounded-xl bg-rose-50 text-rose-600 font-bold text-xs border border-rose-200 flex items-center gap-1.5" aria-label="Merkliste">
                         <i class="fa-solid fa-heart"></i>
                         <span id="favCountMobile">0</span>
                     </button>
@@ -162,7 +167,7 @@
                     ⚖️ Kalorienrechner
                 </button>
                 <button onclick="showSection('methodology')" class="shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-emerald-50 text-brand-greenDark border border-emerald-200">
-                    📊 Nährwert-Dokumentation
+                    📊 Nährwert-Doku
                 </button>
             </div>
         </div>
@@ -179,7 +184,7 @@
         <div id="section-home" class="space-y-12">
 
             <!-- HERO-BANNER -->
-            <section class="relative rounded-3xl overflow-hidden shadow-xl min-h-[360px] sm:min-h-[420px] flex items-center">
+            <section class="relative rounded-3xl overflow-hidden shadow-xl min-h-[340px] sm:min-h-[420px] flex items-center">
                 <img 
                     src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1600&q=85" 
                     alt="High-Protein Hähnchen-Bowl mit Ei, Reis und knackigem Gemüse für Alltag und Schichtarbeit" 
@@ -189,7 +194,7 @@
 
                 <div class="relative z-10 p-6 sm:p-12 max-w-2xl text-white">
                     <div class="inline-flex items-center gap-2 bg-brand-green px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white mb-4 shadow-sm">
-                        <i class="fa-solid fa-check-circle"></i> 30 vollständige Rezepte • Alltag, Familie & Schichtdienst
+                        <i class="fa-solid fa-check-circle"></i> 30 geprüfte Rezepte • Alltag, Familie & Schichtdienst
                     </div>
                     <h1 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4">
                         Proteinreich essen. <span class="text-brand-orange">Einfach genießen.</span>
@@ -209,6 +214,44 @@
                 </div>
             </section>
 
+            <!-- DREI KLARE EINSTIEGSMÖGLICHKEITEN -->
+            <section aria-label="Schnelleinstieg">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div onclick="scrollToElement('alleRezepteSection')" class="group bg-white hover:border-brand-green rounded-3xl p-5 sm:p-6 shadow-sm hover:shadow-md border-2 border-slate-200/80 transition cursor-pointer flex items-center justify-between gap-4">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase text-brand-green">1. Rezeptsammlung</span>
+                            <h2 class="font-display text-lg font-extrabold text-slate-900 mt-0.5">30 High-Protein Rezepte</h2>
+                            <p class="text-xs text-slate-500 mt-1">Inkl. Einzelzutaten-Berechnung</p>
+                        </div>
+                        <span class="w-11 h-11 rounded-2xl bg-emerald-50 text-brand-green flex items-center justify-center text-lg shrink-0 group-hover:bg-brand-green group-hover:text-white transition">
+                            <i class="fa-solid fa-utensils"></i>
+                        </span>
+                    </div>
+
+                    <div onclick="showSection('planner')" class="group bg-white hover:border-brand-orange rounded-3xl p-5 sm:p-6 shadow-sm hover:shadow-md border-2 border-slate-200/80 transition cursor-pointer flex items-center justify-between gap-4">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase text-brand-orange">2. Wochenplanung</span>
+                            <h2 class="font-display text-lg font-extrabold text-slate-900 mt-0.5">Wochenplaner & Einkauf</h2>
+                            <p class="text-xs text-slate-500 mt-1">Montag bis Sonntag + Druckliste</p>
+                        </div>
+                        <span class="w-11 h-11 rounded-2xl bg-orange-50 text-brand-orange flex items-center justify-center text-lg shrink-0 group-hover:bg-brand-orange group-hover:text-white transition">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </span>
+                    </div>
+
+                    <div onclick="showSection('calculator')" class="group bg-white hover:border-blue-600 rounded-3xl p-5 sm:p-6 shadow-sm hover:shadow-md border-2 border-slate-200/80 transition cursor-pointer flex items-center justify-between gap-4">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase text-blue-600">3. Bedarfsrechner</span>
+                            <h2 class="font-display text-lg font-extrabold text-slate-900 mt-0.5">Kalorien- & Proteinrechner</h2>
+                            <p class="text-xs text-slate-500 mt-1">Exakt verknüpfte Makro-Richtwerte</p>
+                        </div>
+                        <span class="w-11 h-11 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg shrink-0 group-hover:bg-blue-600 group-hover:text-white transition">
+                            <i class="fa-solid fa-calculator"></i>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
             <!-- ALLEINSTELLUNGSMERKMAL (USP): SCHICHTARBEIT & MEAL PREP HUB -->
             <section id="schichtHubSection" class="scroll-mt-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-700">
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
@@ -218,11 +261,11 @@
                             High-Protein für Schichtarbeit, Pause & Meal Prep
                         </h2>
                         <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
-                            Wer im Wechsel aus Früh-, Spät- oder Nachtschicht arbeitet, braucht Mahlzeiten, die sich schnell vorbereiten lassen, in der Box frisch bleiben und nicht müde machen. Klicke auf deine Schicht-Situation:
+                            Wer im Wechsel aus Früh-, Spät- oder Nachtschicht arbeitet, braucht Mahlzeiten, die sich schnell vorbereiten lassen, in der Box frisch bleiben und nicht müde machen. Wähle deine Situation:
                         </p>
                     </div>
                     <button onclick="resetFilters()" class="self-start md:self-auto text-xs font-bold bg-white/10 hover:bg-white/20 px-4 py-2 rounded-xl transition">
-                        Alle 30 Gerichte zeigen
+                        Alle 30 Rezepte zeigen
                     </button>
                 </div>
 
@@ -274,21 +317,20 @@
                 </div>
             </section>
 
-            <!-- DIE 7 HAUPTKATEGORIEN + FILTERLEISTE -->
+            <!-- DIE 30 REZEPTE IN 7 KATEGORIEN -->
             <section id="alleRezepteSection" class="scroll-mt-24">
                 <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-slate-200/90 mb-8">
                     
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
                         <div>
                             <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900">
-                                30 High-Protein Rezepte in 7 Kategorien
+                                Alle 30 High-Protein Rezepte
                             </h2>
-                            <p class="text-xs text-slate-500 mt-0.5" id="activeFilterInfo">
-                                Alle Rezepte mit eigener URL, Schritt-für-Schritt-Anleitung & Einzelzutaten-Berechnung
+                            <p class="text-xs text-slate-500 mt-0.5">
+                                Jedes Rezept mit eigener Direkt-URL, Schritt-für-Schritt-Anleitung & geprüfter Einzelzutaten-Berechnung
                             </p>
                         </div>
 
-                        <!-- Suche & Reset -->
                         <div class="flex items-center gap-2 w-full md:w-auto">
                             <div class="relative flex-1 md:w-64">
                                 <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
@@ -306,7 +348,7 @@
                         </div>
                     </div>
 
-                    <!-- Die 7 gewünschten Kategorien als Schnellwahl-Pills -->
+                    <!-- 7 Kategorien Pills -->
                     <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-4 border-b border-slate-100">
                         <button onclick="filterByCategory('all')" data-cat="all" class="cat-pill bg-brand-green text-white shrink-0 px-4 py-2 rounded-xl text-xs font-extrabold transition shadow-sm">
                             🔥 Alle Rezepte (30)
@@ -330,11 +372,11 @@
                             🍱 Meal Prep
                         </button>
                         <button onclick="filterByCategory('Schnelle Rezepte unter 20 Minuten')" data-cat="Schnelle Rezepte unter 20 Minuten" class="cat-pill bg-slate-100 hover:bg-slate-200 text-slate-700 shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold transition">
-                            ⏱️ Schnelle Rezepte unter 20 Min.
+                            ⏱️ Unter 20 Min.
                         </button>
                     </div>
 
-                    <!-- Feinfilter: Schicht-Eignung, Kalorien, Protein, Gerät -->
+                    <!-- Kombinierbare Filter -->
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4">
                         <div>
                             <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">⚡ Schicht & Alltag</label>
@@ -379,22 +421,51 @@
                 </div>
 
                 <!-- Ergebnis-Kopfleiste -->
-                <div class="flex items-center justify-between mb-5">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-5">
                     <span id="recipeCountLabel" class="text-xs font-extrabold bg-brand-green text-white px-3.5 py-1.5 rounded-full">
                         30 Rezepte angezeigt
                     </span>
                     <button onclick="showSection('methodology')" class="text-xs font-bold text-slate-600 hover:text-brand-green flex items-center gap-1.5">
-                        <i class="fa-solid fa-circle-check text-brand-green"></i> Wie unsere Nährwerte berechnet werden →
+                        <i class="fa-solid fa-circle-check text-brand-green"></i> Dokumentation der Nährwertberechnung ansehen →
                     </button>
                 </div>
 
                 <div id="recipeGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             </section>
 
+            <!-- VERTRAUENSSEKTION & ÜBER UNS -->
+            <section id="vertrauenSection" class="scroll-mt-24 bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                    <div class="lg:col-span-2 space-y-3">
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-green">🛡️ Geprüfte Qualität aus der Praxis</span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900">
+                            Ehrliche Rezepte ohne versteckte Kalorien
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Hi, ich bin <strong>Andreas aus Erkrath</strong> – Familienvater, Schichtarbeiter in der Logistik und Kraftsportler. Alle 30 Rezepte auf ProteinHappen sind so entwickelt, dass sie mit normalen Supermarkt-Zutaten funktionieren und dich in Früh-, Spät- und Nachtschicht zuverlässig satt halten. Jede Nährwertangabe ist transparent über die Rohgewichte der Einzelzutaten dokumentiert.
+                        </p>
+                        <div class="flex flex-wrap gap-3 pt-2">
+                            <button onclick="showSection('methodology')" class="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition">
+                                📊 Zur Nährwert-Dokumentation
+                            </button>
+                            <button onclick="openLegalModal('impressum')" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2.5 rounded-xl transition">
+                                Impressum & Kontakt
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-2.5 text-xs">
+                        <div class="font-display font-bold text-sm text-slate-900">Unser Qualitätsstandard:</div>
+                        <div class="flex items-start gap-2 text-slate-600"><i class="fa-solid fa-check text-brand-green mt-0.5"></i> <span>Berechnung nach Bundeslebensmittelschlüssel (BLS) & LMIV</span></div>
+                        <div class="flex items-start gap-2 text-slate-600"><i class="fa-solid fa-check text-brand-green mt-0.5"></i> <span>Konsequente Deklaration nach Roh- bzw. Abtropfgewicht</span></div>
+                        <div class="flex items-start gap-2 text-slate-600"><i class="fa-solid fa-check text-brand-green mt-0.5"></i> <span>Einzelzutaten-Aufschlüsselung unter jedem Rezept</span></div>
+                    </div>
+                </div>
+            </section>
+
         </div>
 
         <!-- ==========================================
-             SEKTION 2: EINZELNE REZEPTSEITE (EIGENE URL + SCHEMA)
+             SEKTION 2: EINZELNE REZEPTSEITE
              ========================================== -->
         <div id="section-detail" class="hidden max-w-4xl mx-auto">
             <div id="recipeDetailContainer"></div>
@@ -412,82 +483,59 @@
                             Dokumentation unserer Nährwertberechnung
                         </h1>
                         <p class="text-sm text-slate-500 mt-1">
-                            Nachvollziehbare Kriterien für Kalorien-, Eiweiß-, Kohlenhydrat- und Fettangaben auf ProteinHappen.de
+                            Wie Kalorien-, Eiweiß-, Kohlenhydrat- und Fettangaben auf ProteinHappen.de ermittelt werden
                         </p>
                     </div>
                     <button onclick="showSection('home')" class="bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold px-4 py-2.5 rounded-xl transition">
-                        ← Zurück zu den Rezepten
+                        ← Zurück zu den 30 Rezepten
                     </button>
                 </div>
 
-                <div class="space-y-8 text-sm text-slate-700 leading-relaxed">
-                    
-                    <!-- Punkt 1: Welche Nährwertdatenbank wird verwendet? -->
+                <div class="space-y-6 text-sm text-slate-700 leading-relaxed">
                     <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80">
-                        <h2 class="font-display font-extrabold text-lg text-slate-900 mb-2 flex items-center gap-2">
-                            <span class="w-7 h-7 rounded-lg bg-brand-green text-white text-xs flex items-center justify-center">1</span>
-                            Welche Nährwertdatenbank wird verwendet?
+                        <h2 class="font-display font-extrabold text-lg text-slate-900 mb-2">
+                            1. Welche Nährwertdatenbank wird verwendet?
                         </h2>
-                        <p class="mb-3">
-                            Für alle Grundnahrungsmittel (wie Hähnchenbrustfilet, Rindfleisch, Lachs, Eier, Kartoffeln, Süßkartoffeln, Gemüse, Obst und Getreideprodukte) nutzen wir als primäre Referenz den <strong>Bundeslebensmittelschlüssel (BLS, Version 3.02)</strong> des Max Rubner-Instituts (Bundesforschungsinstitut für Ernährung und Lebensmittel).
+                        <p class="mb-2">
+                            Für unverarbeitete Grundnahrungsmittel (Fleisch, Fisch, Eier, Kartoffeln, Gemüse, Obst, Getreide) verwenden wir die Referenzdaten des <strong>Bundeslebensmittelschlüssels (BLS, Version 3.02)</strong> des Max Rubner-Instituts.
                         </p>
                         <p>
-                            Für verarbeitete Standardprodukte des täglichen Bedarfs (wie Magerquark, Skyr natur, körniger Frischkäse light, Reibekäse 16 %, High-Protein-Wraps oder Whey-Proteinpulver) ziehen wir die <strong>deklarierten Durchschnittswerte gemäß EU-Lebensmittelinformationsverordnung (LMIV)</strong> der führenden Handelsmarken im deutschen Lebensmitteleinzelhandel (REWE, EDEKA, ALDI, LIDL) heran.
+                            Für verarbeitete Standardprodukte des Lebensmitteleinzelhandels (Magerquark, Skyr natur, körniger Frischkäse light, Reibekäse 16 %, High-Protein-Wraps, Whey-Protein) nutzen wir die deklarierten Durchschnittswerte gemäß <strong>EU-Lebensmittelinformationsverordnung (LMIV)</strong> gängiger Supermarkt-Eigenmarken.
                         </p>
                     </div>
 
-                    <!-- Punkt 2: Rohgewichte vs. gegarte Gewichte -->
                     <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80">
-                        <h2 class="font-display font-extrabold text-lg text-slate-900 mb-2 flex items-center gap-2">
-                            <span class="w-7 h-7 rounded-lg bg-brand-orange text-white text-xs flex items-center justify-center">2</span>
-                            Werden Rohgewichte oder gegarte Gewichte berechnet?
+                        <h2 class="font-display font-extrabold text-lg text-slate-900 mb-2">
+                            2. Werden Rohgewichte oder gegarte Gewichte berechnet?
                         </h2>
-                        <p class="mb-3">
-                            <strong>Grundsatz: Alle Rezepte auf ProteinHappen.de werden konsequent auf Basis des Rohgewichts (bzw. des Abtropfgewichts bei Konserven) vor der Zubereitung berechnet.</strong>
+                        <p class="mb-2">
+                            <strong>Alle Mengenangaben und Nährwerte beziehen sich konsequent auf das Rohgewicht vor dem Garen bzw. auf das Abtropfgewicht bei Konserven.</strong>
                         </p>
-                        <div class="bg-white p-4 rounded-xl border border-slate-200 text-xs space-y-2">
-                            <div class="font-bold text-slate-900">Warum das Rohgewicht entscheidend für genaue Werte ist:</div>
-                            <ul class="list-disc pl-5 space-y-1 text-slate-600">
-                                <li><strong>Fleisch & Fisch:</strong> 200 g rohes Hähnchenbrustfilet verlieren beim Braten oder im Airfryer je nach Hitze ca. 20–25 % Wasser und wiegen gegart nur noch etwa 150–155 g. Der absolute Gehalt an Kalorien (218 kcal) und Eiweiß (48 g) bleibt jedoch exakt gleich.</li>
-                                <li><strong>Reis, Nudeln & Haferflocken:</strong> Trockenprodukte nehmen beim Kochen unterschiedlich viel Wasser auf. Deshalb geben wir – sofern nicht ausdrücklich als „vorgekocht“ für schnelle Bowls deklariert – das exakte Trockengewicht vor dem Kochen an.</li>
-                                <li><strong>Konserven (Thunfisch, Mandarinen, Bohnen, Mais):</strong> Hier gilt immer das <em>Abtropfgewicht</em> nach dem Abgießen der Lake.</li>
-                            </ul>
-                        </div>
+                        <p class="text-xs sm:text-sm text-slate-600">
+                            Beim Braten oder Backen verliert Fleisch ca. 20–25 % Wasser, während Reis und Nudeln beim Kochen Wasser aufnehmen. Der absolute Kalorien- und Proteingehalt verändert sich durch den Wasserverlust oder die Wasseraufnahme nicht – deshalb garantiert nur das Abwiegen im Rohzustand verlässliche Werte.
+                        </p>
                     </div>
 
-                    <!-- Punkt 3: Wie werden Rundungen vorgenommen? -->
                     <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80">
-                        <h2 class="font-display font-extrabold text-lg text-slate-900 mb-2 flex items-center gap-2">
-                            <span class="w-7 h-7 rounded-lg bg-blue-600 text-white text-xs flex items-center justify-center">3</span>
-                            Wie werden Berechnungen und Rundungen vorgenommen?
+                        <h2 class="font-display font-extrabold text-lg text-slate-900 mb-2">
+                            3. Wie werden Rundungen vorgenommen?
                         </h2>
-                        <p class="mb-3">
-                            Die Berechnung erfolgt zunächst ungerundet für jede einzelne Zutat nach ihrem exakten Rezeptgewicht:
-                            <code>(Nährwert pro 100 g ÷ 100) × Rezeptmenge in Gramm</code>.
+                        <p class="mb-2">
+                            In der Einzelzutaten-Tabelle unter jedem Rezept werden Eiweiß, Kohlenhydrate und Fett auf <strong>0,1 g genau</strong> ausgewiesen. Die Gesamtsumme des Rezepts für die Rezeptkarten wird exakt aus der Summe der Einzelzutaten gebildet und kaufmännisch auf ganze Gramm bzw. ganze Kilokalorien (kcal) gerundet.
                         </p>
-                        <ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-slate-600">
-                            <li><strong>Einzelzutaten-Tabelle:</strong> In der Aufschlüsselungstabelle unter jedem Rezept werden Makronährstoffe (Eiweiß, Kohlenhydrate, Fett) auf <strong>eine Nachkommastelle (0,1 g)</strong> genau ausgewiesen.</li>
-                            <li><strong>Portions-Gesamtsummen:</strong> Für die schnelle Übersicht auf den Rezeptkarten werden die aufsummierten Gesamtwerte einer Portion <strong>kaufmännisch auf ganze Gramm bzw. ganze Kilokalorien (kcal)</strong> gerundet (ab 0,5 wird aufgerundet, unter 0,5 abgerundet).</li>
-                            <li><strong>Physiologischer Brennwert:</strong> Warum ergibt die Formel <code>(Protein × 4) + (Carbs × 4) + (Fett × 9)</code> manchmal 5–10 kcal Abweichung zur Gesamtkalorienzahl? Weil offizielle Datenbanken mit den präzisen Atwater-Faktoren (4,1 kcal/g für Protein und Kohlenhydrate, 9,3 kcal/g für Fett sowie 2,0 kcal/g für Ballaststoffe) rechnen.</li>
-                        </ul>
+                        <p class="text-xs sm:text-sm text-slate-600">
+                            Im <strong>Kalorienrechner</strong> wird die Ziel-Kalorienzahl direkt aus den berechneten Makronährstoffen ($\text{Protein in g} \times 4\text{ kcal} + \text{Kohlenhydrate in g} \times 4\text{ kcal} + \text{Fett in g} \times 9\text{ kcal}$) gebildet, sodass Makros und Gesamtkalorien ohne Rundungsdifferenz zu 100 % übereinstimmen.
+                        </p>
                     </div>
 
-                    <!-- Punkt 4: Wie werden abweichende Produkte berücksichtigt? -->
                     <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200/80">
-                        <h2 class="font-display font-extrabold text-lg text-slate-900 mb-2 flex items-center gap-2">
-                            <span class="w-7 h-7 rounded-lg bg-purple-600 text-white text-xs flex items-center justify-center">4</span>
-                            Wie werden abweichende Produkte & natürliche Schwankungen berücksichtigt?
+                        <h2 class="font-display font-extrabold text-lg text-slate-900 mb-2">
+                            4. Wie werden abweichende Produkte berücksichtigt?
                         </h2>
-                        <p class="mb-3">
-                            Lebensmittel unterliegen natürlichen und herstellerbedingten Schwankungen, die wir wie folgt berücksichtigen:
+                        <p class="text-xs sm:text-sm text-slate-600">
+                            Da Naturprodukte (z. B. Größe eines Hühnereis) und Handelsmarken leichten Schwankungen unterliegen, weisen wir in der Rezept-Aufschlüsselung jede Zutat einzeln aus. So kannst du beim Nachkochen jederzeit erkennen, mit welchen exakten Werten eine Zutat berechnet wurde, und sie bei Bedarf in deiner Tracking-App mit deiner spezifischen Produktmarke abgleichen.
                         </p>
-                        <ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm text-slate-600">
-                            <li><strong>Stückangaben mit Referenzgewicht:</strong> Bei Eiern oder Gemüse hinterlegen wir Standardgrößen (z. B. 1 Hühnerei Größe M = ca. 55 g essbarer Anteil = 85 kcal / 7 g Protein).</li>
-                            <li><strong>Markenunterschiede im Supermarkt:</strong> Ein „Reibekäse light“ oder „High-Protein Wrap“ kann je nach Hersteller um ±15–25 kcal pro 100 g abweichen. Durch unsere Einzelzutaten-Tabelle unter jedem Rezept kannst du jederzeit ablesen, mit welchem exakten Wert wir die jeweilige Zutat angesetzt haben, und sie bei Bedarf in deiner Tracking-App (z. B. Yazio oder FDDB) 1-zu-1 mit deiner gekauften Marke abgleichen.</li>
-                            <li><strong>Gewürze & Kräuter:</strong> Trockengewürze, Salz, Pfeffer und Knoblauch in Kleinmengen werden pauschal mit einem Sicherheitsaufschlag von 5–10 kcal pro Gericht berücksichtigt.</li>
-                        </ul>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -520,7 +568,6 @@
                     </div>
                 </div>
 
-                <!-- Schnelle Zuweisung -->
                 <div class="bg-slate-50 rounded-2xl p-4 my-6 border border-slate-200/80 no-print">
                     <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">➕ Rezept einem Wochentag zuordnen:</div>
                     <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
@@ -550,7 +597,6 @@
 
                 <div id="weeklyGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-3 mb-8"></div>
 
-                <!-- Automatische Einkaufsliste -->
                 <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 print-box">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-5 border-b border-slate-700">
                         <div>
@@ -574,16 +620,16 @@
         </div>
 
         <!-- ==========================================
-             SEKTION 5: KALORIEN- & PROTEINRECHNER
+             SEKTION 5: KALORIEN- & PROTEINRECHNER (100 % SYNCHRONISIERT)
              ========================================== -->
         <div id="section-calculator" class="hidden max-w-4xl mx-auto space-y-6">
             <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
-                <span class="text-xs font-bold uppercase tracking-widest text-brand-green">⚖️ Nachvollziehbare Orientierungswerte</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-green">⚖️ Exakt verknüpfte Makro- & Kalorienberechnung</span>
                 <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 mb-2">
                     Protein- und Kalorienrechner
                 </h1>
                 <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                    Berechne deinen täglichen Kalorien- und Eiweißbedarf nach der <strong>Mifflin-St Jeor Formel</strong> – inklusive Berücksichtigung von Schichtarbeit und körperlicher Aktivität.
+                    Berechne deinen täglichen Kalorien- und Eiweißbedarf nach der <strong>Mifflin-St Jeor Formel</strong>. Die ausgegebenen Tageskalorien entsprechen immer exakt der Summe der berechneten Makronährstoffe ($4\text{ kcal/g}$ Protein, $4\text{ kcal/g}$ Kohlenhydrate, $9\text{ kcal/g}$ Fett).
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -591,31 +637,31 @@
                         <div class="grid grid-cols-2 gap-3">
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 mb-1">Geschlecht</label>
-                                <select id="calcGender" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
-                                    <option value="male">Männlich</option>
+                                <select id="calcGender" onchange="calculateMacros()" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                                    <option value="male" selected>Männlich</option>
                                     <option value="female">Weiblich</option>
                                 </select>
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 mb-1">Alter (Jahre)</label>
-                                <input id="calcAge" type="number" value="45" min="16" max="99" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                                <input id="calcAge" type="number" value="45" min="16" max="99" oninput="calculateMacros()" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-2 gap-3">
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 mb-1">Körpergröße (cm)</label>
-                                <input id="calcHeight" type="number" value="175" min="130" max="230" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                                <input id="calcHeight" type="number" value="175" min="130" max="230" oninput="calculateMacros()" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 mb-1">Gewicht (kg)</label>
-                                <input id="calcWeight" type="number" value="83" min="40" max="250" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                                <input id="calcWeight" type="number" value="83" min="40" max="250" oninput="calculateMacros()" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
                             </div>
                         </div>
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 mb-1">Alltagsbewegung & Beruf</label>
-                            <select id="calcActivity" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                            <select id="calcActivity" onchange="calculateMacros()" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
                                 <option value="1.2">Wenig aktiv (sitzend, kaum Sport)</option>
                                 <option value="1.4">Leicht aktiv (Büro + 1–2x Sport/Woche)</option>
                                 <option value="1.6" selected>Mäßig aktiv (Schichtarbeit / Logistik / 3–4x Training)</option>
@@ -625,7 +671,7 @@
 
                         <div>
                             <label class="block text-xs font-bold text-slate-700 mb-1">Dein Ziel</label>
-                            <select id="calcGoal" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                            <select id="calcGoal" onchange="calculateMacros()" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
                                 <option value="lose" selected>🔥 Abnehmen (-450 kcal moderates Defizit)</option>
                                 <option value="maintain">⚖️ Gewicht halten / Maingaining</option>
                                 <option value="gain">💪 Muskelaufbau (+250 kcal Überschuss)</option>
@@ -633,7 +679,7 @@
                         </div>
 
                         <button onclick="calculateMacros()" class="w-full bg-brand-green hover:bg-brand-greenDark text-white font-display font-extrabold py-3.5 rounded-xl text-sm shadow-md transition">
-                            Werte berechnen
+                            Werte jetzt aktualisieren
                         </button>
                     </div>
 
@@ -641,28 +687,32 @@
                         <div>
                             <span class="text-xs font-bold uppercase tracking-wider text-brand-orange">📊 Deine täglichen Richtwerte</span>
                             <div class="mt-4 bg-slate-800 rounded-2xl p-4 border border-slate-700 text-center">
-                                <div class="text-xs text-slate-400">Empfohlene Tageskalorien</div>
-                                <div id="resTargetKcal" class="font-display text-4xl font-extrabold text-white my-1">2.110 kcal</div>
-                                <div id="resBmrInfo" class="text-[11px] text-slate-400">Grundumsatz: 1.700 kcal • Gesamtbedarf: 2.560 kcal</div>
+                                <div class="text-xs text-slate-400">Empfohlene Tageskalorien (exakte Makro-Summe)</div>
+                                <div id="resTargetKcal" class="font-display text-4xl font-extrabold text-white my-1">2.278 kcal</div>
+                                <div id="resBmrInfo" class="text-[11px] text-slate-400">Grundumsatz: 1.704 kcal • Erhaltungsbedarf: 2.726 kcal</div>
                             </div>
 
                             <div class="grid grid-cols-3 gap-2.5 my-4 text-center">
                                 <div class="bg-brand-green/20 border border-brand-green/40 rounded-xl p-3">
                                     <div id="resProtein" class="font-display text-xl font-extrabold text-brand-greenLight">166 g</div>
-                                    <div class="text-[11px] text-brand-greenLight font-bold">Protein</div>
+                                    <div id="resProteinKcal" class="text-[11px] text-brand-greenLight font-bold">Protein (664 kcal)</div>
                                 </div>
                                 <div class="bg-slate-800 border border-slate-700 rounded-xl p-3">
-                                    <div id="resCarbs" class="font-display text-xl font-extrabold text-amber-300">190 g</div>
-                                    <div class="text-[11px] text-slate-400">Kohlenhydrate</div>
+                                    <div id="resCarbs" class="font-display text-xl font-extrabold text-amber-300">255 g</div>
+                                    <div id="resCarbsKcal" class="text-[11px] text-slate-400">KH (1.020 kcal)</div>
                                 </div>
                                 <div class="bg-slate-800 border border-slate-700 rounded-xl p-3">
                                     <div id="resFat" class="font-display text-xl font-extrabold text-rose-300">66 g</div>
-                                    <div class="text-[11px] text-slate-400">Fett</div>
+                                    <div id="resFatKcal" class="text-[11px] text-slate-400">Fett (594 kcal)</div>
                                 </div>
+                            </div>
+
+                            <div id="resMacroFormula" class="bg-slate-800/80 rounded-xl p-3 text-[11px] text-slate-300 border border-slate-700 font-mono text-center">
+                                Nachweis: 664 kcal (P) + 1.020 kcal (KH) + 594 kcal (F) = 2.278 kcal
                             </div>
                         </div>
 
-                        <button onclick="showSection('home'); scrollToElement('alleRezepteSection');" class="w-full bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-xl text-xs sm:text-sm transition">
+                        <button onclick="showSection('home'); scrollToElement('alleRezepteSection');" class="mt-4 w-full bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-xl text-xs sm:text-sm transition">
                             🥗 Passende Rezepte auswählen →
                         </button>
                     </div>
@@ -761,10 +811,9 @@
     </footer>
 
     <!-- ==========================================
-         JAVASCRIPT: 30 VOLLSTÄNDIGE REZEPTE, CLEAN URL ROUTER & DOKU
+         JAVASCRIPT: 30 GEPRÜFTE REZEPTE & LOGIK
          ========================================== -->
     <script>
-        // 30 VOLLSTÄNDIGE REZEPTE INKL. KATEGORIEN, SCHICHT-TAGS, SLUGS & ROHGEWICHT-TABELLE
         const recipes = [
             {
                 id: 1,
@@ -799,22 +848,22 @@
                 id: 2,
                 slug: "high-protein-haehnchen-bowl",
                 title: "High-Protein Hähnchen-Bowl mit Reis, Edamame & Limetten-Skyr",
-                shortDesc: "Das perfekte Meal-Prep-Gericht für 3 Arbeitstage: 58 g Eiweiß, sättigend und auch kalt ein Genuss.",
+                shortDesc: "Das perfekte Meal-Prep-Gericht für 3 Arbeitstage: 60 g Eiweiß, sättigend und auch kalt ein Genuss.",
                 categories: ["Mittagessen", "Abendessen", "Meal Prep", "Schnelle Rezepte unter 20 Minuten"],
                 shiftTags: ["Meal Prep 3 Tage", "Mittagspause & Kalt", "Nachtschicht"],
                 shiftBadge: "🍱 Meal Prep König (3 Tage)",
                 method: "Pfanne",
                 difficulty: "Einfach",
                 time: "15 Min.",
-                kcal: 515, protein: 58, carbs: 52, fat: 7,
+                kcal: 515, protein: 60, carbs: 53, fat: 7,
                 image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1000&q=80",
                 intro: "Diese Bowl vereint mageres Hähnchenbrustfilet, pflanzliches Eiweiß aus Edamame und komplexe Kohlenhydrate aus Basmatireis. Sie liegt leicht im Magen und hält in der Früh-, Spät- oder Nachtschicht stundenlang satt.",
                 ingredients: [
                     { amount: 180, unit: "g", name: "Hähnchenbrustfilet (roh)", kcal: 196, p: 43.2, c: 0, f: 1.8 },
                     { amount: 60, unit: "g", name: "Basmatireis (Rohgewicht trocken)", kcal: 210, p: 4.5, c: 46, f: 0.6 },
                     { amount: 50, unit: "g", name: "Edamame Bohnen (geschält, TK)", kcal: 60, p: 5.5, c: 3, f: 2.5 },
-                    { amount: 60, unit: "g", name: "Skyr natur mit Limettensaft", kcal: 38, p: 6.6, c: 2.4, f: 0.1 },
-                    { amount: 80, unit: "g", name: "Salatgurke, Karottenstreifen & Sojasauce", kcal: 11, p: 0.5, c: 2, f: 2.0 }
+                    { amount: 60, unit: "g", name: "Skyr natur mit Limettensaft", kcal: 38, p: 6.3, c: 2.4, f: 0.1 },
+                    { amount: 80, unit: "g", name: "Salatgurke, Karottenstreifen & Sojasauce", kcal: 11, p: 0.5, c: 1.6, f: 2.0 }
                 ],
                 steps: [
                     "Basmatireis nach Packungsanweisung in leicht gesalzenem Wasser garen (für Meal Prep gerne direkt die 3-fache Menge kochen).",
@@ -928,7 +977,7 @@
                 time: "10 Min.",
                 kcal: 435, protein: 38, carbs: 42, fat: 10,
                 image: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1000&q=80",
-                intro: "Komplett ohne Fertigpulver: Komplexe Hafer-Kohlenhydrate und Quark-Protein halten deinen Blutzuckerspiegel den ganzen Vormittag stabil.",
+                intro: "Komplett ohne Fertigpulver: Komplexe Hafer-Kohlenhydraten und Quark-Protein halten deinen Blutzuckerspiegel den ganzen Vormittag stabil.",
                 ingredients: [
                     { amount: 50, unit: "g", name: "Zarte Haferflocken", kcal: 185, p: 7, c: 29.5, f: 3.5 },
                     { amount: 150, unit: "g", name: "Magerquark", kcal: 100, p: 18, c: 6, f: 0.3 },
@@ -1187,16 +1236,16 @@
                 id: 15,
                 slug: "putenhack-zucchini-pfanne-low-carb",
                 title: "Schnelle Low-Carb Putenhack-Zucchini-Pfanne mit Feta",
-                shortDesc: "Leichtes, eiweißreiches Pfannengericht in 12 Minuten mit 52 g Protein unter 400 kcal.",
+                shortDesc: "Leichtes, eiweißreiches Pfannengericht in 12 Minuten mit 56 g Protein unter 400 kcal.",
                 categories: ["Abendessen", "Mittagessen", "Schnelle Rezepte unter 20 Minuten"],
                 shiftTags: ["Nachtschicht", "Schneller Feierabend", "Meal Prep 3 Tage"],
                 shiftBadge: "🌙 Ideal für die Nachtschicht",
                 method: "Pfanne",
                 difficulty: "Einfach",
                 time: "12 Min.",
-                kcal: 390, protein: 52, carbs: 11, fat: 15,
+                kcal: 390, protein: 56, carbs: 11, fat: 15,
                 image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1000&q=80",
-                intro: "Mageres Putenhackfleisch und knackige Zucchini belasten die Verdauung nicht und versorgen dich in der Nachtschicht oder am späten Abend mit 52 g Eiweiß.",
+                intro: "Mageres Putenhackfleisch und knackige Zucchini belasten die Verdauung nicht und versorgen dich in der Nachtschicht oder am späten Abend mit 56 g Eiweiß.",
                 ingredients: [
                     { amount: 200, unit: "g", name: "Putenhackfleisch mager (roh)", kcal: 224, p: 40, c: 0, f: 6.5 },
                     { amount: 250, unit: "g", name: "Zucchini (roh, gewürfelt)", kcal: 48, p: 4, c: 6, f: 0.5 },
@@ -1244,14 +1293,14 @@
                 id: 17,
                 slug: "thunfisch-avocado-ei-salat-nachtschicht",
                 title: "Leichter Thunfisch-Ei-Salat mit Hüttenkäse für die Nachtschicht",
-                shortDesc: "In 8 Minuten ohne Kochen zubereitet – 47 g Eiweiß, null Vorbereitung am Herd.",
+                shortDesc: "In 8 Minuten ohne Kochen zubereitet – 49 g Eiweiß, null Vorbereitung am Herd.",
                 categories: ["Abendessen", "Mittagessen", "Snacks", "Schnelle Rezepte unter 20 Minuten"],
                 shiftTags: ["Nachtschicht", "Mittagspause & Kalt", "Vorbereiten & Frühschicht"],
                 shiftBadge: "🥗 Kalt & ohne Mikrowelle",
                 method: "Ohne Kochen",
                 difficulty: "Einfach",
                 time: "8 Min.",
-                kcal: 365, protein: 47, carbs: 6, fat: 16,
+                kcal: 365, protein: 49, carbs: 6, fat: 16,
                 image: "https://images.unsplash.com/photo-1546069901-d5bfd2cbfb1f?auto=format&fit=crop&w=1000&q=80",
                 intro: "Statt schwerer Mayonnaise bildet körniger Frischkäse mit etwas Senf das cremige Dressing für diesen proteinreichen Thunfisch-Ei-Salat.",
                 ingredients: [
@@ -1448,14 +1497,14 @@
                 id: 24,
                 slug: "haehnchen-caesar-wrap-meal-prep",
                 title: "Knackiger High-Protein Chicken-Caesar-Wrap mit Skyr-Dressing",
-                shortDesc: "Der Klassiker in der Fitness-Version: 52 g Protein, leichtes Parmesan-Skyr-Dressing und Römersalat.",
+                shortDesc: "Der Klassiker in der Fitness-Version: 61 g Protein, leichtes Parmesan-Skyr-Dressing und Römersalat.",
                 categories: ["Mittagessen", "Abendessen", "Snacks", "Meal Prep", "Schnelle Rezepte unter 20 Minuten"],
                 shiftTags: ["Mittagspause & Kalt", "Vorbereiten & Frühschicht"],
                 shiftBadge: "🥪 Pausen-Favorit",
                 method: "Pfanne",
                 difficulty: "Einfach",
                 time: "12 Min.",
-                kcal: 440, protein: 52, carbs: 23, fat: 14,
+                kcal: 440, protein: 61, carbs: 23, fat: 14,
                 image: "https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=1000&q=80",
                 intro: "Klassisches Caesar-Dressing besteht fast nur aus Öl und Mayonnaise. Unser Dressing aus Skyr, Zitrone, Senf und echtem Parmesan spart 250 Kalorien.",
                 ingredients: [
@@ -1624,14 +1673,14 @@
                 id: 30,
                 slug: "kartoffel-haehnchen-brokkoli-auflauf",
                 title: "Meal-Prep Kartoffel-Hähnchen-Brokkoli-Auflauf für 3 Arbeitstage",
-                shortDesc: "Der Klassiker für die Schichtwoche: Sättigender Ofenauflauf mit 56 g Eiweiß und leichter Skyr-Käse-Kruste.",
+                shortDesc: "Der Klassiker für die Schichtwoche: Sättigender Ofenauflauf mit 66 g Eiweiß und leichter Skyr-Käse-Kruste.",
                 categories: ["Mittagessen", "Abendessen", "Meal Prep"],
                 shiftTags: ["Meal Prep 3 Tage"],
                 shiftBadge: "🏆 Bestes 3-Tage Meal-Prep",
                 method: "Backofen",
                 difficulty: "Einfach",
                 time: "30 Min.",
-                kcal: 480, protein: 56, carbs: 40, fat: 9,
+                kcal: 480, protein: 66, carbs: 40, fat: 9,
                 image: "https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=1000&q=80",
                 intro: "Kartoffeln, Brokkoli und Hähnchenbrust in einem leichten Skyr-Ei-Guss: Einmal im Ofen gebacken hast du sofort drei vollwertige Mahlzeiten für deine Arbeitswoche.",
                 ingredients: [
@@ -1652,7 +1701,14 @@
             }
         ];
 
-        // STATE
+        // AUTOMATISCHE PRÜFUNG: Jedes Rezept übernimmt exakt die Summe seiner Einzelzutaten
+        recipes.forEach(r => {
+            r.kcal = Math.round(r.ingredients.reduce((s, i) => s + i.kcal, 0));
+            r.protein = Math.round(r.ingredients.reduce((s, i) => s + i.p, 0));
+            r.carbs = Math.round(r.ingredients.reduce((s, i) => s + i.c, 0));
+            r.fat = Math.round(r.ingredients.reduce((s, i) => s + i.f, 0));
+        });
+
         let selectedCategory = 'all';
         let favoriteIds = [];
         const weekDays = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
@@ -1675,9 +1731,9 @@
 
         function loadLocalData() {
             try {
-                const favs = localStorage.getItem('ph_favs_v4');
+                const favs = localStorage.getItem('ph_favs_v5');
                 if (favs) favoriteIds = JSON.parse(favs);
-                const plan = localStorage.getItem('ph_plan_v4');
+                const plan = localStorage.getItem('ph_plan_v5');
                 if (plan) weeklyPlan = JSON.parse(plan);
             } catch (e) {}
             updateBadges();
@@ -1685,8 +1741,8 @@
 
         function saveLocalData() {
             try {
-                localStorage.setItem('ph_favs_v4', JSON.stringify(favoriteIds));
-                localStorage.setItem('ph_plan_v4', JSON.stringify(weeklyPlan));
+                localStorage.setItem('ph_favs_v5', JSON.stringify(favoriteIds));
+                localStorage.setItem('ph_plan_v5', JSON.stringify(weeklyPlan));
             } catch (e) {}
             updateBadges();
         }
@@ -1703,28 +1759,26 @@
         }
 
         // ==========================================
-        // CLEAN URL ROUTING (proteinhappen.de/high-protein-haehnchen-bowl)
+        // GOOGLE-FREUNDLICHES URL-ROUTING (HTTP 200 OK)
         // ==========================================
         function handleInitialUrlRouting() {
-            // 1. Prüfe Redirect aus 404.html (falls jemand direkt proteinhappen.de/slug aufgerufen hat)
             const redirectedSlug = sessionStorage.getItem('ph_redirect_path');
             if (redirectedSlug) {
                 sessionStorage.removeItem('ph_redirect_path');
                 const cleanSlug = redirectedSlug.replace(/^\/+|\/+$/g, '');
                 const foundFromRedirect = recipes.find(r => r.slug === cleanSlug);
                 if (foundFromRedirect) {
-                    try { window.history.replaceState({ recipeId: foundFromRedirect.id }, '', '/' + foundFromRedirect.slug); } catch (e) {}
+                    try { window.history.replaceState({ recipeId: foundFromRedirect.id }, '', '?rezept=' + foundFromRedirect.slug); } catch (e) {}
                     openRecipeDetail(foundFromRedirect.id, 1, false);
                     return;
                 }
             }
 
-            // 2. Prüfe aktuellen Pfad (/high-protein-haehnchen-bowl) oder Query (?rezept=...)
-            const pathSlug = window.location.pathname.replace(/^\/+|\/+$/g, '');
             const querySlug = new URLSearchParams(window.location.search).get('rezept');
-            const targetSlug = pathSlug || querySlug;
+            const pathSlug = window.location.pathname.replace(/^\/+|\/+$/g, '');
+            const targetSlug = querySlug || (pathSlug !== 'index.html' ? pathSlug : '');
 
-            if (targetSlug && targetSlug !== 'index.html') {
+            if (targetSlug) {
                 const found = recipes.find(r => r.slug === targetSlug || String(r.id) === targetSlug);
                 if (found) {
                     openRecipeDetail(found.id, 1, false);
@@ -1773,18 +1827,17 @@
             if (sec === 'planner') renderWeeklyPlan();
 
             if (sec === 'home') {
-                document.title = "ProteinHappen | High-Protein Rezepte für Alltag, Abnehmen & Schichtarbeit";
-                document.getElementById('seoDescription').setAttribute('content', 'Proteinreich essen. Einfach genießen. 30 schnelle High-Protein Rezepte für Alltag, Schichtarbeit & Meal Prep mit dokumentierter Nährwertberechnung nach BLS.');
+                document.title = "ProteinHappen | 30 High-Protein Rezepte für Alltag, Abnehmen & Schichtarbeit";
+                document.getElementById('seoDescription').setAttribute('content', 'Proteinreich essen. Einfach genießen. 30 geprüfte High-Protein Rezepte für Alltag, Schichtarbeit & Meal Prep mit dokumentierter Nährwertberechnung nach BLS.');
                 document.getElementById('canonicalLink').setAttribute('href', 'https://proteinhappen.de/');
                 if (updateUrl && window.location.protocol !== 'file:') {
-                    try { window.history.pushState({}, '', '/'); } catch (e) {}
+                    try { window.history.pushState({}, '', window.location.pathname); } catch (e) {}
                 }
             }
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // FILTER-LOGIK FÜR DIE 7 KATEGORIEN & SCHICHTARBEIT
         function filterByCategory(cat) {
             selectedCategory = cat;
             document.querySelectorAll('.cat-pill').forEach(btn => {
@@ -1863,26 +1916,24 @@
 
         function createRecipeCardHtml(r) {
             const isFav = favoriteIds.includes(r.id);
+            const hrefUrl = `?rezept=${r.slug}`;
             return `
                 <article class="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
                     <div class="relative h-56 overflow-hidden bg-slate-100">
-                        <a href="/${r.slug}" onclick="openRecipeDetail(${r.id}, 1, true, event)" class="block w-full h-full">
+                        <a href="${hrefUrl}" onclick="openRecipeDetail(${r.id}, 1, true, event)" class="block w-full h-full">
                             <img src="${r.image}" alt="${r.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                         </a>
 
-                        <!-- Oben links: Schicht-Badge & Gerät -->
                         <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 pointer-events-none">
                             <span class="bg-slate-900/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">${r.shiftBadge}</span>
                             <span class="bg-white/95 text-slate-800 text-[11px] font-bold px-2.5 py-1 rounded-lg">${r.method}</span>
                         </div>
 
-                        <!-- Oben rechts: Merkliste -->
                         <button onclick="toggleFavorite(${r.id}, event)" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/95 hover:bg-white flex items-center justify-center shadow-md transition" title="Merken">
                             <i class="${isFav ? 'fa-solid text-rose-500' : 'fa-regular text-slate-600'} fa-heart text-base"></i>
                         </button>
 
-                        <!-- Unten im Bild: Protein & Kalorien -->
                         <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white pointer-events-none">
                             <span class="bg-brand-orange font-display font-extrabold text-xs sm:text-sm px-3 py-1 rounded-xl shadow">
                                 💪 ${r.protein} g PROTEIN
@@ -1897,10 +1948,10 @@
                         <div>
                             <div class="flex items-center justify-between text-xs font-semibold text-slate-500 mb-2">
                                 <span><i class="fa-regular fa-clock text-brand-green mr-1"></i> ${r.time} • ${r.difficulty}</span>
-                                <span class="text-[11px] text-slate-400">/${r.slug}</span>
+                                <span class="text-[11px] text-slate-400">KH: ${r.carbs}g • F: ${r.fat}g</span>
                             </div>
 
-                            <a href="/${r.slug}" onclick="openRecipeDetail(${r.id}, 1, true, event)" class="block">
+                            <a href="${hrefUrl}" onclick="openRecipeDetail(${r.id}, 1, true, event)" class="block">
                                 <h3 class="font-display font-extrabold text-lg text-slate-900 group-hover:text-brand-green transition leading-snug mb-2">
                                     ${r.title}
                                 </h3>
@@ -1911,7 +1962,7 @@
                         </div>
 
                         <div class="pt-3 border-t border-slate-100 flex items-center gap-2">
-                            <a href="/${r.slug}" onclick="openRecipeDetail(${r.id}, 1, true, event)" class="flex-1 bg-slate-900 group-hover:bg-brand-green text-white text-center font-display font-bold text-xs sm:text-sm py-3 px-4 rounded-xl transition">
+                            <a href="${hrefUrl}" onclick="openRecipeDetail(${r.id}, 1, true, event)" class="flex-1 bg-slate-900 group-hover:bg-brand-green text-white text-center font-display font-bold text-xs sm:text-sm py-3 px-4 rounded-xl transition">
                                 Rezept ansehen →
                             </a>
                             <button onclick="quickAddToMonday(${r.id})" class="p-3 rounded-xl bg-orange-50 hover:bg-brand-orange text-brand-orange hover:text-white text-xs font-bold transition" title="In den Wochenplaner legen">
@@ -1923,9 +1974,6 @@
             `;
         }
 
-        // ==========================================
-        // EINZELNE REZEPTSEITE (proteinhappen.de/slug + JSON-LD SCHEMA)
-        // ==========================================
         function openRecipeDetail(id, portions = 1, pushUrl = true, event = null) {
             if (event) event.preventDefault();
             const r = recipes.find(item => item.id === id);
@@ -1934,19 +1982,18 @@
             currentPortions = portions;
             const isFav = favoriteIds.includes(r.id);
 
-            // Sprechende Einzel-URL setzen (proteinhappen.de/high-protein-haehnchen-bowl)
-            const cleanUrl = `https://proteinhappen.de/${r.slug}`;
+            const indexableUrl = `https://proteinhappen.de/?rezept=${r.slug}`;
             document.title = `${r.title} (${r.protein}g Protein, ${r.kcal} kcal) | ProteinHappen`;
             document.getElementById('seoDescription').setAttribute('content', `${r.shortDesc} Mit ${r.protein} g Eiweiß und ${r.kcal} kcal in ${r.time} zubereitet. Inklusive Rohgewicht-Nährwerttabelle.`);
-            document.getElementById('canonicalLink').setAttribute('href', cleanUrl);
+            document.getElementById('canonicalLink').setAttribute('href', indexableUrl);
 
             if (pushUrl && window.location.protocol !== 'file:') {
                 try {
-                    window.history.pushState({ recipeId: r.id }, '', '/' + r.slug);
+                    window.history.pushState({ recipeId: r.id }, '', `?rezept=${r.slug}`);
                 } catch (e) {}
             }
 
-            updateRecipeSchema(r, cleanUrl);
+            updateRecipeSchema(r, indexableUrl);
 
             const breakdownRows = r.ingredients.map(ing => {
                 const amt = Number.isInteger(ing.amount * portions) ? (ing.amount * portions) : (ing.amount * portions).toFixed(1).replace('.', ',');
@@ -1967,7 +2014,7 @@
 
             const related = recipes.filter(x => x.id !== r.id && x.categories.some(c => r.categories.includes(c))).slice(0, 3);
             const relatedHtml = related.map(rel => `
-                <a href="/${rel.slug}" onclick="openRecipeDetail(${rel.id}, 1, true, event)" class="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                <a href="?rezept=${rel.slug}" onclick="openRecipeDetail(${rel.id}, 1, true, event)" class="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
                     <img src="${rel.image}" alt="${rel.title}" class="h-36 w-full object-cover group-hover:scale-105 transition">
                     <div class="p-4">
                         <div class="text-[11px] font-extrabold text-brand-orange mb-1">💪 ${rel.protein} g Protein • 🔥 ${rel.kcal} kcal</div>
@@ -1988,8 +2035,8 @@
                         <i class="fa-solid fa-arrow-left"></i> Alle 30 Rezepte
                     </button>
                     <div class="flex flex-wrap items-center gap-2">
-                        <button onclick="copyRecipeLink('${cleanUrl}')" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs sm:text-sm font-bold px-3.5 py-2.5 rounded-xl shadow-sm transition flex items-center gap-1.5" title="Direktlink kopieren">
-                            <i class="fa-solid fa-link text-brand-green"></i> <span>Link kopieren</span>
+                        <button onclick="copyRecipeLink('${indexableUrl}')" class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs sm:text-sm font-bold px-3.5 py-2.5 rounded-xl shadow-sm transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-link text-brand-green"></i> <span>Rezept-Link kopieren</span>
                         </button>
                         <button onclick="toggleFavorite(${r.id})" class="bg-white hover:bg-rose-50 text-slate-800 border border-slate-200 text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-sm transition flex items-center gap-2">
                             <i class="${isFav ? 'fa-solid text-rose-500' : 'fa-regular text-slate-500'} fa-heart"></i>
@@ -2019,7 +2066,6 @@
                         </div>
 
                         <div class="absolute bottom-5 left-5 right-5 text-white">
-                            <div class="text-[11px] font-mono text-brand-greenLight mb-1">proteinhappen.de/${r.slug}</div>
                             <h1 class="font-display text-2xl sm:text-4xl font-extrabold leading-tight mb-2">${r.title}</h1>
                             <p class="text-slate-200 text-xs sm:text-base max-w-2xl">${r.shortDesc}</p>
                         </div>
@@ -2052,7 +2098,6 @@
                             <p class="text-slate-700 text-sm sm:text-base leading-relaxed">${r.intro}</p>
                         </div>
 
-                        <!-- 1. ZUTATEN -->
                         <div>
                             <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
                                 <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 flex items-center gap-2">
@@ -2084,7 +2129,6 @@
                             </ul>
                         </div>
 
-                        <!-- 2. SCHRITT-FÜR-SCHRITT-ZUBEREITUNG -->
                         <div>
                             <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 mb-4 flex items-center gap-2">
                                 <i class="fa-solid fa-fire-burner text-brand-orange"></i> 2. Ausführliche Zubereitung
@@ -2101,7 +2145,6 @@
                             </div>
                         </div>
 
-                        <!-- 3. SCHICHT- & MEAL-PREP-TIPP -->
                         <div class="bg-amber-50/90 border border-amber-200 rounded-2xl p-5">
                             <div class="flex items-center gap-2 font-display font-extrabold text-amber-900 text-base mb-1.5">
                                 <i class="fa-solid fa-briefcase text-brand-orange"></i>
@@ -2110,7 +2153,6 @@
                             <p class="text-slate-700 text-sm leading-relaxed">${r.tip}</p>
                         </div>
 
-                        <!-- 4. NACHVOLLZIEHBARE NÄHRWERT-TABELLE -->
                         <div class="bg-slate-900 text-white rounded-2xl p-5 sm:p-6 shadow-sm">
                             <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
                                 <div>
@@ -2176,7 +2218,7 @@
 
         function copyRecipeLink(url) {
             navigator.clipboard.writeText(url);
-            showToast(`🔗 Link kopiert: ${url}`);
+            showToast(`🔗 Rezept-Link kopiert!`);
         }
 
         function updateRecipeSchema(r, url) {
@@ -2247,7 +2289,7 @@
             grid.innerHTML = list.map(r => createRecipeCardHtml(r)).join('');
         }
 
-        // WOCHENPLANER & EINKAUFSLISTE
+        // WOCHENPLANER
         function populatePlannerDropdown() {
             const sel = document.getElementById('plannerRecipeSelect');
             if (!sel) return;
@@ -2396,7 +2438,9 @@
             showToast("📋 Einkaufsliste kopiert!");
         }
 
-        // KALORIENRECHNER
+        // ==========================================
+        // KALORIENRECHNER (100 % MATHEMATISCH KONSISTENT)
+        // ==========================================
         function calculateMacros() {
             const gender = document.getElementById('calcGender').value;
             const age = parseFloat(document.getElementById('calcAge').value) || 45;
@@ -2405,28 +2449,41 @@
             const activity = parseFloat(document.getElementById('calcActivity').value) || 1.6;
             const goal = document.getElementById('calcGoal').value;
 
-            let bmr = (10 * weight) + (6.25 * height) - (5 * age);
-            bmr += (gender === 'male') ? 5 : -161;
+            // 1. Grundumsatz (Mifflin-St Jeor) & Erhaltungsbedarf
+            const bmr = Math.round((10 * weight) + (6.25 * height) - (5 * age) + (gender === 'male' ? 5 : -161));
             const tdee = Math.round(bmr * activity);
 
-            let targetKcal = tdee;
+            // 2. Roh-Zielwert nach Zielsetzung
+            let rawTarget = tdee;
             let protFactor = 1.8;
             if (goal === 'lose') {
-                targetKcal = Math.max(1300, tdee - 450);
+                rawTarget = Math.max(1300, tdee - 450);
                 protFactor = 2.0;
             } else if (goal === 'gain') {
-                targetKcal = tdee + 250;
+                rawTarget = tdee + 250;
             }
 
+            // 3. Makros in Gramm berechnen
             const pGrams = Math.round(weight * protFactor);
             const fGrams = Math.round(weight * 0.8);
-            const cGrams = Math.round(Math.max(400, targetKcal - (pGrams * 4) - (fGrams * 9)) / 4);
+            const pKcal = pGrams * 4;
+            const fKcal = fGrams * 9;
 
-            document.getElementById('resTargetKcal').textContent = `${targetKcal.toLocaleString('de-DE')} kcal`;
-            document.getElementById('resBmrInfo').textContent = `Grundumsatz: ${Math.round(bmr)} kcal • Gesamtbedarf: ${tdee} kcal`;
+            const cGrams = Math.max(50, Math.round((rawTarget - pKcal - fKcal) / 4));
+            const cKcal = cGrams * 4;
+
+            // 4. Exakte Verknüpfung: Die angezeigten Tageskalorien entsprechen exakt der Summe der Makro-Kalorien
+            const exactTargetKcal = pKcal + cKcal + fKcal;
+
+            document.getElementById('resTargetKcal').textContent = `${exactTargetKcal.toLocaleString('de-DE')} kcal`;
+            document.getElementById('resBmrInfo').textContent = `Grundumsatz: ${bmr.toLocaleString('de-DE')} kcal • Erhaltungsbedarf: ${tdee.toLocaleString('de-DE')} kcal`;
             document.getElementById('resProtein').textContent = `${pGrams} g`;
+            document.getElementById('resProteinKcal').textContent = `Protein (${pKcal} kcal)`;
             document.getElementById('resCarbs').textContent = `${cGrams} g`;
+            document.getElementById('resCarbsKcal').textContent = `KH (${cKcal.toLocaleString('de-DE')} kcal)`;
             document.getElementById('resFat').textContent = `${fGrams} g`;
+            document.getElementById('resFatKcal').textContent = `Fett (${fKcal} kcal)`;
+            document.getElementById('resMacroFormula').textContent = `Nachweis: ${pKcal} kcal (P) + ${cKcal.toLocaleString('de-DE')} kcal (KH) + ${fKcal} kcal (F) = ${exactTargetKcal.toLocaleString('de-DE')} kcal`;
         }
 
         // RECHTLICHES MODAL
