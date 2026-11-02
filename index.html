@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="seoTitle">ProteinHappen | Einfache High-Protein Rezepte zum Abnehmen</title>
-    <meta id="seoDescription" name="description" content="Proteinreich essen. Einfach genießen. 12 vollständig ausgearbeitete High-Protein Rezepte mit transparenter Nährwertberechnung, Favoriten-Merkliste und automatischer Einkaufsliste.">
+    <title id="seoTitle">ProteinHappen | Proteinreich essen. Einfach genießen.</title>
+    <meta id="seoDescription" name="description" content="Proteinreich essen. Einfach genießen. Alltagstaugliche High-Protein Rezepte mit transparenter Nährwertberechnung, Wochenplaner, Einkaufsliste und Kalorienrechner.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://proteinhappen.de/">
+    <link id="canonicalLink" rel="canonical" href="https://proteinhappen.de/">
 
-    <!-- Open Graph -->
+    <!-- Open Graph / Social Sharing -->
     <meta property="og:title" content="ProteinHappen | Proteinreich essen. Einfach genießen.">
-    <meta property="og:description" content="Alltagstaugliche High-Protein Rezepte mit transparenter Nährwert-Aufschlüsselung, Merkliste und automatischer Einkaufsliste.">
+    <meta property="og:description" content="Schnelle High-Protein Rezepte mit geprüften Nährwerten, Wochenplaner & automatischer Einkaufsliste.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://proteinhappen.de/">
     <meta property="og:image" content="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=80">
@@ -24,14 +24,14 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Strukturiertes Google Recipe Schema (wird dynamisch aktualisiert) -->
-    <script id="dynamicRecipeSchema" type="application/ld+json">
+    <!-- Strukturierte Daten (Recipe & FAQ Schema) -->
+    <script id="dynamicSchema" type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "ProteinHappen",
       "url": "https://proteinhappen.de/",
-      "description": "Einfache High-Protein Rezepte zum Abnehmen mit transparenter Nährwertberechnung."
+      "description": "Proteinreich essen. Einfach genießen. Alltagstaugliche High-Protein Rezepte, Wochenplaner und Kalorienrechner."
     }
     </script>
 
@@ -85,9 +85,9 @@
             <div class="flex items-center justify-between gap-4">
                 
                 <!-- LOGO -->
-                <a href="#" onclick="showView('home'); return false;" class="flex items-center gap-3 group focus:outline-none">
+                <a href="?" onclick="navigateHome(event)" class="flex items-center gap-3 group focus:outline-none">
                     <div class="w-12 h-12 relative flex-shrink-0 flex items-center justify-center bg-slate-50 rounded-2xl border border-slate-200 shadow-sm group-hover:scale-105 transition">
-                        <svg viewBox="0 0 100 100" class="w-10 h-10" role="img" aria-label="ProteinHappen Logo">
+                        <svg viewBox="0 0 100 100" class="w-10 h-10" role="img" aria-label="ProteinHappen Logo – Schüssel mit Salat und Hantel">
                             <path d="M22 48 C15 32, 30 20, 42 35 C45 22, 62 24, 60 40 C68 32, 78 40, 70 48 Z" fill="#16A34A"/>
                             <path d="M30 48 C25 36, 38 28, 46 42 Z" fill="#84CC16"/>
                             <circle cx="46" cy="43" r="6" fill="#EA580C"/>
@@ -111,35 +111,54 @@
                     </div>
                 </a>
 
-                <!-- NAVIGATION (Rezepte, Favoriten, Einkaufsliste) -->
-                <nav class="hidden md:flex items-center gap-2 bg-slate-100 p-1.5 rounded-2xl border border-slate-200/70">
-                    <button onclick="showView('home')" id="nav-home" class="nav-btn px-4 py-2 rounded-xl text-sm font-bold transition bg-white text-slate-900 shadow-sm">
-                        <i class="fa-solid fa-utensils text-brand-green mr-1.5"></i> Alle Rezepte
+                <!-- DESKTOP NAVIGATION -->
+                <nav class="hidden lg:flex items-center gap-1.5 bg-slate-100 p-1.5 rounded-2xl border border-slate-200/70">
+                    <button onclick="showSection('home')" id="nav-home" class="nav-btn px-4 py-2 rounded-xl text-sm font-bold transition bg-white text-slate-900 shadow-sm">
+                        <i class="fa-solid fa-utensils text-brand-green mr-1.5"></i> Rezepte
                     </button>
-                    <button onclick="showView('favorites')" id="nav-favorites" class="nav-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:text-slate-900 flex items-center gap-1.5">
-                        <i class="fa-solid fa-heart text-rose-500"></i> Meine Favoriten
+                    <button onclick="showSection('planner')" id="nav-planner" class="nav-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:text-slate-900 flex items-center gap-1.5">
+                        <i class="fa-solid fa-calendar-check text-brand-orange"></i> Wochenplaner
+                        <span id="plannerCountBadge" class="bg-brand-orange text-white text-[11px] px-2 py-0.5 rounded-full">0</span>
+                    </button>
+                    <button onclick="showSection('calculator')" id="nav-calculator" class="nav-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:text-slate-900">
+                        <i class="fa-solid fa-calculator text-brand-green mr-1.5"></i> Kalorienrechner
+                    </button>
+                    <button onclick="showSection('favorites')" id="nav-favorites" class="nav-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:text-slate-900 flex items-center gap-1.5">
+                        <i class="fa-solid fa-heart text-rose-500"></i> Merkliste
                         <span id="favCountBadge" class="bg-rose-500 text-white text-[11px] px-2 py-0.5 rounded-full">0</span>
-                    </button>
-                    <button onclick="showView('shopping')" id="nav-shopping" class="nav-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:text-slate-900 flex items-center gap-1.5">
-                        <i class="fa-solid fa-basket-shopping text-brand-orange"></i> Einkaufsliste
-                        <span id="shopCountBadge" class="bg-brand-orange text-white text-[11px] px-2 py-0.5 rounded-full">0</span>
                     </button>
                 </nav>
 
-                <!-- SOCIAL & MOBILE SHORTCUTS -->
+                <!-- SOCIAL & MOBILE BUTTONS -->
                 <div class="flex items-center gap-2">
-                    <button onclick="showView('favorites')" class="md:hidden relative px-3 py-2 rounded-xl bg-rose-50 text-rose-600 font-bold text-xs border border-rose-200 flex items-center gap-1.5">
+                    <button onclick="showSection('planner')" class="lg:hidden px-3 py-2 rounded-xl bg-orange-50 text-brand-orange font-bold text-xs border border-orange-200 flex items-center gap-1.5" title="Wochenplaner">
+                        <i class="fa-solid fa-calendar-check"></i>
+                        <span id="plannerCountMobile">0</span>
+                    </button>
+                    <button onclick="showSection('favorites')" class="lg:hidden px-3 py-2 rounded-xl bg-rose-50 text-rose-600 font-bold text-xs border border-rose-200 flex items-center gap-1.5" title="Merkliste">
                         <i class="fa-solid fa-heart"></i>
                         <span id="favCountMobile">0</span>
-                    </button>
-                    <button onclick="showView('shopping')" class="md:hidden relative px-3 py-2 rounded-xl bg-orange-50 text-brand-orange font-bold text-xs border border-orange-200 flex items-center gap-1.5">
-                        <i class="fa-solid fa-basket-shopping"></i>
-                        <span id="shopCountMobile">0</span>
                     </button>
                     <a href="https://www.facebook.com/profile.php?id=61596274644312" target="_blank" rel="noopener" class="w-10 h-10 rounded-xl bg-[#1877F2] text-white flex items-center justify-center hover:opacity-90 transition shadow-sm" title="ProteinHappen auf Facebook">
                         <i class="fa-brands fa-facebook-f text-base"></i>
                     </a>
                 </div>
+            </div>
+
+            <!-- MOBILE SCHNELLWAHL -->
+            <div class="flex lg:hidden items-center gap-2 overflow-x-auto no-scrollbar pt-2.5 mt-2.5 border-t border-slate-100">
+                <button onclick="showSection('home')" class="shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 text-white">
+                    🍽️ Rezepte
+                </button>
+                <button onclick="showSection('planner')" class="shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
+                    📅 Wochenplaner & Einkaufsliste
+                </button>
+                <button onclick="showSection('calculator')" class="shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
+                    ⚖️ Kalorienrechner
+                </button>
+                <button onclick="scrollToElement('vertrauenSection')" class="shrink-0 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700">
+                    🛡️ Qualität & Über uns
+                </button>
             </div>
         </div>
     </header>
@@ -150,199 +169,527 @@
     <main class="flex-1 max-w-6xl w-full mx-auto px-4 py-6">
 
         <!-- ==========================================
-             ANSICHT 1: STARTSEITE & REZEPTÜBERSICHT
+             SEKTION 1: ENTSCHLACKTE STARTSEITE (5-SEKUNDEN-FÜHRUNG)
              ========================================== -->
-        <div id="view-home">
+        <div id="section-home" class="space-y-14">
 
-            <!-- HERO-BEREICH -->
-            <section class="relative rounded-3xl overflow-hidden shadow-lg mb-8 min-h-[320px] sm:min-h-[380px] flex items-center">
+            <!-- SCHRITT 1 & 2: GROSSES APPETITLICHES TITELBILD + KLARE ERKLÄRUNG -->
+            <section class="relative rounded-3xl overflow-hidden shadow-xl min-h-[360px] sm:min-h-[420px] flex items-center">
                 <img 
-                    src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1500&q=85" 
-                    alt="Frische High-Protein Bowl mit Hähnchen, Ei und buntem Gemüse" 
+                    src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1600&q=85" 
+                    alt="Frisch zubereitete High-Protein Bowl mit gegrilltem Hähnchen, Ei, Avocado und knackigem Gemüse" 
                     class="absolute inset-0 w-full h-full object-cover"
                 >
                 <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/75 to-slate-900/25"></div>
 
-                <div class="relative z-10 p-6 sm:p-10 max-w-2xl text-white">
-                    <div class="inline-flex items-center gap-2 bg-brand-green/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white mb-3">
-                        <i class="fa-solid fa-check-circle"></i> 100% Supermarkt-Zutaten • Transparent berechnet
+                <div class="relative z-10 p-6 sm:p-12 max-w-2xl text-white">
+                    <div class="inline-flex items-center gap-2 bg-brand-green px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-white mb-4 shadow-sm">
+                        <i class="fa-solid fa-check-circle"></i> Alltagstauglich • Geprüfte Makros • Ohne teure Spezialzutaten
                     </div>
-                    <h1 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-3">
+                    <h1 class="font-display text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4">
                         Proteinreich essen. <span class="text-brand-orange">Einfach genießen.</span>
                     </h1>
-                    <p class="text-slate-200 text-sm sm:text-base mb-6 leading-relaxed">
-                        Vollständige, alltagstaugliche Rezepte zum Abnehmen und Sattwerden – ohne komplizierte Klickwege. Mit transparenter Nährwert-Aufschlüsselung für jede einzelne Zutat, persönlicher Merkliste und automatischer Einkaufsliste.
+                    <p class="text-slate-200 text-sm sm:text-lg mb-7 leading-relaxed">
+                        Auf <strong>ProteinHappen</strong> findest du schnelle, ehrliche High-Protein-Rezepte aus normalen Supermarkt-Zutaten, die dich beim Abnehmen und im Schichtalltag wirklich satt machen – inklusive Wochenplaner und transparenter Nährwertberechnung.
                     </p>
                     <div class="flex flex-wrap gap-3">
-                        <a href="#rezeptUebersicht" class="bg-brand-orange hover:bg-brand-orangeDark text-white font-display font-extrabold text-sm px-6 py-3.5 rounded-xl shadow-md transition inline-flex items-center gap-2">
-                            <span>Rezepte entdecken</span>
+                        <button onclick="scrollToElement('alleRezepteSection')" class="bg-brand-orange hover:bg-brand-orangeDark text-white font-display font-extrabold text-sm sm:text-base px-7 py-4 rounded-2xl shadow-lg transition inline-flex items-center gap-2">
+                            <span>Direkt zu den Rezepten</span>
                             <i class="fa-solid fa-arrow-down"></i>
-                        </a>
-                        <button onclick="showView('shopping')" class="bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white font-bold text-sm px-5 py-3.5 rounded-xl border border-white/25 transition inline-flex items-center gap-2">
-                            <i class="fa-solid fa-basket-shopping text-brand-greenLight"></i> Meine Einkaufsliste
+                        </button>
+                        <button onclick="scrollToElement('vertrauenSection')" class="bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white font-bold text-sm sm:text-base px-6 py-4 rounded-2xl border border-white/25 transition">
+                            Warum ProteinHappen?
                         </button>
                     </div>
                 </div>
             </section>
 
-            <!-- FILTER- & SUCHLEISTE -->
-            <section id="rezeptUebersicht" class="scroll-mt-24 bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-slate-200/90 mb-8">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
-                    <div>
-                        <h2 class="font-display text-lg sm:text-xl font-extrabold text-slate-900">
-                            Rezepte nach deinem Ziel filtern
-                        </h2>
-                        <p class="text-xs text-slate-500">Alle Angaben pro Portion auf Basis dokumentierter Rohgewichte</p>
-                    </div>
-                    <div class="flex items-center gap-2 w-full md:w-auto">
-                        <div class="relative flex-1 md:w-72">
-                            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
-                            <input 
-                                type="text" 
-                                id="searchInput" 
-                                oninput="renderRecipes()"
-                                placeholder="Zutat oder Rezept suchen (z.B. Skyr, Lachs)..." 
-                                class="w-full pl-9 pr-4 py-2 bg-slate-100 focus:bg-white rounded-xl text-sm border border-slate-200 focus:border-brand-green focus:outline-none"
-                            >
+            <!-- SCHRITT 3: DREI KLARE EINSTIEGSMÖGLICHKEITEN (REZEPTE, WOCHENPLANER, RECHNER) -->
+            <section aria-label="Drei Einstiegsmöglichkeiten">
+                <div class="text-center max-w-xl mx-auto mb-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-green">In 5 Sekunden startklar</span>
+                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+                        Wie möchtest du heute starten?
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Einstieg 1: Rezepte -->
+                    <div onclick="scrollToElement('alleRezepteSection')" class="group bg-white hover:border-brand-green rounded-3xl p-6 shadow-sm hover:shadow-xl border-2 border-slate-200/80 transition cursor-pointer flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-brand-green flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-utensils"></i>
+                            </div>
+                            <h3 class="font-display text-xl font-extrabold text-slate-900 mb-2">1. Rezepte entdecken</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                                12 vollständig ausgearbeitete Gerichte für Airfryer, Pfanne und Backofen – jedes Rezept mit exakten Protein- und Kalorienangaben.
+                            </p>
                         </div>
-                        <button onclick="resetFilters()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-3.5 py-2.5 rounded-xl transition shrink-0">
-                            Reset
-                        </button>
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-green inline-flex items-center gap-1.5 group-hover:translate-x-1 transition">
+                            Rezepte ansehen <i class="fa-solid fa-arrow-right"></i>
+                        </span>
                     </div>
-                </div>
 
-                <!-- Filter-Auswahl -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4">
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">🍽️ Kategorie</label>
-                        <select id="filterCategory" onchange="renderRecipes()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800">
-                            <option value="all">Alle Mahlzeiten</option>
-                            <option value="Frühstück">Frühstück</option>
-                            <option value="Hauptgericht">Mittag- & Abendessen</option>
-                            <option value="Snack & Süßes">Snacks & Süßes</option>
-                        </select>
+                    <!-- Einstieg 2: Wochenplaner -->
+                    <div onclick="showSection('planner')" class="group bg-white hover:border-brand-orange rounded-3xl p-6 shadow-sm hover:shadow-xl border-2 border-slate-200/80 transition cursor-pointer flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-orange-100 text-brand-orange flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+                            <h3 class="font-display text-xl font-extrabold text-slate-900 mb-2">2. Wochenplaner & Einkauf</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                                Verteile deine Lieblingsgerichte auf Montag bis Sonntag und erstelle mit einem Klick deine druckfertige Supermarkt-Einkaufsliste.
+                            </p>
+                        </div>
+                        <span class="text-xs sm:text-sm font-extrabold text-brand-orange inline-flex items-center gap-1.5 group-hover:translate-x-1 transition">
+                            Woche planen <i class="fa-solid fa-arrow-right"></i>
+                        </span>
                     </div>
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">🔥 Kalorien</label>
-                        <select id="filterKcal" onchange="renderRecipes()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800">
-                            <option value="all">Alle Kalorien</option>
-                            <option value="300">Unter 300 kcal</option>
-                            <option value="450">Unter 450 kcal</option>
-                            <option value="550">Unter 550 kcal</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">💪 Eiweißgehalt</label>
-                        <select id="filterProtein" onchange="renderRecipes()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800">
-                            <option value="all">Beliebig</option>
-                            <option value="35">Ab 35 g Protein</option>
-                            <option value="45">Ab 45 g Protein</option>
-                            <option value="55">Ab 55 g Protein</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">⚡ Zubereitung</label>
-                        <select id="filterMethod" onchange="renderRecipes()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800">
-                            <option value="all">Alle Zubereitungsarten</option>
-                            <option value="Airfryer">Airfryer (Heißluft)</option>
-                            <option value="Pfanne">Pfanne & Herd</option>
-                            <option value="Backofen">Backofen</option>
-                            <option value="Ohne Kochen">Ohne Kochen / Kalt</option>
-                        </select>
+
+                    <!-- Einstieg 3: Kalorienrechner -->
+                    <div onclick="showSection('calculator')" class="group bg-white hover:border-blue-600 rounded-3xl p-6 shadow-sm hover:shadow-xl border-2 border-slate-200/80 transition cursor-pointer flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            <h3 class="font-display text-xl font-extrabold text-slate-900 mb-2">3. Kalorien- & Proteinrechner</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                                Berechne deinen persönlichen Orientierungswert zum Abnehmen, Halten oder für den Muskelaufbau – verständlich und ehrlich erklärt.
+                            </p>
+                        </div>
+                        <span class="text-xs sm:text-sm font-extrabold text-blue-600 inline-flex items-center gap-1.5 group-hover:translate-x-1 transition">
+                            Bedarf berechnen <i class="fa-solid fa-arrow-right"></i>
+                        </span>
                     </div>
                 </div>
             </section>
 
-            <!-- ANZAHL & REZEPT-GRID -->
-            <div class="flex items-center justify-between mb-5">
-                <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900">
-                    Unsere High-Protein Rezepte
-                </h2>
-                <span id="recipeCountLabel" class="text-xs font-extrabold bg-brand-green text-white px-3.5 py-1.5 rounded-full">
-                    12 vollständige Rezepte
-                </span>
-            </div>
+            <!-- SCHRITT 4: BELIEBTE REZEPTE DER WOCHE -->
+            <section aria-label="Beliebte Rezepte">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">⭐ Besonders oft gekocht</span>
+                        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
+                            Beliebte Rezepte dieser Woche
+                        </h2>
+                    </div>
+                    <button onclick="scrollToElement('alleRezepteSection')" class="text-xs sm:text-sm font-bold text-brand-green hover:underline self-start sm:self-auto">
+                        Alle 12 Rezepte anzeigen →
+                    </button>
+                </div>
 
-            <div id="recipeGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                <div id="popularRecipesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </section>
+
+            <!-- ALLE REZEPTE MIT EINFACHEM FILTER -->
+            <section id="alleRezepteSection" class="scroll-mt-24 pt-4 border-t border-slate-200">
+                <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-slate-200/90 mb-8">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
+                        <div>
+                            <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900">
+                                Alle High-Protein Rezepte im Überblick
+                            </h2>
+                            <p class="text-xs text-slate-500 mt-0.5">Filtere gezielt nach Mahlzeit, Kalorien, Eiweißgehalt oder Zubereitungsart</p>
+                        </div>
+                        <div class="flex items-center gap-2 w-full md:w-auto">
+                            <div class="relative flex-1 md:w-64">
+                                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                                <input 
+                                    type="text" 
+                                    id="searchInput" 
+                                    oninput="renderRecipes()"
+                                    placeholder="Zutat oder Gericht suchen..." 
+                                    class="w-full pl-9 pr-4 py-2 bg-slate-100 focus:bg-white rounded-xl text-sm border border-slate-200 focus:border-brand-green focus:outline-none"
+                                >
+                            </div>
+                            <button onclick="resetFilters()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-3.5 py-2.5 rounded-xl transition shrink-0">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4">
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">🍽️ Kategorie</label>
+                            <select id="filterCategory" onchange="renderRecipes()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800">
+                                <option value="all">Alle Mahlzeiten</option>
+                                <option value="Frühstück">Frühstück</option>
+                                <option value="Hauptgericht">Mittag- & Abendessen</option>
+                                <option value="Snack & Süßes">Snacks & Süßes</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">🔥 Kalorien</label>
+                            <select id="filterKcal" onchange="renderRecipes()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800">
+                                <option value="all">Alle Kalorien</option>
+                                <option value="300">Unter 300 kcal</option>
+                                <option value="450">Unter 450 kcal</option>
+                                <option value="550">Unter 550 kcal</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">💪 Protein</label>
+                            <select id="filterProtein" onchange="renderRecipes()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800">
+                                <option value="all">Beliebig</option>
+                                <option value="35">Ab 35 g Protein</option>
+                                <option value="45">Ab 45 g Protein</option>
+                                <option value="55">Ab 55 g Protein</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold uppercase text-slate-500 mb-1">⚡ Zubereitung</label>
+                            <select id="filterMethod" onchange="renderRecipes()" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold text-slate-800">
+                                <option value="all">Alle Geräte</option>
+                                <option value="Airfryer">Airfryer (Heißluft)</option>
+                                <option value="Pfanne">Pfanne & Herd</option>
+                                <option value="Backofen">Backofen</option>
+                                <option value="Ohne Kochen">Ohne Kochen / Kalt</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between mb-5">
+                    <span id="recipeCountLabel" class="text-xs font-extrabold bg-brand-green text-white px-3.5 py-1.5 rounded-full">
+                        12 Rezepte angezeigt
+                    </span>
+                </div>
+
+                <div id="recipeGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </section>
+
+            <!-- SCHRITT 5 & 6: VERTRAUENSSEKTION, QUALITÄTSVERSPRECHEN & ÜBER UNS -->
+            <section id="vertrauenSection" class="scroll-mt-24 bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
+                <div class="max-w-3xl mb-8">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-green">🛡️ Transparenz, Qualität & Vertrauen</span>
+                    <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 mb-3">
+                        Wie wir arbeiten & wer hinter ProteinHappen steckt
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                        Gerade bei Ernährung und Kalorienangaben musst du dich auf die Daten verlassen können. Deshalb legen wir unsere Berechnungsgrundlage und Arbeitsweise bei jedem Rezept offen.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <!-- Frage 1 & 2: Nährwertberechnung & Quellen -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                        <h3 class="font-display font-bold text-base text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-scale-balanced text-brand-green"></i> 1. Wie werden Nährwerte berechnet & woher stammen die Werte?
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Jedes Rezept basiert auf den exakten Rohgewichten der angegebenen Zutaten. Als Datenquelle nutzen wir die Referenzwerte des <strong>Bundeslebensmittelschlüssels (BLS)</strong> sowie überprüfte Nährwertangaben gängiger deutscher Supermarkt-Grundprodukte (z. B. Magerquark, Skyr, Hähnchenbrustfilet). Unter jedem Rezept findest du eine transparente Einzelzutaten-Tabelle.
+                        </p>
+                    </div>
+
+                    <!-- Frage 3 & 4: Rezeptentwicklung & Praxistest -->
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                        <h3 class="font-display font-bold text-base text-slate-900 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-kitchen-set text-brand-orange"></i> 2. Wie werden Rezepte entwickelt und getestet?
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            Alle Gerichte auf ProteinHappen sind <strong>selbst erprobte Alltagsrezepte und gezielt optimierte Fitness-Klassiker</strong>. Wir ersetzen unnötige Kalorienfallen (wie Frittierfett oder Kochsahne) durch proteinreiche Alternativen (wie Airfryer-Garung, Skyr oder Frischkäse light) und testen jedes Gericht auf Geschmack, Sättigung und Meal-Prep-Tauglichkeit.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Frage 5: Wer steckt hinter ProteinHappen? + Kontakt -->
+                <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    <div class="max-w-2xl">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-orange">👋 Persönlicher Einblick</span>
+                        <h3 class="font-display text-xl font-extrabold mt-1 mb-2">Wer steckt hinter ProteinHappen.de?</h3>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Hi, ich bin <strong>Andreas aus Erkrath</strong> – Familienvater, Schichtarbeiter in der Logistik und leidenschaftlicher Kraftsportler. Wer im Wechsel aus Früh- und Spätschicht arbeitet und regelmäßig trainiert, hat keine Zeit für stundenlanges Kochen oder komplizierte Diätpläne. Ich habe ProteinHappen aufgebaut, um genau die schnellen, proteinreichen Gerichte zu teilen, die mich selbst jeden Tag satt und fit halten.
+                        </p>
+                    </div>
+                    <div class="shrink-0 bg-white/10 p-4 rounded-2xl border border-white/15 text-xs space-y-2 w-full md:w-auto">
+                        <div class="font-bold text-white">Direkter Draht zu mir:</div>
+                        <div class="text-slate-300"><i class="fa-regular fa-envelope text-brand-greenLight mr-1.5"></i> info@proteinhappen.de</div>
+                        <button onclick="openLegalModal('impressum')" class="text-brand-orange font-bold hover:underline block pt-1">
+                            Vollständiges Impressum ansehen →
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DEZENTE VORSCHAU: 30 TAGE HIGH-PROTEIN PLAN (MONETARISIERUNGS-VORBEREITUNG) -->
+            <section class="bg-emerald-50 border-2 border-emerald-200 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="max-w-2xl">
+                    <span class="bg-brand-green text-white text-[11px] font-extrabold uppercase px-3 py-1 rounded-full">In Kürze verfügbar • Digitales Handbuch</span>
+                    <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 mt-3 mb-2">
+                        📘 „30 Tage High-Protein – dein einfacher Ernährungsplan“
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                        Du möchtest einen kompletten Fahrplan für 4 Wochen inklusive fertiger Wochenübersichten, Schichtarbeiter-Tipps und gebündelten Einkaufslisten als druckbares PDF-Buch? Schreib uns eine kurze Nachricht und sichere dir den Start-Vorteil.
+                    </p>
+                </div>
+                <a href="mailto:info@proteinhappen.de?subject=Vormerkung%2030%20Tage%20High-Protein%20Plan" class="shrink-0 bg-slate-900 hover:bg-slate-800 text-white font-display font-extrabold text-xs sm:text-sm px-6 py-4 rounded-2xl shadow-md transition">
+                    Unverbindlich vormerken →
+                </a>
+            </section>
+
+            <!-- SEO FAQ-BEREICH MIT ECHTEN NUTZERFRAGEN -->
+            <section aria-label="Häufig gestellte Fragen" class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
+                <div class="mb-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">❓ Häufige Fragen (FAQ)</span>
+                    <h2 class="font-display text-2xl font-extrabold text-slate-900 mt-1">
+                        Wichtige Fragen rund um High-Protein-Ernährung & Abnehmen
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs sm:text-sm">
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/70">
+                        <h3 class="font-display font-bold text-slate-900 text-base mb-1.5">Warum hilft eine proteinreiche Ernährung beim Abnehmen?</h3>
+                        <p class="text-slate-600 leading-relaxed">Eiweiß hat von allen Makronährstoffen den höchsten Sättigungseffekt und schützt im Kaloriendefizit deine wertvolle Muskulatur vor dem Abbau. Dadurch bleibt dein Grundumsatz stabil und Heißhungerattacken am Abend werden deutlich reduziert.</p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/70">
+                        <h3 class="font-display font-bold text-slate-900 text-base mb-1.5">Brauche ich für die Rezepte teures Proteinpulver?</h3>
+                        <p class="text-slate-600 leading-relaxed">Nein. Unsere herzhaften Hauptgerichte basieren komplett auf natürlichen Eiweißquellen wie Hähnchen, Rindfleisch, Lachs, Thunfisch, Eiern, Magerquark, Skyr und Hüttenkäse. Nur bei ausgewählten süßen Snacks wird optional Whey genutzt.</p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/70">
+                        <h3 class="font-display font-bold text-slate-900 text-base mb-1.5">Eignen sich die Gerichte zum Vorkochen (Meal-Prep & Schichtarbeit)?</h3>
+                        <p class="text-slate-600 leading-relaxed">Ja! Alle Rezepte sind so konzipiert, dass du direkt 2 bis 4 Portionen zubereiten kannst. Bei jedem Rezept findest du zudem einen konkreten Praxis-Tipp, wie das Gericht auch am nächsten Arbeitstag frisch schmeckt.</p>
+                    </div>
+                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/70">
+                        <h3 class="font-display font-bold text-slate-900 text-base mb-1.5">Kann ich die Airfryer-Rezepte auch im normalen Backofen machen?</h3>
+                        <p class="text-slate-600 leading-relaxed">Selbstverständlich. Jedes Heißluftfritteusen-Gericht gelingt auch im klassischen Backofen bei Umluft. Plane im normalen Backofen lediglich etwa 4 bis 5 Minuten mehr Backzeit ein.</p>
+                    </div>
+                </div>
+            </section>
+
         </div>
 
         <!-- ==========================================
-             ANSICHT 2: EINSEITIGE REZEPT-DETAILANSICHT
+             SEKTION 2: EINSEITIGE REZEPT-DETAILANSICHT (MIT EIGENER URL & INTERNER VERLINKUNG)
              ========================================== -->
-        <div id="view-detail" class="hidden max-w-4xl mx-auto">
+        <div id="section-detail" class="hidden max-w-4xl mx-auto">
             <div id="recipeDetailContainer"></div>
         </div>
 
         <!-- ==========================================
-             ANSICHT 3: MEINE FAVORITEN (MERKLISTE)
+             SEKTION 3: WOCHENPLANER & AUTOMATISCHE EINKAUFSLISTE
              ========================================== -->
-        <div id="view-favorites" class="hidden">
-            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 mb-8">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-100 mb-6">
+        <div id="section-planner" class="hidden space-y-8">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 print-box">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-widest text-rose-500">❤️ Deine persönliche Rezept-Sammlung</span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">📅 Unser Alleinstellungsmerkmal für deinen Alltag</span>
                         <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
-                            Gespeicherte Lieblingsrezepte
+                            Interaktiver Wochenplaner & Einkaufsliste
                         </h1>
                         <p class="text-sm text-slate-500 mt-1">
-                            Alle Rezepte, die du mit dem Herz-Symbol markiert hast, bleiben hier in deinem Browser gespeichert.
+                            Stelle dir deinen Essensplan von Montag bis Sonntag zusammen – deine Einkaufsliste berechnet sich unten automatisch.
                         </p>
                     </div>
-                    <button onclick="showView('home')" class="self-start sm:self-auto bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold px-4 py-2.5 rounded-xl transition">
-                        ← Zurück zu allen Rezepten
-                    </button>
+                    <div class="flex flex-wrap items-center gap-2 no-print">
+                        <button onclick="loadSampleWeek()" class="bg-emerald-50 hover:bg-emerald-100 text-brand-greenDark text-xs font-bold px-4 py-2.5 rounded-xl border border-emerald-200 transition">
+                            ✨ Beispiel-Woche laden
+                        </button>
+                        <button onclick="clearWeekPlan()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2.5 rounded-xl transition">
+                            Plan leeren
+                        </button>
+                        <button onclick="window.print()" class="bg-brand-orange hover:bg-brand-orangeDark text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm transition">
+                            <i class="fa-solid fa-print mr-1"></i> Plan & Einkaufsliste drucken
+                        </button>
+                    </div>
                 </div>
 
-                <div id="favoritesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                <!-- Schnelle Zuweisung -->
+                <div class="bg-slate-50 rounded-2xl p-4 my-6 border border-slate-200/80 no-print">
+                    <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">➕ Gericht zu einem Wochentag hinzufügen:</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+                        <select id="plannerDaySelect" class="bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-bold text-slate-800">
+                            <option value="Montag">Montag</option>
+                            <option value="Dienstag">Dienstag</option>
+                            <option value="Mittwoch">Mittwoch</option>
+                            <option value="Donnerstag">Donnerstag</option>
+                            <option value="Freitag">Freitag</option>
+                            <option value="Samstag">Samstag</option>
+                            <option value="Sonntag">Sonntag</option>
+                        </select>
+                        <select id="plannerRecipeSelect" class="sm:col-span-2 bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-800"></select>
+                        <div class="flex items-center gap-2">
+                            <select id="plannerPortionSelect" class="bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-bold text-slate-800">
+                                <option value="1">1 Port.</option>
+                                <option value="2">2 Port.</option>
+                                <option value="3">3 Port.</option>
+                                <option value="4">4 Port.</option>
+                            </select>
+                            <button onclick="addSelectedToWeek()" class="flex-1 bg-brand-green hover:bg-brand-greenDark text-white font-bold py-2.5 px-4 rounded-xl text-sm transition">
+                                Einfügen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7-Tage Grid -->
+                <div id="weeklyGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-3 mb-8"></div>
+
+                <!-- Automatische Einkaufsliste -->
+                <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 print-box">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-5 border-b border-slate-700">
+                        <div>
+                            <h2 class="font-display text-xl sm:text-2xl font-extrabold flex items-center gap-2">
+                                <i class="fa-solid fa-cart-shopping text-brand-greenLight"></i> Automatische Einkaufsliste
+                            </h2>
+                            <p class="text-xs text-slate-400 mt-0.5">Alle Zutaten deiner geplanten Wochentage automatisch zusammengeführt.</p>
+                        </div>
+                        <div class="flex gap-2 no-print">
+                            <button onclick="copyShoppingText()" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl border border-slate-600 transition">
+                                <i class="fa-regular fa-copy mr-1"></i> Kopieren
+                            </button>
+                            <button onclick="window.print()" class="bg-white text-slate-900 hover:bg-slate-100 text-xs font-extrabold px-4 py-2.5 rounded-xl transition">
+                                <i class="fa-solid fa-print text-brand-orange mr-1"></i> Drucken
+                            </button>
+                        </div>
+                    </div>
+                    <ul id="shoppingListContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 text-sm"></ul>
+                </div>
             </div>
         </div>
 
         <!-- ==========================================
-             ANSICHT 4: AUTOMATISCHE EINKAUFSLISTE
+             SEKTION 4: KALORIEN- & PROTEINRECHNER (MIT KLAREN ERKLÄRUNGEN)
              ========================================== -->
-        <div id="view-shopping" class="hidden max-w-4xl mx-auto">
-            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 print-box">
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100 mb-6">
+        <div id="section-calculator" class="hidden max-w-4xl mx-auto space-y-6">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-green">⚖️ Nachvollziehbare Orientierungswerte</span>
+                <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1 mb-2">
+                    Protein- und Kalorienrechner
+                </h1>
+                <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                    Berechne deinen täglichen Kalorien- und Eiweißbedarf auf Basis der wissenschaftlich etablierten <strong>Mifflin-St Jeor Formel</strong>. Unten erklären wir dir genau, wie sich deine Werte zusammensetzen.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <!-- Eingabe -->
+                    <div class="space-y-4 bg-slate-50 p-5 rounded-2xl border border-slate-200/80">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Geschlecht</label>
+                                <select id="calcGender" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                                    <option value="male">Männlich</option>
+                                    <option value="female">Weiblich</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Alter (Jahre)</label>
+                                <input id="calcAge" type="number" value="40" min="16" max="99" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Körpergröße (cm)</label>
+                                <input id="calcHeight" type="number" value="175" min="130" max="230" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">Gewicht (kg)</label>
+                                <input id="calcWeight" type="number" value="83" min="40" max="250" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Alltagsbewegung & Beruf (PAL-Faktor)</label>
+                            <select id="calcActivity" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                                <option value="1.2">Wenig aktiv (überwiegend sitzend, kaum Sport)</option>
+                                <option value="1.4">Leicht aktiv (Büroalltag + 1–2x Sport/Woche)</option>
+                                <option value="1.6" selected>Mäßig aktiv (Schichtarbeit / Lager / 3–4x Training)</option>
+                                <option value="1.8">Sehr aktiv (körperliche Arbeit + intensiver Sport)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">Dein persönliches Ziel</label>
+                            <select id="calcGoal" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-semibold">
+                                <option value="lose" selected>🔥 Abnehmen (-450 kcal moderates Defizit)</option>
+                                <option value="maintain">⚖️ Gewicht halten (Gesamtbedarf decken)</option>
+                                <option value="gain">💪 Muskelaufbau (+250 kcal kontrollierter Aufbau)</option>
+                            </select>
+                        </div>
+
+                        <button onclick="calculateMacros()" class="w-full bg-brand-green hover:bg-brand-greenDark text-white font-display font-extrabold py-3.5 rounded-xl text-sm shadow-md transition">
+                            Orientierungswerte berechnen
+                        </button>
+                    </div>
+
+                    <!-- Ergebnis -->
+                    <div class="bg-slate-900 text-white rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-orange">📊 Dein täglicher Orientierungswert</span>
+                            <div class="mt-4 bg-slate-800 rounded-2xl p-4 border border-slate-700 text-center">
+                                <div class="text-xs text-slate-400">Empfohlene Tageskalorien</div>
+                                <div id="resTargetKcal" class="font-display text-4xl font-extrabold text-white my-1">2.140 kcal</div>
+                                <div id="resBmrInfo" class="text-[11px] text-slate-400">Grundumsatz: 1.720 kcal • Erhaltungsbedarf: 2.590 kcal</div>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-2.5 my-4 text-center">
+                                <div class="bg-brand-green/20 border border-brand-green/40 rounded-xl p-3">
+                                    <div id="resProtein" class="font-display text-xl font-extrabold text-brand-greenLight">166 g</div>
+                                    <div class="text-[11px] text-brand-greenLight font-bold">Protein</div>
+                                </div>
+                                <div class="bg-slate-800 border border-slate-700 rounded-xl p-3">
+                                    <div id="resCarbs" class="font-display text-xl font-extrabold text-amber-300">195 g</div>
+                                    <div class="text-[11px] text-slate-400">Kohlenhydrate</div>
+                                </div>
+                                <div class="bg-slate-800 border border-slate-700 rounded-xl p-3">
+                                    <div id="resFat" class="font-display text-xl font-extrabold text-rose-300">66 g</div>
+                                    <div class="text-[11px] text-slate-400">Fett</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button onclick="showSection('home'); scrollToElement('alleRezepteSection');" class="w-full bg-brand-orange hover:bg-brand-orangeDark text-white font-bold py-3 rounded-xl text-xs sm:text-sm transition">
+                            🥗 Passende Rezepte zu meinen Werten aussuchen →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- KLARE ERKLÄRUNG DER BEGRIFFE & RICHTWERTE -->
+                <div class="border-t border-slate-200 pt-6">
+                    <h2 class="font-display font-bold text-lg text-slate-900 mb-3">
+                        So verstehst du deine berechneten Werte richtig:
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm text-slate-600">
+                        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/70">
+                            <strong class="text-slate-900 block mb-1">1. Grundumsatz & Gesamtbedarf</strong>
+                            Der <em>Grundumsatz</em> ist die Energie, die dein Körper in völliger Ruhe für Organe und Atmung verbraucht. Multipliziert mit deiner Alltagsbewegung entsteht dein <em>Gesamtbedarf (Erhaltungskalorien)</em>.
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/70">
+                            <strong class="text-slate-900 block mb-1">2. Warum 450 kcal Defizit?</strong>
+                            Um nachhaltig Körperfett abzubauen, ohne im Alltag kraftlos zu werden, hat sich ein moderates Defizit von 400 bis 500 kcal unter dem Gesamtbedarf bewährt (entspricht ca. 0,4 bis 0,5 kg Gewichtsverlust pro Woche).
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/70">
+                            <strong class="text-slate-900 block mb-1">3. Warum 1,8–2,0 g Protein pro kg?</strong>
+                            Während einer Gewichtsreduktion oder bei regelmäßigem Training schützt eine erhöhte Eiweißzufuhr deine Muskulatur und sorgt für maximale Sättigung. <em>Hinweis: Diese Werte sind Orientierungswerte für gesunde Erwachsene und ersetzen keine ärztliche Beratung.</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             SEKTION 5: MERKLISTE (FAVORITEN)
+             ========================================== -->
+        <div id="section-favorites" class="hidden">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-100 mb-6">
                     <div>
-                        <span class="text-xs font-bold uppercase tracking-widest text-brand-orange">🛒 Automatisch zusammengeführt</span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-rose-500">❤️ Deine persönliche Rezept-Sammlung</span>
                         <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
-                            Deine Einkaufsliste
+                            Meine gespeicherten Favoriten
                         </h1>
-                        <p class="text-sm text-slate-500 mt-1">
-                            Zutaten mehrerer Rezepte werden hier automatisch summiert. Ideal für deinen Wocheneinkauf im Supermarkt.
-                        </p>
                     </div>
-                    <div class="flex flex-wrap items-center gap-2 no-print">
-                        <button onclick="copyShoppingList()" class="bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold px-4 py-2.5 rounded-xl transition">
-                            <i class="fa-regular fa-copy mr-1"></i> Kopieren
-                        </button>
-                        <button onclick="window.print()" class="bg-brand-green hover:bg-brand-greenDark text-white text-xs font-bold px-4 py-2.5 rounded-xl transition">
-                            <i class="fa-solid fa-print mr-1"></i> Ausdrucken
-                        </button>
-                        <button onclick="clearShoppingList()" class="bg-rose-50 hover:bg-rose-100 text-rose-600 text-xs font-bold px-3.5 py-2.5 rounded-xl transition">
-                            <i class="fa-solid fa-trash-can mr-1"></i> Leeren
-                        </button>
-                    </div>
+                    <button onclick="showSection('home')" class="self-start sm:self-auto bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold px-4 py-2.5 rounded-xl transition">
+                        ← Zurück zu allen Rezepten
+                    </button>
                 </div>
-
-                <!-- Ausgewählte Rezepte auf der Liste -->
-                <div class="mb-6">
-                    <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Enthaltene Rezepte in dieser Einkaufsliste:</h2>
-                    <div id="shoppingRecipesList" class="flex flex-wrap gap-2"></div>
-                </div>
-
-                <!-- Summierte Zutaten -->
-                <div>
-                    <h2 class="font-display font-bold text-lg text-slate-900 mb-3">Benötigte Zutaten (automatisch summiert):</h2>
-                    <ul id="shoppingItemsContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5"></ul>
-                </div>
+                <div id="favoritesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
             </div>
         </div>
 
     </main>
 
     <!-- ==========================================
-         MODAL: IMPRESSUM, DATENSCHUTZ & BERECHNUNGSGRUNDLAGE
+         MODAL: RECHTLICHES (IMPRESSUM § 5 DDG & DSGVO)
          ========================================== -->
     <div id="legalModal" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 no-print">
         <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[88vh] overflow-y-auto p-6 sm:p-8 shadow-2xl">
@@ -367,20 +714,28 @@
          ========================================== -->
     <footer class="bg-white border-t border-slate-200 mt-16 py-10 no-print">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-slate-100 text-xs sm:text-sm">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-slate-100 text-xs sm:text-sm">
                 <div>
                     <div class="font-display font-extrabold text-slate-900 text-lg mb-2">ProteinHappen.de</div>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        Ehrliche, vollständige High-Protein Rezepte für Alltag, Abnehmen und Schichtarbeit. Jedes Rezept mit transparenter Nährwert-Aufschlüsselung auf Einzelzutaten-Basis.
+                        Proteinreich essen. Einfach genießen. Geprüfte High-Protein-Rezepte mit transparenter Nährwertberechnung für Alltag, Familie und Schichtarbeit.
                     </p>
                 </div>
                 <div>
-                    <div class="font-bold text-slate-900 mb-2">Navigation & Mehrwert</div>
+                    <div class="font-bold text-slate-900 mb-2">Schnellzugriff</div>
                     <ul class="space-y-1.5 text-slate-500 text-xs">
-                        <li><button onclick="showView('home')" class="hover:text-brand-green">Alle 12 High-Protein Rezepte</button></li>
-                        <li><button onclick="showView('favorites')" class="hover:text-brand-green">Meine gespeicherten Favoriten</button></li>
-                        <li><button onclick="showView('shopping')" class="hover:text-brand-green">Automatische Einkaufsliste</button></li>
-                        <li><button onclick="openLegalModal('berechnung')" class="hover:text-brand-green">Dokumentation der Nährwertberechnung</button></li>
+                        <li><button onclick="showSection('home')" class="hover:text-brand-green">Alle 12 High-Protein Rezepte</button></li>
+                        <li><button onclick="showSection('planner')" class="hover:text-brand-green">Wochenplaner & Einkaufsliste</button></li>
+                        <li><button onclick="showSection('calculator')" class="hover:text-brand-green">Protein- & Kalorienrechner</button></li>
+                        <li><button onclick="showSection('favorites')" class="hover:text-brand-green">Meine Favoriten-Merkliste</button></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="font-bold text-slate-900 mb-2">Transparenz & Qualität</div>
+                    <ul class="space-y-1.5 text-slate-500 text-xs">
+                        <li><button onclick="showSection('home'); scrollToElement('vertrauenSection');" class="hover:text-brand-green">Über uns & Rezept-Entwicklung</button></li>
+                        <li><button onclick="openLegalModal('berechnung')" class="hover:text-brand-green">Nährwert-Dokumentation (BLS)</button></li>
+                        <li><button onclick="openLegalModal('sponsoring')" class="hover:text-brand-green">Kooperationen & Sponsoring</button></li>
                     </ul>
                 </div>
                 <div>
@@ -388,27 +743,28 @@
                     <ul class="space-y-1.5 text-slate-500 text-xs">
                         <li><button onclick="openLegalModal('impressum')" class="hover:text-brand-green font-semibold text-slate-700">Impressum (§ 5 DDG)</button></li>
                         <li><button onclick="openLegalModal('datenschutz')" class="hover:text-brand-green font-semibold text-slate-700">Datenschutzerklärung (DSGVO)</button></li>
-                        <li><button onclick="openLegalModal('sponsoring')" class="hover:text-brand-green">Kooperationen & Sponsoring</button></li>
-                        <li><a href="mailto:info@proteinhappen.de" class="hover:text-brand-green">Kontakt: info@proteinhappen.de</a></li>
+                        <li><a href="mailto:info@proteinhappen.de" class="hover:text-brand-green">E-Mail: info@proteinhappen.de</a></li>
                     </ul>
                 </div>
             </div>
             <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
-                <span>© 2026 ProteinHappen.de • Alle Nährwerte transparent nach Rohgewicht dokumentiert</span>
-                <span>Einfach • Proteinreich • Abnehmen</span>
+                <span>© 2026 ProteinHappen.de • Entwickelt von Andreas Goldian in Erkrath</span>
+                <span>Alle Nährwerte transparent nach Rohgewicht dokumentiert</span>
             </div>
         </div>
     </footer>
 
     <!-- ==========================================
-         JAVASCRIPT: 12 VOLLSTÄNDIGE REZEPTE MIT EINZELZUTATEN-NÄHRWERTEN
+         JAVASCRIPT: REZEPTDATENBANK, URL-ROUTING & PLANER
          ========================================== -->
     <script>
+        // 12 VOLLSTÄNDIGE REZEPTE INKL. SPRECHENDER SEO-SLUGS & EINZELZUTATEN-NÄHRWERTEN
         const recipes = [
             {
                 id: 1,
+                slug: "knusprige-airfryer-haehnchen-bites",
                 title: "Knusprige Airfryer Hähnchen-Bites mit Knoblauch-Skyr-Dip",
-                shortDesc: "Außen knusprig wie Nuggets, innen saftig – komplett ohne Frittierfett in 15 Minuten fertig.",
+                shortDesc: "Außen knusprig wie Nuggets, innen extrem saftig – ohne Frittierfett in 15 Minuten fertig.",
                 category: "Hauptgericht",
                 method: "Airfryer",
                 difficulty: "Einfach",
@@ -417,7 +773,9 @@
                 protein: 67,
                 carbs: 33,
                 fat: 3,
+                popular: true,
                 image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=1000&q=80",
+                alt: "Knusprig gebackene Hähnchen-Bites aus dem Airfryer mit cremigem Kräuter-Skyr-Dip",
                 intro: "Durch die Panade aus ungesüßten Cornflakes und die Zubereitung im Airfryer sparst du das komplette Frittierfett ein. Die Kombination aus magerer Hähnchenbrust und Skyr-Dip liefert 67 g hochwertiges Eiweiß bei nur 3 g Fett.",
                 ingredients: [
                     { amount: 200, unit: "g", name: "Hähnchenbrustfilet (roh)", kcal: 218, p: 48, c: 0, f: 2.0 },
@@ -427,7 +785,7 @@
                 ],
                 steps: [
                     "Hähnchenbrustfilet trocken tupfen und mit einem scharfen Messer in gleichmäßige, mundgerechte Würfel (ca. 2,5 cm) schneiden.",
-                    "In einer Schüssel 1 EL vom Skyr mit Paprikapulver, Knoblauchgranulat, Salz und Pfeffer verrühren. Die Hähnchenwürfel darin gründlich wenden, sodass sie leicht überzogen sind.",
+                    "In einer Schüssel 1 EL vom Skyr mit Paprikapulver, Knoblauchgranulat, Salz und Pfeffer verrühren. Die Hähnchenwürfel darin gründlich wenden, sodass die Panade ohne Ei haftet.",
                     "Die ungesüßten Cornflakes in einem Gefrierbeutel grob zerdrücken und die marinierten Hähnchenstücke rundherum fest in den Bröseln wenden.",
                     "Den Airfryer auf 200 °C einstellen, die panierten Hähnchen-Bites nebeneinander in den Korb legen und für 11 bis 12 Minuten goldbraun backen.",
                     "Währenddessen den restlichen Skyr mit Zitronensaft, Knoblauch, Salz und Pfeffer glatt rühren und als frischen Dip zu den heißen Bites servieren."
@@ -436,6 +794,7 @@
             },
             {
                 id: 2,
+                slug: "high-protein-mandarinen-kaesekuchen",
                 title: "Cremiger High-Protein Mandarinen-Käsekuchen (ohne Boden)",
                 shortDesc: "Ein ganzer, saftiger Käsekuchen aus Magerquark und Skyr mit 54 g Protein und nur 7 g Fett.",
                 category: "Snack & Süßes",
@@ -446,7 +805,9 @@
                 protein: 54,
                 carbs: 45,
                 fat: 7,
+                popular: true,
                 image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1000&q=80",
+                alt: "Saftiger High-Protein Käsekuchen mit Mandarinen ohne Boden auf einem Teller",
                 intro: "Klassischer Käsekuchen schlägt durch Butter und Sahne oft mit über 1.200 Kalorien zu Buche. Dieses Rezept verzichtet auf den fettigen Mürbeteigboden und nutzt Magerquark, Skyr und Erythrit für vollen Kuchengenuss im Kaloriendefizit.",
                 ingredients: [
                     { amount: 250, unit: "g", name: "Magerquark (unter 0,5 % Fett)", kcal: 168, p: 30, c: 10, f: 0.5 },
@@ -467,6 +828,7 @@
             },
             {
                 id: 3,
+                slug: "rinderhack-suesskartoffel-schicht-pfanne",
                 title: "Schnelle Rinderhack-Süßkartoffel-Pfanne mit Hüttenkäse",
                 shortDesc: "Deftiges One-Pot-Gericht in 15 Minuten – perfekt zum Vorkochen für Arbeit und Schicht.",
                 category: "Hauptgericht",
@@ -477,7 +839,9 @@
                 protein: 49,
                 carbs: 41,
                 fat: 11,
+                popular: true,
                 image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80",
+                alt: "Würzige Rinderhack-Süßkartoffel-Pfanne mit Paprika und geschmolzenem Hüttenkäse",
                 intro: "Durch den Einsatz von fettreduziertem 5%-Rinderhackfleisch anstelle von gemischtem Hackfleisch sparst du über 200 Kalorien aus gesättigten Fetten, während die Süßkartoffel langanhaltende Energie liefert.",
                 ingredients: [
                     { amount: 180, unit: "g", name: "Rinderhackfleisch fettreduziert (5 % Fett)", kcal: 230, p: 38, c: 0, f: 9.0 },
@@ -497,6 +861,7 @@
             },
             {
                 id: 4,
+                slug: "lemon-iced-tea-quark-fluff",
                 title: "Erfrischender Lemon-Iced-Tea Quark-Fluff (Unter 250 kcal)",
                 shortDesc: "Doppeltes Volumen durch den Sprudelwasser-Trick: Luftige Zitronen-Creme mit 43 g Eiweiß.",
                 category: "Snack & Süßes",
@@ -507,7 +872,9 @@
                 protein: 43,
                 carbs: 15,
                 fat: 1,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1000&q=80",
+                alt: "Luftig aufgeschlagener Magerquark-Fluff im Glas mit frischen Erdbeeren",
                 intro: "Wenn abends auf der Couch der Heißhunger auf Süßes kommt: Durch das Aufschlagen von Magerquark mit kohlensäurehaltigem Wasser und Clear Whey entsteht eine große Schüssel luftiges Mousse bei minimalen Kalorien.",
                 ingredients: [
                     { amount: 250, unit: "g", name: "Magerquark (gut gekühlt)", kcal: 168, p: 30, c: 10, f: 0.5 },
@@ -526,6 +893,7 @@
             },
             {
                 id: 5,
+                slug: "fluffige-hafer-protein-pancakes",
                 title: "Fluffige 3-Zutaten Hafer-Protein-Pancakes mit warmen Beeren",
                 shortDesc: "Sättigendes Power-Frühstück aus Haferflocken, Quark und Eiern ohne teures Fertigpulver.",
                 category: "Frühstück",
@@ -536,7 +904,9 @@
                 protein: 38,
                 carbs: 42,
                 fat: 10,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1000&q=80",
+                alt: "Stapel aus goldbraunen Hafer-Protein-Pancakes mit warmen Beeren",
                 intro: "Diese Pancakes kommen komplett ohne zugesetzten Zucker oder Weißmehl aus. Die Kombination aus komplexen Hafer-Kohlenhydraten und langsam verdaulichem Quark-Protein hält den ganzen Vormittag satt.",
                 ingredients: [
                     { amount: 50, unit: "g", name: "Zarte Haferflocken", kcal: 185, p: 7, c: 29.5, f: 3.5 },
@@ -556,6 +926,7 @@
             },
             {
                 id: 6,
+                slug: "thunfisch-skyr-pizza-ohne-hefe",
                 title: "Schnelle High-Protein Thunfisch-Skyr-Pizza (Ohne Hefe)",
                 shortDesc: "Knuspriger Blitz-Teig ohne Gehzeit mit 65 g Eiweiß – in 15 Minuten auf dem Tisch.",
                 category: "Hauptgericht",
@@ -566,7 +937,9 @@
                 protein: 65,
                 carbs: 50,
                 fat: 9,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1000&q=80",
+                alt: "Frisch gebackene High-Protein Thunfisch-Pizza mit roten Zwiebeln und geschmolzenem Käse",
                 intro: "Wenn am Wochenende der Pizza-Hunger kommt, liefert dir dieser Teig aus Dinkelmehl und Skyr zusammen mit dem Thunfisch-Belag satte 65 g Protein bei unter 10 g Fett.",
                 ingredients: [
                     { amount: 100, unit: "g", name: "Skyr natur", kcal: 63, p: 11, c: 4, f: 0.2 },
@@ -586,6 +959,7 @@
             },
             {
                 id: 7,
+                slug: "airfryer-pizza-broetchen-high-protein",
                 title: "Knusprige Airfryer Pizza-Brötchen mit Putenbrust",
                 shortDesc: "Herzhaft überbackene Quark-Teig-Brötchen mit 53 g Protein – warm und kalt ein Genuss.",
                 category: "Snack & Süßes",
@@ -596,7 +970,9 @@
                 protein: 53,
                 carbs: 53,
                 fat: 9,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=1000&q=80",
+                alt: "Überbackene High-Protein Pizza-Brötchen aus dem Airfryer",
                 intro: "Diese schnellen Pizza-Brötchen benötigen keine Hefe und sind in 12 Minuten im Airfryer ausgebacken. Perfekt fürs Abendessen oder als herzhafter Proviant für die Arbeit.",
                 ingredients: [
                     { amount: 150, unit: "g", name: "Magerquark", kcal: 100, p: 18, c: 6, f: 0.3 },
@@ -616,6 +992,7 @@
             },
             {
                 id: 8,
+                slug: "schoko-bananen-baked-oats-airfryer",
                 title: "Warme Schoko-Bananen Baked Oats aus dem Airfryer",
                 shortDesc: "Schmeckt wie ein warmer Schokokuchen zum Frühstück und liefert 40 g Eiweiß.",
                 category: "Frühstück",
@@ -626,7 +1003,9 @@
                 protein: 40,
                 carbs: 50,
                 fat: 5,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?auto=format&fit=crop&w=1000&q=80",
+                alt: "Warme Schoko-Bananen Baked Oats in einer Keramikform",
                 intro: "Gebackene Haferflocken (Baked Oats) haben die Konsistenz von frischem Rührkuchen, bestehen aber aus reinem Fitness-Treibstoff: Haferflocken, Skyr, Banane und Schoko-Protein.",
                 ingredients: [
                     { amount: 50, unit: "g", name: "Zarte Haferflocken", kcal: 185, p: 7, c: 29.5, f: 3.5 },
@@ -646,6 +1025,7 @@
             },
             {
                 id: 9,
+                slug: "stremellachs-protein-wrap-schichtpause",
                 title: "Schneller Stremellachs-Protein-Wrap mit Frischkäse",
                 shortDesc: "Kalt genießbar, in 5 Minuten gerollt und vollgepackt mit 49 g Eiweiß & Omega-3.",
                 category: "Hauptgericht",
@@ -656,7 +1036,9 @@
                 protein: 49,
                 carbs: 21,
                 fat: 19,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?auto=format&fit=crop&w=1000&q=80",
+                alt: "Frisch gerollter High-Protein Lachs-Wrap mit Spinat und Frischkäse",
                 intro: "Wenn auf der Arbeit keine Mikrowelle zur Verfügung steht, ist dieser Lachs-Wrap die ideale Lösung. Stremellachs liefert hochwertiges Eiweiß und lebenswichtige Omega-3-Fettsäuren.",
                 ingredients: [
                     { amount: 60, unit: "g", name: "High-Protein Tortilla-Wrap (1 Stück)", kcal: 168, p: 13, c: 17, f: 4.5 },
@@ -675,6 +1057,7 @@
             },
             {
                 id: 10,
+                slug: "haehnchen-schupfnudel-pfanne-ohne-sahne",
                 title: "Cremige Hähnchen-Schupfnudel-Pfanne mit Champignons",
                 shortDesc: "Deftiges Soulfood mit 58 g Protein – leichter Frischkäse statt schwerer Kochsahne.",
                 category: "Hauptgericht",
@@ -685,7 +1068,9 @@
                 protein: 58,
                 carbs: 47,
                 fat: 11,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1000&q=80",
+                alt: "Deftige Hähnchen-Schupfnudel-Pfanne mit Champignons in cremiger Rahmsauce",
                 intro: "Goldbraun gebratene Schupfnudeln und saftige Hähnchenstreifen in einer sämigen Pilz-Rahmsauce: Durch den Tausch von Sahne gegen fettarmen Frischkäse sparst du über 220 Kalorien.",
                 ingredients: [
                     { amount: 180, unit: "g", name: "Hähnchenbrustfilet (in Streifen)", kcal: 196, p: 43, c: 0, f: 2.0 },
@@ -705,6 +1090,7 @@
             },
             {
                 id: 11,
+                slug: "airfryer-lachs-mediterranes-ofengemuese",
                 title: "Saftiger Airfryer-Lachs auf mediterranem Ofengemüse",
                 shortDesc: "Auf den Punkt gegartes Lachsfilet mit buntem Röstgemüse in nur 15 Minuten.",
                 category: "Hauptgericht",
@@ -715,7 +1101,9 @@
                 protein: 40,
                 carbs: 12,
                 fat: 28,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1000&q=80",
+                alt: "Gebratenes Lachsfilet aus dem Airfryer auf mediterranem Zucchini-Paprika-Gemüse",
                 intro: "Ein leichtes, kohlenhydratarmes Abendessen mit wertvollen ungesättigten Fettsäuren: Fisch und Gemüse garen gleichzeitig im Airfryer, sodass kein Topf abgewaschen werden muss.",
                 ingredients: [
                     { amount: 180, unit: "g", name: "Lachsfilet (ohne Haut)", kcal: 356, p: 36, c: 0, f: 23.0 },
@@ -734,6 +1122,7 @@
             },
             {
                 id: 12,
+                slug: "griechischer-ofen-feta-haehnchen-auflauf",
                 title: "Griechischer Ofen-Feta-Auflauf mit Hähnchenbrust & Tomaten",
                 shortDesc: "Saftige Hähnchenbrust in geschmolzener Tomaten-Feta-Sauce mit 71 g Eiweiß.",
                 category: "Hauptgericht",
@@ -744,7 +1133,9 @@
                 protein: 71,
                 carbs: 8,
                 fat: 18,
+                popular: false,
                 image: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=1000&q=80",
+                alt: "Griechischer Ofen-Auflauf mit Hähnchenbrustfilet, Feta light, Kirschtomaten und Oliven",
                 intro: "Kaum Vorbereitungszeit und maximale Protein-Ausbeute: Im Ofen platzen die Kirschtomaten auf und verbinden sich mit dem fettarmen Hirtenkäse zu einer würzigen, mediterranen Sauce.",
                 ingredients: [
                     { amount: 200, unit: "g", name: "Hähnchenbrustfilet (im Ganzen oder halbiert)", kcal: 218, p: 48, c: 0, f: 2.0 },
@@ -764,74 +1155,184 @@
             }
         ];
 
-        // ZUSTANDSVERWALTUNG (Favoriten & Einkaufsliste in LocalStorage)
+        // STATE
         let favoriteIds = [];
-        let shoppingCart = [];
-        let checkedShoppingKeys = {};
+        const weekDays = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
+        let weeklyPlan = { Montag: [], Dienstag: [], Mittwoch: [], Donnerstag: [], Freitag: [], Samstag: [], Sonntag: [] };
         let currentRecipeId = 1;
         let currentPortions = 1;
 
         window.addEventListener('DOMContentLoaded', () => {
-            loadState();
+            loadLocalData();
+            populatePlannerDropdown();
+            renderPopularRecipes();
             renderRecipes();
-            updateBadges();
+            renderWeeklyPlan();
+            calculateMacros();
+            checkUrlRouting();
         });
 
-        function loadState() {
+        window.addEventListener('popstate', () => {
+            checkUrlRouting();
+        });
+
+        function loadLocalData() {
             try {
-                const favs = localStorage.getItem('ph_favorites_v2');
+                const favs = localStorage.getItem('ph_favs_v3');
                 if (favs) favoriteIds = JSON.parse(favs);
-
-                const shop = localStorage.getItem('ph_shopping_v2');
-                if (shop) shoppingCart = JSON.parse(shop);
-
-                const checked = localStorage.getItem('ph_checked_v2');
-                if (checked) checkedShoppingKeys = JSON.parse(checked);
+                const plan = localStorage.getItem('ph_plan_v3');
+                if (plan) weeklyPlan = JSON.parse(plan);
             } catch (e) {}
+            updateBadges();
         }
 
-        function saveState() {
+        function saveLocalData() {
             try {
-                localStorage.setItem('ph_favorites_v2', JSON.stringify(favoriteIds));
-                localStorage.setItem('ph_shopping_v2', JSON.stringify(shoppingCart));
-                localStorage.setItem('ph_checked_v2', JSON.stringify(checkedShoppingKeys));
+                localStorage.setItem('ph_favs_v3', JSON.stringify(favoriteIds));
+                localStorage.setItem('ph_plan_v3', JSON.stringify(weeklyPlan));
             } catch (e) {}
             updateBadges();
         }
 
         function updateBadges() {
             const favCount = favoriteIds.length;
-            const shopCount = shoppingCart.length;
+            let planCount = 0;
+            weekDays.forEach(d => planCount += (weeklyPlan[d] ? weeklyPlan[d].length : 0));
+
             document.getElementById('favCountBadge').textContent = favCount;
             document.getElementById('favCountMobile').textContent = favCount;
-            document.getElementById('shopCountBadge').textContent = shopCount;
-            document.getElementById('shopCountMobile').textContent = shopCount;
+            document.getElementById('plannerCountBadge').textContent = planCount;
+            document.getElementById('plannerCountMobile').textContent = planCount;
         }
 
-        function showView(viewName) {
-            ['home', 'detail', 'favorites', 'shopping'].forEach(v => {
-                document.getElementById(`view-${v}`).classList.add('hidden');
+        // SEO URL-ROUTING (?rezept=slug)
+        function checkUrlRouting() {
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get('rezept');
+            if (slug) {
+                const found = recipes.find(r => r.slug === slug || String(r.id) === slug);
+                if (found) {
+                    openRecipeDetail(found.id, 1, false);
+                    return;
+                }
+            }
+            showSection('home', false);
+        }
+
+        function navigateHome(e) {
+            if (e) e.preventDefault();
+            showSection('home', true);
+        }
+
+        function scrollToElement(id) {
+            showSection('home', true);
+            setTimeout(() => {
+                const el = document.getElementById(id);
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 50);
+        }
+
+        function showSection(sec, updateUrl = true) {
+            ['home', 'detail', 'planner', 'calculator', 'favorites'].forEach(s => {
+                document.getElementById(`section-${s}`).classList.add('hidden');
             });
 
-            ['home', 'favorites', 'shopping'].forEach(nav => {
-                const btn = document.getElementById(`nav-${nav}`);
+            ['home', 'planner', 'calculator', 'favorites'].forEach(n => {
+                const btn = document.getElementById(`nav-${n}`);
                 if (!btn) return;
-                if (nav === viewName) {
+                if (n === sec) {
                     btn.className = "nav-btn px-4 py-2 rounded-xl text-sm font-bold transition bg-white text-slate-900 shadow-sm flex items-center gap-1.5";
                 } else {
                     btn.className = "nav-btn px-4 py-2 rounded-xl text-sm font-bold transition text-slate-600 hover:text-slate-900 flex items-center gap-1.5";
                 }
             });
 
-            document.getElementById(`view-${viewName}`).classList.remove('hidden');
+            document.getElementById(`section-${sec}`).classList.remove('hidden');
 
-            if (viewName === 'favorites') renderFavoritesView();
-            if (viewName === 'shopping') renderShoppingView();
-            if (viewName === 'home') {
-                document.title = "ProteinHappen | Einfache High-Protein Rezepte zum Abnehmen";
+            if (sec === 'favorites') renderFavorites();
+            if (sec === 'planner') renderWeeklyPlan();
+
+            if (sec === 'home') {
+                document.title = "ProteinHappen | Proteinreich essen. Einfach genießen.";
+                document.getElementById('seoDescription').setAttribute('content', 'Proteinreich essen. Einfach genießen. Alltagstaugliche High-Protein Rezepte mit transparenter Nährwertberechnung, Wochenplaner, Einkaufsliste und Kalorienrechner.');
+                document.getElementById('canonicalLink').setAttribute('href', 'https://proteinhappen.de/');
+                if (updateUrl && window.location.search) {
+                    window.history.pushState({}, '', window.location.pathname);
+                }
             }
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // REZEPTKARTEN (MIT PROMINENTEN MAKROS, ZEIT, SCHWIERIGKEIT & KLAREM BUTTON)
+        function createRecipeCardHtml(r) {
+            const isFav = favoriteIds.includes(r.id);
+            return `
+                <article class="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56 overflow-hidden bg-slate-100">
+                        <a href="?rezept=${r.slug}" onclick="openRecipeDetail(${r.id}, 1, true, event)" class="block w-full h-full">
+                            <img src="${r.image}" alt="${r.alt}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-transparent to-transparent"></div>
+                        </a>
+
+                        <!-- Oben links: Kategorie & Gerät -->
+                        <div class="absolute top-3 left-3 flex gap-1.5 pointer-events-none">
+                            <span class="bg-slate-900/85 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">${r.category}</span>
+                            <span class="bg-white/95 text-slate-800 text-[11px] font-bold px-2.5 py-1 rounded-lg">⚡ ${r.method}</span>
+                        </div>
+
+                        <!-- Oben rechts: Merkliste Herz -->
+                        <button onclick="toggleFavorite(${r.id}, event)" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/95 hover:bg-white flex items-center justify-center shadow-md transition" title="Auf meine Merkliste">
+                            <i class="${isFav ? 'fa-solid text-rose-500' : 'fa-regular text-slate-600'} fa-heart text-base"></i>
+                        </button>
+
+                        <!-- Unten im Bild: Protein & Kalorien prominent -->
+                        <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white pointer-events-none">
+                            <span class="bg-brand-orange font-display font-extrabold text-xs sm:text-sm px-3 py-1 rounded-xl shadow">
+                                💪 ${r.protein} g PROTEIN
+                            </span>
+                            <span class="bg-brand-green font-display font-extrabold text-xs sm:text-sm px-3 py-1 rounded-xl shadow">
+                                🔥 ${r.kcal} kcal
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <!-- Zeit & Schwierigkeitsgrad direkt sichtbar -->
+                            <div class="flex items-center gap-3 text-xs font-semibold text-slate-500 mb-2">
+                                <span><i class="fa-regular fa-clock text-brand-green mr-1"></i> ${r.time}</span>
+                                <span>•</span>
+                                <span><i class="fa-solid fa-signal text-brand-orange mr-1"></i> ${r.difficulty}</span>
+                            </div>
+
+                            <a href="?rezept=${r.slug}" onclick="openRecipeDetail(${r.id}, 1, true, event)" class="block">
+                                <h3 class="font-display font-extrabold text-lg text-slate-900 group-hover:text-brand-green transition leading-snug mb-2">
+                                    ${r.title}
+                                </h3>
+                            </a>
+                            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5">
+                                ${r.shortDesc}
+                            </p>
+                        </div>
+
+                        <div class="pt-3 border-t border-slate-100 flex items-center gap-2">
+                            <a href="?rezept=${r.slug}" onclick="openRecipeDetail(${r.id}, 1, true, event)" class="flex-1 bg-slate-900 group-hover:bg-brand-green text-white text-center font-display font-bold text-xs sm:text-sm py-3 px-4 rounded-xl transition">
+                                Rezept ansehen →
+                            </a>
+                            <button onclick="quickAddToMonday(${r.id})" class="p-3 rounded-xl bg-orange-50 hover:bg-brand-orange text-brand-orange hover:text-white text-xs font-bold transition" title="Direkt in den Wochenplaner legen">
+                                <i class="fa-solid fa-calendar-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+
+        function renderPopularRecipes() {
+            const popGrid = document.getElementById('popularRecipesGrid');
+            const popList = recipes.filter(r => r.popular).slice(0, 3);
+            popGrid.innerHTML = popList.map(r => createRecipeCardHtml(r)).join('');
         }
 
         function renderRecipes() {
@@ -855,77 +1356,20 @@
                 return true;
             });
 
-            document.getElementById('recipeCountLabel').textContent = `${filtered.length} ${filtered.length === 1 ? 'Rezept' : 'vollständige Rezepte'}`;
+            document.getElementById('recipeCountLabel').textContent = `${filtered.length} ${filtered.length === 1 ? 'Rezept angezeigt' : 'Rezepte angezeigt'}`;
 
             const grid = document.getElementById('recipeGrid');
             if (filtered.length === 0) {
                 grid.innerHTML = `
                     <div class="col-span-full bg-white rounded-3xl p-10 text-center border border-slate-200">
                         <h3 class="font-display font-bold text-lg text-slate-800 mb-2">Keine passenden Rezepte gefunden</h3>
-                        <p class="text-sm text-slate-500 mb-4">Setze die Filter zurück, um wieder alle 12 Rezepte anzuzeigen.</p>
+                        <p class="text-sm text-slate-500 mb-4">Setze die Filter zurück, um wieder alle 12 Rezepte zu sehen.</p>
                         <button onclick="resetFilters()" class="bg-brand-green text-white text-xs font-bold px-4 py-2.5 rounded-xl">Filter zurücksetzen</button>
                     </div>
                 `;
                 return;
             }
-
             grid.innerHTML = filtered.map(r => createRecipeCardHtml(r)).join('');
-        }
-
-        function createRecipeCardHtml(r) {
-            const isFav = favoriteIds.includes(r.id);
-            return `
-                <article class="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-                    <div class="relative h-52 overflow-hidden bg-slate-100">
-                        <img onclick="openRecipeDetail(${r.id})" src="${r.image}" alt="${r.title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500 cursor-pointer">
-                        <div onclick="openRecipeDetail(${r.id})" class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent cursor-pointer"></div>
-                        
-                        <div class="absolute top-3 left-3 flex gap-1.5">
-                            <span class="bg-slate-900/80 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-lg">${r.category}</span>
-                            <span class="bg-white/95 text-slate-800 text-[11px] font-bold px-2.5 py-1 rounded-lg">${r.method}</span>
-                        </div>
-
-                        <button onclick="toggleFavorite(${r.id}, event)" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/95 hover:bg-white flex items-center justify-center shadow-md transition" title="Auf meine Merkliste">
-                            <i class="${isFav ? 'fa-solid text-rose-500' : 'fa-regular text-slate-600'} fa-heart text-base"></i>
-                        </button>
-
-                        <div onclick="openRecipeDetail(${r.id})" class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-xs font-semibold cursor-pointer">
-                            <span class="bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded-md">
-                                <i class="fa-regular fa-clock text-brand-greenLight mr-1"></i> ${r.time}
-                            </span>
-                            <div class="flex gap-1.5">
-                                <span class="bg-brand-orange px-2.5 py-1 rounded-md font-extrabold">💪 ${r.protein} g P</span>
-                                <span class="bg-brand-green px-2.5 py-1 rounded-md font-bold">🔥 ${r.kcal} kcal</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-5 flex-1 flex flex-col justify-between">
-                        <div onclick="openRecipeDetail(${r.id})" class="cursor-pointer">
-                            <h3 class="font-display font-bold text-lg text-slate-900 group-hover:text-brand-green transition leading-snug mb-2">
-                                ${r.title}
-                            </h3>
-                            <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                                ${r.shortDesc}
-                            </p>
-                        </div>
-
-                        <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
-                            <div class="text-[11px] font-semibold text-slate-500">
-                                KH: <strong class="text-slate-700">${r.carbs} g</strong> • Fett: <strong class="text-slate-700">${r.fat} g</strong>
-                            </div>
-                            <div class="flex items-center gap-1.5">
-                                <button onclick="addToShoppingList(${r.id}, 1)" class="px-2.5 py-1.5 rounded-xl bg-slate-100 hover:bg-brand-orange hover:text-white text-slate-700 text-xs font-bold transition" title="Zutaten auf die Einkaufsliste">
-                                    <i class="fa-solid fa-cart-plus"></i>
-                                </button>
-                                <button onclick="openRecipeDetail(${r.id})" class="bg-emerald-50 hover:bg-brand-green text-brand-greenDark hover:text-white text-xs font-bold px-3 py-1.5 rounded-xl transition inline-flex items-center gap-1">
-                                    Zum Rezept <i class="fa-solid fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            `;
         }
 
         function resetFilters() {
@@ -937,16 +1381,28 @@
             renderRecipes();
         }
 
-        function openRecipeDetail(id, portions = 1) {
+        // EINSEITIGE REZEPTANSICHT MIT EIGENER URL, TRANSPARENTER BERECHNUNG & ÄHNLICHEN REZEPTEN
+        function openRecipeDetail(id, portions = 1, pushUrl = true, event = null) {
+            if (event) event.preventDefault();
             const r = recipes.find(item => item.id === id);
             if (!r) return;
             currentRecipeId = r.id;
             currentPortions = portions;
             const isFav = favoriteIds.includes(r.id);
 
+            // Individuelle SEO-URL, Titel & Meta-Description
+            const recipeUrl = `https://proteinhappen.de/?rezept=${r.slug}`;
             document.title = `${r.title} (${r.protein}g Protein, ${r.kcal} kcal) | ProteinHappen`;
-            updateRecipeSchema(r);
+            document.getElementById('seoDescription').setAttribute('content', `${r.shortDesc} Mit ${r.protein} g Eiweiß und ${r.kcal} kcal in ${r.time} zubereitet. Inklusive exakter Nährwert-Aufschlüsselung.`);
+            document.getElementById('canonicalLink').setAttribute('href', recipeUrl);
 
+            if (pushUrl) {
+                window.history.pushState({ recipeId: r.id }, '', `?rezept=${r.slug}`);
+            }
+
+            updateRecipeSchema(r, recipeUrl);
+
+            // Einzelzutaten-Nährwerttabelle
             const breakdownRows = r.ingredients.map(ing => {
                 const amt = Number.isInteger(ing.amount * portions) ? (ing.amount * portions) : (ing.amount * portions).toFixed(1).replace('.', ',');
                 const k = Math.round(ing.kcal * portions);
@@ -964,6 +1420,18 @@
                 `;
             }).join('');
 
+            // Passende ähnliche Rezepte für interne Verlinkung
+            const related = recipes.filter(x => x.id !== r.id && (x.category === r.category || x.method === r.method)).slice(0, 3);
+            const relatedHtml = related.map(rel => `
+                <a href="?rezept=${rel.slug}" onclick="openRecipeDetail(${rel.id}, 1, true, event)" class="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+                    <img src="${rel.image}" alt="${rel.alt}" class="h-36 w-full object-cover group-hover:scale-105 transition">
+                    <div class="p-4">
+                        <div class="text-[11px] font-extrabold text-brand-orange mb-1">💪 ${rel.protein} g Protein • 🔥 ${rel.kcal} kcal</div>
+                        <h4 class="font-display font-bold text-sm text-slate-900 group-hover:text-brand-green transition line-clamp-2">${rel.title}</h4>
+                    </div>
+                </a>
+            `).join('');
+
             const totalKcal = Math.round(r.kcal * portions);
             const totalProt = Math.round(r.protein * portions);
             const totalCarbs = Math.round(r.carbs * portions);
@@ -972,16 +1440,16 @@
             const container = document.getElementById('recipeDetailContainer');
             container.innerHTML = `
                 <div class="flex flex-wrap items-center justify-between gap-3 mb-5 no-print">
-                    <button onclick="showView('home')" class="inline-flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-brand-green bg-white px-4 py-2.5 rounded-xl shadow-sm border border-slate-200 transition">
+                    <button onclick="showSection('home')" class="inline-flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-brand-green bg-white px-4 py-2.5 rounded-xl shadow-sm border border-slate-200 transition">
                         <i class="fa-solid fa-arrow-left"></i> Zurück zur Übersicht
                     </button>
                     <div class="flex flex-wrap items-center gap-2">
                         <button onclick="toggleFavorite(${r.id})" class="bg-white hover:bg-rose-50 text-slate-800 border border-slate-200 text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-sm transition flex items-center gap-2">
                             <i class="${isFav ? 'fa-solid text-rose-500' : 'fa-regular text-slate-500'} fa-heart"></i>
-                            <span>${isFav ? 'In Favoriten gespeichert' : 'Rezept merken'}</span>
+                            <span>${isFav ? 'Gespeichert' : 'Merken'}</span>
                         </button>
-                        <button onclick="addToShoppingList(${r.id}, ${portions})" class="bg-brand-orange hover:bg-brand-orangeDark text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-sm transition flex items-center gap-2">
-                            <i class="fa-solid fa-cart-plus"></i> Zutaten auf Einkaufsliste
+                        <button onclick="quickAddToMonday(${r.id}, ${portions})" class="bg-brand-orange hover:bg-brand-orangeDark text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-sm transition flex items-center gap-2">
+                            <i class="fa-solid fa-calendar-plus"></i> In den Wochenplaner (${portions} Port.)
                         </button>
                         <button onclick="window.print()" class="bg-white hover:bg-slate-100 text-slate-700 text-xs sm:text-sm font-bold px-3.5 py-2.5 rounded-xl border border-slate-200 transition" title="Rezept drucken">
                             <i class="fa-solid fa-print"></i>
@@ -989,9 +1457,9 @@
                     </div>
                 </div>
 
-                <article class="bg-white rounded-3xl shadow-md border border-slate-200/90 overflow-hidden print-box">
+                <article class="bg-white rounded-3xl shadow-md border border-slate-200/90 overflow-hidden print-box mb-10">
                     <div class="relative h-72 sm:h-96 w-full bg-slate-200">
-                        <img src="${r.image}" alt="${r.title}" class="w-full h-full object-cover">
+                        <img src="${r.image}" alt="${r.alt}" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/30 to-transparent"></div>
 
                         <div class="absolute top-4 left-4 flex flex-wrap gap-2">
@@ -1019,11 +1487,11 @@
                             <div class="font-bold text-slate-800 text-sm sm:text-base mt-0.5"><i class="fa-solid fa-signal text-brand-orange mr-1"></i>${r.difficulty}</div>
                         </div>
                         <div class="p-1">
-                            <div class="text-[11px] text-slate-400 font-bold uppercase">Gerät</div>
+                            <div class="text-[11px] text-slate-400 font-bold uppercase">Zubereitung</div>
                             <div class="font-bold text-slate-800 text-sm sm:text-base mt-0.5">${r.method}</div>
                         </div>
                         <div class="p-1">
-                            <div class="text-[11px] text-slate-400 font-bold uppercase">Portionsgröße</div>
+                            <div class="text-[11px] text-slate-400 font-bold uppercase">Portionen</div>
                             <div class="font-bold text-brand-green text-sm sm:text-base mt-0.5">${portions} ${portions === 1 ? 'Portion' : 'Portionen'}</div>
                         </div>
                     </div>
@@ -1031,11 +1499,12 @@
                     <div class="p-6 sm:p-10 space-y-8">
                         <div class="bg-emerald-50/80 border-l-4 border-brand-green p-4 sm:p-5 rounded-r-2xl">
                             <div class="text-xs font-bold uppercase tracking-wider text-brand-greenDark mb-1">
-                                <i class="fa-solid fa-check-double mr-1"></i> Ernährungsvorteil & Sättigung:
+                                <i class="fa-solid fa-check-double mr-1"></i> Warum dieses Gericht ideal zum Abnehmen & Sattwerden ist:
                             </div>
                             <p class="text-slate-700 text-sm sm:text-base leading-relaxed">${r.intro}</p>
                         </div>
 
+                        <!-- 1. ZUTATEN -->
                         <div>
                             <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
                                 <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 flex items-center gap-2">
@@ -1044,7 +1513,7 @@
                                 <div class="flex items-center gap-1 bg-slate-100 p-1.5 rounded-xl border border-slate-200 no-print">
                                     <span class="text-xs text-slate-600 font-semibold px-2">Portionen:</span>
                                     ${[1, 2, 3, 4].map(p => `
-                                        <button onclick="openRecipeDetail(${r.id}, ${p})" class="px-3 py-1 rounded-lg text-xs font-bold transition ${p === portions ? 'bg-brand-green text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}">${p}</button>
+                                        <button onclick="openRecipeDetail(${r.id}, ${p}, false)" class="px-3 py-1 rounded-lg text-xs font-bold transition ${p === portions ? 'bg-brand-green text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}">${p}</button>
                                     `).join('')}
                                 </div>
                             </div>
@@ -1065,15 +1534,12 @@
                                     `;
                                 }).join('')}
                             </ul>
-
-                            <button onclick="addToShoppingList(${r.id}, ${portions})" class="no-print w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold px-5 py-3 rounded-xl transition inline-flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-cart-plus text-brand-orange"></i> Alle Zutaten (${portions} ${portions === 1 ? 'Portion' : 'Portionen'}) auf die Einkaufsliste setzen
-                            </button>
                         </div>
 
+                        <!-- 2. SCHRITT-FÜR-SCHRITT-ZUBEREITUNG -->
                         <div>
                             <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 mb-4 flex items-center gap-2">
-                                <i class="fa-solid fa-fire-burner text-brand-orange"></i> 2. Ausführliche Schritt-für-Schritt-Zubereitung
+                                <i class="fa-solid fa-fire-burner text-brand-orange"></i> 2. Ausführliche Zubereitung
                             </h2>
                             <div class="space-y-3.5">
                                 ${r.steps.map((step, idx) => `
@@ -1081,340 +1547,4 @@
                                         <span class="w-8 h-8 rounded-xl bg-brand-orange text-white font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
                                             ${idx + 1}
                                         </span>
-                                        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">${step}</p>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-
-                        <div class="bg-amber-50/90 border border-amber-200 rounded-2xl p-5">
-                            <div class="flex items-center gap-2 font-display font-extrabold text-amber-900 text-base mb-1.5">
-                                <i class="fa-solid fa-lightbulb text-brand-orange"></i>
-                                <span>3. Praxis-Tipp für Meal-Prep & Alltag:</span>
-                            </div>
-                            <p class="text-slate-700 text-sm leading-relaxed">${r.tip}</p>
-                        </div>
-
-                        <div class="bg-slate-900 text-white rounded-2xl p-5 sm:p-6 shadow-sm">
-                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
-                                <div>
-                                    <span class="text-xs font-bold uppercase tracking-wider text-brand-orange block">📊 Transparente Nährwert-Dokumentation</span>
-                                    <h3 class="font-display font-bold text-base sm:text-lg text-white">Exakte Berechnungsgrundlage (${portions} ${portions === 1 ? 'Portion' : 'Portionen'})</h3>
-                                </div>
-                                <span class="text-[11px] bg-white/10 text-slate-300 px-3 py-1 rounded-full">
-                                    Basis: Rohgewicht nach BLS / Standard-Nährwerttabelle
-                                </span>
-                            </div>
-
-                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center mb-5">
-                                <div class="bg-slate-800 rounded-xl p-3 border border-slate-700">
-                                    <div class="text-xl font-display font-extrabold text-white">${totalKcal} kcal</div>
-                                    <div class="text-[11px] text-slate-400">Gesamtkalorien</div>
-                                </div>
-                                <div class="bg-brand-green/20 rounded-xl p-3 border border-brand-green/50">
-                                    <div class="text-xl font-display font-extrabold text-brand-greenLight">${totalProt} g</div>
-                                    <div class="text-[11px] text-brand-greenLight font-bold">Eiweiß (Protein)</div>
-                                </div>
-                                <div class="bg-slate-800 rounded-xl p-3 border border-slate-700">
-                                    <div class="text-xl font-display font-extrabold text-amber-300">${totalCarbs} g</div>
-                                    <div class="text-[11px] text-slate-400">Kohlenhydrate</div>
-                                </div>
-                                <div class="bg-slate-800 rounded-xl p-3 border border-slate-700">
-                                    <div class="text-xl font-display font-extrabold text-rose-300">${totalFat} g</div>
-                                    <div class="text-[11px] text-slate-400">Fett</div>
-                                </div>
-                            </div>
-
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left border-collapse">
-                                    <thead>
-                                        <tr class="border-b border-slate-700 text-[11px] uppercase text-slate-400">
-                                            <th class="py-2 pr-2">Zutat & Menge</th>
-                                            <th class="py-2 px-2 text-right">Kalorien</th>
-                                            <th class="py-2 px-2 text-right text-brand-greenLight">Eiweiß</th>
-                                            <th class="py-2 px-2 text-right">KH</th>
-                                            <th class="py-2 pl-2 text-right">Fett</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        ${breakdownRows}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                    </div>
-                </article>
-            `;
-
-            showView('detail');
-        }
-
-        function updateRecipeSchema(r) {
-            const schema = {
-                "@context": "https://schema.org/",
-                "@type": "Recipe",
-                "name": r.title,
-                "image": [r.image],
-                "author": { "@type": "Organization", "name": "ProteinHappen" },
-                "description": r.shortDesc,
-                "totalTime": "PT15M",
-                "recipeYield": "1 Portion",
-                "recipeCategory": r.category,
-                "nutrition": {
-                    "@type": "NutritionInformation",
-                    "calories": `${r.kcal} calories`,
-                    "proteinContent": `${r.protein} g`,
-                    "carbohydrateContent": `${r.carbs} g`,
-                    "fatContent": `${r.fat} g`
-                },
-                "recipeIngredient": r.ingredients.map(i => `${i.amount} ${i.unit} ${i.name}`),
-                "recipeInstructions": r.steps.map((s, idx) => ({
-                    "@type": "HowToStep",
-                    "position": idx + 1,
-                    "text": s
-                }))
-            };
-            document.getElementById('dynamicRecipeSchema').textContent = JSON.stringify(schema, null, 2);
-        }
-
-        function toggleFavorite(recipeId, event) {
-            if (event) event.stopPropagation();
-            const idx = favoriteIds.indexOf(recipeId);
-            if (idx > -1) {
-                favoriteIds.splice(idx, 1);
-                showToast("Aus deinen Favoriten entfernt.");
-            } else {
-                favoriteIds.push(recipeId);
-                showToast("❤️ In deinen Favoriten gespeichert!");
-            }
-            saveState();
-            renderRecipes();
-            if (!document.getElementById('view-detail').classList.contains('hidden')) {
-                openRecipeDetail(currentRecipeId, currentPortions);
-            }
-            if (!document.getElementById('view-favorites').classList.contains('hidden')) {
-                renderFavoritesView();
-            }
-        }
-
-        function renderFavoritesView() {
-            const grid = document.getElementById('favoritesGrid');
-            const favRecipes = recipes.filter(r => favoriteIds.includes(r.id));
-            if (favRecipes.length === 0) {
-                grid.innerHTML = `
-                    <div class="col-span-full bg-slate-50 rounded-2xl p-10 text-center border border-slate-200">
-                        <div class="text-3xl mb-2">❤️</div>
-                        <h3 class="font-display font-bold text-lg text-slate-800 mb-1">Noch keine Favoriten gespeichert</h3>
-                        <p class="text-xs sm:text-sm text-slate-500 mb-4">Klicke bei einem Rezept einfach auf das Herz-Symbol, um es hier für später zu speichern.</p>
-                        <button onclick="showView('home')" class="bg-brand-green text-white text-xs font-bold px-5 py-2.5 rounded-xl">Rezepte durchstöbern</button>
-                    </div>
-                `;
-                return;
-            }
-            grid.innerHTML = favRecipes.map(r => createRecipeCardHtml(r)).join('');
-        }
-
-        function addToShoppingList(recipeId, portions = 1) {
-            const existing = shoppingCart.find(item => item.recipeId === recipeId);
-            if (existing) {
-                existing.portions += portions;
-            } else {
-                shoppingCart.push({ recipeId, portions });
-            }
-            saveState();
-            const r = recipes.find(x => x.id === recipeId);
-            showToast(`🛒 "${r ? r.title : 'Rezept'}" zur Einkaufsliste hinzugefügt!`);
-        }
-
-        function removeRecipeFromShoppingList(recipeId) {
-            shoppingCart = shoppingCart.filter(item => item.recipeId !== recipeId);
-            saveState();
-            renderShoppingView();
-        }
-
-        function clearShoppingList() {
-            shoppingCart = [];
-            checkedShoppingKeys = {};
-            saveState();
-            renderShoppingView();
-            showToast("Einkaufsliste wurde geleert.");
-        }
-
-        function toggleShoppingItemCheck(key) {
-            checkedShoppingKeys[key] = !checkedShoppingKeys[key];
-            saveState();
-            renderShoppingView();
-        }
-
-        function renderShoppingView() {
-            const recipesListEl = document.getElementById('shoppingRecipesList');
-            const itemsContainer = document.getElementById('shoppingItemsContainer');
-
-            if (shoppingCart.length === 0) {
-                recipesListEl.innerHTML = `<span class="text-xs text-slate-400 italic">Noch keine Rezepte ausgewählt.</span>`;
-                itemsContainer.innerHTML = `
-                    <li class="col-span-full bg-slate-50 rounded-2xl p-8 text-center border border-slate-200">
-                        <div class="text-3xl mb-2">🛒</div>
-                        <h3 class="font-display font-bold text-base text-slate-800 mb-1">Deine Einkaufsliste ist noch leer</h3>
-                        <p class="text-xs text-slate-500 mb-4">Klicke bei deinen Wunschrezepten auf das Einkaufswagen-Symbol, um alle Zutaten automatisch zusammenzuführen.</p>
-                        <button onclick="showView('home')" class="bg-brand-green text-white text-xs font-bold px-5 py-2.5 rounded-xl">Rezepte auswählen</button>
-                    </li>
-                `;
-                return;
-            }
-
-            recipesListEl.innerHTML = shoppingCart.map(entry => {
-                const r = recipes.find(x => x.id === entry.recipeId);
-                if (!r) return '';
-                return `
-                    <div class="bg-slate-100 border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-semibold text-slate-800 flex items-center gap-2">
-                        <span class="cursor-pointer hover:text-brand-green" onclick="openRecipeDetail(${r.id}, ${entry.portions})"><strong>${entry.portions}x</strong> ${r.title}</span>
-                        <button onclick="removeRecipeFromShoppingList(${r.id})" class="text-rose-500 hover:text-rose-700 no-print" title="Entfernen">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </div>
-                `;
-            }).join('');
-
-            const merged = {};
-            shoppingCart.forEach(entry => {
-                const r = recipes.find(x => x.id === entry.recipeId);
-                if (!r) return;
-                r.ingredients.forEach(ing => {
-                    const key = `${ing.name}__${ing.unit}`;
-                    if (!merged[key]) {
-                        merged[key] = { name: ing.name, unit: ing.unit, amount: 0 };
-                    }
-                    merged[key].amount += ing.amount * entry.portions;
-                });
-            });
-
-            itemsContainer.innerHTML = Object.keys(merged).map(key => {
-                const item = merged[key];
-                const isChecked = !!checkedShoppingKeys[key];
-                const amt = Number.isInteger(item.amount) ? item.amount : item.amount.toFixed(1).replace('.', ',');
-                return `
-                    <li>
-                        <label class="flex items-center gap-3 p-3 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/80 cursor-pointer transition ${isChecked ? 'line-through opacity-50' : ''}">
-                            <input type="checkbox" ${isChecked ? 'checked' : ''} onchange="toggleShoppingItemCheck('${key.replace(/'/g, "\\'")}')" class="w-4 h-4 accent-brand-green rounded cursor-pointer">
-                            <span class="text-sm text-slate-800"><strong class="font-bold text-slate-900">${amt} ${item.unit}</strong> ${item.name}</span>
-                        </label>
-                    </li>
-                `;
-            }).join('');
-        }
-
-        function copyShoppingList() {
-            if (shoppingCart.length === 0) {
-                showToast("Deine Einkaufsliste ist noch leer.");
-                return;
-            }
-            const merged = {};
-            shoppingCart.forEach(entry => {
-                const r = recipes.find(x => x.id === entry.recipeId);
-                if (!r) return;
-                r.ingredients.forEach(ing => {
-                    const key = `${ing.name}__${ing.unit}`;
-                    if (!merged[key]) merged[key] = { name: ing.name, unit: ing.unit, amount: 0 };
-                    merged[key].amount += ing.amount * entry.portions;
-                });
-            });
-            const lines = Object.values(merged).map(i => `- ${Number.isInteger(i.amount) ? i.amount : i.amount.toFixed(1)} ${i.unit} ${i.name}`);
-            navigator.clipboard.writeText("🛒 Meine ProteinHappen Einkaufsliste:\n" + lines.join('\n'));
-            showToast("📋 Einkaufsliste in die Zwischenablage kopiert!");
-        }
-
-        // ==========================================
-        // VOLLSTÄNDIGES IMPRESSUM (§ 5 DDG) & DATENSCHUTZERKLÄRUNG (DSGVO)
-        // ==========================================
-        function openLegalModal(type) {
-            const titleEl = document.getElementById('legalModalTitle');
-            const contentEl = document.getElementById('legalModalContent');
-
-            const contentMap = {
-                impressum: {
-                    title: "Impressum (Angaben gemäß § 5 DDG)",
-                    html: `
-                        <p><strong>Anbieter und Diensteanbieter gemäß § 5 Digitale-Dienste-Gesetz (DDG):</strong><br>
-                        Andreas Goldian<br>
-                        ProteinHappen – Rezept- & Ernährungsportal<br>
-                        Kalkumerfeld 26<br>
-                        40699 Erkrath<br>
-                        Deutschland</p>
-
-                        <p><strong>Kontakt:</strong><br>
-                        E-Mail: <a href="mailto:info@proteinhappen.de" class="text-brand-green font-bold underline">info@proteinhappen.de</a><br>
-                        Internet: https://proteinhappen.de</p>
-
-                        <p><strong>Redaktionell Verantwortlicher gemäß § 18 Abs. 2 MStV:</strong><br>
-                        Andreas Goldian<br>
-                        Kalkumerfeld 26<br>
-                        40699 Erkrath</p>
-
-                        <p><strong>EU-Streitschlichtung & Verbraucherstreitbeilegung:</strong><br>
-                        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr/. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-                    `
-                },
-                datenschutz: {
-                    title: "Datenschutzerklärung (DSGVO)",
-                    html: `
-                        <p><strong>1. Verantwortlicher</strong><br>
-                        Verantwortlicher für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:<br>
-                        Andreas Goldian, Kalkumerfeld 26, 40699 Erkrath, E-Mail: <a href="mailto:info@proteinhappen.de" class="text-brand-green font-bold underline">info@proteinhappen.de</a>.</p>
-
-                        <p><strong>2. Datenschutz auf einen Blick</strong><br>
-                        Die Nutzung von ProteinHappen.de ist ohne Registrierung und ohne Angabe personenbezogener Daten möglich. Wir setzen keine Tracking- oder Werbe-Cookies von Drittanbietern ein.</p>
-
-                        <p><strong>3. Hosting über GitHub Pages</strong><br>
-                        Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Webseite erfasst der Hosting-Provider technisch notwendige Server-Logfiles (z. B. IP-Adresse, Browsertyp, Zeitpunkt des Aufrufs), um die Sicherheit und Auslieferung der Website zu gewährleisten (Art. 6 Abs. 1 lit. f DSGVO).</p>
-
-                        <p><strong>4. Lokale Speicherung im Browser (LocalStorage)</strong><br>
-                        Wenn Sie die Funktionen „Meine Favoriten“ oder „Einkaufsliste“ nutzen, werden Ihre ausgewählten Rezepte ausschließlich lokal in Ihrem eigenen Browser (LocalStorage) gespeichert. Diese Daten verbleiben auf Ihrem Endgerät und werden zu keinem Zeitpunkt an uns oder Dritte übertragen.</p>
-
-                        <p><strong>5. Kontaktaufnahme per E-Mail</strong><br>
-                        Wenn Sie uns per E-Mail unter info@proteinhappen.de kontaktieren, werden Ihre Angaben zwecks Bearbeitung der Anfrage gespeichert (Art. 6 Abs. 1 lit. b bzw. f DSGVO).</p>
-
-                        <p><strong>6. Ihre Betroffenenrechte</strong><br>
-                        Sie haben jederzeit das Recht auf unentgeltliche Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung Ihrer gespeicherten personenbezogenen Daten sowie ein Beschwerderecht bei der zuständigen Datenschutzaufsichtsbehörde.</p>
-                    `
-                },
-                berechnung: {
-                    title: "Dokumentation der Nährwertberechnung",
-                    html: `
-                        <p><strong>Wie werden die Nährwerte auf ProteinHappen.de berechnet?</strong><br>
-                        Jedes Rezept auf ProteinHappen.de weist unterhalb der Zubereitungsanleitung eine vollständige Einzelzutaten-Tabelle auf. Die Kalorien-, Eiweiß-, Kohlenhydrat- und Fettwerte basieren auf den Rohgewichten der angegebenen Zutaten gemäß Bundeslebensmittelschlüssel (BLS) sowie den durchschnittlichen Herstellerangaben im deutschen Lebensmitteleinzelhandel.</p>
-                        <p><strong>Nachvollziehbarkeit bei Portionsänderungen:</strong><br>
-                        Wenn Sie im Rezept die Portionsanzahl (1 bis 4 Portionen) ändern, skaliert die Berechnungstabelle alle Einzelwerte proportional mit.</p>
-                    `
-                },
-                sponsoring: {
-                    title: "Kooperationen & Sponsoring",
-                    html: `
-                        <p><strong>Partnerschaften auf ProteinHappen.de</strong><br>
-                        Sie möchten passende Lebensmittel, High-Protein-Produkte oder Küchengeräte auf ProteinHappen vorstellen? Schreiben Sie uns gerne unverbindlich an:<br>
-                        <a href="mailto:info@proteinhappen.de" class="text-brand-green font-bold underline">info@proteinhappen.de</a></p>
-                    `
-                }
-            };
-
-            const selected = contentMap[type] || contentMap.impressum;
-            titleEl.textContent = selected.title;
-            contentEl.innerHTML = selected.html;
-            document.getElementById('legalModal').classList.remove('hidden');
-        }
-
-        function closeLegalModal() {
-            document.getElementById('legalModal').classList.add('hidden');
-        }
-
-        function showToast(msg) {
-            const box = document.getElementById('toastBox');
-            document.getElementById('toastMessage').textContent = msg;
-            box.classList.remove('hidden');
-            clearTimeout(window.toastTimer);
-            window.toastTimer = setTimeout(() => box.classList.add('hidden'), 3200);
-        }
-    </script>
-</body>
-</html>
+                                        <p class="text-slate-700 text-sm sm:text-base
