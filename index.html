@@ -1923,7 +1923,16 @@
             });
 
             ['home', 'planner', 'calculator', 'methodology', 'favorites'].forEach(n => {
-                const btn = document.getElementById(`nav-${n}`); if (!btn) return; if (n === sec) { btn.className = "nav-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition bg-white text-slate-900 shadow-sm flex items-center gap-1.5"; } else { btn.className = "nav-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition text-slate-600 hover:text-slate-900 flex items-center gap-1.5"; } });  document.getElementById(`section-${sec}`).classList.remove('hidden');
+                const btn = document.getElementById(`nav-${n}`);
+                if (!btn) return;
+                if (n === sec) {
+                    btn.className = "nav-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition bg-white text-slate-900 shadow-sm flex items-center gap-1.5";
+                } else {
+                    btn.className = "nav-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition text-slate-600 hover:text-slate-900 flex items-center gap-1.5";
+                }
+            });
+
+            document.getElementById(`section-${sec}`).classList.remove('hidden');
 
             if (sec === 'favorites') renderFavorites();
             if (sec === 'planner') renderWeeklyPlan();
@@ -2000,7 +2009,7 @@
                 return true;
             });
 
-            document.getElementById('recipeCountLabel').textContent = `${filtered.length}${filtered.length === 1 ? 'Rezept angezeigt' : 'Rezepte angezeigt'}`;
+            document.getElementById('recipeCountLabel').textContent = `${filtered.length} ${filtered.length === 1 ? 'Rezept angezeigt' : 'Rezepte angezeigt'}`;
 
             const grid = document.getElementById('recipeGrid');
             if (filtered.length === 0) {
@@ -2050,7 +2059,7 @@
                     <div class="p-5 flex-1 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between text-xs font-semibold text-slate-500 mb-2">
-                                <span><i class="fa-regular fa-clock text-brand-green mr-1"></i> ${r.time} •${r.difficulty}</span>
+                                <span><i class="fa-regular fa-clock text-brand-green mr-1"></i> ${r.time} • ${r.difficulty}</span>
                                 <span class="text-amber-500 font-bold"><i class="fa-solid fa-star"></i> ${userStars},0</span>
                             </div>
 
@@ -2086,8 +2095,9 @@
             const isFav = favoriteIds.includes(r.id);
             const currentStars = recipeRatings[r.id] || 5;
 
-            const indexableUrl = `https://proteinhappen.de/?rezept=${r.slug}`; document.title = `${r.title} (${r.protein}g Protein,${r.kcal} kcal) | ProteinHappen`;
-            document.getElementById('seoDescription').setAttribute('content', `${r.shortDesc} Mit${r.protein} g Eiweiß und ${r.kcal} kcal in${r.time} zubereitet. Inklusive Rohgewicht-Nährwerttabelle.`);
+            const indexableUrl = `https://proteinhappen.de/?rezept=${r.slug}`;
+            document.title = `${r.title} (${r.protein}g Protein, ${r.kcal} kcal) | ProteinHappen`;
+            document.getElementById('seoDescription').setAttribute('content', `${r.shortDesc} Mit ${r.protein} g Eiweiß und ${r.kcal} kcal in ${r.time} zubereitet. Inklusive Rohgewicht-Nährwerttabelle.`);
             document.getElementById('canonicalLink').setAttribute('href', indexableUrl);
 
             if (pushUrl && window.location.protocol !== 'file:') {
@@ -2106,7 +2116,7 @@
                 const f = (ing.f * portions).toFixed(1).replace('.0', '').replace('.', ',');
                 return `
                     <tr class="border-b border-slate-800 text-xs">
-                        <td class="py-2 pr-2 font-medium text-slate-200">${amt} ${ing.unit}${ing.name}</td>
+                        <td class="py-2 pr-2 font-medium text-slate-200">${amt} ${ing.unit} ${ing.name}</td>
                         <td class="py-2 px-2 text-right text-slate-300">${k} kcal</td>
                         <td class="py-2 px-2 text-right font-bold text-brand-greenLight">${p} g</td>
                         <td class="py-2 px-2 text-right text-slate-400">${c} g</td>
@@ -2145,7 +2155,7 @@
                             <i class="${isFav ? 'fa-solid text-rose-500' : 'fa-regular text-slate-500'} fa-heart"></i>
                             <span>${isFav ? 'Gespeichert' : 'Merken'}</span>
                         </button>
-                        <button onclick="quickAddToMonday(${r.id},${portions})" class="bg-brand-orange hover:bg-brand-orangeDark text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-sm transition flex items-center gap-2">
+                        <button onclick="quickAddToMonday(${r.id}, ${portions})" class="bg-brand-orange hover:bg-brand-orangeDark text-white text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl shadow-sm transition flex items-center gap-2">
                             <i class="fa-solid fa-calendar-plus"></i> In den Wochenplaner
                         </button>
                         <button onclick="window.print()" class="bg-white hover:bg-slate-100 text-slate-700 text-xs sm:text-sm font-bold px-3.5 py-2.5 rounded-xl border border-slate-200 transition">
@@ -2165,7 +2175,7 @@
                         </div>
 
                         <div class="absolute top-4 right-4 bg-brand-orange text-white font-display font-extrabold text-xs sm:text-sm px-4 py-1.5 rounded-xl shadow-lg border-2 border-white">
-                            💪 ${r.protein} g PROTEIN \vert{}${r.kcal} KCAL
+                            💪 ${r.protein} g PROTEIN | ${r.kcal} KCAL
                         </div>
 
                         <div class="absolute bottom-5 left-5 right-5 text-white">
@@ -2181,4 +2191,662 @@
                         </div>
                         <div class="p-1">
                             <div class="text-[11px] text-slate-400 font-bold uppercase">Schwierigkeit</div>
-                            <div class="font-bold text-slate-
+                            <div class="font-bold text-slate-800 text-sm sm:text-base mt-0.5"><i class="fa-solid fa-signal text-brand-orange mr-1"></i>${r.difficulty}</div>
+                        </div>
+                        <div class="p-1">
+                            <div class="text-[11px] text-slate-400 font-bold uppercase">Schicht-Eignung</div>
+                            <div class="font-bold text-slate-800 text-xs sm:text-sm mt-0.5">${r.shiftTags.join(' • ')}</div>
+                        </div>
+                        <div class="p-1">
+                            <div class="text-[11px] text-slate-400 font-bold uppercase">Portionen</div>
+                            <div class="font-bold text-brand-green text-sm sm:text-base mt-0.5">${portions} ${portions === 1 ? 'Portion' : 'Portionen'}</div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 sm:p-10 space-y-8">
+                        <div class="bg-emerald-50/80 border-l-4 border-brand-green p-4 sm:p-5 rounded-r-2xl">
+                            <div class="text-xs font-bold uppercase tracking-wider text-brand-greenDark mb-1">
+                                <i class="fa-solid fa-check-double mr-1"></i> Warum dieses Gericht ideal für Alltag & Schichtarbeit ist:
+                            </div>
+                            <p class="text-slate-700 text-sm sm:text-base leading-relaxed">${r.intro}</p>
+                        </div>
+
+                        <div>
+                            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                                <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+                                    <i class="fa-solid fa-basket-shopping text-brand-green"></i> 1. Zutaten (${portions} ${portions === 1 ? 'Portion' : 'Portionen'})
+                                </h2>
+                                <div class="flex items-center gap-1 bg-slate-100 p-1.5 rounded-xl border border-slate-200 no-print">
+                                    <span class="text-xs text-slate-600 font-semibold px-2">Portionen:</span>
+                                    ${[1, 2, 3, 4].map(p => `
+                                        <button onclick="openRecipeDetail(${r.id}, ${p}, false)" class="px-3 py-1 rounded-lg text-xs font-bold transition ${p === portions ? 'bg-brand-green text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'}">${p}</button>
+                                    `).join('')}
+                                </div>
+                            </div>
+
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                                ${r.ingredients.map(ing => {
+                                    const amt = Number.isInteger(ing.amount * portions) ? (ing.amount * portions) : (ing.amount * portions).toFixed(1).replace('.', ',');
+                                    return `
+                                        <li>
+                                            <label class="flex items-center justify-between gap-3 p-3 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/70 cursor-pointer transition select-none">
+                                                <div class="flex items-center gap-3">
+                                                    <input type="checkbox" class="w-4 h-4 accent-brand-green rounded cursor-pointer" onchange="this.closest('label').classList.toggle('line-through'); this.closest('label').classList.toggle('opacity-50');">
+                                                    <span class="text-sm text-slate-800"><strong class="font-bold text-slate-900">${amt} ${ing.unit}</strong> ${ing.name}</span>
+                                                </div>
+                                                <span class="text-[11px] font-semibold text-slate-400 shrink-0">${Math.round(ing.p * portions)}g P</span>
+                                            </label>
+                                        </li>
+                                    `;
+                                }).join('')}
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h2 class="font-display text-xl sm:text-2xl font-extrabold text-slate-900 mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-fire-burner text-brand-orange"></i> 2. Ausführliche Zubereitung
+                            </h2>
+                            <div class="space-y-3.5">
+                                ${r.steps.map((step, idx) => `
+                                    <div class="flex items-start gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200/80">
+                                        <span class="w-8 h-8 rounded-xl bg-brand-orange text-white font-display font-extrabold text-sm flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                                            ${idx + 1}
+                                        </span>
+                                        <p class="text-slate-700 text-sm sm:text-base leading-relaxed">${step}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="bg-amber-50/90 border border-amber-200 rounded-2xl p-5">
+                            <div class="flex items-center gap-2 font-display font-extrabold text-amber-900 text-base mb-1.5">
+                                <i class="fa-solid fa-briefcase text-brand-orange"></i>
+                                <span>3. Praxis-Tipp für Schichtarbeit, Pause & Meal Prep:</span>
+                            </div>
+                            <p class="text-slate-700 text-sm leading-relaxed">${r.tip}</p>
+                        </div>
+
+                        <div class="bg-slate-900 text-white rounded-2xl p-5 sm:p-6 shadow-sm">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                <div>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-brand-orange block">📊 Dokumentierte Berechnungsgrundlage</span>
+                                    <h3 class="font-display font-bold text-base sm:text-lg text-white">Einzelzutaten-Aufschlüsselung (${portions} ${portions === 1 ? 'Portion' : 'Portionen'})</h3>
+                                </div>
+                                <button onclick="showSection('methodology')" class="text-xs text-brand-greenLight hover:underline flex items-center gap-1 no-print">
+                                    <i class="fa-solid fa-circle-info"></i> Methodik & Garverlust-Hinweis ansehen
+                                </button>
+                            </div>
+
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center mb-5">
+                                <div class="bg-slate-800 rounded-xl p-3 border border-slate-700">
+                                    <div class="text-xl font-display font-extrabold text-white">${totalKcal} kcal</div>
+                                    <div class="text-[11px] text-slate-400">Kalorien</div>
+                                </div>
+                                <div class="bg-brand-green/20 rounded-xl p-3 border border-brand-green/50">
+                                    <div class="text-xl font-display font-extrabold text-brand-greenLight">${totalProt} g</div>
+                                    <div class="text-[11px] text-brand-greenLight font-bold">Eiweiß (Protein)</div>
+                                </div>
+                                <div class="bg-slate-800 rounded-xl p-3 border border-slate-700">
+                                    <div class="text-xl font-display font-extrabold text-amber-300">${totalCarbs} g</div>
+                                    <div class="text-[11px] text-slate-400">Kohlenhydrate</div>
+                                </div>
+                                <div class="bg-slate-800 rounded-xl p-3 border border-slate-700">
+                                    <div class="text-xl font-display font-extrabold text-rose-300">${totalFat} g</div>
+                                    <div class="text-[11px] text-slate-400">Fett</div>
+                                </div>
+                            </div>
+
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr class="border-b border-slate-700 text-[11px] uppercase text-slate-400">
+                                            <th class="py-2 pr-2">Zutat (Roh-/Abtropfgewicht)</th>
+                                            <th class="py-2 px-2 text-right">Kalorien</th>
+                                            <th class="py-2 px-2 text-right text-brand-greenLight">Eiweiß</th>
+                                            <th class="py-2 px-2 text-right">KH</th>
+                                            <th class="py-2 pl-2 text-right">Fett</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${breakdownRows}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- BEWERTUNGEN & REZEPTFEEDBACK -->
+                        <div class="bg-slate-50 rounded-2xl p-5 sm:p-6 border border-slate-200 no-print">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-4 border-b border-slate-200">
+                                <div>
+                                    <h3 class="font-display font-extrabold text-base text-slate-900">⭐ Rezept bewerten & Verbesserungsvorschlag senden</h3>
+                                    <p class="text-xs text-slate-500 mt-0.5">Wie hat dir dieses Gericht geschmeckt? Deine Sternebewertung wird lokal in deinem Browser gespeichert.</p>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    ${[1, 2, 3, 4, 5].map(star => `
+                                        <button onclick="rateRecipe(${r.id}, ${star})" class="w-9 h-9 rounded-xl bg-white border border-slate-200 hover:border-amber-400 flex items-center justify-center transition" title="${star} Sterne vergeben">
+                                            <i class="fa-solid fa-star ${star <= currentStars ? 'text-amber-400' : 'text-slate-300'}"></i>
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 items-end">
+                                <div class="sm:col-span-2">
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">Dein Feedback oder Verbesserungsvorschlag zu diesem Rezept:</label>
+                                    <input id="feedbackTextInput" type="text" placeholder="z. B. Super für die Spätschicht, habe noch etwas Chili ergänzt..." class="w-full bg-white border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm">
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-28 shrink-0">
+                                        <label class="block text-[11px] font-bold text-slate-600 mb-1">Spamschutz: 3 + 4 =</label>
+                                        <input id="feedbackSpamInput" type="number" placeholder="?" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs sm:text-sm font-bold text-center">
+                                    </div>
+                                    <button onclick="submitRecipeFeedback('${r.title.replace(/'/g, "\\'")}')" class="flex-1 bg-slate-900 hover:bg-brand-green text-white font-bold py-2.5 px-3 rounded-xl text-xs transition">
+                                        Feedback senden
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </article>
+
+                <section class="mb-8 no-print">
+                    <h3 class="font-display text-xl font-extrabold text-slate-900 mb-4">
+                        🔥 Ähnliche High-Protein Rezepte
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                        ${relatedHtml}
+                    </div>
+                </section>
+            `;
+
+            showSection('detail', false);
+        }
+
+        function rateRecipe(recipeId, stars) {
+            recipeRatings[recipeId] = stars;
+            saveLocalData();
+            openRecipeDetail(recipeId, currentPortions, false);
+            renderRecipes();
+            showToast(`⭐ Danke! Du hast ${stars} von 5 Sternen vergeben.`);
+        }
+
+        function submitRecipeFeedback(recipeTitle) {
+            const text = document.getElementById('feedbackTextInput').value.trim();
+            const spamAns = parseInt(document.getElementById('feedbackSpamInput').value);
+            if (spamAns !== 7) {
+                showToast("⚠️ Bitte beantworte kurz die Spamschutz-Rechenaufgabe (3 + 4 = 7).");
+                return;
+            }
+            if (!text) {
+                showToast("Bitte gib kurz dein Feedback in das Textfeld ein.");
+                return;
+            }
+            const subject = encodeURIComponent(`Rezept-Feedback: ${recipeTitle}`);
+            const body = encodeURIComponent(`Hallo Andreas,\n\nmein Feedback zum Rezept "${recipeTitle}":\n\n${text}\n\nViele Grüße`);
+            window.location.href = `mailto:info@proteinhappen.de?subject=${subject}&body=${body}`;
+            showToast("✉️ Vielen Dank! Dein E-Mail-Programm öffnet sich für den Versand.");
+        }
+
+        function copyRecipeLink(url) {
+            navigator.clipboard.writeText(url);
+            showToast(`🔗 Rezept-Link kopiert!`);
+        }
+
+        function updateRecipeSchema(r, url) {
+            const schema = {
+                "@context": "https://schema.org/",
+                "@type": "Recipe",
+                "name": r.title,
+                "url": url,
+                "image": [r.image],
+                "author": { "@type": "Person", "name": "Andreas Goldian" },
+                "description": r.shortDesc,
+                "totalTime": "PT15M",
+                "recipeYield": "1 Portion",
+                "recipeCategory": r.categories[0],
+                "keywords": [...r.categories, ...r.shiftTags, "High Protein"].join(", "),
+                "nutrition": {
+                    "@type": "NutritionInformation",
+                    "calories": `${r.kcal} calories`,
+                    "proteinContent": `${r.protein} g`,
+                    "carbohydrateContent": `${r.carbs} g`,
+                    "fatContent": `${r.fat} g`
+                },
+                "recipeIngredient": r.ingredients.map(i => `${i.amount} ${i.unit} ${i.name}`),
+                "recipeInstructions": r.steps.map((s, idx) => ({
+                    "@type": "HowToStep",
+                    "position": idx + 1,
+                    "text": s
+                }))
+            };
+            document.getElementById('dynamicSchema').textContent = JSON.stringify(schema, null, 2);
+        }
+
+        // MERKLISTE (DAUERHAFT PERSISTENT)
+        function toggleFavorite(recipeId, event = null) {
+            if (event) event.stopPropagation();
+            const idx = favoriteIds.indexOf(recipeId);
+            if (idx > -1) {
+                favoriteIds.splice(idx, 1);
+                showToast("Aus deiner Merkliste entfernt.");
+            } else {
+                favoriteIds.push(recipeId);
+                showToast("❤️ Dauerhaft auf deiner Merkliste gespeichert!");
+            }
+            saveLocalData();
+            renderRecipes();
+            if (!document.getElementById('section-detail').classList.contains('hidden')) {
+                openRecipeDetail(currentRecipeId, currentPortions, false);
+            }
+            if (!document.getElementById('section-favorites').classList.contains('hidden')) {
+                renderFavorites();
+            }
+        }
+
+        function renderFavorites() {
+            const grid = document.getElementById('favoritesGrid');
+            const list = recipes.filter(r => favoriteIds.includes(r.id));
+            if (list.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full bg-slate-50 rounded-2xl p-10 text-center border border-slate-200">
+                        <div class="text-3xl mb-2">❤️</div>
+                        <h3 class="font-display font-bold text-lg text-slate-800 mb-1">Deine Merkliste ist noch leer</h3>
+                        <p class="text-xs sm:text-sm text-slate-500 mb-4">Klicke bei deinen Lieblingsrezepten auf das Herz-Symbol, um sie hier dauerhaft zu speichern.</p>
+                        <button onclick="showSection('home')" class="bg-brand-green text-white text-xs font-bold px-5 py-2.5 rounded-xl">Zu den 30 Rezepten</button>
+                    </div>
+                `;
+                return;
+            }
+            grid.innerHTML = list.map(r => createRecipeCardHtml(r)).join('');
+        }
+
+        // WOCHENPLANER MIT TAGESZIEL & PERSISTENTER ABHAK-EINKAUFSLISTE
+        function populatePlannerDropdown() {
+            const sel = document.getElementById('plannerRecipeSelect');
+            if (!sel) return;
+            sel.innerHTML = recipes.map(r => `<option value="${r.id}">${r.title} (${r.protein}g P | ${r.kcal} kcal)</option>`).join('');
+        }
+
+        function updatePlannerTargets() {
+            const k = parseInt(document.getElementById('plannerTargetKcal').value) || 2110;
+            const p = parseInt(document.getElementById('plannerTargetProt').value) || 166;
+            userDailyTarget = { kcal: k, protein: p };
+            saveLocalData();
+            renderWeeklyPlan();
+            showToast(`🎯 Tagesziel aktualisiert: ${k} kcal & ${p} g Protein`);
+        }
+
+        function adoptTargetsFromCalculator() {
+            calculateMacros();
+            document.getElementById('plannerTargetKcal').value = userDailyTarget.kcal;
+            document.getElementById('plannerTargetProt').value = userDailyTarget.protein;
+            saveLocalData();
+            renderWeeklyPlan();
+            showToast(`🎯 Werte aus dem Rechner übernommen (${userDailyTarget.kcal} kcal | ${userDailyTarget.protein} g P)!`);
+        }
+
+        function adoptTargetsAndOpenPlanner() {
+            adoptTargetsFromCalculator();
+            showSection('planner');
+        }
+
+        function addSelectedToWeek() {
+            const day = document.getElementById('plannerDaySelect').value;
+            const recipeId = parseInt(document.getElementById('plannerRecipeSelect').value);
+            const portions = parseInt(document.getElementById('plannerPortionSelect').value) || 1;
+            weeklyPlan[day].push({ recipeId, portions });
+            saveLocalData();
+            renderWeeklyPlan();
+            showToast(`📅 Für ${day} eingeplant!`);
+        }
+
+        function quickAddToMonday(recipeId, portions = 1) {
+            weeklyPlan["Montag"].push({ recipeId, portions });
+            saveLocalData();
+            showToast("📅 Zum Wochenplaner (Montag) hinzugefügt!");
+        }
+
+        function removeWeekEntry(day, idx) {
+            weeklyPlan[day].splice(idx, 1);
+            saveLocalData();
+            renderWeeklyPlan();
+        }
+
+        function loadSampleWeek() {
+            weeklyPlan = {
+                Montag: [{ recipeId: 14, portions: 1 }, { recipeId: 2, portions: 1 }, { recipeId: 11, portions: 1 }, { recipeId: 5, portions: 1 }],
+                Dienstag: [{ recipeId: 6, portions: 1 }, { recipeId: 1, portions: 1 }, { recipeId: 4, portions: 1 }, { recipeId: 16, portions: 1 }],
+                Mittwoch: [{ recipeId: 9, portions: 1 }, { recipeId: 10, portions: 1 }, { recipeId: 13, portions: 1 }, { recipeId: 22, portions: 1 }],
+                Donnerstag: [{ recipeId: 20, portions: 1 }, { recipeId: 23, portions: 1 }, { recipeId: 15, portions: 1 }, { recipeId: 18, portions: 1 }],
+                Freitag: [{ recipeId: 14, portions: 1 }, { recipeId: 17, portions: 1 }, { recipeId: 7, portions: 1 }, { recipeId: 29, portions: 1 }],
+                Samstag: [{ recipeId: 6, portions: 1 }, { recipeId: 19, portions: 1 }, { recipeId: 12, portions: 1 }, { recipeId: 25, portions: 1 }],
+                Sonntag: [{ recipeId: 3, portions: 1 }, { recipeId: 30, portions: 1 }, { recipeId: 27, portions: 1 }, { recipeId: 5, portions: 1 }]
+            };
+            saveLocalData();
+            renderWeeklyPlan();
+            showToast("✨ Komplette Schicht-Beispielwoche geladen!");
+        }
+
+        function clearWeekPlan() {
+            weekDays.forEach(d => weeklyPlan[d] = []);
+            checkedShoppingItems = {};
+            saveLocalData();
+            renderWeeklyPlan();
+            showToast("Wochenplan wurde geleert.");
+        }
+
+        function normalizeIngredientName(rawName) {
+            return rawName.replace(/\s*\([^)]*\)/g, '').trim();
+        }
+
+        function getAggregatedShoppingList() {
+            const merged = {};
+            weekDays.forEach(d => {
+                (weeklyPlan[d] || []).forEach(entry => {
+                    const r = recipes.find(x => x.id === entry.recipeId);
+                    if (!r) return;
+                    r.ingredients.forEach(ing => {
+                        const cleanName = normalizeIngredientName(ing.name);
+                        const key = `${cleanName.toLowerCase()}__${ing.unit}`;
+                        if (!merged[key]) {
+                            merged[key] = { key, name: cleanName, unit: ing.unit, amount: 0 };
+                        }
+                        merged[key].amount += ing.amount * entry.portions;
+                    });
+                });
+            });
+            return merged;
+        }
+
+        function toggleShoppingCheck(key) {
+            checkedShoppingItems[key] = !checkedShoppingItems[key];
+            saveLocalData();
+            renderWeeklyPlan();
+        }
+
+        function resetCheckedShoppingItems() {
+            checkedShoppingItems = {};
+            saveLocalData();
+            renderWeeklyPlan();
+            showToast("Alle Haken auf der Einkaufsliste zurückgesetzt.");
+        }
+
+        function renderWeeklyPlan() {
+            const grid = document.getElementById('weeklyGrid');
+            const targetK = userDailyTarget.kcal || 2110;
+            const targetP = userDailyTarget.protein || 166;
+
+            grid.innerHTML = weekDays.map(day => {
+                const items = weeklyPlan[day] || [];
+                let dayKcal = 0, dayProt = 0;
+
+                const entriesHtml = items.map((entry, idx) => {
+                    const r = recipes.find(x => x.id === entry.recipeId);
+                    if (!r) return '';
+                    dayKcal += r.kcal * entry.portions;
+                    dayProt += r.protein * entry.portions;
+                    return `
+                        <div class="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm text-xs flex flex-col justify-between gap-1">
+                            <div class="font-bold text-slate-800 leading-snug cursor-pointer hover:text-brand-green" onclick="openRecipeDetail(${r.id}, ${entry.portions})">${r.title}</div>
+                            <div class="flex items-center justify-between text-[11px] text-slate-500 pt-1 border-t border-slate-100">
+                                <span><strong>${entry.portions}x</strong> • ${r.protein * entry.portions}g P</span>
+                                <button onclick="removeWeekEntry('${day}', ${idx})" class="text-rose-500 hover:text-rose-700 no-print">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                const kcalPct = Math.min(100, Math.round((dayKcal / targetK) * 100));
+
+                return `
+                    <div class="bg-slate-50 rounded-2xl p-3 border border-slate-200 flex flex-col justify-between min-h-[215px]">
+                        <div>
+                            <div class="flex items-center justify-between border-b border-slate-200 pb-2 mb-2">
+                                <span class="font-display font-extrabold text-sm text-slate-900">${day}</span>
+                                <span class="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">${dayProt} / ${targetP}g P</span>
+                            </div>
+                            <div class="space-y-2">
+                                ${entriesHtml || '<div class="text-[11px] text-slate-400 italic py-4 text-center">Noch frei</div>'}
+                            </div>
+                        </div>
+                        <div class="mt-3 pt-2 border-t border-slate-200 space-y-1">
+                            <div class="flex justify-between text-[10px] font-bold text-slate-600">
+                                <span>Kalorien:</span>
+                                <span>${dayKcal} / ${targetK} kcal</span>
+                            </div>
+                            <div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                                <div class="bg-brand-green h-full rounded-full transition-all" style="width: ${kcalPct}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const merged = getAggregatedShoppingList();
+            const listEl = document.getElementById('shoppingListContainer');
+            const keys = Object.keys(merged);
+            const checkedCount = keys.filter(k => checkedShoppingItems[k]).length;
+            document.getElementById('shoppingProgressBadge').textContent = `${checkedCount} / ${keys.length} erledigt`;
+
+            if (keys.length === 0) {
+                listEl.innerHTML = `<li class="col-span-full text-slate-400 text-xs italic">Klicke oben auf „Schicht-Beispielwoche laden“ oder füge eigene Rezepte hinzu, um deine Einkaufsliste zu berechnen.</li>`;
+                return;
+            }
+
+            listEl.innerHTML = keys.map(k => {
+                const item = merged[k];
+                const isDone = !!checkedShoppingItems[k];
+                const amt = Number.isInteger(item.amount) ? item.amount : item.amount.toFixed(1).replace('.', ',');
+                return `
+                    <li>
+                        <label class="flex items-center gap-2.5 bg-slate-800 hover:bg-slate-700/80 p-3 rounded-xl border border-slate-700 cursor-pointer transition select-none ${isDone ? 'line-through opacity-50' : ''}">
+                            <input type="checkbox" ${isDone ? 'checked' : ''} onchange="toggleShoppingCheck('${k.replace(/'/g, "\\'")}')" class="w-4 h-4 accent-brand-green rounded cursor-pointer">
+                            <span class="text-xs text-slate-200"><strong class="text-brand-greenLight">${amt} ${item.unit}</strong> ${item.name}</span>
+                        </label>
+                    </li>
+                `;
+            }).join('');
+        }
+
+        function copyShoppingText() {
+            const merged = getAggregatedShoppingList();
+            const lines = Object.values(merged).map(i => `- ${Number.isInteger(i.amount) ? i.amount : i.amount.toFixed(1)} ${i.unit} ${i.name}`);
+            if (lines.length === 0) {
+                showToast("Wochenplan ist noch leer.");
+                return;
+            }
+            navigator.clipboard.writeText("🛒 Meine ProteinHappen Einkaufsliste:\n" + lines.join('\n'));
+            showToast("📋 Einkaufsliste kopiert!");
+        }
+
+        // KALORIENRECHNER (100 % NACHVOLLZIEHBAR + REZEPTVORSCHLÄGE)
+        function calculateMacros() {
+            const gender = document.getElementById('calcGender').value;
+            const age = parseFloat(document.getElementById('calcAge').value) || 45;
+            const height = parseFloat(document.getElementById('calcHeight').value) || 175;
+            const weight = parseFloat(document.getElementById('calcWeight').value) || 83;
+            const activity = parseFloat(document.getElementById('calcActivity').value) || 1.5;
+            const goal = document.getElementById('calcGoal').value;
+
+            const bmrExact = (10 * weight) + (6.25 * height) - (5 * age) + (gender === 'male' ? 5 : -161);
+            const bmr = Math.round(bmrExact);
+            const tdee = Math.round(bmrExact * activity);
+
+            let rawTarget = tdee;
+            let protFactor = 1.8;
+            if (goal === 'lose') {
+                rawTarget = Math.max(1300, tdee - 446);
+                protFactor = 2.0;
+            } else if (goal === 'gain') {
+                rawTarget = tdee + 250;
+            }
+
+            const pGrams = Math.round(weight * protFactor);
+            const fGrams = Math.round(weight * 0.8);
+            const pKcal = pGrams * 4;
+            const fKcal = fGrams * 9;
+
+            const cGrams = Math.max(50, Math.round((rawTarget - pKcal - fKcal) / 4));
+            const cKcal = cGrams * 4;
+
+            const macroSumKcal = pKcal + cKcal + fKcal;
+            const diffKcal = Math.abs(rawTarget - macroSumKcal);
+
+            userDailyTarget = { kcal: rawTarget, protein: pGrams };
+
+            document.getElementById('resTargetKcal').textContent = `${rawTarget.toLocaleString('de-DE')} kcal`;
+            document.getElementById('resBmrInfo').textContent = `Grundumsatz (Mifflin-St. Jeor): ${bmr.toLocaleString('de-DE')} kcal • Gesamtbedarf: ${tdee.toLocaleString('de-DE')} kcal`;
+            document.getElementById('resProtein').textContent = `${pGrams} g`;
+            document.getElementById('resProteinKcal').textContent = `Protein (${pKcal} kcal)`;
+            document.getElementById('resCarbs').textContent = `${cGrams} g`;
+            document.getElementById('resCarbsKcal').textContent = `KH (${cKcal.toLocaleString('de-DE')} kcal)`;
+            document.getElementById('resFat').textContent = `${fGrams} g`;
+            document.getElementById('resFatKcal').textContent = `Fett (${fKcal} kcal)`;
+
+            if (diffKcal === 0) {
+                document.getElementById('resMacroFormula').textContent = `Kalorien aus Makros (4/4/9): ${pKcal} + ${cKcal} + ${fKcal} = ${macroSumKcal.toLocaleString('de-DE')} kcal (Differenz: 0 kcal)`;
+            } else {
+                document.getElementById('resMacroFormula').textContent = `Kalorien aus Makros (4/4/9): ${pKcal} + ${cKcal} + ${fKcal} = ${macroSumKcal.toLocaleString('de-DE')} kcal (Rundungsdifferenz durch ganze Gramm: ${diffKcal} kcal)`;
+            }
+
+            renderCalculatorSuggestions(rawTarget, pGrams);
+        }
+
+        function renderCalculatorSuggestions(targetKcal, targetProt) {
+            const breakfasts = recipes.filter(r => r.categories.includes('Frühstück'));
+            const mains = recipes.filter(r => r.categories.includes('Mittagessen') || r.categories.includes('Abendessen'));
+            const snacks = recipes.filter(r => r.categories.includes('Snacks') || r.categories.includes('Süßes & Desserts'));
+
+            const bPick = targetKcal < 1900 ? breakfasts.find(r => r.id === 14) : breakfasts.find(r => r.id === 6);
+            const lPick = targetKcal < 1900 ? mains.find(r => r.id === 15) : mains.find(r => r.id === 2);
+            const dPick = targetKcal < 2200 ? mains.find(r => r.id === 4) : mains.find(r => r.id === 19);
+            const sPick = targetKcal < 2000 ? snacks.find(r => r.id === 5) : snacks.find(r => r.id === 3);
+
+            const picks = [
+                { slot: "🥞 Frühstück", r: bPick || recipes[5] },
+                { slot: "🥗 Mittag / Schicht", r: lPick || recipes[1] },
+                { slot: "🍳 Abendessen", r: dPick || recipes[3] },
+                { slot: "🍰 Protein-Snack", r: sPick || recipes[4] }
+            ];
+
+            suggestedDayRecipeIds = picks.map(x => x.r.id);
+            const sumK = picks.reduce((s, x) => s + x.r.kcal, 0);
+            const sumP = picks.reduce((s, x) => s + x.r.protein, 0);
+
+            const subEl = document.getElementById('suggestedMealsSubtext');
+            if (subEl) {
+                subEl.textContent = `Diese 4 Gerichte liefern zusammen ${sumK.toLocaleString('de-DE')} kcal und starke ${sumP} g Eiweiß (Dein Richtwert: ${targetKcal.toLocaleString('de-DE')} kcal / ${targetProt} g P):`;
+            }
+
+            const grid = document.getElementById('calculatorSuggestionsGrid');
+            if (!grid) return;
+            grid.innerHTML = picks.map(item => `
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-32">
+                            <img src="${item.r.image}" onerror="this.onerror=null;this.src='${FALLBACK_IMAGE}';" alt="${item.r.title}" class="w-full h-full object-cover">
+                            <span class="absolute top-2 left-2 bg-slate-900/85 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md">${item.slot}</span>
+                        </div>
+                        <div class="p-3.5">
+                            <div class="text-[11px] font-extrabold text-brand-orange mb-1">💪 ${item.r.protein} g P • 🔥 ${item.r.kcal} kcal</div>
+                            <h3 class="font-display font-bold text-xs sm:text-sm text-slate-900 line-clamp-2">${item.r.title}</h3>
+                        </div>
+                    </div>
+                    <div class="px-3.5 pb-3.5">
+                        <button onclick="openRecipeDetail(${item.r.id})" class="w-full bg-white hover:bg-brand-green hover:text-white text-slate-800 border border-slate-200 text-xs font-bold py-2 rounded-xl transition">
+                            Rezept öffnen →
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function adoptSuggestedDayToMonday() {
+            weeklyPlan["Montag"] = suggestedDayRecipeIds.map(id => ({ recipeId: id, portions: 1 }));
+            adoptTargetsFromCalculator();
+            showSection('planner');
+            showToast("📅 Alle 4 vorgeschlagenen Gerichte wurden für Montag eingeplant!");
+        }
+
+        // RECHTLICHES MODAL
+        function openLegalModal(type) {
+            const titleEl = document.getElementById('legalModalTitle');
+            const contentEl = document.getElementById('legalModalContent');
+
+            const contentMap = {
+                impressum: {
+                    title: "Impressum (Angaben gemäß § 5 DDG)",
+                    html: `
+                        <p><strong>Anbieter und Diensteanbieter gemäß § 5 Digitale-Dienste-Gesetz (DDG):</strong><br>
+                        Andreas Goldian<br>
+                        ProteinHappen – Rezept- & Ernährungsportal<br>
+                        Kalkumerfeld 26<br>
+                        40699 Erkrath<br>
+                        Deutschland</p>
+
+                        <p><strong>Kontakt:</strong><br>
+                        E-Mail: <a href="mailto:info@proteinhappen.de" class="text-brand-green font-bold underline">info@proteinhappen.de</a><br>
+                        Internet: https://proteinhappen.de</p>
+
+                        <p><strong>Redaktionell Verantwortlicher gemäß § 18 Abs. 2 MStV:</strong><br>
+                        Andreas Goldian<br>
+                        Kalkumerfeld 26<br>
+                        40699 Erkrath</p>
+
+                        <p><strong>EU-Streitschlichtung & Verbraucherstreitbeilegung:</strong><br>
+                        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr/. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                    `
+                },
+                datenschutz: {
+                    title: "Datenschutzerklärung (DSGVO)",
+                    html: `
+                        <p><strong>1. Verantwortlicher</strong><br>
+                        Verantwortlicher für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:<br>
+                        Andreas Goldian, Kalkumerfeld 26, 40699 Erkrath, E-Mail: <a href="mailto:info@proteinhappen.de" class="text-brand-green font-bold underline">info@proteinhappen.de</a>.</p>
+
+                        <p><strong>2. Datenschutz auf einen Blick</strong><br>
+                        Die Nutzung von ProteinHappen.de ist ohne Registrierung und ohne Angabe personenbezogener Daten möglich. Wir setzen keine Tracking- oder Werbe-Cookies von Drittanbietern ein.</p>
+
+                        <p><strong>3. Hosting über GitHub Pages</strong><br>
+                        Diese Website wird über GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Webseite erfasst der Hosting-Provider technisch notwendige Server-Logfiles (z. B. IP-Adresse, Browsertyp, Zeitpunkt des Aufrufs), um die Sicherheit und Auslieferung der Website zu gewährleisten (Art. 6 Abs. 1 lit. f DSGVO).</p>
+
+                        <p><strong>4. Lokale Speicherung im Browser (LocalStorage)</strong><br>
+                        Wenn Sie die Funktionen „Merkliste“, „Wochenplaner“, „Einkaufsliste“ oder „Sternebewertung“ nutzen, werden Ihre Eingaben ausschließlich lokal in Ihrem eigenen Browser (LocalStorage) gespeichert. Diese Daten verbleiben auf Ihrem Endgerät und werden zu keinem Zeitpunkt an uns oder Dritte übertragen.</p>
+
+                        <p><strong>5. Kontaktaufnahme & Rezept-Feedback per E-Mail</strong><br>
+                        Wenn Sie uns per E-Mail unter info@proteinhappen.de kontaktieren oder über den Feedback-Button einen Verbesserungsvorschlag senden, werden Ihre Angaben zwecks Bearbeitung der Anfrage gespeichert (Art. 6 Abs. 1 lit. b bzw. f DSGVO).</p>
+                    `
+                },
+                sponsoring: {
+                    title: "Kooperationen & Sponsoring",
+                    html: `
+                        <p><strong>Partnerschaften auf ProteinHappen.de</strong><br>
+                        Sie möchten passende Lebensmittel, High-Protein-Produkte oder Meal-Prep-Equipment vorstellen? Schreiben Sie uns gerne unverbindlich an:<br>
+                        <a href="mailto:info@proteinhappen.de" class="text-brand-green font-bold underline">info@proteinhappen.de</a></p>
+                    `
+                }
+            };
+
+            const selected = contentMap[type] || contentMap.impressum;
+            titleEl.textContent = selected.title;
+            contentEl.innerHTML = selected.html;
+            document.getElementById('legalModal').classList.remove('hidden');
+        }
+
+        function closeLegalModal() {
+            document.getElementById('legalModal').classList.add('hidden');
+        }
+
+        function showToast(msg) {
+            const box = document.getElementById('toastBox');
+            document.getElementById('toastMessage').textContent = msg;
+            box.classList.remove('hidden');
+            clearTimeout(window.toastTimer);
+            window.toastTimer = setTimeout(() => box.classList.add('hidden'), 3200);
+        }
+    </script>
+</body>
+</html>
