@@ -266,7 +266,7 @@
                             Wer im Wechsel aus Früh-, Spät- oder Nachtschicht arbeitet, braucht Mahlzeiten, die sich schnell vorbereiten lassen, in der Box frisch bleiben und nicht müde machen. Wähle deine Situation:
                         </p>
                     </div>
-                    <button onclick="resetFilters()" class="self-start md:self-auto text-xs font-bold bg-white/10 hover:bg-white/20 px-4 py-2.5 rounded-xl transition">
+                    <button onclick="resetFilters()" class="self-start md:self-auto text-xs font-bold bg-white/10 hover:bg-white/20 px-4 py-2 rounded-xl transition">
                         Alle 30 Rezepte zeigen
                     </button>
                 </div>
@@ -474,7 +474,7 @@
         </div>
 
         <!-- ==========================================
-             SEKTION 3: AUSFÜHRLICHE DOKUMENTATION DER NÄHRWERTBERECHNUNG
+             SEKTION 3: AUSFÜHRLICHE DOKUMENTATION DER NÄHRWERTBERECHNUNG (KORRIGIERT)
              ========================================== -->
         <div id="section-methodology" class="hidden max-w-4xl mx-auto space-y-6">
             <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
@@ -632,7 +632,7 @@
 
                 <div id="weeklyGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-3 mb-8"></div>
 
-                <!-- NEU 3: Smartphone-optimierte Einkaufsliste zum Abhaken -->
+                <!-- NEU 3: Smartphone-optimierte Einkaufsliste zum Abhaken (persistent) -->
                 <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 print-box">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-5 border-b border-slate-700">
                         <div>
@@ -662,7 +662,7 @@
         </div>
 
         <!-- ==========================================
-             SEKTION 5: KALORIEN- & PROTEINRECHNER
+             SEKTION 5: KALORIEN- & PROTEINRECHNER (KORRIGIERT + REZEPTVORSCHLÄGE)
              ========================================== -->
         <div id="section-calculator" class="hidden max-w-4xl mx-auto space-y-8">
             <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-sm border border-slate-200">
@@ -725,6 +725,7 @@
                         </button>
                     </div>
 
+                    <!-- Ergebnis-Anzeige (Startwerte im HTML: 2.110 kcal = 166g P * 4 + 213g KH * 4 + 66g F * 9) -->
                     <div class="bg-slate-900 text-white rounded-2xl p-6 flex flex-col justify-between">
                         <div>
                             <span class="text-xs font-bold uppercase tracking-wider text-brand-orange">📊 Deine täglichen Richtwerte</span>
@@ -760,7 +761,7 @@
                     </div>
                 </div>
 
-                <!-- KORREKTUR C: Erklärung zu Mifflin-St. Jeor & Schichtarbeit -->
+                <!-- KORREKTUR C: Transparente Erklärung zu Mifflin-St. Jeor & Schichtarbeit -->
                 <div class="mt-8 pt-6 border-t border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-5 text-xs sm:text-sm text-slate-600 leading-relaxed">
                     <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/70">
                         <strong class="text-slate-900 block mb-1">1. Was berechnet die Mifflin-St.-Jeor-Formel?</strong>
@@ -901,7 +902,7 @@
                 difficulty: "Einfach",
                 time: "15 Min.",
                 kcal: 435, protein: 67, carbs: 33, fat: 3,
-                image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=1000&q=80",
                 intro: "Durch die Panade aus ungesüßten Cornflakes und die Zubereitung im Airfryer sparst du das komplette Frittierfett ein. 67 g hochwertiges Eiweiß bei nur 3 g Fett.",
                 ingredients: [
                     { amount: 200, unit: "g", name: "Hähnchenbrustfilet (roh)", kcal: 218, p: 48, c: 0, f: 2.0 },
@@ -930,7 +931,7 @@
                 difficulty: "Einfach",
                 time: "15 Min.",
                 kcal: 515, protein: 60, carbs: 53, fat: 7,
-                image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1000&q=80",
                 intro: "Diese Bowl vereint mageres Hähnchenbrustfilet, pflanzliches Eiweiß aus Edamame und komplexe Kohlenhydrate aus Basmatireis. Sie liegt leicht im Magen und hält in der Früh-, Spät- oder Nachtschicht stundenlang satt.",
                 ingredients: [
                     { amount: 180, unit: "g", name: "Hähnchenbrustfilet (roh)", kcal: 196, p: 43.2, c: 0, f: 1.8 },
@@ -960,7 +961,7 @@
                 difficulty: "Einfach",
                 time: "35 Min.",
                 kcal: 465, protein: 54, carbs: 45, fat: 7,
-                image: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1000&q=80",
                 intro: "Ohne fettigen Mürbeteigboden sparst du hunderte Kalorien, während Magerquark und Skyr für eine cremige Konsistenz wie vom Bäcker sorgen.",
                 ingredients: [
                     { amount: 250, unit: "g", name: "Magerquark (unter 0,5 % Fett)", kcal: 168, p: 30, c: 10, f: 0.5 },
@@ -991,7 +992,7 @@
                 difficulty: "Einfach",
                 time: "15 Min.",
                 kcal: 460, protein: 49, carbs: 41, fat: 11,
-                image: "https://images.unsplash.com/photo-1534080564583-6be75777b70a?auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80",
                 intro: "5%-Rinderhackfleisch statt gemischtem Hack spart über 200 Kalorien pro Pfanne, während die Süßkartoffel komplexe Energie für lange Schichten liefert.",
                 ingredients: [
                     { amount: 180, unit: "g", name: "Rinderhackfleisch 5 % Fett (roh)", kcal: 230, p: 38, c: 0, f: 9.0 },
@@ -1258,7 +1259,7 @@
                 difficulty: "Einfach",
                 time: "25 Min.",
                 kcal: 490, protein: 71, carbs: 8, fat: 18,
-                image: "https://images.unsplash.com/photo-1626074964491-030f2f32a762?auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=1000&q=80",
                 intro: "5 Minuten Vorbereitung, den Rest macht der Ofen: Aufgeplatzte Kirschtomaten und Feta light verschmelzen zu einer würzigen Sauce.",
                 ingredients: [
                     { amount: 200, unit: "g", name: "Hähnchenbrustfilet (roh)", kcal: 218, p: 48, c: 0, f: 2.0 },
@@ -1288,7 +1289,7 @@
                 difficulty: "Einfach",
                 time: "5 Min.",
                 kcal: 385, protein: 39, carbs: 43, fat: 6,
-                image: "https://images.unsplash.com/photo-1488477304112-4944851de03d?auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?auto=format&fit=crop&w=1000&q=80",
                 intro: "Kaffee, Haferflocken und cremiger Vanille-Skyr in einem auslaufsicheren Glas: Liefert dir morgens Energie und Koffein ohne eine einzige Minute Kochzeit.",
                 ingredients: [
                     { amount: 50, unit: "g", name: "Zarte Haferflocken", kcal: 185, p: 7, c: 29.5, f: 3.5 },
@@ -1318,7 +1319,7 @@
                 difficulty: "Einfach",
                 time: "12 Min.",
                 kcal: 390, protein: 56, carbs: 11, fat: 15,
-                image: "https://images.unsplash.com/photo-1593504049359-74330189a345?auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1000&q=80",
                 intro: "Mageres Putenhackfleisch und knackige Zucchini belasten die Verdauung nicht und versorgen dich in der Nachtschicht oder am späten Abend mit 56 g Eiweiß.",
                 ingredients: [
                     { amount: 200, unit: "g", name: "Putenhackfleisch mager (roh)", kcal: 224, p: 40, c: 0, f: 6.5 },
@@ -1347,7 +1348,7 @@
                 difficulty: "Einfach",
                 time: "10 Min.",
                 kcal: 240, protein: 48, carbs: 6, fat: 2,
-                image: "https://images.unsplash.com/photo-1600181516264-3ea807faeb3f?auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=1000&q=80",
                 intro: "Gebacken im Airfryer oder Ofen verliert Harzer Käse seinen strengen Geschmack komplett und geht zu knusprigen Protein-Chips auf.",
                 ingredients: [
                     { amount: 100, unit: "g", name: "Harzer Roller / Handkäse", kcal: 125, p: 30, c: 0, f: 0.7 },
@@ -1405,7 +1406,7 @@
                 difficulty: "Einfach",
                 time: "5 Min.",
                 kcal: 340, protein: 36, carbs: 29, fat: 7,
-                image: "https://images.unsplash.com/photo-1511715282680-fbf93a50e721?auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1488477304112-4944851de03d?auto=format&fit=crop&w=1000&q=80",
                 intro: "Die feine Körnung von Hüttenkäse gemischt mit cremigem Vanille-Skyr ahmt die Textur von Milchreis verblüffend echt nach – bei einem Bruchteil der Kohlenhydrate.",
                 ingredients: [
                     { amount: 200, unit: "g", name: "Körniger Frischkäse light", kcal: 184, p: 26, c: 4, f: 6.0 },
@@ -1463,7 +1464,7 @@
                 difficulty: "Einfach",
                 time: "18 Min.",
                 kcal: 295, protein: 36, carbs: 5, fat: 14,
-                image: "https://images.unsplash.com/photo-1608039755401-7420790100e4?auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=1000&q=80",
                 intro: "Aus Eiern, Hüttenkäse und Putenbrust gebackene Muffins, die im Kühlschrank 3 Tage frisch bleiben und morgens null Arbeit machen.",
                 ingredients: [
                     { amount: 2, unit: "Stk.", name: "Hühnerei (Größe M, 110 g)", kcal: 170, p: 14, c: 1, f: 12.0 },
@@ -1726,7 +1727,7 @@
                 difficulty: "Einfach",
                 time: "5 Min.",
                 kcal: 310, protein: 42, carbs: 19, fat: 6,
-                image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1000&q=80",
+                image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=1000&q=80",
                 intro: "Entöltes Erdnussmehl liefert fast 50 % Eiweiß und intensives Erdnussaroma ohne die hohen Fettkalorien normaler Erdnussbutter.",
                 ingredients: [
                     { amount: 250, unit: "g", name: "Magerquark", kcal: 168, p: 30, c: 10, f: 0.5 },
@@ -1787,7 +1788,7 @@
         let selectedCategory = 'all';
         let favoriteIds = [];
         let checkedShoppingItems = {};
-        let recipeRatings = {};
+        let recipeRatings = {}; // { recipeId: starValue }
         let userDailyTarget = { kcal: 2110, protein: 166 };
         let suggestedDayRecipeIds = [6, 2, 11, 5];
 
@@ -2311,7 +2312,7 @@
                             </div>
                         </div>
 
-                        <!-- BEWERTUNGEN & REZEPTFEEDBACK (SPAM- & DATENSCHUTZFREUNDLICH) -->
+                        <!-- NEU 4: BEWERTUNGEN & REZEPTFEEDBACK (SPAM- & DATENSCHUTZFREUNDLICH) -->
                         <div class="bg-slate-50 rounded-2xl p-5 sm:p-6 border border-slate-200 no-print">
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 mb-4 border-b border-slate-200">
                                 <div>
@@ -2661,7 +2662,7 @@
         }
 
         // ==========================================
-        // KALORIENRECHNER (100 % MATHEMATISCH KONSISTENT)
+        // KALORIENRECHNER (100 % NACHVOLLZIEHBAR + REZEPTVORSCHLÄGE)
         // ==========================================
         function calculateMacros() {
             const gender = document.getElementById('calcGender').value;
@@ -2671,9 +2672,12 @@
             const activity = parseFloat(document.getElementById('calcActivity').value) || 1.5;
             const goal = document.getElementById('calcGoal').value;
 
-            const bmr = Math.round((10 * weight) + (6.25 * height) - (5 * age) + (gender === 'male' ? 5 : -161));
-            const tdee = Math.round(bmr * activity);
+            // 1. Grundumsatz nach Mifflin-St. Jeor
+            const bmrExact = (10 * weight) + (6.25 * height) - (5 * age) + (gender === 'male' ? 5 : -161);
+            const bmr = Math.round(bmrExact);
+            const tdee = Math.round(bmrExact * activity);
 
+            // 2. Zielkalorien vor Makro-Rundung
             let rawTarget = tdee;
             let protFactor = 1.8;
             if (goal === 'lose') {
@@ -2683,6 +2687,7 @@
                 rawTarget = tdee + 250;
             }
 
+            // 3. Makros so berechnen, dass sie möglichst genau zum Kalorienziel passen
             const pGrams = Math.round(weight * protFactor);
             const fGrams = Math.round(weight * 0.8);
             const pKcal = pGrams * 4;
@@ -2691,17 +2696,85 @@
             const cGrams = Math.max(50, Math.round((rawTarget - pKcal - fKcal) / 4));
             const cKcal = cGrams * 4;
 
-            const exactTargetKcal = pKcal + cKcal + fKcal;
+            const macroSumKcal = pKcal + cKcal + fKcal;
+            const diffKcal = Math.abs(rawTarget - macroSumKcal);
 
-            document.getElementById('resTargetKcal').textContent = `${exactTargetKcal.toLocaleString('de-DE')} kcal`;
-            document.getElementById('resBmrInfo').textContent = `Grundumsatz: ${bmr.toLocaleString('de-DE')} kcal • Erhaltungsbedarf: ${tdee.toLocaleString('de-DE')} kcal`;
+            userDailyTarget = { kcal: rawTarget, protein: pGrams };
+
+            document.getElementById('resTargetKcal').textContent = `${rawTarget.toLocaleString('de-DE')} kcal`;
+            document.getElementById('resBmrInfo').textContent = `Grundumsatz (Mifflin-St. Jeor): ${bmr.toLocaleString('de-DE')} kcal • Gesamtbedarf: ${tdee.toLocaleString('de-DE')} kcal`;
             document.getElementById('resProtein').textContent = `${pGrams} g`;
             document.getElementById('resProteinKcal').textContent = `Protein (${pKcal} kcal)`;
             document.getElementById('resCarbs').textContent = `${cGrams} g`;
             document.getElementById('resCarbsKcal').textContent = `KH (${cKcal.toLocaleString('de-DE')} kcal)`;
             document.getElementById('resFat').textContent = `${fGrams} g`;
             document.getElementById('resFatKcal').textContent = `Fett (${fKcal} kcal)`;
-            document.getElementById('resMacroFormula').textContent = `${pGrams}g × 4 (${pKcal}) + ${cGrams}g × 4 (${cKcal.toLocaleString('de-DE')}) + ${fGrams}g × 9 (${fKcal}) = ${exactTargetKcal.toLocaleString('de-DE')} kcal`;
+
+            if (diffKcal === 0) {
+                document.getElementById('resMacroFormula').textContent = `Kalorien aus Makros (4/4/9): ${pKcal} + ${cKcal} + ${fKcal} = ${macroSumKcal.toLocaleString('de-DE')} kcal (Differenz: 0 kcal)`;
+            } else {
+                document.getElementById('resMacroFormula').textContent = `Kalorien aus Makros (4/4/9): ${pKcal} + ${cKcal} + ${fKcal} = ${macroSumKcal.toLocaleString('de-DE')} kcal (Rundungsdifferenz durch ganze Gramm: ${diffKcal} kcal)`;
+            }
+
+            renderCalculatorSuggestions(rawTarget, pGrams);
+        }
+
+        // NEU 2: Passende Rezeptvorschläge zum Kalorienziel
+        function renderCalculatorSuggestions(targetKcal, targetProt) {
+            const breakfasts = recipes.filter(r => r.categories.includes('Frühstück'));
+            const mains = recipes.filter(r => r.categories.includes('Mittagessen') || r.categories.includes('Abendessen'));
+            const snacks = recipes.filter(r => r.categories.includes('Snacks') || r.categories.includes('Süßes & Desserts'));
+
+            // Wähle 1 Frühstück, 2 Hauptgerichte, 1 Snack passend zur Zielhöhe
+            const bPick = targetKcal < 1900 ? breakfasts.find(r => r.id === 14) : breakfasts.find(r => r.id === 6);
+            const lPick = targetKcal < 1900 ? mains.find(r => r.id === 15) : mains.find(r => r.id === 2);
+            const dPick = targetKcal < 2200 ? mains.find(r => r.id === 4) : mains.find(r => r.id === 19);
+            const sPick = targetKcal < 2000 ? snacks.find(r => r.id === 5) : snacks.find(r => r.id === 3);
+
+            const picks = [
+                { slot: "🥞 Frühstück", r: bPick || recipes[5] },
+                { slot: "🥗 Mittag / Schicht", r: lPick || recipes[1] },
+                { slot: "🍳 Abendessen", r: dPick || recipes[3] },
+                { slot: "🍰 Protein-Snack", r: sPick || recipes[4] }
+            ];
+
+            suggestedDayRecipeIds = picks.map(x => x.r.id);
+            const sumK = picks.reduce((s, x) => s + x.r.kcal, 0);
+            const sumP = picks.reduce((s, x) => s + x.r.protein, 0);
+
+            const subEl = document.getElementById('suggestedMealsSubtext');
+            if (subEl) {
+                subEl.textContent = `Diese 4 Gerichte liefern zusammen ${sumK.toLocaleString('de-DE')} kcal und starke ${sumP} g Eiweiß (Dein Richtwert: ${targetKcal.toLocaleString('de-DE')} kcal / ${targetProt} g P):`;
+            }
+
+            const grid = document.getElementById('calculatorSuggestionsGrid');
+            if (!grid) return;
+            grid.innerHTML = picks.map(item => `
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-32">
+                            <img src="${item.r.image}" alt="${item.r.title}" class="w-full h-full object-cover">
+                            <span class="absolute top-2 left-2 bg-slate-900/85 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md">${item.slot}</span>
+                        </div>
+                        <div class="p-3.5">
+                            <div class="text-[11px] font-extrabold text-brand-orange mb-1">💪 ${item.r.protein} g P • 🔥 ${item.r.kcal} kcal</div>
+                            <h3 class="font-display font-bold text-xs sm:text-sm text-slate-900 line-clamp-2">${item.r.title}</h3>
+                        </div>
+                    </div>
+                    <div class="px-3.5 pb-3.5">
+                        <button onclick="openRecipeDetail(${item.r.id})" class="w-full bg-white hover:bg-brand-green hover:text-white text-slate-800 border border-slate-200 text-xs font-bold py-2 rounded-xl transition">
+                            Rezept öffnen →
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function adoptSuggestedDayToMonday() {
+            weeklyPlan["Montag"] = suggestedDayRecipeIds.map(id => ({ recipeId: id, portions: 1 }));
+            adoptTargetsFromCalculator();
+            showSection('planner');
+            showToast("📅 Alle 4 vorgeschlagenen Gerichte wurden für Montag eingeplant!");
         }
 
         // RECHTLICHES MODAL
